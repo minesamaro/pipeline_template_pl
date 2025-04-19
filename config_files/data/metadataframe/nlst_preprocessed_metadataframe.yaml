@@ -1,0 +1,6 @@
+dataset_name: ${..dataset_name}
+data_preprocessing_protocol_number: ${..data_preprocessing_protocol_number}
+label: 5y #classification/regression target
+dimension: 2 # "2D, 2.5D, 3D
+roi: lung # lung, whole
+resample: False

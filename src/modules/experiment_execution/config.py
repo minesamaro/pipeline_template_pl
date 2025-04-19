@@ -94,9 +94,21 @@ class ExperimentExecutionConfig:
                     f"/nas-ctm01/datasets/public/medical_datasets"
                     f"/lung_ct_datasets/luna25_challenge"
                 )
+        elif config.data.dataset_name == "NLST": #TODO: Check this
+            if dirname(abspath("")).startswith('/nas-ctm01'):
+                dataset_dir_path = (
+                    "/nas-ctm01/datasets/public/medical_datasets"
+                    "/lung_ct_datasets/nlst"
+                )
+            else:
+                dataset_dir_path = (
+                    f"{dirname(abspath('')).split('/nas-ctm01')[0]}"
+                    f"/nas-ctm01/datasets/public/medical_datasets"
+                    f"/lung_ct_datasets/nlst"
+                )
         else:
             raise ValueError(
-                "Invalid dataset name: {}. Expected: 'LIDC-IDRI' or 'LUNA25'"
+                "Invalid dataset name: {}. Expected: 'LIDC-IDRI' or 'LUNA25', or 'NLST'"
             )
 
         experiment_id = config.experiment_execution.ids.experiment_id

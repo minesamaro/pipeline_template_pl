@@ -99,9 +99,21 @@ def set_paths(dataset_name):
                 f"/nas-ctm01/datasets/public/medical_datasets"
                 f"/lung_ct_datasets/luna25_challenge"
             )
+    elif dataset_name == "NLST":
+        if dirname(abspath("")).startswith('/nas-ctm01'):
+            _PATHS['DATASET_DIR_PATH'] = (
+                "/nas-ctm01/datasets/public/medical_datasets"
+                "/lung_ct_datasets/nlst"
+            )
+        else:
+            _PATHS['DATASET_DIR_PATH'] = (
+                f"{dirname(abspath('')).split('/nas-ctm01')[0]}"
+                f"/nas-ctm01/datasets/public/medical_datasets"
+                f"/lung_ct_datasets/nlst"
+            )
     else:
         raise ValueError(
-            "Invalid dataset name: {}. Expected: 'LIDC-IDRI' or 'LUNA25'"
+            "Invalid dataset name: {}. Expected: 'LIDC-IDRI' or 'LUNA25' or 'NLST'"
         )
     _PATHS['PREPROCESSED_DATA_DIR_PATH'] = \
         f"{_PATHS['DATASET_DIR_PATH']}/preprocessed_data"

@@ -4,6 +4,9 @@ from src.modules.data.dataloader.preprocessed_dataloaders \
 from src.modules.data.dataloader.preprocessed_dataloaders \
     .luna25_preprocessed_dataloader \
     import LUNA25PreprocessedKFoldDataLoader
+from src.modules.data.dataloader.preprocessed_dataloaders \
+    .nlst_preprocessed_dataloader \
+    import NLSTPreprocessedKFoldDataLoader
 
 
 class PreprocessedDataLoader:
@@ -15,6 +18,11 @@ class PreprocessedDataLoader:
             )
         elif config.dataset_name == "LUNA25":
             return LUNA25PreprocessedKFoldDataLoader(
+                config,
+                lung_nodule_metadataframe
+            )
+        elif config.dataset_name == "NLST":
+            return NLSTPreprocessedKFoldDataLoader(
                 config,
                 lung_nodule_metadataframe
             )

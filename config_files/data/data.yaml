@@ -1,2 +1,2 @@
-dataset_name: LUNA25 # LUNA25
+dataset_name: NLST # LUNA25 or NLST
 data_preprocessing_protocol_number: 2
