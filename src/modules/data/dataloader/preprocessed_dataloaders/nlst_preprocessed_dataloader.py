@@ -6,6 +6,8 @@ import numpy
 import random
 import torch
 import torchvision
+import pydicom
+import os
 
 from src.modules.data.data_augmentation.ct_image_augmenter \
     import CTImageAugmenter
@@ -103,11 +105,11 @@ class NLSTPreprocessedKFoldDataLoader:
                     train_and_validation_file_name_column,
                     test_size=self.config.validation_fraction_of_train_set,
                     random_state=self.config.seed_value,
-                    stratify=lung_nodule_image_metadataframe[
-                        lung_nodule_image_metadataframe['file_name'].isin(
+                    stratify=lung_metadataframe[
+                        lung_metadataframe['path'].isin(
                             train_and_validation_file_name_column
                         )
-                    ]['Mean Nodule Malignancy'].apply(lambda x: int(x + 0.5))  #TODO: Fix this
+                    ]['label']
                 )
 
             self.data_names_by_subset['train'] = \
@@ -121,7 +123,7 @@ class NLSTPreprocessedKFoldDataLoader:
                 self.dataloaders_by_subset[subset_type] = \
                     self._get_torch_dataloader(
                         file_names=self.data_names_by_subset[subset_type],
-                        label_dataframe=lung_nodule_image_metadataframe,
+                        label_dataframe=lung_metadataframe,
                         subset_type=subset_type,
                         torch_dataloader_kwargs=
                             self.config.torch_dataloader_kwargs
@@ -154,19 +156,19 @@ class NLSTPreprocessedKFoldDataLoader:
                 )
 
                 self.data_splits['train']['file_names'].append(
-                    train_lung_metadataframe['file_name'].tolist()
+                    train_lung_metadataframe['path'].tolist()
                 )
                 self.data_splits['train']['labels'].append(
                     train_lung_metadataframe['label'].tolist()
                 )
                 self.data_splits['validation']['file_names'].append(
-                    validation_lung_metadataframe['file_name'].tolist()
+                    validation_lung_metadataframe['path'].tolist()
                 )
                 self.data_splits['validation']['labels'].append(
                     validation_lung_metadataframe['label'].tolist()
                 )
                 self.data_splits['test']['file_names'].append(
-                    test_lung_metadataframe['file_name'].tolist()
+                    test_lung_metadataframe['path'].tolist()
                 )
                 self.data_splits['test']['labels'].append(
                     test_lung_metadataframe['label'].tolist()
@@ -188,7 +190,7 @@ class NLSTPreprocessedDataLoader(Dataset):
                 file_names
                 + config.data_augmentation.augmented_to_original_data_ratio
                 * file_names
-            )
+            )  #TODO: Fix this
         else:
             self.file_names = file_names
         self.labels = labels
@@ -207,7 +209,7 @@ class NLSTPreprocessedDataLoader(Dataset):
                 if x.ndim == 3 else x,
             torchvision.transforms.ToTensor(),
             torchvision.transforms.Normalize(mean=0.5, std=0.5),
-        ])
+        ]) #TODO: Check this transformer
 
     def __len__(self):
         return len(self.file_names)
@@ -221,21 +223,92 @@ class NLSTPreprocessedDataLoader(Dataset):
             return self.file_names[data_index], data, label
 
     def _get_data(self, data_index): #TODO: CHange this to DICOM load
-        image = numpy.load(
-            "{}/{}.npy".format(
-                self.config.image_numpy_arrays_dir_path,
-                self.file_names[data_index]
-            )
-        ).astype(numpy.float32)
+
+        if self.config.dimension == 2:
+            image = self._get_slice(data_index)
+        elif self.config.dimension == 3:
+            image = self._get_scan(data_index)
+
+        # TODO: Do the same for lung roi and 2.5D and resample
+        
+        image = image.astype(numpy.float32)
+
         if self.apply_data_augmentations and data_index >= (
                 len(self.file_names)
                 / (self.augmented_to_original_data_ratio + 1)
         ) and self.subset_type == "train":
-            image = self.data_augmenter(image=image)
+            image = self.data_augmenter(image=image) #TODO: Figure this out - Change
         image = self.image_transformer(image)
         data = dict(image=image)
 
         return data
+    
+    def _get_slice(self, data_index):
+        # Load the DICOM file
+        dicom_file_path = self.file_names[data_index]
+        
+        # Go to the metadataframe and get the slice number of the path == dicom_file_path
+        slice_number = self.lung_metadataframe.loc[
+            self.lung_metadataframe['path'] == dicom_file_path,
+            'sct_slice_num'
+        ].values[0]
+
+        # List CT slices files
+        ct_dcms = os.listdir(dicom_file_path)
+
+        # List the DICOM slice files that are read with pydicom.read_file()
+        slices = [pydicom.dcmread(os.path.join(dicom_file_path, dcm)) for dcm in ct_dcms]
+
+        # Order list of slices in an ascendant way by the position z of the slice
+        slices.sort(key = lambda x: float(x.ImagePositionPatient[2]))
+        image = numpy.stack([s.pixel_array for s in slices])
+        image = image.astype(numpy.int16)
+        image[image == -2000] = 0
+            
+        intercept = slices[0].RescaleIntercept
+        slope = slices[0].RescaleSlope
+
+        if slope != 1:
+            image = slope * image.astype(numpy.float64)
+            image = image.astype(numpy.int16)
+                    
+        image += numpy.int16(intercept)
+        dicom_image = numpy.array(image, dtype=numpy.int16)
+
+        # Extract the slice from the DICOM image
+        slice_image = dicom_image[slice_number - 1]
+
+        return slice_image
+    
+
+    def __get_scan(self, data_index):
+        # Load the DICOM file
+        dicom_file_path = self.file_names[data_index]
+        
+        # List CT slices files
+        ct_dcms = os.listdir(dicom_file_path)
+
+        # List the DICOM slice files that are read with pydicom.read_file()
+        slices = [pydicom.dcmread(os.path.join(dicom_file_path, dcm)) for dcm in ct_dcms]
+
+        # Order list of slices in an ascendant way by the position z of the slice
+        slices.sort(key = lambda x: float(x.ImagePositionPatient[2]))
+        image = numpy.stack([s.pixel_array for s in slices])
+        image = image.astype(numpy.int16)
+        image[image == -2000] = 0
+            
+        intercept = slices[0].RescaleIntercept
+        slope = slices[0].RescaleSlope
+
+        if slope != 1:
+            image = slope * image.astype(numpy.float64)
+            image = image.astype(numpy.int16)
+                    
+        image += numpy.int16(intercept)
+        dicom_image = numpy.array(image, dtype=numpy.int16)
+
+        return dicom_image
+
 
     def _get_label(self, data_index):
         labels = torch.tensor([
