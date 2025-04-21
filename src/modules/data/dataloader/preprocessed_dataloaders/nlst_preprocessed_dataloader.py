@@ -254,41 +254,48 @@ class NLSTPreprocessedDataLoader(Dataset):
         return data
     
     def _get_slice(self, data_index):
-        # Load the DICOM file
-        dicom_file_path = self.file_names[data_index]
-        
-        # Go to the metadataframe and get the slice number of the path == dicom_file_path
-        slice_number = self.lung_metadataframe.loc[
-            self.lung_metadataframe['path'] == dicom_file_path,
-            'sct_slice_num'
-        ].values[0]
-
-        # List CT slices files
-        ct_dcms = os.listdir(dicom_file_path)
-
-        # List the DICOM slice files that are read with pydicom.read_file()
-        slices = [pydicom.dcmread(os.path.join(dicom_file_path, dcm)) for dcm in ct_dcms]
-
-        # Order list of slices in an ascendant way by the position z of the slice
-        slices.sort(key = lambda x: float(x.ImagePositionPatient[2]))
-        image = numpy.stack([s.pixel_array for s in slices])
-        image = image.astype(numpy.int16)
-        image[image == -2000] = 0
+        try:
+            # Load the DICOM file
+            dicom_file_path = self.file_names[data_index]
             
-        intercept = slices[0].RescaleIntercept
-        slope = slices[0].RescaleSlope
+            # Go to the metadataframe and get the slice number of the path == dicom_file_path
+            slice_number = self.lung_metadataframe.loc[
+                self.lung_metadataframe['path'] == dicom_file_path,
+                'sct_slice_num'
+            ].values[0]
 
-        if slope != 1:
-            image = slope * image.astype(numpy.float64)
+            # List CT slices files
+            ct_dcms = os.listdir(dicom_file_path)
+
+            # List the DICOM slice files that are read with pydicom.read_file()
+            slices = [pydicom.dcmread(os.path.join(dicom_file_path, dcm)) for dcm in ct_dcms]
+
+            # Order list of slices in an ascendant way by the position z of the slice
+            slices.sort(key = lambda x: float(x.ImagePositionPatient[2]))
+            image = numpy.stack([s.pixel_array for s in slices])
             image = image.astype(numpy.int16)
-                    
-        image += numpy.int16(intercept)
-        dicom_image = numpy.array(image, dtype=numpy.int16)
+            image[image == -2000] = 0
+                
+            intercept = slices[0].RescaleIntercept
+            slope = slices[0].RescaleSlope
 
-        # Extract the slice from the DICOM image
-        slice_image = dicom_image[slice_number - 1]
+            if slope != 1:
+                image = slope * image.astype(numpy.float64)
+                image = image.astype(numpy.int16)
+                        
+            image += numpy.int16(intercept)
+            dicom_image = numpy.array(image, dtype=numpy.int16)
 
-        return slice_image
+            # Extract the slice from the DICOM image
+            slice_image = dicom_image[slice_number - 1]
+
+            return slice_image
+        except Exception as e:
+            print(f"Error loading slice {data_index}: {e}")
+            print(f"File path: {self.file_names[data_index]}")
+            print(f"Slice number: {slice_number}")
+            print(f"Image shape: {dicom_image.shape}")
+            return None
     
 
     def __get_scan(self, data_index):
