@@ -1,0 +1,14 @@
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 52, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 96, in run_experiment_pipeline
+    lung_nodule_metadataframe=metadataframe.get_lung_nodule_metadataframe()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NLSTPreprocessedMetaDataFrame' object has no attribute 'get_lung_nodule_metadataframe'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+
+**************************************************  Experiment 5 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days']
+srun: error: 01.ctm-deep-04: task 0: Exited with exit code 1
