@@ -95,7 +95,7 @@ class NLSTPreprocessedKFoldDataLoader:
                 )
 
     def _set_data_splits(self, lung_metadataframe):
-        if not self.config.number_of_k_folds:
+        if not self.config.number_of_k_folds: #TODO: Fix problem with K = 0
             train_and_validation_file_name_column, test_file_name_column = \
                 train_test_split(
                     lung_metadataframe,

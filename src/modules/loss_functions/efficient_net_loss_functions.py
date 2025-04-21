@@ -28,7 +28,7 @@ class EfficientNetLossFunction(torch.nn.Module):
                 experiment_execution_paths=experiment_execution_paths
             )
             lung_nodule_metadataframe = \
-                metadataframe.get_lung_nodule_metadataframe()
+                metadataframe.get_lung_metadataframe()
 
             label_counts = \
                 lung_nodule_metadataframe['label'].value_counts().sort_index()
