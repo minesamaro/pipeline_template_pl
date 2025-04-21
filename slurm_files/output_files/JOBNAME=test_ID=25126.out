@@ -9,6 +9,6 @@ AttributeError: 'NLSTPreprocessedMetaDataFrame' object has no attribute 'get_lun
 
 Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
 
-**************************************************  Experiment 5 | Version 1 **************************************************
+**************************************************  Experiment 8 | Version 1 **************************************************
 Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days']
-srun: error: 01.ctm-deep-04: task 0: Exited with exit code 1
+srun: error: 01.ctm-deep-03: task 0: Exited with exit code 1

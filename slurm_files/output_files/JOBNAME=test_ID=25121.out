@@ -1,9 +1,0 @@
-Traceback (most recent call last):
-  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 12, in <module>
-    from src.modules.data.dataloader.preprocessed_dataloader \
-  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloader.py", line 7, in <module>
-    from src.modules.data.dataloader.preprocessed_dataloaders \
-  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 9, in <module>
-    import pydicom
-ModuleNotFoundError: No module named 'pydicom'
-srun: error: 01.ctm-deep-04: task 0: Exited with exit code 1
