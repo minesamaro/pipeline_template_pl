@@ -235,9 +235,16 @@ class NLSTPreprocessedDataLoader(Dataset):
     def _get_data(self, data_index): #TODO: CHange this to DICOM load
 
         if self.config.dimension == 2:
+            print('Got here to 2D')
             image = self._get_slice(data_index)
         elif self.config.dimension == 3:
+            print('Got here to 3D')
             image = self._get_scan(data_index)
+        else:
+            raise ValueError(
+                f"Invalid dimension {self.config.dimension}. "
+                f"Expected 2 or 3."
+            )
 
         # TODO: Do the same for lung roi and 2.5D and resample
         
