@@ -93,7 +93,7 @@ def run_experiment_pipeline(config):
     )
     dataloader = PreprocessedDataLoader(
         config=config.data.dataloader,
-        lung_metadataframe=metadataframe.get_lung_metadataframe()
+        lung_nodule_metadataframe=metadataframe.get_lung_metadataframe()
     )
     kfold_dataloaders = dataloader.get_dataloaders()
     kfold_data_names = dataloader.get_data_names()
