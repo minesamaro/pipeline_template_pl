@@ -234,10 +234,10 @@ class NLSTPreprocessedDataLoader(Dataset):
 
     def _get_data(self, data_index): #TODO: CHange this to DICOM load
 
-        if self.config.dimension == 2:
+        if int(self.config.dimension) == 2:
             print('Got here to 2D')
             image = self._get_slice(data_index)
-        elif self.config.dimension == 3:
+        elif int(self.config.dimension) == 3:
             print('Got here to 3D')
             image = self._get_scan(data_index)
         else:
