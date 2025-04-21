@@ -1,7 +1,7 @@
 defaults:
   - data: data
-  - data/dataloader: luna25_preprocessed_dataloader
-  - data/metadataframe: luna25_preprocessed_metadataframe
+  - data/dataloader: nlst_preprocessed_dataloader
+  - data/metadataframe: nlst_preprocessed_metadataframe
   - experiment_execution/ids: ids
   - experiment_execution/info: info
   - experiment_execution/paths: paths
