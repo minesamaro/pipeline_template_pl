@@ -234,6 +234,10 @@ class NLSTPreprocessedDataLoader(Dataset):
 
     def _get_data(self, data_index): #TODO: CHange this to DICOM load
 
+        print(self.config.dimension)
+        print(f'Data type of config.dimension: {type(self.config.dimension)}')
+        print(self.file_names[data_index])
+        print(self.lung_metadataframe.iloc[data_index]['path'])
         if int(self.config.dimension) == 2:
             print('Got here to 2D')
             image = self._get_slice(data_index)
