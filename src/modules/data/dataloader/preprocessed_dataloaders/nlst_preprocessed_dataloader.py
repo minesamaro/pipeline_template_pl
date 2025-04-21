@@ -241,13 +241,15 @@ class NLSTPreprocessedDataLoader(Dataset):
             print('Got here to 3D')
             image = self._get_scan(data_index)
         else:
-            raise ValueError(
+            print(
                 f"Invalid dimension {self.config.dimension}. "
                 f"Expected 2 or 3."
             )
+        if image is None:
+            raise ValueError(f"[ERROR] Image is None at index {data_index}. File info: {self.lung_metadataframe.iloc[data_index]}")
 
         # TODO: Do the same for lung roi and 2.5D and resample
-        
+
         image = image.astype(numpy.float32)
 
         if self.apply_data_augmentations and data_index >= (
@@ -292,9 +294,11 @@ class NLSTPreprocessedDataLoader(Dataset):
                         
             image += numpy.int16(intercept)
             dicom_image = numpy.array(image, dtype=numpy.int16)
+            print(f"Dicom image shape: {dicom_image.shape}")
 
             # Extract the slice from the DICOM image
             slice_image = dicom_image[slice_number - 1]
+            print(f"Slice image shape: {slice_image.shape}")
 
             return slice_image
         except Exception as e:
