@@ -27,7 +27,8 @@ class NLSTPreprocessedMetaDataFrame:
                 f"Label column '{self.config.label}' not found in metadata. "
                 f"Available columns: {list(self.lung_metadataframe.columns)}"
             )
-
+        print(f"Label column '{self.config.label}' found in metadata. "
+              f"Available columns: {list(self.lung_metadataframe.columns)}")
         # Cleanly create or override the 'label' column used downstream
         self.lung_metadataframe = self.lung_metadataframe.copy()
         self.lung_metadataframe['label'] = self.lung_metadataframe[self.config.label]
