@@ -49,7 +49,7 @@ class NLSTPreprocessedMetaDataFrame:
             self.lung_metadataframe['study_yr'].astype(str)
         
         self.lung_metadataframe = \
-            self.lung_metadataframe[['pid', 'study_yr', 'path', 'key', 'sct_slice_num']]
+            self.lung_metadataframe[['pid', 'study_yr', 'path', 'key', 'label', 'sct_slice_num']]
     
     def _save_metadataframe_as_csv(self, experiment_execution_paths):
         self.lung_metadataframe.to_csv(
