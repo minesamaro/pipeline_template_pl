@@ -234,23 +234,14 @@ class NLSTPreprocessedDataLoader(Dataset):
 
     def _get_data(self, data_index): #TODO: CHange this to DICOM load
 
-        print(self.config.dimension)
-        print(f'Data type of config.dimension: {type(self.config.dimension)}')
-        print(self.file_names[data_index])
-        print(self.lung_metadataframe.iloc[data_index]['path'])
         if int(self.config.dimension) == 2:
-            print('Got here to 2D')
             image = self._get_slice(data_index)
         elif int(self.config.dimension) == 3:
-            print('Got here to 3D')
             image = self._get_scan(data_index)
-        else:
-            print(
-                f"Invalid dimension {self.config.dimension}. "
-                f"Expected 2 or 3."
-            )
+        
         if image is None:
-            raise ValueError(f"[ERROR] Image is None at index {data_index}. File info: {self.lung_metadataframe.iloc[data_index]}")
+            raise ValueError(f"[ERROR] Image is None at index {data_index}. File info: {self.lung_metadataframe.loc[
+                self.lung_metadataframe['path'] == self.file_names[data_index]]}")
 
         # TODO: Do the same for lung roi and 2.5D and resample
 
@@ -276,6 +267,9 @@ class NLSTPreprocessedDataLoader(Dataset):
                 self.lung_metadataframe['path'] == dicom_file_path,
                 'sct_slice_num'
             ].values[0]
+            
+            print(f"Slice number: {slice_number}")
+            print(f"File path: {dicom_file_path}")
 
             # List CT slices files
             ct_dcms = os.listdir(dicom_file_path)
@@ -298,11 +292,9 @@ class NLSTPreprocessedDataLoader(Dataset):
                         
             image += numpy.int16(intercept)
             dicom_image = numpy.array(image, dtype=numpy.int16)
-            print(f"Dicom image shape: {dicom_image.shape}")
 
             # Extract the slice from the DICOM image
             slice_image = dicom_image[slice_number - 1]
-            print(f"Slice image shape: {slice_image.shape}")
 
             return slice_image
         except Exception as e:
