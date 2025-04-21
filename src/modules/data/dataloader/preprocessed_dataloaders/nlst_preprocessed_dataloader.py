@@ -103,6 +103,11 @@ class NLSTPreprocessedKFoldDataLoader:
                     random_state=self.config.seed_value,
                     stratify=lung_metadataframe['label']
                 )
+            # Print the distribution of the labels in each set
+            print("Train and validation set label distribution:")
+            print(train_and_validation_file_name_column['label'].value_counts())
+            print("Test set label distribution:")
+            print(test_file_name_column['label'].value_counts())
             train_file_name_column, validation_file_name_column = \
                 train_test_split(
                     train_and_validation_file_name_column,
