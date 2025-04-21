@@ -24,7 +24,7 @@ class PreprocessedDataLoader:
         elif config.dataset_name == "NLST":
             return NLSTPreprocessedKFoldDataLoader(
                 config,
-                lung_nodule_metadataframe
+                lung_metadataframe
             )
         else:
             raise ValueError(

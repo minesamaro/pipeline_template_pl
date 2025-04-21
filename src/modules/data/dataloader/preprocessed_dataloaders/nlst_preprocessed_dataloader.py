@@ -36,8 +36,10 @@ class NLSTPreprocessedKFoldDataLoader:
         self.load_data_name = load_data_name
         self.torch_generator = torch.Generator()
 
+        self.lung_metadataframe = lung_metadataframe
+
         self.torch_generator.manual_seed(self.config.seed_value)
-        self._set_data_splits(lung_metadataframe)
+        self._set_data_splits(self.lung_metadataframe)
         self._set_dataloaders()
 
     def get_data_names(self):
@@ -63,7 +65,8 @@ class NLSTPreprocessedKFoldDataLoader:
                 file_names=file_names,
                 labels=labels,
                 load_data_name=self.load_data_name,
-                subset_type=subset_type
+                subset_type=subset_type,
+                lung_metadataframe=self.lung_metadataframe
             ),
             generator=self.torch_generator,
             shuffle=True if subset_type == "train" else False,
@@ -182,7 +185,8 @@ class NLSTPreprocessedDataLoader(Dataset):
             file_names,
             labels,
             load_data_name,
-            subset_type
+            subset_type,
+            lung_metadataframe
     ):
         self.config = config
         if config.data_augmentation.apply and subset_type == "train":
@@ -196,6 +200,7 @@ class NLSTPreprocessedDataLoader(Dataset):
         self.labels = labels
         self.load_data_name = load_data_name
         self.subset_type = subset_type
+        self.lung_metadataframe = lung_metadataframe
 
         self.augmented_to_original_data_ratio = \
             config.data_augmentation.augmented_to_original_data_ratio
