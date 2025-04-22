@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 12, in <module>
+    from src.modules.data.dataloader.preprocessed_dataloader \
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloader.py", line 7, in <module>
+    from src.modules.data.dataloader.preprocessed_dataloaders \
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 243
+    raise ValueError(f"[ERROR] Image is None at index {data_index}. File info: {self.lung_metadataframe.loc[
+                     ^
+SyntaxError: unterminated string literal (detected at line 243)
+srun: error: 01.ctm-deep-03: task 0: Exited with exit code 1

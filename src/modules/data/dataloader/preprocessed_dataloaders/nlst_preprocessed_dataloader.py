@@ -240,8 +240,7 @@ class NLSTPreprocessedDataLoader(Dataset):
             image = self._get_scan(data_index)
         
         if image is None:
-            raise ValueError(f"[ERROR] Image is None at index {data_index}. File info: {self.lung_metadataframe.loc[
-                self.lung_metadataframe['path'] == self.file_names[data_index]]}")
+            raise ValueError(f"[ERROR] Image is None at index {data_index}. File info: {self.lung_metadataframe.loc[self.lung_metadataframe['path'] == self.file_names[data_index]]}")
 
         # TODO: Do the same for lung roi and 2.5D and resample
 
