@@ -1,0 +1,272 @@
+
+**************************************************  Experiment 21 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days']
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days']
+Slice number: 97
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/121469/01-02-1999-NLST-LSS-64401/3.000000-0OPASEVZOOMB50f3162.0120160.080.0null-48755
+Slice number: 66
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/201979/01-02-2000-NLST-ACRIN-34410/3.000000-1OPAGELSULTBONE3262.512050371.4-15725
+Slice number: 36
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/100913/01-02-2000-NLST-LSS-47439/1.000000-1OPAGELSPLUSLUNG3602.512080.00.11.5-06917
+Slice number: 60
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/124696/01-02-2000-NLST-LSS-46469/2.000000-1OPASEVZOOMB50f3202.012060.030.0null-78997
+Slice number: 45
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/126955/01-02-2000-NLST-LSS-72760/2.000000-1OPAGELSQXD3372.5120.00000064.00.11.5-07615
+Slice number: 72
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/202268/01-02-2001-NLST-ACRIN-17703/4.000000-2OPATOAQUL4FC51390.6212070nana-71014
+Slice number: 87
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/209029/01-02-2000-NLST-ACRIN-52772/2.000000-1OPAGELSQXSTANDARD3202.51204026.71.5-15082
+Slice number: 18
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/108670/01-02-1999-NLST-LSS-01036/2.000000-0OPAGELSQXD2812.5120.00000048.00.01.5-75640
+Slice number: 48
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/117820/01-02-2000-NLST-LSS-72392/3.000000-1OPASEVZOOMB50f300212075.040.0null-96118
+Slice number: 67
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/131306/01-02-1999-NLST-LSS-93040/5.000000-0OPASEVZOOMB50f364212060.030.0null-46292
+Slice number: 108
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/202014/01-02-1999-NLST-ACRIN-89080/531.000000-0OPAPHMX8000C2623.212062.5501.2-97814
+Slice number: 103
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/106286/01-02-1999-NLST-LSS-31426/6.000000-0OPASEVZOOMB50f380212060.030.0null-02835
+Slice number: 39
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/109259/01-02-1999-NLST-LSS-96519/2.000000-0OPAGELS16B3602.514060.00.11.375-20093
+Slice number: 77
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/207830/01-02-2001-NLST-ACRIN-22473/2.000000-2OPAGELS16STANDARD3452.51204029.11.4-34589
+Slice number: 98
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/117799/01-02-1999-NLST-LSS-17434/2.000000-0OPAGELS16B3202.512060.00.11.375-31003
+Slice number: 70
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/207584/01-02-2000-NLST-ACRIN-23970/3.000000-1OPAGELSULTLUNG3602.51207051.91.4-72206
+Slice number: 57
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/216940/01-02-2000-NLST-ACRIN-38310/3.000000-1OPAGELS16LUNG3602.51207050.91.4-35966
+Slice number: 97
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/213046/01-02-1999-NLST-ACRIN-63672/2.000000-0OPASESEN16B50f350112060401.5-47960
+Slice number: 68
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/115520/01-02-2000-NLST-LSS-42433/2.000000-1OPASEVZOOMB50f3502.012060.030.0null-09376
+Slice number: 26
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/133934/01-02-1999-NLST-LSS-90263/1.000000-0OPAGELSPLUSLUNG3802.5120102.50.11.5-81149
+Slice number: 44
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/108352/01-02-2000-NLST-LSS-94328/2.000000-1OPAGELSQXD3402.514040.00.01.5-41536
+Slice number: 30
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/112851/01-02-1999-NLST-LSS-36206/2.000000-0OPAGELSQXD2902.514048.00.01.5-13549
+Slice number: 78
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/106000/01-02-2001-NLST-LSS-04892/5.000000-2OPASEVZOOMB50f327212060.030.0null-08611
+Slice number: 51
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/112285/01-02-1999-NLST-LSS-88870/2.000000-0OPAGELS16B3802.514080.00.11.375-16778
+Slice number: 30
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/104683/01-02-2000-NLST-LSS-68810/3.000000-1OPAGEHSQXB3302.512056.00.11.5-09346
+Slice number: 57
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/100158/01-02-2001-NLST-LSS-89087/2.000000-2OPAGELS16D3502.5120650.0nullnull-09470
+Slice number: 42
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/215394/01-02-2001-NLST-ACRIN-55277/4.000000-2OPASESEN64B30f279212040401-36045
+Slice number: 77
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/210218/01-02-2001-NLST-ACRIN-96078/4.000000-2OPATOAQUL4FC51419.9212080nana-68039
+Slice number: 119
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/126792/01-02-2000-NLST-LSS-85243/2.000000-1OPAGELS16D3402.514040.00.01.375-68792
+Slice number: 55
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/218307/01-02-2001-NLST-ACRIN-97693/2.000000-2OPAGELSQXSTANDARD3602.51204026.71.5-63644
+Slice number: 218
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/201275/01-02-2001-NLST-ACRIN-00250/3.000000-2OPAGELSQXSTANDARD3302.51208053.31.5-59557
+Slice number: 113
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/216793/01-02-1999-NLST-ACRIN-72197/2.000000-0OPASESEN4B50f310212040202-06448
+Slice number: 25
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/132227/01-02-1999-NLST-LSS-39522/2.000000-0OPAGELSQXD3302.5120.00000064.00.11.5-18341
+Slice number: 77
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/130467/01-02-1999-NLST-LSS-38457/2.000000-0OPASEVZOOMB50f3402.012060.030.0null-32568
+Slice number: 90
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/208801/01-02-2000-NLST-ACRIN-91855/2.000000-1OPAGELSPR16BONE3101.21204834.91.4-70544
+Slice number: 76
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/131156/01-02-2001-NLST-LSS-87498/3.000000-2OPATOAQUL4FC51273.42-34235
+Slice number: 115
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/106753/01-02-1999-NLST-LSS-13846/2.000000-0OPAGELSQXD2902.5120.00000048.00.01.5-59093
+Slice number: 101
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/130315/01-02-1999-NLST-LSS-70411/2.000000-0OPAGELSPLUSD2902.514040.00.01.5-59408
+Slice number: 49
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/121999/01-02-2000-NLST-LSS-68853/2.000000-1OPASESEN16B50f290212045.030.0null-11993
+Slice number: 31
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/125450/01-02-2001-NLST-LSS-62630/3.000000-2OPASEVZOOMB50f376212075.040.0null-57683
+Slice number: 102
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/205591/01-02-1999-NLST-ACRIN-24384/2.000000-0OPAGELSQXSTANDARD3702.51204026.71.5-45884
+Slice number: 153
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/211328/01-02-1999-NLST-ACRIN-20758/7067.000000-0OPAPHMX8000D3231.312060401.5-65805
+Slice number: 92
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/130624/01-02-2000-NLST-LSS-12681/1.000000-1OPAGELSPLUSLUNG3202.512080.00.11.5-82705
+Slice number: 52
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/129553/01-02-2000-NLST-LSS-48626/2.000000-1OPAGELSQXD3702.512048.00.01.5-62477
+Slice number: 110
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/212202/01-02-2001-NLST-ACRIN-20204/4.000000-2OPAGELSQXBONE3602.51208053.31.5-96044
+Slice number: 43
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/116137/01-02-2001-NLST-LSS-29433/3.000000-2OPATOAQUL4FC51323.42-77572
+Slice number: 65
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/104999/01-02-2001-NLST-LSS-60078/1.000000-2OPAGELSPLUSLUNG3602.512080.00.11.5-55668
+Slice number: 52
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/211570/01-02-2001-NLST-ACRIN-44193/3.000000-2OPAGELSPR16STANDARD3601.21208058.21.4-38766
+Slice number: 51
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/113623/01-02-1999-NLST-LSS-87257/4.000000-0OPATOAQUL4FC51304.72-02173
+Slice number: 67
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/105767/01-02-1999-NLST-LSS-85531/2.000000-0OPASEVZOOMB50f3522.012060.030.0null-61125
+Slice number: 94
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/209184/01-02-1999-NLST-ACRIN-78298/4.000000-0OPAGELSQXBONE3002.51204026.71.5-12375
+Slice number: 76
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/131542/01-02-1999-NLST-LSS-02963/2.000000-0OPAGELSQXD3402.514040.00.0null-23254
+Slice number: 60
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/120011/01-02-1999-NLST-LSS-29591/3.000000-0OPAGELSQXB3202.5120nullnullnull-55486
+Slice number: 36
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/134371/01-02-1999-NLST-LSS-51792/4.000000-0OPATOAQUL4FC51323.42-03591
+Slice number: 107
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/217203/01-02-2001-NLST-ACRIN-44283/2.000000-2OPASESEN64B30f330212025251-98154
+Slice number: 53
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/131611/01-02-2001-NLST-LSS-83262/1.000000-2OPATOAQUL4C330.12-16069
+Slice number: 100
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/117601/01-02-1999-NLST-LSS-50075/2.000000-0OPAGELSPLUSD3002.514040.00.01.5-14388
+Slice number: 105
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/134408/01-02-2001-NLST-LSS-92123/3.000000-2OPATOAQUL4FC51328.12-90438
+Slice number: 16
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/131963/01-02-2001-NLST-LSS-75746/2.000000-2OPAGELSPR16B3402.512040.00.01.375-25157
+Slice number: 148
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/200931/01-02-2001-NLST-ACRIN-68983/4609.000000-2OPAPHMX8000B315212037.5251.5-27567
+Slice number: 101
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/213734/01-02-2001-NLST-ACRIN-82024/3.000000-2OPASESEN64B30f290212025251-46987
+Slice number: 36
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/132036/01-02-2001-NLST-LSS-68455/3.000000-2OPAGEHSQXB3402.512056.00.11.5-26040
+Slice number: 69
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/113814/01-02-1999-NLST-LSS-38244/4.000000-0OPASEVZOOMB50f3402120105.060.0null-46407
+Slice number: 47
+File path: /nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/raw_data/manifest-1741808882472/NLST/104363/01-02-1999-NLST-LSS-27498/3.000000-0OPAGEHSQXB3002.512056.00.11.5-11448
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 52, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 127, in run_experiment_pipeline
+    model_pipeline.train_model()
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/model_pipeline.py", line 67, in train_model
+    self.pytorch_lightning_trainer.fit(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 532, in fit
+    call._call_and_handle_interrupt(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 571, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 980, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1023, in _run_stage
+    self.fit_loop.run()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 202, in run
+    self.advance()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 355, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 133, in run
+    self.advance(data_fetcher)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 219, in advance
+    batch_output = self.automatic_optimization.run(trainer.optimizers[0], kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 188, in run
+    self._optimizer_step(kwargs.get("batch_idx", 0), closure)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 266, in _optimizer_step
+    call._call_lightning_module_hook(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 146, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/core/module.py", line 1276, in optimizer_step
+    optimizer.step(closure=optimizer_closure)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/core/optimizer.py", line 161, in step
+    step_output = self._strategy.optimizer_step(self._optimizer, closure, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 231, in optimizer_step
+    return self.precision_plugin.optimizer_step(optimizer, model=model, closure=closure, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision_plugin.py", line 116, in optimizer_step
+    return optimizer.step(closure=closure, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/optim/optimizer.py", line 280, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/optim/optimizer.py", line 33, in _use_grad
+    ret = func(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/optim/adam.py", line 121, in step
+    loss = closure()
+           ^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/plugins/precision/precision_plugin.py", line 103, in _wrap_closure
+    closure_result = closure()
+                     ^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 142, in __call__
+    self._result = self.closure(*args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 128, in closure
+    step_output = self._step_fn()
+                  ^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/optimization/automatic.py", line 315, in _training_step
+    training_step_output = call._call_strategy_hook(trainer, "training_step", *kwargs.values())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 294, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 380, in training_step
+    return self.model.training_step(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/efficient_net/pytorch_lightning_efficient_net_model.py", line 36, in training_step
+    model_output = self.model(data['image'].to(self.device))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/efficient_net/efficient_net_model.py", line 15, in forward
+    model_output = self.model(model_input.repeat(1, 3, 1, 1))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchvision/models/efficientnet.py", line 343, in forward
+    return self._forward_impl(x)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchvision/models/efficientnet.py", line 333, in _forward_impl
+    x = self.features(x)
+        ^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchvision/models/efficientnet.py", line 164, in forward
+    result = self.block(input)
+             ^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/batchnorm.py", line 171, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/functional.py", line 2450, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 60.00 MiB (GPU 0; 10.75 GiB total capacity; 10.48 GiB already allocated; 43.56 MiB free; 10.50 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+srun: error: 02.ctm-deep-01: task 0: Exited with exit code 1
