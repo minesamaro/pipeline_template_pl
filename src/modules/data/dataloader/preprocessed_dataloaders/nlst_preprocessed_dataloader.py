@@ -240,8 +240,7 @@ class NLSTPreprocessedDataLoader(Dataset):
             image = self._get_scan(data_index)
         
         if image is None:
-            raise ValueError(f"[ERROR] Image is None at index {data_index}. File info: {self.lung_metadataframe.loc[
-                self.lung_metadataframe['path'] == self.file_names[data_index]]}")
+            raise ValueError(f"[ERROR] Image is None at index {data_index}. File info: {self.lung_metadataframe.loc[self.lung_metadataframe['path'] == self.file_names[data_index]]}")
 
         # TODO: Do the same for lung roi and 2.5D and resample
 
@@ -276,6 +275,9 @@ class NLSTPreprocessedDataLoader(Dataset):
 
             # List the DICOM slice files that are read with pydicom.read_file()
             slices = [pydicom.dcmread(os.path.join(dicom_file_path, dcm)) for dcm in ct_dcms]
+
+            if len(slices) < slice_number:
+                slice_number = len(slices) // 2 # TODO: Fix this about the missing data
 
             # Order list of slices in an ascendant way by the position z of the slice
             slices.sort(key = lambda x: float(x.ImagePositionPatient[2]))
