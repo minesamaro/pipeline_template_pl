@@ -233,6 +233,8 @@ class NLSTPreprocessedDataLoader(Dataset):
             image = self._get_slice(data_index)
         elif int(self.config.dimension) == 3:
             image = self._get_scan(data_index)
+        elif int(self.config.dimension) == 2.5:
+            image = self._get_2_5(data_index)
         
         if image is None:
             raise ValueError(f"[ERROR] Image is None at index {data_index}. File info: {self.lung_metadataframe.loc[self.lung_metadataframe['path'] == self.file_names[data_index]]}")
