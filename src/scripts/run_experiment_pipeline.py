@@ -171,5 +171,5 @@ if __name__ == "__main__":
     for config_folder in config_folders:
         with initialize(version_base=None, config_path="../../" + config_folder):
             config = compose(config_name="main"),
-            run_hyperparameter_grid_based_execution_pipeline(config)
+            run_hyperparameter_grid_based_execution_pipeline()
 
