@@ -174,3 +174,6 @@ if __name__ == "__main__":
         "config_files",
         "config_files_2"
     ]
+
+    for config_folder in config_folders:
+        run_one_config(config_folder)
