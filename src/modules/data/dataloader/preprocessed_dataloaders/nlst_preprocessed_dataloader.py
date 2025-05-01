@@ -255,7 +255,7 @@ class NLSTPreprocessedDataLoader(Dataset):
         if data_index %50 == 0:
             print(f"[INFO] Data index: {data_index}, Image shape: {image.shape}")
             # Save the image or middle slice of volume to path
-            save_path = f"/nas-ctm/homes/mipaiva/experiment_figures/slice{data_index}.png"
+            save_path = f"/nas-ctm01/homes/mipaiva/experiment_figures/slice{data_index}.png"
 
             plt.imsave(save_path, image[-1], cmap='gray')
 
