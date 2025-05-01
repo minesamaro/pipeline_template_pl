@@ -11,6 +11,7 @@ class NLSTPreprocessedMetaDataFrame:
                 self.config.data_preprocessing_protocol_number
             ) + "/subset_tabular_info/cancer_info.csv" #TODO change this
         )
+        self.dimension = int(self.config.dimension)
         # Apply transformations to the metadataframe
         self._apply_label_metadataframe_transformations() # Changes according to the wanted label
         self._apply_truncation_metadataframe_transformations() # Truncation of the metadataframe
@@ -36,6 +37,10 @@ class NLSTPreprocessedMetaDataFrame:
     def _apply_truncation_metadataframe_transformations(self):
         # If config.resample is True, sct_slice_num = sct_slice_num_rs
         # If config.resample is False, sct_slice_num = sct_slice_num_og
+
+        if self.dimension == 2 or self.dimension == 2.5:
+            self.lung_metadataframe = \
+                self.lung_metadataframe[self.lung_metadataframe['sct_nod_err'] != 1]
 
         if self.config.resample:
             self.lung_metadataframe['sct_slice_num'] = \

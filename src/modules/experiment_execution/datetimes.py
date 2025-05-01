@@ -50,5 +50,6 @@ class ExperimentExecutionDatetimes:
         """
         execution_datetimes_file_path = \
             f"{self.experiment_version_dir_path}/execution_datetimes.json"
+        print(f"Saving execution datetimes to {execution_datetimes_file_path}")
         with open(execution_datetimes_file_path, 'w') as file:
             json.dump(self.events, file, indent=4)

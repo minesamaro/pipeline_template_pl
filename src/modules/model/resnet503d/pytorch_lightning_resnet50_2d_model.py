@@ -2,13 +2,13 @@ from torchmetrics.functional import accuracy, auroc, precision, recall
 import pytorch_lightning
 import torch
 
-from pytorch_lightning_dl_pipeline_template.src.modules.model.resnet502d.resnet503d_model \
-    import ResNet50Model
+from pytorch_lightning_dl_pipeline_template.src.modules.model.resnet503d.resnet503d_model \
+    import ResNet503DModel
 from src.modules.loss_functions.resnet50_loss_functions \
     import ResNet50LossFunction
 
 
-class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
+class PyTorchLightningResNet503dModel(pytorch_lightning.LightningModule):
     def __init__(self, config, experiment_execution_paths):
         super().__init__()
         self.config = config
@@ -18,7 +18,7 @@ class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
             experiment_execution_paths=experiment_execution_paths
         )
         self.labels = None
-        self.model = ResNet50Model(config=self.config.model)
+        self.model = ResNet503DModel(config=self.config.model)
         self.predicted_labels = None
         self.weighted_losses = None
 
