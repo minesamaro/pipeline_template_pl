@@ -2,7 +2,7 @@ from torchmetrics.functional import accuracy, auroc, precision, recall
 import pytorch_lightning
 import torch
 
-from pytorch_lightning_dl_pipeline_template.src.modules.model.resnet503d.resnet503d_model \
+from src.modules.model.resnet503d.resnet503d_model \
     import ResNet503DModel
 from src.modules.loss_functions.resnet50_loss_functions \
     import ResNet50LossFunction
