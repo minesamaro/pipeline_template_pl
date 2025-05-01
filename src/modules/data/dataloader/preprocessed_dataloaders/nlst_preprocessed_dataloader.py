@@ -286,12 +286,8 @@ class NLSTPreprocessedDataLoader(Dataset):
             # List the DICOM slice files that are read with pydicom.read_file()
             slices = [pydicom.dcmread(os.path.join(dicom_file_path, dcm)) for dcm in ct_dcms]
 
-            if len(slices) < slice_number:
-                print('HERE')
-                slice_number = len(slices) // 2 # TODO: Fix this about the missing data
-
             # Order list of slices in an ascendant way by the position z of the slice
-            slices.sort(key = lambda x: float(x.ImagePositionPatient[2]))
+            slices.sort(key = lambda x: float(x.ImageInstanceNumber))
             image = numpy.stack([s.pixel_array for s in slices])
             image = image.astype(numpy.int16)
             image[image == -2000] = 0
