@@ -252,13 +252,20 @@ class NLSTPreprocessedDataLoader(Dataset):
         image = self.image_transformer(image)
         data = dict(image=image)
 
-        if data_index %50 == 0:
-            print(f"[INFO] Data index: {data_index}, Image shape: {image.shape}")
-            # Save the image or middle slice of volume to path
-            save_path = f"/nas-ctm01/homes/mipaiva/experiment_figures/slice{data_index}.png"
+        # Get the metadata row corresponding to the current file
+        meta_row = self.lung_metadataframe.loc[
+            self.lung_metadataframe['path'] == self.file_names[data_index]
+        ]
 
+        if not meta_row.empty:
+            pid = meta_row['pid'].values[0]
+            study = meta_row['study_yr'].values[0]
+            
+            filename = f"slice_{pid}_{study}.png"
+            save_path = f"/nas-ctm01/homes/mipaiva/experiment_figures/{filename}"
             plt.imsave(save_path, image[-1], cmap='gray')
-
+        else:
+            print(f"[WARNING] No metadata found for file: {self.file_names[data_index]}")
 
         return data
     
