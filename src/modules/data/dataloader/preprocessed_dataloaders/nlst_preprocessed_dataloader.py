@@ -341,6 +341,9 @@ class NLSTPreprocessedDataLoader(Dataset):
                 image = image.astype(numpy.int16)
                         
             image += numpy.int16(intercept)
+            # Normalization
+            image = [self._normalize(image[i]) for i in range(image.shape[0])]
+            
             dicom_image = numpy.array(image, dtype=numpy.int16)
 
         return dicom_image
@@ -394,3 +397,10 @@ class NLSTPreprocessedDataLoader(Dataset):
         ])
 
         return labels
+    
+    def _normalize(scan, minimum = -1000, maximum = 400):
+        scan = (scan - minimum) / (maximum - minimum)
+        scan[scan >= 1] = 1
+        scan[scan <= 0] = 0
+        
+        return scan
