@@ -3,6 +3,7 @@ from itertools import product
 from os.path import abspath, dirname, join
 import hydra
 import sys
+from hydra import initialize, compose
 
 sys.path.append(abspath(join(dirname('.'), "../../")))
 from src.modules.experiment_execution import setup
@@ -24,12 +25,14 @@ from src.modules.results_analysis.model_test_performance_metrics_dataframe \
     import ModelTestPerformanceMetricsDataframe
 experiment_execution_prints = ExperimentExecutionPrints()
 
+def run_one_config(config_path):
+    @hydra.main(config_path=config_path, config_name="main")
+    def _main(config):
+        print("Running experiment pipeline with config:", config_path)
+        run_hyperparameter_grid_based_execution_pipeline(config)
+    _main()
+    return
 
-@hydra.main(
-    version_base=None,
-    config_path="../../config_files",
-    config_name="main"
-)
 def run_hyperparameter_grid_based_execution_pipeline(config):
     experiment_execution_config.set_experiment_id(config)
 
@@ -167,5 +170,10 @@ def run_experiment_pipeline(config):
     experiment_execution_datetimes.save()
 
 if __name__ == "__main__":
-    run_hyperparameter_grid_based_execution_pipeline()
+    config_folders = [
+        "../../config_files",
+        "../../config_files_2"
+    ]
 
+    for config_folder in config_folders:
+        run_one_config(config_folder)

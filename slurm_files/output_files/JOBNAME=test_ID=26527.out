@@ -1,0 +1,14 @@
+Initialization time: 2025-04-27 18:57:36
+In 'main': Could not find 'model/pytorch_lightning_model/nlst_pytorch_lightning_efficient_net'
+
+Available options in 'model/pytorch_lightning_model':
+	luna25_pytorch_lightning_efficient_net
+	nlst_pytorch_lightning_resnet5d
+Config search path:
+	provider=hydra, path=pkg://hydra.conf
+	provider=main, path=file:///nas-ctm01/homes/mipaiva/pipeline_template_pl/config_files
+	provider=schema, path=structured://
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+srun: error: 04.ctm-deep-05: task 0: Exited with exit code 1
+Finish time: 2025-04-27 18:57:51

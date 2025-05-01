@@ -103,11 +103,6 @@ class NLSTPreprocessedKFoldDataLoader:
                     random_state=self.config.seed_value,
                     stratify=lung_metadataframe['label']
                 )
-            # Print the distribution of the labels in each set
-            print("Train and validation set label distribution:")
-            print(train_and_validation_file_name_column['label'].value_counts())
-            print("Test set label distribution:")
-            print(test_file_name_column['label'].value_counts())
             train_file_name_column, validation_file_name_column = \
                 train_test_split(
                     train_and_validation_file_name_column,
@@ -238,6 +233,8 @@ class NLSTPreprocessedDataLoader(Dataset):
             image = self._get_slice(data_index)
         elif int(self.config.dimension) == 3:
             image = self._get_scan(data_index)
+        elif int(self.config.dimension) == 2.5:
+            image = self._get_2_5(data_index)
         
         if image is None:
             raise ValueError(f"[ERROR] Image is None at index {data_index}. File info: {self.lung_metadataframe.loc[self.lung_metadataframe['path'] == self.file_names[data_index]]}")
@@ -267,9 +264,6 @@ class NLSTPreprocessedDataLoader(Dataset):
                 'sct_slice_num'
             ].values[0]
             
-            print(f"Slice number: {slice_number}")
-            print(f"File path: {dicom_file_path}")
-
             # List CT slices files
             ct_dcms = os.listdir(dicom_file_path)
 
@@ -277,6 +271,7 @@ class NLSTPreprocessedDataLoader(Dataset):
             slices = [pydicom.dcmread(os.path.join(dicom_file_path, dcm)) for dcm in ct_dcms]
 
             if len(slices) < slice_number:
+                print('HERE')
                 slice_number = len(slices) // 2 # TODO: Fix this about the missing data
 
             # Order list of slices in an ascendant way by the position z of the slice

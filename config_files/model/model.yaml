@@ -1,2 +1,2 @@
-model_id: EfNet
-model_name: EfficientNet
+model_id: RN502D
+model_name: ResNet502d
