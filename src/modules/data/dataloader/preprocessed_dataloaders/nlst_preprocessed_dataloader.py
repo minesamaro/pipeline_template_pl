@@ -287,7 +287,7 @@ class NLSTPreprocessedDataLoader(Dataset):
             slices = [pydicom.dcmread(os.path.join(dicom_file_path, dcm)) for dcm in ct_dcms]
 
             # Order list of slices in an ascendant way by the position z of the slice
-            slices.sort(key = lambda x: float(x.ImageInstanceNumber))
+            slices.sort(key = lambda x: float(x.InstanceNumber))
             image = numpy.stack([s.pixel_array for s in slices])
             image = image.astype(numpy.int16)
             image[image == -2000] = 0
