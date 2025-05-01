@@ -1,0 +1,13 @@
+Initialization time: 2025-05-01 15:12:09
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 21, in <module>
+    from src.modules.model.model_pipeline import ModelPipeline
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/model_pipeline.py", line 8, in <module>
+    from src.modules.model.pytorch_lightning_model import PyTorchLightningModel
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/pytorch_lightning_model.py", line 3, in <module>
+    from src.modules.model.resnet502d.pytorch_lightning_resnet50_2d_model \
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/resnet502d/pytorch_lightning_resnet50_2d_model.py", line 5, in <module>
+    from pytorch_lightning_dl_pipeline_template.src.modules.model.resnet502d.resnet503d_model \
+ModuleNotFoundError: No module named 'pytorch_lightning_dl_pipeline_template'
+srun: error: 03.ctm-deep-06: task 0: Exited with exit code 1
+Finish time: 2025-05-01 15:12:32
