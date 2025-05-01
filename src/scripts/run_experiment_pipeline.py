@@ -89,11 +89,22 @@ def run_experiment_pipeline(config):
         subevent_name="start",
         datetime=str(datetime.now(UTC).replace(microsecond=0))
     )
-
+    # Add time elapsed for the creation of the metadataframe
+    experiment_execution_datetimes.add_event(
+        event_name="metadataframe_creation",
+        subevent_name="start",
+        datetime=str(datetime.now(UTC).replace(microsecond=0))
+    )
     metadataframe = MetadataFrame(
         config=config.data.metadataframe,
         experiment_execution_paths=config.experiment_execution.paths
     )
+    experiment_execution_datetimes.add_event(
+        event_name="metadataframe_creation",
+        subevent_name="end",
+        datetime=str(datetime.now(UTC).replace(microsecond=0))
+    )
+
     dataloader = PreprocessedDataLoader(
         config=config.data.dataloader,
         lung_nodule_metadataframe=metadataframe.get_lung_metadataframe()

@@ -8,6 +8,7 @@ import torch
 import torchvision
 import pydicom
 import os
+import matplotlib.pyplot as plt
 
 from src.modules.data.data_augmentation.ct_image_augmenter \
     import CTImageAugmenter
@@ -251,6 +252,14 @@ class NLSTPreprocessedDataLoader(Dataset):
         image = self.image_transformer(image)
         data = dict(image=image)
 
+        if data_index %50 == 0:
+            print(f"[INFO] Data index: {data_index}, Image shape: {image.shape}")
+            # Save the image or middle slice of volume to path
+            save_path = f"/nas-ctm/homes/mipaiva/experiment_figures/slice{data_index}.png"
+
+            plt.imsave(save_path, image[-1], cmap='gray')
+
+
         return data
     
     def _get_slice(self, data_index):
@@ -302,7 +311,50 @@ class NLSTPreprocessedDataLoader(Dataset):
             return None
     
 
-    def __get_scan(self, data_index):
+    def _get_scan(self, data_index):
+        if self.config.resample_z == False:
+            dicom_image = numpy.load() #TODO: Insert path to the numpy file
+        else:
+            # Load the DICOM file
+            dicom_file_path = self.file_names[data_index]
+            
+            # List CT slices files
+            ct_dcms = os.listdir(dicom_file_path)
+
+            # List the DICOM slice files that are read with pydicom.read_file()
+            slices = [pydicom.dcmread(os.path.join(dicom_file_path, dcm)) for dcm in ct_dcms]
+
+            # Order list of slices in an ascendant way by the position z of the slice
+            slices.sort(key = lambda x: float(x.ImagePositionPatient[2]))
+            image = numpy.stack([s.pixel_array for s in slices])
+            image = image.astype(numpy.int16)
+            image[image == -2000] = 0
+                
+            intercept = slices[0].RescaleIntercept
+            slope = slices[0].RescaleSlope
+
+            if slope != 1:
+                image = slope * image.astype(numpy.float64)
+                image = image.astype(numpy.int16)
+                        
+            image += numpy.int16(intercept)
+            dicom_image = numpy.array(image, dtype=numpy.int16)
+
+        return dicom_image
+    
+    def _get_2_5(self, data_index):
+
+        if self.config.n_slices_2_5 != None:
+            n_slices = self.config.n_slices_2_5
+        else:
+            n_slices = 11
+
+        # Go to the metadataframe and get the slice number of the path == dicom_file_path
+        slice_number = self.lung_metadataframe.loc[
+                self.lung_metadataframe['path'] == dicom_file_path,
+                'sct_slice_num'
+            ].values[0]
+
         # Load the DICOM file
         dicom_file_path = self.file_names[data_index]
         
@@ -327,6 +379,8 @@ class NLSTPreprocessedDataLoader(Dataset):
                     
         image += numpy.int16(intercept)
         dicom_image = numpy.array(image, dtype=numpy.int16)
+
+        dicom_image = dicom_image[slice_number - n_slices // 2: slice_number + n_slices // 2]
 
         return dicom_image
 
