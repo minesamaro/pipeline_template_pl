@@ -1,6 +1,6 @@
 dataset_name: ${..dataset_name}
 data_preprocessing_protocol_number: ${..data_preprocessing_protocol_number}
-data_type: ${..metadataframe.data_type}
+data_type: whole_scan
 data_augmentation:
   apply: False
   augmented_to_original_data_ratio: 2
