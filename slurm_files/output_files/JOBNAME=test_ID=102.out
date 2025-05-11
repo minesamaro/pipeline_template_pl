@@ -1,0 +1,51 @@
+Initialization time: 2025-05-01 18:31:08
+/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py:29: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  @hydra.main(config_path=config_path, config_name="main")
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/hydra/_internal/hydra.py:119: UserWarning: Future Hydra versions will no longer change working directory at job runtime by default.
+See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/ for more information.
+  ret = run_job(
+Running experiment pipeline with config: ../../config_files
+
+**************************************************  Experiment 36 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+...model pipeline for data fold 3 has run!
+
+Running model pipeline for data fold 4...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+...model pipeline for data fold 4 has run!
+
+Running model pipeline for data fold 5...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 32, in _main
+    run_hyperparameter_grid_based_execution_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 55, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 174, in run_experiment_pipeline
+    experiment_execution_config.save(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/experiment_execution/config.py", line 22, in save
+    OmegaConf.to_container(config, resolve=True),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+omegaconf.errors.InterpolationKeyError: Interpolation key 'metadataframe.data_type' not found
+    full_key: data.dataloader.data_type
+    object_type=dict
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+...model pipeline for data fold 5 has run!
+srun: error: 04.ctm-deep-05: task 0: Exited with exit code 1
+Finish time: 2025-05-02 04:46:28
