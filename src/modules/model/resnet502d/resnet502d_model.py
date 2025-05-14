@@ -12,5 +12,10 @@ class ResNet50Model(torch.nn.Module):
         )
 
     def forward(self, model_input):
-        model_output = self.model(model_input.repeat(1, 3, 1, 1))
+        if model_input.shape[1] == 1:
+            # If the input has only one channel, repeat it to make it 3 channels
+            # This is necessary because ResNet50 expects 3-channel input
+            # (e.g., RGB images)
+            model_input = model_input.repeat(1, 3, 1, 1)
+        model_output = self.model(model_input)
         return model_output
