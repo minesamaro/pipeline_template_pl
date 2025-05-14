@@ -182,8 +182,8 @@ def run_experiment_pipeline(config):
 
 if __name__ == "__main__":
     config_folders = [
-        "../../config_files",
-        "../../config_files_2"
+        "../../config_files"
+        #"../../config_files_2"
     ]
 
     for config_folder in config_folders:
