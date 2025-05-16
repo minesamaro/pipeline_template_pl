@@ -9,6 +9,7 @@ from src.modules.data.dataloader.preprocessed_dataloaders \
     import NLSTPreprocessedKFoldDataLoader
 
 
+
 class PreprocessedDataLoader:
     def __new__(cls, config, lung_nodule_metadataframe):
         if config.dataset_name == "LIDC-IDRI":
@@ -21,7 +22,7 @@ class PreprocessedDataLoader:
                 config,
                 lung_nodule_metadataframe
             )
-        elif config.dataset_name == "NLST":
+        elif config.dataset_name == "NLST" or config.dataset_name == "NLSTLocal":
             return NLSTPreprocessedKFoldDataLoader(
                 config,
                 lung_nodule_metadataframe

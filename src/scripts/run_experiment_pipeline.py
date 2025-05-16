@@ -3,6 +3,7 @@ from itertools import product
 from os.path import abspath, dirname, join
 import hydra
 import sys
+import wandb
 from hydra import initialize, compose
 
 sys.path.append(abspath(join(dirname('.'), "../../")))
@@ -67,11 +68,13 @@ def run_hyperparameter_grid_based_execution_pipeline(config):
     experiment_info.save_dataframe_as_csv()
 
 def run_experiment_pipeline(config):
+
     experiment_execution_config.set_experiment_version_id(config)
     experiment_execution_config.set_paths(config)
     setup.create_experiment_dir(
         dir_path=config.experiment_execution.paths.experiment_version_dir_path
     )
+   
 
     experiment_execution_prints.experiment_version_start(
         experiment_id=config.experiment_execution.ids.experiment_id,
@@ -111,7 +114,20 @@ def run_experiment_pipeline(config):
     kfold_data_names = dataloader.get_data_names()
 
     setup.set_seed(seed_value=config.seed_value)
-    for datafold_id in range(1, 6):
+
+    n_datafolds = len(kfold_dataloaders['train'])
+    for datafold_id in range(1, n_datafolds + 1):
+
+        # Initalize wandb
+        wandb.init(
+            project=config.wandb.project_name,
+            name=f"{config.wandb.name}_{config.experiment_execution.ids.experiment_id}"
+                f"_{config.experiment_execution.ids.experiment_version_id}_fold{datafold_id}",
+            config=dict(config),
+            dir=config.experiment_execution.paths.experiment_version_dir_path,
+            reinit=True
+        )
+
         experiment_execution_prints.datafold_start(datafold_id)
 
         experiment_execution_datetimes.add_event(
@@ -148,15 +164,15 @@ def run_experiment_pipeline(config):
 
         experiment_execution_prints.datafold_end(datafold_id)
 
-    model_training_performance_metrics_figure = \
-        ModelTrainingPerformanceMetricsFigure(
-            config=config.results_analysis
-                .model_training_performance_metrics_figure,
-            experiment_execution_ids=config.experiment_execution.ids,
-            experiment_execution_paths=config.experiment_execution.paths
-        )
-    model_training_performance_metrics_figure.set()
-    model_training_performance_metrics_figure.save_image()
+    #model_training_performance_metrics_figure = \
+    #    ModelTrainingPerformanceMetricsFigure(
+    #        config=config.results_analysis
+    #            .model_training_performance_metrics_figure,
+    #        experiment_execution_ids=config.experiment_execution.ids,
+    #        experiment_execution_paths=config.experiment_execution.paths
+    #    )
+    #model_training_performance_metrics_figure.set()
+    #model_training_performance_metrics_figure.save_image()
 
     model_test_performance_metrics_dataframe = (
         ModelTestPerformanceMetricsDataframe(
@@ -177,6 +193,7 @@ def run_experiment_pipeline(config):
         datetime=str(datetime.now(UTC).replace(microsecond=0))
     )
     experiment_execution_datetimes.save()
+    wandb.finish()
 
 if __name__ == "__main__":
     run_hyperparameter_grid_based_execution_pipeline()

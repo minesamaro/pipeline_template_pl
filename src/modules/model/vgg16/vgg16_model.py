@@ -5,7 +5,15 @@ import torch
 class VGG16Model(torch.nn.Module):
     def __init__(self, config):
         super(VGG16Model, self).__init__()
-        self.model = vgg16(pretrained=False)
+        self.model = vgg16(weights=None)
+        if config.dimension == 2.5:
+            self.model.features[0] = torch.nn.Conv2d(
+                in_channels=10, #TODO: Change this to make more customizable
+                out_channels=64,
+                kernel_size=3,
+                stride=1,
+                padding=1
+            )
         self.model.classifier[6] = torch.nn.Linear(
             in_features=self.model.classifier[6].in_features,
             out_features=config.number_of_classes
