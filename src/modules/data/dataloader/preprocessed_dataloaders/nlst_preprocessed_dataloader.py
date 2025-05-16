@@ -13,14 +13,6 @@ import matplotlib.pyplot as plt
 from src.modules.data.data_augmentation.ct_image_augmenter \
     import CTImageAugmenter
 
-def collate_fn(batch):
-    pixel_values = [item['pixel_values'] for item in batch]
-    labels = [item['labels'] for item in batch]
-    
-    return {
-        'pixel_values': torch.stack(pixel_values),
-        'labels': torch.tensor(labels)
-    }
 
 class NLSTPreprocessedKFoldDataLoader:
     def __init__(
@@ -83,7 +75,6 @@ class NLSTPreprocessedKFoldDataLoader:
             generator=self.torch_generator,
             shuffle=True if subset_type == "train" else False,
             worker_init_fn=self._get_torch_dataloader_worker_init_fn,
-            collate_fn = collate_fn,
             **torch_dataloader_kwargs
         )
                 
