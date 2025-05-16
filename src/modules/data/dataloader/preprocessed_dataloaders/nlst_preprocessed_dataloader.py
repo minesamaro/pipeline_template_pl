@@ -44,9 +44,12 @@ class NLSTPreprocessedKFoldDataLoader:
         self._set_dataloaders()
 
     def get_data_names(self):
+        folds = self.config.number_of_k_folds
+        if folds == 0:
+            folds = 1
         data_names = {subset_type: [
             self.data_splits[subset_type]['file_names'][datafold_id]
-            for datafold_id in range(self.config.number_of_k_folds)
+            for datafold_id in range(folds)
         ] for subset_type in ["train", "validation", "test"]}
         return data_names
 
@@ -74,6 +77,7 @@ class NLSTPreprocessedKFoldDataLoader:
             worker_init_fn=self._get_torch_dataloader_worker_init_fn,
             **torch_dataloader_kwargs
         )
+                
         return torch_dataloader
 
     def _get_torch_dataloader_worker_init_fn(self, worker_id):
@@ -81,8 +85,12 @@ class NLSTPreprocessedKFoldDataLoader:
         random.seed(self.config.seed_value + worker_id)
 
     def _set_dataloaders(self):
+        folds = self.config.number_of_k_folds
+        if folds == 0: # Works for no cross validation and cross validation 
+            # When n_folds is 0 it works as if it was just one data split, adding another diemnsion to the datalaoder dictionary
+            folds = 1
         for subset_type in ["train", "validation", "test"]:
-            for datafold_id in range(self.config.number_of_k_folds):
+            for datafold_id in range(folds):
                 self.dataloaders[subset_type].append(
                     self._get_torch_dataloader(
                         file_names=self.data_splits[subset_type] \
@@ -94,6 +102,7 @@ class NLSTPreprocessedKFoldDataLoader:
                             self.config.torch_dataloader_kwargs
                     )
                 )
+                
 
     def _set_data_splits(self, lung_metadataframe):
         if not self.config.number_of_k_folds: #TODO: Fix problem with K = 0
@@ -104,34 +113,43 @@ class NLSTPreprocessedKFoldDataLoader:
                     random_state=self.config.seed_value,
                     stratify=lung_metadataframe['label']
                 )
+           
+
             train_file_name_column, validation_file_name_column = \
                 train_test_split(
                     train_and_validation_file_name_column,
                     test_size=self.config.validation_fraction_of_train_set,
                     random_state=self.config.seed_value,
-                    stratify=lung_metadataframe[
-                        lung_metadataframe['path'].isin(
-                            train_and_validation_file_name_column
-                        )
-                    ]['label']
+                    stratify=train_and_validation_file_name_column['label']
                 )
 
             self.data_names_by_subset['train'] = \
-                train_file_name_column.tolist()
+                train_file_name_column['path'].tolist()
             self.data_names_by_subset['validation'] = \
-                validation_file_name_column.tolist()
+                validation_file_name_column['path'].tolist()
             self.data_names_by_subset['test'] = \
-                test_file_name_column.tolist()
+                test_file_name_column['path'].tolist()
 
-            for subset_type in ["train", "validation", "test"]: #TODO: Fix this
-                self.dataloaders_by_subset[subset_type] = \
-                    self._get_torch_dataloader(
-                        file_names=self.data_names_by_subset[subset_type],
-                        label_dataframe=lung_metadataframe,
-                        subset_type=subset_type,
-                        torch_dataloader_kwargs=
-                            self.config.torch_dataloader_kwargs
-                    )
+            self.data_splits['train']['file_names'].append(
+                train_file_name_column['path'].tolist()
+            )
+            self.data_splits['train']['labels'].append(
+                train_file_name_column['label'].tolist()
+            )
+            self.data_splits['validation']['file_names'].append(
+                validation_file_name_column['path'].tolist()
+            )
+            self.data_splits['validation']['labels'].append(
+                validation_file_name_column['label'].tolist()
+            )
+            self.data_splits['test']['file_names'].append(
+                test_file_name_column['path'].tolist()
+            )
+            self.data_splits['test']['labels'].append(
+                test_file_name_column['label'].tolist()
+            )
+        
+            
         else:
             skf_cross_validator = StratifiedKFold(
                 n_splits=self.config.number_of_k_folds,
@@ -217,6 +235,20 @@ class NLSTPreprocessedDataLoader(Dataset):
             torchvision.transforms.Normalize(mean=0.5, std=0.5),
         ]) #TODO: Check this transformer
 
+    def _transform(self, image):
+        if image.ndim == 3:
+            image_transformer = torchvision.transforms.Compose([
+                lambda x: numpy.transpose(x, axes=(1, 2, 0)),
+                torchvision.transforms.ToTensor(),
+                torchvision.transforms.Normalize(mean=0.5, std=0.5),
+            ])
+        else:
+            image_transformer = torchvision.transforms.Compose([
+                torchvision.transforms.ToTensor(),
+                torchvision.transforms.Normalize(mean=0.5, std=0.5),
+            ])
+        return image
+
     def __len__(self):
         return len(self.file_names)
 
@@ -229,12 +261,11 @@ class NLSTPreprocessedDataLoader(Dataset):
             return self.file_names[data_index], data, label
 
     def _get_data(self, data_index): #TODO: CHange this to DICOM load
-
-        if int(self.config.dimension) == 2:
+        if self.config.dimension == 2:
             image = self._get_slice(data_index)
-        elif int(self.config.dimension) == 3:
+        elif self.config.dimension == 3:
             image = self._get_scan(data_index)
-        elif int(self.config.dimension) == 2.5:
+        elif self.config.dimension == 2.5:
             image = self._get_2_5(data_index)
         
         if image is None:
@@ -349,20 +380,20 @@ class NLSTPreprocessedDataLoader(Dataset):
         return dicom_image
     
     def _get_2_5(self, data_index):
-
-        if self.config.n_slices_2_5 != None:
+        if 'n_slices_2_5' in self.config:
             n_slices = self.config.n_slices_2_5
         else:
             n_slices = 11
+        
+
+        # Load the DICOM file
+        dicom_file_path = self.file_names[data_index]
 
         # Go to the metadataframe and get the slice number of the path == dicom_file_path
         slice_number = self.lung_metadataframe.loc[
                 self.lung_metadataframe['path'] == dicom_file_path,
                 'sct_slice_num'
             ].values[0]
-
-        # Load the DICOM file
-        dicom_file_path = self.file_names[data_index]
         
         # List CT slices files
         ct_dcms = os.listdir(dicom_file_path)

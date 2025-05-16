@@ -1,12 +1,12 @@
 defaults:
-  - data: data
-  - data/dataloader: nlst_preprocessed_dataloader
+  - data: datalocal
+  - data/dataloader: nlstlocal_preprocessed_dataloader
   - data/metadataframe: nlst_preprocessed_metadataframe
   - experiment_execution/ids: ids
   - experiment_execution/info: info
   - experiment_execution/paths: paths
   - hyperparameter_grid_based_execution: luna25_hyperparameter_grid_based_execution # Change this if necessary
-  - model: model_resnet50
+  - model: model_vgg16
   - model/model_pipeline: luna25_model_pipeline # Change this if necessary
   - model/pytorch_lightning_model: nlst_pytorch_lightning_resnet502d
   - results_analysis/model_test_performance_metrics_dataframe: luna25_model_test_performance_metrics_dataframe # Change this if necessary
@@ -22,4 +22,4 @@ seed_value: 900
 wandb:
   project_name: "comparative_study_2d"
   entity: "nlst"
-  name: "resnet50_2d"
+  name: "vgg16_2d_local"

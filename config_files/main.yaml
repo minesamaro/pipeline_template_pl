@@ -19,3 +19,7 @@ hydra:
   run:
     dir: .
 seed_value: 900
+wandb:
+  project_name: "comparative_study"
+  entity: "nlst"
+  name: "resnet50_2d"

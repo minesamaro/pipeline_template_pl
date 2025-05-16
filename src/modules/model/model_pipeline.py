@@ -123,10 +123,10 @@ class ModelPipeline:
         trainer_loggers = []
         if self.config.enable_logging:
             csv_logger = CSVLogger(
-                datafold_id=self.datafold_id,
                 version=self.experiment_version_id,
                 name="",
                 save_dir=self.experiment_dir_path
             )
             trainer_loggers.append(csv_logger)
+            
         return trainer_loggers

@@ -6,6 +6,16 @@ class ResNet50Model(torch.nn.Module):
     def __init__(self, config):
         super(ResNet50Model, self).__init__()
         self.model = resnet50(weights=None)
+
+        if config.dimension == 2.5:
+            self.model.conv1 = torch.nn.Conv2d(
+                in_channels=10, #TODO: Change this to make more customizable
+                out_channels=64,
+                kernel_size=(7, 7),
+                stride=(2, 2),
+                padding=(3, 3),
+                bias=False
+            )
         self.model.fc = torch.nn.Linear(
             self.model.fc.in_features,
             config.number_of_classes

@@ -19,3 +19,7 @@ hydra:
   run:
     dir: .
 seed_value: 900
+wandb:
+  project_name: "comparative_study_2d"
+  entity: "nlst"
+  name: "vgg16_2d"
