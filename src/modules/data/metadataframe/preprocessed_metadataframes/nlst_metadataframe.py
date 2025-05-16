@@ -38,7 +38,7 @@ class NLSTPreprocessedMetaDataFrame:
         # If config.resample is True, sct_slice_num = sct_slice_num_rs
         # If config.resample is False, sct_slice_num = sct_slice_num_og
 
-        if self.config.dimension == 2:
+        if (self.config.dimension == 2) or (self.config.dimension == 2.5):
             self.lung_metadataframe = self.lung_metadataframe[self.lung_metadataframe['sct_nod_err'] != 1 ]
 
         if self.config.resample:
