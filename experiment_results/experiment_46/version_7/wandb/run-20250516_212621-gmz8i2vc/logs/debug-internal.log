@@ -5,3 +5,12 @@
 {"time":"2025-05-16T21:26:21.565163693+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"gmz8i2vc"}
 {"time":"2025-05-16T21:26:21.565297633+01:00","level":"INFO","msg":"sender: started","stream_id":"gmz8i2vc"}
 {"time":"2025-05-16T21:26:21.849441069+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-16T21:35:48.291455804+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-16T21:35:48.291754605+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-16T21:35:49.059943342+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-16T21:35:49.270494049+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-05-16T21:35:49.275955831+01:00","level":"INFO","msg":"stream: closing","id":"gmz8i2vc"}
+{"time":"2025-05-16T21:35:49.275970921+01:00","level":"INFO","msg":"handler: closed","stream_id":"gmz8i2vc"}
+{"time":"2025-05-16T21:35:49.275980262+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"gmz8i2vc"}
+{"time":"2025-05-16T21:35:49.275990561+01:00","level":"INFO","msg":"sender: closed","stream_id":"gmz8i2vc"}
+{"time":"2025-05-16T21:35:49.276574272+01:00","level":"INFO","msg":"stream: closed","id":"gmz8i2vc"}
