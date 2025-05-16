@@ -253,12 +253,18 @@ class NLSTPreprocessedDataLoader(Dataset):
         return len(self.file_names)
 
     def __getitem__(self, data_index):
-        data = self._get_data(data_index)
-        label = self._get_label(data_index)
-        if not self.load_data_name:
-            return data, label
-        else:
-            return self.file_names[data_index], data, label
+        try:
+            data = self._get_data(data_index)
+            label = self._get_label(data_index)
+            if not self.load_data_name:
+                return data, label
+            else:
+                return self.file_names[data_index], data, label
+        except Exception as e:
+            print(f"[ERROR] Error in __getitem__ at index {data_index}: {e}")
+            print(f"File path: {self.file_names[data_index]}")
+            print(f"Label: {self.labels[data_index]}")
+            raise e
 
     def _get_data(self, data_index): #TODO: CHange this to DICOM load
         if self.config.dimension == 2:
