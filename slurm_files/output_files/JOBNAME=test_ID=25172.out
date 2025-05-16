@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 4, in <module>
-srun: error: 01.ctm-deep-03: task 0: Exited with exit code 1
-    import hydra
-ModuleNotFoundError: No module named 'hydra'

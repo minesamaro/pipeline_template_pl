@@ -1,0 +1,7 @@
+{"time":"2025-05-16T21:26:21.303495805+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_46/version_7/wandb/run-20250516_212621-gmz8i2vc/logs/debug-core.log"}
+{"time":"2025-05-16T21:26:21.565082843+01:00","level":"INFO","msg":"created new stream","id":"gmz8i2vc"}
+{"time":"2025-05-16T21:26:21.565120733+01:00","level":"INFO","msg":"stream: started","id":"gmz8i2vc"}
+{"time":"2025-05-16T21:26:21.565172663+01:00","level":"INFO","msg":"handler: started","stream_id":"gmz8i2vc"}
+{"time":"2025-05-16T21:26:21.565163693+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"gmz8i2vc"}
+{"time":"2025-05-16T21:26:21.565297633+01:00","level":"INFO","msg":"sender: started","stream_id":"gmz8i2vc"}
+{"time":"2025-05-16T21:26:21.849441069+01:00","level":"INFO","msg":"Starting system monitor"}
