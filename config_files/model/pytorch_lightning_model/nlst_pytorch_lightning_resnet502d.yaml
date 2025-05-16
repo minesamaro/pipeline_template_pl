@@ -13,3 +13,4 @@ hyperparameters:
     metadataframe: ${.....data.metadataframe}
   model:
     number_of_classes: 2
+    dimension: ${....dimension}

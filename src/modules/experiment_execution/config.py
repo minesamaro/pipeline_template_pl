@@ -106,6 +106,15 @@ class ExperimentExecutionConfig:
                     f"/nas-ctm01/datasets/public/medical_datasets"
                     f"/lung_ct_datasets/nlst"
                 )
+        elif config.data.dataset_name == "NLSTLocal": #TODO: Check this
+            if dirname(abspath("")).startswith('/nas-ctm01'):
+                dataset_dir_path = (
+                    "C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\PhantomDataset"
+                )
+            else:
+                dataset_dir_path = (
+                    "C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\PhantomDataset"
+                )       
         else:
             raise ValueError(
                 "Invalid dataset name: {}. Expected: 'LIDC-IDRI' or 'LUNA25', or 'NLST'"

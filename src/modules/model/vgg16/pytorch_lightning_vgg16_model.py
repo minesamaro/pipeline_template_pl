@@ -1,6 +1,7 @@
 from torchmetrics.functional import accuracy, auroc, precision, recall
 import pytorch_lightning
 import torch
+import wandb
 
 from src.modules.model.vgg16.vgg16_model \
     import VGG16Model
@@ -30,15 +31,25 @@ class PyTorchLightningVGG16Model(pytorch_lightning.LightningModule):
         )
         return optimizer
 
+    def on_train_epoch_start(self):
+        self.labels = []
+        self.predicted_labels = []
+        self.weighted_losses = []
+
     def training_step(self, batch):
         data, labels = batch[0], batch[1]
 
         model_output = self.model(data['image'].to(self.device))
-
+        predicted_labels = torch.argmax(model_output, dim=1, keepdim=True)
         loss = self.criterion(
             logits=model_output,
             targets=labels.to(self.device)
         )
+
+        self.labels.append(labels)
+        self.predicted_labels.append(predicted_labels)
+        self.weighted_losses.append(loss * data['image'].shape[0])
+
 
         self.log(
             batch_size=data['image'].shape[0],
@@ -48,9 +59,32 @@ class PyTorchLightningVGG16Model(pytorch_lightning.LightningModule):
             prog_bar=False,
             value=loss
         )
-
+   
         return loss
+    
+    def on_train_epoch_end(self):
+        labels = torch.cat(self.labels, dim=0)
+        predicted_labels = torch.cat(self.predicted_labels, dim=0)
 
+        metrics_for_logging = {
+            'train_loss': (sum(self.weighted_losses) / labels.shape[0]).item(),
+            'train_auroc': auroc(
+                preds=predicted_labels.float(),
+                target=labels.int(),
+                task="binary"
+            ).item()
+        }
+        wandb.log(metrics_for_logging)
+
+        self.log_dict(
+            metrics_for_logging,
+            batch_size=labels.shape[0],
+            on_epoch=True,
+            on_step=False,
+            prog_bar=False
+        )
+
+        
     def on_validation_epoch_start(self):
         self.labels = []
         self.predicted_labels = []
@@ -97,6 +131,8 @@ class PyTorchLightningVGG16Model(pytorch_lightning.LightningModule):
                 task="binary"
             ).item()
         }
+        wandb.log(metrics_for_logging)
+
         self.log_dict(
             metrics_for_logging,
             batch_size=labels.shape[0],
@@ -151,3 +187,4 @@ class PyTorchLightningVGG16Model(pytorch_lightning.LightningModule):
             on_step=False,
             prog_bar=False
         )
+        wandb.log(metrics_for_logging)
