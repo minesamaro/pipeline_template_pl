@@ -14,7 +14,9 @@ from src.modules.data.data_augmentation.ct_image_augmenter \
     import CTImageAugmenter
 
 def collate_fn(batch):
-    pixel_values, labels = zip(*batch)  # unzip the batch
+    pixel_values = [item['pixel_values'] for item in batch]
+    labels = [item['labels'] for item in batch]
+    
     return {
         'pixel_values': torch.stack(pixel_values),
         'labels': torch.tensor(labels)
