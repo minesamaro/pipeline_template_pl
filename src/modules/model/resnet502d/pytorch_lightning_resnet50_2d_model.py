@@ -86,9 +86,9 @@ class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
 
         
     def on_validation_epoch_start(self):
-        self.labels = []
-        self.predicted_labels = []
-        self.weighted_losses = []
+        self.val_labels = []
+        self.val_predicted_labels = []
+        self.val_weighted_losses = []
 
     def validation_step(self, batch, batch_idx):
         data, labels = batch[0], batch[1]
@@ -100,16 +100,16 @@ class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
             targets=labels.to(self.device)
         )
 
-        self.labels.append(labels)
-        self.predicted_labels.append(predicted_labels)
-        self.weighted_losses.append(loss * data['image'].shape[0])
+        self.val_labels.append(labels)
+        self.val_predicted_labels.append(predicted_labels)
+        self.val_weighted_losses.append(loss * data['image'].shape[0])
 
     def on_validation_epoch_end(self):
-        labels = torch.cat(self.labels, dim=0)
-        predicted_labels = torch.cat(self.predicted_labels, dim=0)
+        labels = torch.cat(self.val_labels, dim=0)
+        predicted_labels = torch.cat(self.val_predicted_labels, dim=0)
 
         metrics_for_logging = {
-            'val_loss': (sum(self.weighted_losses) / labels.shape[0]).item(),
+            'val_loss': (sum(self.val_weighted_losses) / labels.shape[0]).item(),
             'val_accuracy': accuracy(
                 preds=predicted_labels,
                 target=labels,
@@ -139,7 +139,7 @@ class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
             on_epoch=True,
             on_step=False,
             prog_bar=False
-        )
+        )      
 
     def on_test_epoch_start(self):
         self.labels = []
