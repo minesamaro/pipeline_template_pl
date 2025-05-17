@@ -1,0 +1,17 @@
+
+Running model pipeline for data fold 1...
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\scripts\run_experiment_pipeline.py", line 54, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\scripts\run_experiment_pipeline.py", line 139, in run_experiment_pipeline
+    model_pipeline = ModelPipeline(
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\model\model_pipeline.py", line 33, in __init__
+    self.pytorch_lightning_model = PyTorchLightningModel(
+                                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\model\pytorch_lightning_model.py", line 26, in __new__
+    raise ValueError(
+ValueError: Invalid model name: ResNet503d. Supported datasets are 'EfficientNet'.
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

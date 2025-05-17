@@ -1,7 +1,0 @@
-dataset_name: ${..dataset_name}
-data_preprocessing_protocol_number: ${..data_preprocessing_protocol_number}
-data_type: whole_slice
-label: 5y #classification/regression target
-resample: False
-dimension: 2.5 #2D or 3D
-

@@ -1,0 +1,3 @@
+dataset_name: NLSTLocal # LUNA25 or NLST
+data_preprocessing_protocol_number: 4
+dimension: 3

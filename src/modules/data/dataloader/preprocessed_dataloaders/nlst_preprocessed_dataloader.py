@@ -294,6 +294,8 @@ class NLSTPreprocessedDataLoader(Dataset):
             self.lung_metadataframe['path'] == self.file_names[data_index]
         ]
 
+        quit()
+
 #        if not meta_row.empty:
 #            pid = meta_row['pid'].values[0]
 #            study = meta_row['study_yr'].values[0]
@@ -342,6 +344,9 @@ class NLSTPreprocessedDataLoader(Dataset):
             # Extract the slice from the DICOM image
             slice_image = dicom_image[slice_number - 1]
 
+            # Normalize the slice
+            slice_image = self._normalize(slice_image)
+
             return slice_image
         except Exception as e:
             print(f"Error loading slice {data_index}: {e}")
@@ -352,7 +357,7 @@ class NLSTPreprocessedDataLoader(Dataset):
     
 
     def _get_scan(self, data_index):
-        if self.config.resample_z == False:
+        if self.config.resample_z:
             dicom_image = numpy.load() #TODO: Insert path to the numpy file
         else:
             # Load the DICOM file
@@ -366,6 +371,11 @@ class NLSTPreprocessedDataLoader(Dataset):
 
             # Order list of slices in an ascendant way by the position z of the slice
             slices.sort(key = lambda x: float(x.ImagePositionPatient[2]))
+
+            # keep only the 10 middle slices
+            n_slices = 11
+            slices = slices[len(slices) // 2 - n_slices // 2: len(slices) // 2 + n_slices // 2]
+
             image = numpy.stack([s.pixel_array for s in slices])
             image = image.astype(numpy.int16)
             image[image == -2000] = 0
@@ -379,7 +389,7 @@ class NLSTPreprocessedDataLoader(Dataset):
                         
             image += numpy.int16(intercept)
             # Normalization
-            image = [self._normalize(image[i]) for i in range(image.shape[0])]
+            image = self._normalize(image)
             
             dicom_image = numpy.array(image, dtype=numpy.int16)
 
@@ -425,6 +435,9 @@ class NLSTPreprocessedDataLoader(Dataset):
 
         dicom_image = dicom_image[slice_number - n_slices // 2: slice_number + n_slices // 2]
 
+        # Normalize the slice
+        dicom_image = self._normalize(dicom_image)
+
         return dicom_image
 
 
@@ -435,9 +448,8 @@ class NLSTPreprocessedDataLoader(Dataset):
 
         return labels
     
-    def _normalize(scan, minimum = -1000, maximum = 400):
+    def _normalize(self, scan, minimum=-1000, maximum=400):
+        scan = scan.astype(numpy.float32)  # ensure float
         scan = (scan - minimum) / (maximum - minimum)
-        scan[scan >= 1] = 1
-        scan[scan <= 0] = 0
-        
+        scan = numpy.clip(scan, 0, 1)      # clip values between 0 and 1
         return scan
