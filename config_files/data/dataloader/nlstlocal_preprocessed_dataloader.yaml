@@ -28,7 +28,7 @@ torch_dataloader_kwargs:
   batch_size: 2
   num_workers: 0
 validation_fraction_of_train_set: 0.25
-dimension: 2 # "2D, 2.5D, 3D
+dimension: ${..dimension} # "2D, 2.5D, 3D
 roi: lung # lung, whole
 resample: False
 resample_z: False

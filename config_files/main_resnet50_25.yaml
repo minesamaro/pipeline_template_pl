@@ -1,7 +1,7 @@
 defaults:
   - data: data_25
-  - data/dataloader: nlst_preprocessed_dataloader_25
-  - data/metadataframe: nlst_preprocessed_metadataframe_25
+  - data/dataloader: nlst_preprocessed_dataloader
+  - data/metadataframe: nlst_preprocessed_metadataframe
   - experiment_execution/ids: ids
   - experiment_execution/info: info
   - experiment_execution/paths: paths
@@ -20,6 +20,6 @@ hydra:
     dir: .
 seed_value: 900
 wandb:
-  project_name: "comparative_study_25"
+  project_name: "comparative_study_25_norm"
   entity: "nlst"
   name: "resnet50_25d"

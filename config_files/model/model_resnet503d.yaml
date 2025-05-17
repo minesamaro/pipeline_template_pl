@@ -1,0 +1,3 @@
+model_id: RN503D
+model_name: ResNet503d
+dimension: ${..data.dimension}
