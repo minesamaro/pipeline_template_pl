@@ -28,3 +28,22 @@ wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_stu
   rank_zero_warn(
 /nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:442: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 14 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
   rank_zero_warn(
+srun: got SIGCONT
+slurmstepd-01.ctm-deep-09: error: *** JOB 4136 ON 01.ctm-deep-09 CANCELLED AT 2025-05-19T14:18:35 ***
+srun: forcing job termination
+slurmstepd-01.ctm-deep-09: error: *** STEP 4136.0 ON 01.ctm-deep-09 CANCELLED AT 2025-05-19T14:18:35 ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+
+**************************************************  Experiment 101 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+...model pipeline for data fold 1 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_101/version_1/execution_datetimes.json
+
+**************************************************  Experiment 101 | Version 2 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
