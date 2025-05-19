@@ -1,0 +1,17 @@
+Initialization time: 2025-05-19 11:52:36
+wandb: Currently logged in as: maria-i-paiva (maria-i-paiva-inesc-tec) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_100/version_1/wandb/run-20250519_115250-oij9ksb9
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet50_3d_local_100_1_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_3d_norm
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_3d_norm/runs/oij9ksb9
+
+**************************************************  Experiment 100 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+[DEBUG] Model input shape: torch.Size([4, 3, 10, 512, 512])
+[DEBUG] Model input shape: torch.Size([4, 3, 10, 512, 512])
