@@ -24,7 +24,5 @@ class VGG16Model(torch.nn.Module):
         # If the input has 1 channel, repeat it to 3 channels
         if model_input.shape[1] == 1:
             model_input = model_input.repeat(1, 3, 1, 1)
-        print(model_input.shape)
-        quit()
         model_output = self.model(model_input)
         return model_output
