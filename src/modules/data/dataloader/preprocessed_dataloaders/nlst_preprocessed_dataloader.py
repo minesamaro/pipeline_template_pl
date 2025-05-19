@@ -435,7 +435,6 @@ class NLSTPreprocessedDataLoader(Dataset):
 
         # Normalize the slice
         dicom_image = self._normalize(dicom_image)
-        print(dicom_image.shape)
 
         return dicom_image
 
