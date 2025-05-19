@@ -22,4 +22,4 @@ seed_value: 900
 wandb:
   project_name: "comparative_study_25_norm"
   entity: "nlst"
-  name: "resnet50_25d"
+  name: "resnet50_25d_norm"
