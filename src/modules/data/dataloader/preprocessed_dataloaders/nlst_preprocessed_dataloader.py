@@ -294,8 +294,6 @@ class NLSTPreprocessedDataLoader(Dataset):
             self.lung_metadataframe['path'] == self.file_names[data_index]
         ]
 
-        quit()
-
 #        if not meta_row.empty:
 #            pid = meta_row['pid'].values[0]
 #            study = meta_row['study_yr'].values[0]
