@@ -371,7 +371,7 @@ class NLSTPreprocessedDataLoader(Dataset):
             slices.sort(key = lambda x: float(x.ImagePositionPatient[2]))
 
             # keep only the 10 middle slices
-            n_slices = 11
+            n_slices = 32
             slices = slices[len(slices) // 2 - n_slices // 2: len(slices) // 2 + n_slices // 2]
 
             image = numpy.stack([s.pixel_array for s in slices])

@@ -1,10 +1,14 @@
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 
 class VGG16_3DModel(nn.Module):
-    def __init__(self, num_classes: int, in_channels: int = 1):
+    def __init__(self, config):
         super(VGG16_3DModel, self).__init__()
+
+        self.num_classes = config.number_of_classes
+        self.in_channels = 3
 
         def conv_block(in_c, out_c, num_convs):
             layers = []
@@ -16,7 +20,7 @@ class VGG16_3DModel(nn.Module):
             return nn.Sequential(*layers)
 
         self.features = nn.Sequential(
-            conv_block(in_channels, 64, 2),   # Block 1
+            conv_block(self.in_channels, 64, 2),   # Block 1
             conv_block(64, 128, 2),           # Block 2
             conv_block(128, 256, 3),          # Block 3
             conv_block(256, 512, 3),          # Block 4
@@ -33,10 +37,15 @@ class VGG16_3DModel(nn.Module):
             nn.Linear(4096, 4096),
             nn.ReLU(True),
             nn.Dropout(),
-            nn.Linear(4096, num_classes)
+            nn.Linear(4096, self.num_classes)
         )
 
     def forward(self, x):
+        x = x.unsqueeze(1)
+        if x.shape[1] != 3:
+            x = x.repeat(1, 3, 1, 1, 1)
+
+        # Resize the input for B, C, 64, 512, 512
         x = self.features(x)           # (B, 512, D/32, H/32, W/32)
         x = self.avgpool(x)            # (B, 512, 1, 1, 1)
         x = torch.flatten(x, 1)        # (B, 512)

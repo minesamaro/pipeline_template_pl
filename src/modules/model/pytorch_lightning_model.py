@@ -6,6 +6,8 @@ from src.modules.model.vgg16.pytorch_lightning_vgg16_model \
     import PyTorchLightningVGG16Model
 from src.modules.model.resnet503d.pytorch_lightning_resnet50_3d_model \
     import PyTorchLightningResNet503dModel
+from src.modules.model.vgg163d.pytorch_lightning_vgg163d_model \
+    import PyTorchLightningVGG163dModel
 
 class PyTorchLightningModel:
     def __new__(cls, config, experiment_execution_paths):
@@ -30,7 +32,7 @@ class PyTorchLightningModel:
                 experiment_execution_paths=experiment_execution_paths
             )
         elif config.model_name == "VGG163d":
-            return PyTorchLightningVGG16Model(
+            return PyTorchLightningVGG163dModel(
                 config=config.hyperparameters,
                 experiment_execution_paths=experiment_execution_paths
             )

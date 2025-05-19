@@ -8,7 +8,7 @@ from src.modules.loss_functions.resnet50_loss_functions \
     import ResNet50LossFunction
 
 
-class PyTorchLightningVGG16Model(pytorch_lightning.LightningModule):
+class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
     def __init__(self, config, experiment_execution_paths):
         super().__init__()
         self.config = config
@@ -18,7 +18,7 @@ class PyTorchLightningVGG16Model(pytorch_lightning.LightningModule):
             experiment_execution_paths=experiment_execution_paths
         )
         self.labels = None
-        self.model = VGG16_3DModel()
+        self.model = VGG16_3DModel(config=self.config)
         self.predicted_labels = None
         self.weighted_losses = None
 
