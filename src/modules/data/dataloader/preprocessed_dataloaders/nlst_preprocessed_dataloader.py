@@ -345,6 +345,9 @@ class NLSTPreprocessedDataLoader(Dataset):
             # Normalize the slice
             slice_image = self._normalize(slice_image)
 
+            if self.config.resize:
+                slice_image = numpy.resize(slice_image, (224, 224))
+
             return slice_image
         except Exception as e:
             print(f"Error loading slice {data_index}: {e}")
@@ -391,13 +394,16 @@ class NLSTPreprocessedDataLoader(Dataset):
             
             dicom_image = numpy.array(image, dtype=numpy.int16)
 
+            if self.config.resize:
+                dicom_image = numpy.resize(dicom_image, (dicom_image.shape[0], 224, 224))
+
         return dicom_image
     
     def _get_2_5(self, data_index):
         if 'n_slices_2_5' in self.config:
             n_slices = self.config.n_slices_2_5
         else:
-            n_slices = 11
+            n_slices = 10
         
 
         # Load the DICOM file
@@ -435,6 +441,9 @@ class NLSTPreprocessedDataLoader(Dataset):
 
         # Normalize the slice
         dicom_image = self._normalize(dicom_image)
+
+        if self.config.resize:
+            dicom_image = numpy.resize(dicom_image, (dicom_image.shape[0], 224, 224))
 
         return dicom_image
 
