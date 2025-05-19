@@ -1,0 +1,16 @@
+{"time":"2025-05-19T14:03:13.316274961+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_102/version_5/wandb/run-20250519_140313-pdw418hg/logs/debug-core.log"}
+{"time":"2025-05-19T14:03:13.601344188+01:00","level":"INFO","msg":"created new stream","id":"pdw418hg"}
+{"time":"2025-05-19T14:03:13.601400749+01:00","level":"INFO","msg":"stream: started","id":"pdw418hg"}
+{"time":"2025-05-19T14:03:13.601525991+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"pdw418hg"}
+{"time":"2025-05-19T14:03:13.601595632+01:00","level":"INFO","msg":"sender: started","stream_id":"pdw418hg"}
+{"time":"2025-05-19T14:03:13.601692513+01:00","level":"INFO","msg":"handler: started","stream_id":"pdw418hg"}
+{"time":"2025-05-19T14:03:13.810479944+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-19T14:12:49.237995496+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-19T14:12:49.238331732+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-19T14:12:50.24063355+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.656686593,"progress":"396B/396B"},{"desc":"uploading wandb-summary.json","runtime_seconds":0.656666894,"progress":"438B/438B"},{"desc":"uploading config.yaml","runtime_seconds":0.454467351,"progress":"5.5KB/5.5KB"}],"total_operations":3}}
+{"time":"2025-05-19T14:12:50.316105037+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-19T14:12:50.539963057+01:00","level":"INFO","msg":"stream: closing","id":"pdw418hg"}
+{"time":"2025-05-19T14:12:50.539998768+01:00","level":"INFO","msg":"handler: closed","stream_id":"pdw418hg"}
+{"time":"2025-05-19T14:12:50.540016919+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"pdw418hg"}
+{"time":"2025-05-19T14:12:50.540037429+01:00","level":"INFO","msg":"sender: closed","stream_id":"pdw418hg"}
+{"time":"2025-05-19T14:12:50.540584357+01:00","level":"INFO","msg":"stream: closed","id":"pdw418hg"}
