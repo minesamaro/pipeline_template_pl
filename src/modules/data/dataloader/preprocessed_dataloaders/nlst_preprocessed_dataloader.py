@@ -345,6 +345,9 @@ class NLSTPreprocessedDataLoader(Dataset):
             # Normalize the slice
             slice_image = self._normalize(slice_image)
 
+            if self.config.resize:
+                slice_image = numpy.resize(slice_image, (self.config.resize[0], self.config.resize[1]))
+
             return slice_image
         except Exception as e:
             print(f"Error loading slice {data_index}: {e}")
