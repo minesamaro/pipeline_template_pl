@@ -1,0 +1,28 @@
+Initialization time: 2025-05-17 01:56:26
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 22, in <module>
+    from src.modules.model.model_pipeline import ModelPipeline
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/model_pipeline.py", line 8, in <module>
+    from src.modules.model.pytorch_lightning_model import PyTorchLightningModel
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/pytorch_lightning_model.py", line 7, in <module>
+    from src.modules.model.resnet503d.pytorch_lightning_resnet50_3d_model \
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/resnet503d/pytorch_lightning_resnet50_3d_model.py", line 6, in <module>
+    from src.modules.model.resnet503d.resnet503d_model \
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/resnet503d/resnet503d_model.py", line 1, in <module>
+    import monai.networks.nets as monai_nets
+ModuleNotFoundError: No module named 'monai'
+srun: error: 04.ctm-deep-06: task 0: Exited with exit code 1
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 22, in <module>
+    from src.modules.model.model_pipeline import ModelPipeline
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/model_pipeline.py", line 8, in <module>
+    from src.modules.model.pytorch_lightning_model import PyTorchLightningModel
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/pytorch_lightning_model.py", line 7, in <module>
+    from src.modules.model.resnet503d.pytorch_lightning_resnet50_3d_model \
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/resnet503d/pytorch_lightning_resnet50_3d_model.py", line 6, in <module>
+    from src.modules.model.resnet503d.resnet503d_model \
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/resnet503d/resnet503d_model.py", line 1, in <module>
+    import monai.networks.nets as monai_nets
+ModuleNotFoundError: No module named 'monai'
+srun: error: 04.ctm-deep-06: task 0: Exited with exit code 1
+Finish time: 2025-05-17 01:56:49
