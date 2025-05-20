@@ -196,7 +196,7 @@ class PyTorchLightningVGG16Model(pytorch_lightning.LightningModule):
 
         metrics_for_logging = {
             'test_accuracy': accuracy(
-                preds=predicted_labels,
+                preds=predicted_activated_labels,
                 target=labels,
                 task="binary"
             ).item(),
