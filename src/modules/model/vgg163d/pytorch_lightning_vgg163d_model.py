@@ -40,49 +40,32 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
         data, labels = batch[0], batch[1]
 
         model_output = self.model(data['image'].to(self.device))
-        predicted_labels = torch.argmax(model_output, dim=1, keepdim=True)
+        activated_labels = torch.sigmoid(model_output)
         loss = self.criterion(
             logits=model_output,
             targets=labels.to(self.device)
         )
 
         self.labels.append(labels)
-        self.predicted_labels.append(predicted_labels)
+        self.predicted_labels.append(activated_labels)
         self.weighted_losses.append(loss * data['image'].shape[0])
-
-
-        self.log(
-            batch_size=data['image'].shape[0],
-            name="train_loss",
-            on_epoch=True,
-            on_step=False,
-            prog_bar=False,
-            value=loss
-        )
    
         return loss
     
     def on_train_epoch_end(self):
         labels = torch.cat(self.labels, dim=0)
         predicted_labels = torch.cat(self.predicted_labels, dim=0)
+        predicted_activated_labels = torch.argmax(predicted_labels, dim=1, keepdim=True)
 
         metrics_for_logging = {
             'train_loss': (sum(self.weighted_losses) / labels.shape[0]).item(),
             'train_auroc': auroc(
-                preds=predicted_labels.float(),
+                preds=predicted_activated_labels.squeeze().float(),
                 target=labels.int(),
                 task="binary"
             ).item()
         }
         wandb.log(metrics_for_logging)
-
-        self.log_dict(
-            metrics_for_logging,
-            batch_size=labels.shape[0],
-            on_epoch=True,
-            on_step=False,
-            prog_bar=False
-        )
 
         
     def on_validation_epoch_start(self):
@@ -94,7 +77,7 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
         data, labels = batch[0], batch[1]
 
         model_output = self.model(data['image'].to(self.device))
-        predicted_labels = torch.argmax(model_output, dim=1, keepdim=True)
+        predicted_labels = torch.sigmoid(model_output)
         loss = self.criterion(
             logits=model_output,
             targets=labels.to(self.device)
@@ -107,39 +90,33 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
     def on_validation_epoch_end(self):
         labels = torch.cat(self.val_labels, dim=0)
         predicted_labels = torch.cat(self.val_predicted_labels, dim=0)
+        predicted_activated_labels = torch.argmax(predicted_labels, dim=1, keepdim=True)
 
         metrics_for_logging = {
             'val_loss': (sum(self.val_weighted_losses) / labels.shape[0]).item(),
             'val_accuracy': accuracy(
-                preds=predicted_labels,
+                preds=predicted_activated_labels,
                 target=labels,
                 task="binary"
             ).item(),
             'val_auroc': auroc(
-                preds=predicted_labels.float(),
+                preds=predicted_activated_labels.squeeze().float(),
                 target=labels.int(),
                 task="binary"
             ).item(),
             'val_precision': precision(
-                preds=predicted_labels,
+                preds=predicted_activated_labels,
                 target=labels,
                 task="binary"
             ).item(),
             'val_recall': recall(
-                preds=predicted_labels,
+                preds=predicted_activated_labels,
                 target=labels,
                 task="binary"
             ).item()
         }
         wandb.log(metrics_for_logging)
-
-        self.log_dict(
-            metrics_for_logging,
-            batch_size=labels.shape[0],
-            on_epoch=True,
-            on_step=False,
-            prog_bar=False
-        )      
+     
 
     def on_test_epoch_start(self):
         self.labels = []
@@ -149,7 +126,7 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
         data, labels = batch[0], batch[1]
 
         model_output = self.model(data['image'].to(self.device))
-        predicted_labels = torch.argmax(model_output, dim=1, keepdim=True)
+        predicted_labels = torch.sigmoid(model_output)
 
         self.labels.append(labels)
         self.predicted_labels.append(predicted_labels)
@@ -157,6 +134,7 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
     def on_test_epoch_end(self):
         labels = torch.cat(self.labels, dim=0)
         predicted_labels = torch.cat(self.predicted_labels, dim=0)
+        predicted_activated_labels = torch.argmax(predicted_labels, dim=1, keepdim=True)
 
         metrics_for_logging = {
             'test_accuracy': accuracy(
@@ -165,26 +143,20 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
                 task="binary"
             ).item(),
             'test_auroc': auroc(
-                preds=predicted_labels.float(),
+                preds=predicted_activated_labels.squeeze().float(),
                 target=labels.int(),
                 task="binary"
             ).item(),
             'test_precision': precision(
-                preds=predicted_labels,
+                preds=predicted_activated_labels,
                 target=labels,
                 task="binary"
             ).item(),
             'test_recall': recall(
-                preds=predicted_labels,
+                preds=predicted_activated_labels,
                 target=labels,
                 task="binary"
             ).item()
         }
-        self.log_dict(
-            metrics_for_logging,
-            batch_size=labels.shape[0],
-            on_epoch=True,
-            on_step=False,
-            prog_bar=False
-        )
+
         wandb.log(metrics_for_logging)

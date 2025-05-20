@@ -10,7 +10,7 @@ from src.modules.loss_functions.resnet50_loss_functions \
 
 
 class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
-    def __init__(self, config, experiment_execution_paths):
+    def __init__(self, config, experiment_execution_paths, test_dataloader= None):
         super().__init__()
         self.config = config
 
@@ -22,14 +22,60 @@ class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
         self.model = ResNet50Model(config=self.config.model)
         self.predicted_labels = None
         self.weighted_losses = None
+        self.test_ref = test_dataloader
 
         self.to(torch.device(self.config.device))
+        self.test_dataloader_ref = test_dataloader
 
     def configure_optimizers(self):
         optimizer = getattr(torch.optim, self.config.optimiser.type)(
             self.parameters(), **self.config.optimiser.kwargs
         )
         return optimizer
+    
+    def evaluate_on_test_set(self):
+        self.model.eval()
+        test_labels = []
+        test_preds = []
+
+        with torch.no_grad():
+            for batch in self.test_dataloader_ref:
+                data, labels = batch[0], batch[1]
+                outputs = self.model(data['image'].to(self.device))
+                probs = torch.sigmoid(outputs)
+
+                test_labels.append(labels)
+                test_preds.append(probs)
+
+        test_labels = torch.cat(test_labels, dim=0).to(self.device)
+        test_preds = torch.cat(test_preds, dim=0).to(self.device)
+        test_binary_preds = torch.argmax(test_preds, dim=1, keepdim=True)
+
+        # Compute test metrics (customize as needed)
+        metrics_for_logging = {
+            'test_accuracy': accuracy(
+                preds=test_binary_preds,
+                target=test_labels,
+                task="binary"
+            ).item(),
+            'test_auroc': auroc(
+                preds=test_preds[:, 0].float(),
+                target=test_labels.squeeze().int(),
+                task="binary"
+            ).item(),
+            'test_precision': precision(
+                preds=test_binary_preds,
+                target=test_labels,
+                task="binary"
+            ).item(),
+            'test_recall': recall(
+                preds=test_binary_preds,
+                target=test_labels,
+                task="binary"
+            ).item()
+        }
+        # Log to wandb
+        wandb.log(metrics_for_logging, step=self.current_epoch)
 
     def on_train_epoch_start(self):
         self.labels = []
@@ -40,49 +86,35 @@ class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
         data, labels = batch[0], batch[1]
 
         model_output = self.model(data['image'].to(self.device))
-        predicted_labels = torch.argmax(model_output, dim=1, keepdim=True)
+        activated_labels = torch.sigmoid(model_output)
         loss = self.criterion(
             logits=model_output,
             targets=labels.to(self.device)
         )
 
         self.labels.append(labels)
-        self.predicted_labels.append(predicted_labels)
+        self.predicted_labels.append(activated_labels)
         self.weighted_losses.append(loss * data['image'].shape[0])
-
-
-        self.log(
-            batch_size=data['image'].shape[0],
-            name="train_loss",
-            on_epoch=True,
-            on_step=False,
-            prog_bar=False,
-            value=loss
-        )
    
         return loss
     
     def on_train_epoch_end(self):
         labels = torch.cat(self.labels, dim=0)
         predicted_labels = torch.cat(self.predicted_labels, dim=0)
+        #predicted_activated_labels = torch.argmax(predicted_labels, dim=1, keepdim=True)
 
         metrics_for_logging = {
             'train_loss': (sum(self.weighted_losses) / labels.shape[0]).item(),
             'train_auroc': auroc(
-                preds=predicted_labels.float(),
-                target=labels.int(),
+                preds=predicted_labels[:,0].float(),
+                target=labels.squeeze().int(),
                 task="binary"
             ).item()
         }
-        wandb.log(metrics_for_logging)
+        wandb.log(metrics_for_logging, step=self.current_epoch)
 
-        self.log_dict(
-            metrics_for_logging,
-            batch_size=labels.shape[0],
-            on_epoch=True,
-            on_step=False,
-            prog_bar=False
-        )
+        if self.test_dataloader_ref is not None:
+            self.evaluate_on_test_set()
 
         
     def on_validation_epoch_start(self):
@@ -94,7 +126,7 @@ class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
         data, labels = batch[0], batch[1]
 
         model_output = self.model(data['image'].to(self.device))
-        predicted_labels = torch.argmax(model_output, dim=1, keepdim=True)
+        predicted_labels = torch.sigmoid(model_output)
         loss = self.criterion(
             logits=model_output,
             targets=labels.to(self.device)
@@ -107,39 +139,42 @@ class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
     def on_validation_epoch_end(self):
         labels = torch.cat(self.val_labels, dim=0)
         predicted_labels = torch.cat(self.val_predicted_labels, dim=0)
+        predicted_activated_labels = torch.argmax(predicted_labels, dim=1, keepdim=True)
 
         metrics_for_logging = {
             'val_loss': (sum(self.val_weighted_losses) / labels.shape[0]).item(),
             'val_accuracy': accuracy(
-                preds=predicted_labels,
+                preds=predicted_activated_labels,
                 target=labels,
                 task="binary"
             ).item(),
             'val_auroc': auroc(
-                preds=predicted_labels.float(),
-                target=labels.int(),
-                task="binary"
+                preds=predicted_labels[:, 0].float(),
+                target=labels.squeeze().int(),
+                task="binary",
+                num_classes=2
             ).item(),
             'val_precision': precision(
-                preds=predicted_labels,
+                preds=predicted_activated_labels,
                 target=labels,
                 task="binary"
             ).item(),
             'val_recall': recall(
-                preds=predicted_labels,
+                preds=predicted_activated_labels,
                 target=labels,
                 task="binary"
             ).item()
         }
-        wandb.log(metrics_for_logging)
-
+        wandb.log(metrics_for_logging, step=self.current_epoch)
         self.log_dict(
             metrics_for_logging,
             batch_size=labels.shape[0],
             on_epoch=True,
             on_step=False,
             prog_bar=False
-        )      
+        )
+        
+     
 
     def on_test_epoch_start(self):
         self.labels = []
@@ -149,7 +184,7 @@ class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
         data, labels = batch[0], batch[1]
 
         model_output = self.model(data['image'].to(self.device))
-        predicted_labels = torch.argmax(model_output, dim=1, keepdim=True)
+        predicted_labels = torch.sigmoid(model_output)
 
         self.labels.append(labels)
         self.predicted_labels.append(predicted_labels)
@@ -157,6 +192,7 @@ class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
     def on_test_epoch_end(self):
         labels = torch.cat(self.labels, dim=0)
         predicted_labels = torch.cat(self.predicted_labels, dim=0)
+        predicted_activated_labels = torch.argmax(predicted_labels, dim=1, keepdim=True)
 
         metrics_for_logging = {
             'test_accuracy': accuracy(
@@ -165,26 +201,20 @@ class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
                 task="binary"
             ).item(),
             'test_auroc': auroc(
-                preds=predicted_labels.float(),
+                preds=predicted_labels[:, 0].float(),
                 target=labels.int(),
                 task="binary"
             ).item(),
             'test_precision': precision(
-                preds=predicted_labels,
+                preds=predicted_activated_labels,
                 target=labels,
                 task="binary"
             ).item(),
             'test_recall': recall(
-                preds=predicted_labels,
+                preds=predicted_activated_labels,
                 target=labels,
                 task="binary"
             ).item()
         }
-        self.log_dict(
-            metrics_for_logging,
-            batch_size=labels.shape[0],
-            on_epoch=True,
-            on_step=False,
-            prog_bar=False
-        )
-        wandb.log(metrics_for_logging)
+
+        wandb.log(metrics_for_logging, step=self.current_epoch)

@@ -10,7 +10,7 @@ from src.modules.model.vgg163d.pytorch_lightning_vgg163d_model \
     import PyTorchLightningVGG163dModel
 
 class PyTorchLightningModel:
-    def __new__(cls, config, experiment_execution_paths):
+    def __new__(cls, config, experiment_execution_paths, test_dataloader=None):
         if config.model_name == "EfficientNet":
             return PyTorchLightningEfficientNetModel(
                 config=config.hyperparameters,
@@ -19,22 +19,26 @@ class PyTorchLightningModel:
         elif config.model_name == "ResNet502d":
             return PyTorchLightningResNet502dModel(
                 config=config.hyperparameters,
-                experiment_execution_paths=experiment_execution_paths
+                experiment_execution_paths=experiment_execution_paths,
+                test_dataloader=test_dataloader
             )
         elif config.model_name == "VGG16":
             return PyTorchLightningVGG16Model(
                 config=config.hyperparameters,
-                experiment_execution_paths=experiment_execution_paths
+                experiment_execution_paths=experiment_execution_paths,
+                test_dataloader=test_dataloader
             )
         elif config.model_name == "ResNet503d":
             return PyTorchLightningResNet503dModel(
                 config=config.hyperparameters,
-                experiment_execution_paths=experiment_execution_paths
+                experiment_execution_paths=experiment_execution_paths,
+                test_dataloader=test_dataloader
             )
         elif config.model_name == "VGG163d":
             return PyTorchLightningVGG163dModel(
                 config=config.hyperparameters,
-                experiment_execution_paths=experiment_execution_paths
+                experiment_execution_paths=experiment_execution_paths,
+                test_dataloader=test_dataloader
             )
         else:
             raise ValueError(

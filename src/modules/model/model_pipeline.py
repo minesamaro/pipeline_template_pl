@@ -32,7 +32,8 @@ class ModelPipeline:
             experiment_execution_paths.experiment_version_dir_path
         self.pytorch_lightning_model = PyTorchLightningModel(
             config=self.config.pytorch_lightning_model,
-            experiment_execution_paths=experiment_execution_paths
+            experiment_execution_paths=experiment_execution_paths,
+            test_dataloader=self.dataloaders['test']
         )
         self.pytorch_lightning_trainer = Trainer(
             callbacks=self._get_model_trainer_callbacks(),
