@@ -1,6 +1,6 @@
 defaults:
   - data: data3
-  - data/dataloader: nlstlocal_preprocessed_dataloader
+  - data/dataloader: nlst_preprocessed_dataloader
   - data/metadataframe: nlst_preprocessed_metadataframe
   - experiment_execution/ids: ids
   - experiment_execution/info: info
