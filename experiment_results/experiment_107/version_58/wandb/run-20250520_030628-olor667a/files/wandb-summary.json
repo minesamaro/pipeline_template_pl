@@ -1,0 +1,1 @@
+{"val_precision":0,"val_recall":0,"val_auroc":0.5,"_step":35,"val_accuracy":0.75,"test_auroc":0.5,"test_precision":0,"_runtime":380.571877304,"train_loss":0.35528552532196045,"_wandb":{"runtime":381},"val_loss":0.383495032787323,"test_accuracy":0.746835470199585,"_timestamp":1.7477071695574274e+09,"test_recall":0,"train_auroc":0.5}

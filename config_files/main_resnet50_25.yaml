@@ -20,6 +20,6 @@ hydra:
     dir: .
 seed_value: 900
 wandb:
-  project_name: "comparative_study_25_norm"
+  project_name: "comparative_study_25_norm_resize"
   entity: "nlst"
   name: "resnet50_25d_norm"
