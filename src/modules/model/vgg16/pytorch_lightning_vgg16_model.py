@@ -22,17 +22,17 @@ class PyTorchLightningVGG16Model(pytorch_lightning.LightningModule):
         self.model = VGG16Model(config=self.config.model)
         self.predicted_labels = None
         self.weighted_losses = None
+        self.test_ref = test_dataloader
 
         self.to(torch.device(self.config.device))
         self.test_dataloader_ref = test_dataloader
-
 
     def configure_optimizers(self):
         optimizer = getattr(torch.optim, self.config.optimiser.type)(
             self.parameters(), **self.config.optimiser.kwargs
         )
         return optimizer
-
+    
     def evaluate_on_test_set(self):
         self.model.eval()
         test_labels = []
