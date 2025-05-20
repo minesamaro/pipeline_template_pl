@@ -116,6 +116,16 @@ def run_experiment_pipeline(config):
     setup.set_seed(seed_value=config.seed_value)
 
     n_datafolds = len(kfold_dataloaders['train'])
+    if 'hyperparameter_grid_based_execution' in config:
+        hyperparameters_dict = config.hyperparameter_grid_based_execution.hyperparameter_combination.used
+        hyperparameters = {'batch_size': hyperparameters_dict['data.dataloader.torch_dataloader_kwargs.batch_size'], \
+                          'learning_rate': hyperparameters_dict['model.pytorch_lightning_model.hyperparameters.optimiser.kwargs.lr']}
+        config_dict = (dict(config) | hyperparameters)
+    else:
+        config_dict = dict(config) \
+        | {"batch_size": config.data.dataloader.torch_dataloader_kwargs["batch_size"]} \
+        | {"learning_rate": config.model.pytorch_lightning_model.hyperparameters.optimiser.kwargs["lr"]}
+
     for datafold_id in range(1, n_datafolds + 1):
 
         # Initalize wandb
@@ -123,7 +133,7 @@ def run_experiment_pipeline(config):
             project=config.wandb.project_name,
             name=f"{config.wandb.name}_{config.experiment_execution.ids.experiment_id}"
                 f"_{config.experiment_execution.ids.experiment_version_id}_fold{datafold_id}",
-            config=dict(config),
+            config=config_dict,
             dir=config.experiment_execution.paths.experiment_version_dir_path,
             reinit=True
         )

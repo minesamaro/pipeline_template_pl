@@ -18,7 +18,7 @@ hydra:
   output_subdir: null
   run:
     dir: .
-seed_value: 900
+seed_value: 1
 wandb:
   project_name: "comparative_study_25_norm"
   entity: "nlst"
