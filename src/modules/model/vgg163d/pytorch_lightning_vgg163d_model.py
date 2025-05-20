@@ -202,7 +202,7 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
             ).item(),
             'test_auroc': auroc(
                 preds=predicted_labels[:, 0].float(),
-                target=labels.int(),
+                target=labels.squeeze().int(),
                 task="binary"
             ).item(),
             'test_precision': precision(
