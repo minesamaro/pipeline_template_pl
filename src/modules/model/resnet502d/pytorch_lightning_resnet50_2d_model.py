@@ -51,6 +51,13 @@ class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
         test_preds = torch.cat(test_preds, dim=0).to(self.device)
         test_binary_preds = torch.argmax(test_preds, dim=1, keepdim=True)
 
+        print(f"Test labels shape: {test_labels.shape}")
+        print(test_labels)
+        print(f"Test predictions shape: {test_preds.shape}")
+        print(test_preds)
+        print(f"Test binary predictions shape: {test_binary_preds.shape}")
+        print(test_binary_preds)
+
         # Compute test metrics (customize as needed)
         metrics_for_logging = {
             'test_accuracy': accuracy(
@@ -196,7 +203,7 @@ class PyTorchLightningResNet502dModel(pytorch_lightning.LightningModule):
 
         metrics_for_logging = {
             'test_accuracy': accuracy(
-                preds=predicted_labels,
+                preds=predicted_activated_labels,
                 target=labels,
                 task="binary"
             ).item(),
