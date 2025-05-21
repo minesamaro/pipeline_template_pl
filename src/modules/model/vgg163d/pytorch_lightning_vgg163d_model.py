@@ -5,8 +5,8 @@ import wandb
 
 from src.modules.model.vgg163d.vgg16_model \
     import VGG16_3DModel
-from src.modules.loss_functions.resnet50_loss_functions \
-    import ResNet50LossFunction
+from src.modules.loss_functions.ce_loss_functions \
+    import CELossFunction
 
 
 class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):

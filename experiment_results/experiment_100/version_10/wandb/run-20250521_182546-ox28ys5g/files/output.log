@@ -1,0 +1,32 @@
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\lightning_fabric\loggers\csv_logs.py:195: UserWarning: Experiment logs directory C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template/experiment_results/experiment_100\version_10 exists and is not empty. Previous log files in this directory will be deleted when the new ones are saved!
+  rank_zero_warn(
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\callbacks\model_checkpoint.py:617: UserWarning: Checkpoint directory C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template/experiment_results/experiment_100/version_10/datafold_1/models exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, val_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\call.py:53: UserWarning: Detected KeyboardInterrupt, attempting graceful shutdown...
+  rank_zero_warn("Detected KeyboardInterrupt, attempting graceful shutdown...")
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, test_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, test_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, test_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\scripts\run_experiment_pipeline.py", line 54, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\scripts\run_experiment_pipeline.py", line 167, in run_experiment_pipeline
+    model_pipeline.finalize()
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\model\model_pipeline.py", line 55, in finalize
+    self.delete_model_checkpoints()
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\model\model_pipeline.py", line 48, in delete_model_checkpoints
+    os.rmdir(
+OSError: [WinError 145] The directory is not empty: 'C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\pytorch_lightning_dl_pipeline_template/experiment_results/experiment_100/version_10/datafold_1/models'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

@@ -7,7 +7,6 @@ class VGG16Model(torch.nn.Module):
         super(VGG16Model, self).__init__()
         self.model = vgg16(weights=None)
         if config.dimension == 2.5:
-            print('HERE')
             self.model.features[0] = torch.nn.Conv2d(
                 in_channels=10, #TODO: Change this to make more customizable
                 out_channels=64,

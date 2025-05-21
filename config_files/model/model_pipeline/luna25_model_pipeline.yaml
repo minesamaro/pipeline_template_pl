@@ -13,7 +13,7 @@ callbacks:
     - filename: mod=${....model_id}-exp=X-ver=Y-dtf=Z-{epoch}-var=last_epoch
   model_early_stoppings:
     - monitor: val_auroc
-      patience: 15
+      patience: 50
       mode: max
       verbose: False
 enable_logging: True
