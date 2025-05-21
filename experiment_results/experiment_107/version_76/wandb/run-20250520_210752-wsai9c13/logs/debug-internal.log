@@ -1,0 +1,17 @@
+{"time":"2025-05-20T21:07:52.291599419+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_76/wandb/run-20250520_210752-wsai9c13/logs/debug-core.log"}
+{"time":"2025-05-20T21:07:52.588621979+01:00","level":"INFO","msg":"created new stream","id":"wsai9c13"}
+{"time":"2025-05-20T21:07:52.588676751+01:00","level":"INFO","msg":"stream: started","id":"wsai9c13"}
+{"time":"2025-05-20T21:07:52.588781633+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"wsai9c13"}
+{"time":"2025-05-20T21:07:52.588811581+01:00","level":"INFO","msg":"handler: started","stream_id":"wsai9c13"}
+{"time":"2025-05-20T21:07:52.588879988+01:00","level":"INFO","msg":"sender: started","stream_id":"wsai9c13"}
+{"time":"2025-05-20T21:07:52.836248031+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-20T21:22:38.386821706+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-05-20T21:29:23.934145494+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-20T21:29:23.934451082+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-20T21:29:24.705839438+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-20T21:29:24.937713451+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 45-45, summary, console lines 3-4","runtime_seconds":0.231572515}],"total_operations":1}}
+{"time":"2025-05-20T21:29:25.001356418+01:00","level":"INFO","msg":"stream: closing","id":"wsai9c13"}
+{"time":"2025-05-20T21:29:25.001387559+01:00","level":"INFO","msg":"handler: closed","stream_id":"wsai9c13"}
+{"time":"2025-05-20T21:29:25.001405299+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"wsai9c13"}
+{"time":"2025-05-20T21:29:25.001448941+01:00","level":"INFO","msg":"sender: closed","stream_id":"wsai9c13"}
+{"time":"2025-05-20T21:29:25.001796503+01:00","level":"INFO","msg":"stream: closed","id":"wsai9c13"}

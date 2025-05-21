@@ -5,7 +5,7 @@ defaults:
   - experiment_execution/ids: ids
   - experiment_execution/info: info
   - experiment_execution/paths: paths
-  - hyperparameter_grid_based_execution: false_hyperparameter_grid_based_execution # Change this if necessary
+  - hyperparameter_grid_based_execution: luna25_hyperparameter_grid_based_execution # Change this if necessary
   - model: model_resnet50
   - model/model_pipeline: luna25_model_pipeline # Change this if necessary
   - model/pytorch_lightning_model: nlst_pytorch_lightning_resnet502d
@@ -20,6 +20,6 @@ hydra:
     dir: .
 seed_value: 1
 wandb:
-  project_name: "comparative_study_2d_norm_resize"
+  project_name: "comparative_study_2d_norm_resize_fix_auc"
   entity: "nlst"
   name: "resnet50_2d"

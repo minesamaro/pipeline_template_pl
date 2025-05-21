@@ -1,0 +1,17 @@
+{"time":"2025-05-21T09:36:23.47543354+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_145/wandb/run-20250521_093623-u1qauaoi/logs/debug-core.log"}
+{"time":"2025-05-21T09:36:23.742073665+01:00","level":"INFO","msg":"created new stream","id":"u1qauaoi"}
+{"time":"2025-05-21T09:36:23.742146836+01:00","level":"INFO","msg":"stream: started","id":"u1qauaoi"}
+{"time":"2025-05-21T09:36:23.742185544+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"u1qauaoi"}
+{"time":"2025-05-21T09:36:23.742211756+01:00","level":"INFO","msg":"handler: started","stream_id":"u1qauaoi"}
+{"time":"2025-05-21T09:36:23.742249524+01:00","level":"INFO","msg":"sender: started","stream_id":"u1qauaoi"}
+{"time":"2025-05-21T09:36:23.927600313+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-21T09:59:54.429152371+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-05-21T10:10:54.231788588+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-21T10:10:54.232088722+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-21T10:10:55.064066145+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-21T10:10:55.23475611+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 58-58, summary, console lines 3-4","runtime_seconds":0.1704767}],"total_operations":1}}
+{"time":"2025-05-21T10:10:55.266619621+01:00","level":"INFO","msg":"stream: closing","id":"u1qauaoi"}
+{"time":"2025-05-21T10:10:55.26665273+01:00","level":"INFO","msg":"handler: closed","stream_id":"u1qauaoi"}
+{"time":"2025-05-21T10:10:55.266669222+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"u1qauaoi"}
+{"time":"2025-05-21T10:10:55.266759438+01:00","level":"INFO","msg":"sender: closed","stream_id":"u1qauaoi"}
+{"time":"2025-05-21T10:10:55.267349681+01:00","level":"INFO","msg":"stream: closed","id":"u1qauaoi"}

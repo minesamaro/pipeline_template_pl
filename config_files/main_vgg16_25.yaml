@@ -20,6 +20,6 @@ hydra:
     dir: .
 seed_value: 1
 wandb:
-  project_name: "comparative_study_25_norm_resize"
+  project_name: "comparative_study_25_norm_resize_fix_auc"
   entity: "nlst"
   name: "vgg16_25d"

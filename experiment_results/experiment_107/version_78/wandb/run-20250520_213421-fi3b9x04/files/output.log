@@ -1,0 +1,7 @@
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchmetrics/utilities/prints.py:43: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+...model pipeline for data fold 1 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_78/execution_datetimes.json

@@ -1,0 +1,1 @@
+{"_step":16,"test_recall":0,"_runtime":967.38124321,"_wandb":{"runtime":967},"train_loss":0.35525500774383545,"train_auroc":0.3547954559326172,"val_auroc":0.3906249701976776,"_timestamp":1.74780021373222e+09,"val_recall":0,"test_accuracy":0.746835470199585,"val_precision":0,"test_auroc":0.46864402294158936,"test_precision":0,"val_accuracy":0.75,"val_loss":0.37436074018478394}

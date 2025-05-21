@@ -20,7 +20,7 @@ hydra:
     dir: .
 seed_value: 1
 wandb:
-  project_name: "comparative_study_3d_norm"
+  project_name: "comparative_study_3d_norm_resize"
   entity: "nlst"
   name: "vgg16_3d"
 
