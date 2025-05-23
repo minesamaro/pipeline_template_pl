@@ -102,7 +102,11 @@ class NLSTPreprocessedKFoldDataLoader:
                             self.config.torch_dataloader_kwargs
                     )
                 )
-                
+                # print the label distribution of each subset_type
+                labels, counts = numpy.unique(self.data_splits[subset_type]['labels'][datafold_id], return_counts=True)
+                label_dist_str = ", ".join([f"{label}: {count}" for label, count in zip(labels, counts)])
+                print(f"[INFO] {subset_type.capitalize()} dataloader {datafold_id} label distribution: {label_dist_str}")
+
 
     def _set_data_splits(self, lung_metadataframe):
         if not self.config.number_of_k_folds: #TODO: Fix problem with K = 0
