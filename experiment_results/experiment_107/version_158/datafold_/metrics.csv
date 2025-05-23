@@ -1,0 +1,2 @@
+val_loss,val_accuracy,val_auroc,val_precision,val_recall,epoch,step
+0.37440890073776245,0.75,0.4531249701976776,0.0,0.0,0,35
