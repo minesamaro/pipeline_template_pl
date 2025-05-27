@@ -270,14 +270,26 @@ class NLSTPreprocessedDataLoader(Dataset):
             print(f"Label: {self.labels[data_index]}")
             raise e
 
-    def _get_data(self, data_index): #TODO: CHange this to DICOM load
-        if self.config.dimension == 2:
-            image = self._get_slice(data_index)
-        elif self.config.dimension == 3:
-            image = self._get_scan(data_index)
-        elif self.config.dimension == 2.5:
-            image = self._get_2_5(data_index)
-        
+    def _get_data(self, data_index):
+        if getattr(self.config, "random", False):  # If config.random exists and is True
+            if self.config.dimension == 2:
+                image = numpy.random.rand(512, 512).astype(numpy.float32)
+            elif self.config.dimension == 2.5:
+                image = numpy.random.rand(512, 512, 10).astype(numpy.float32)
+            elif self.config.dimension == 3:
+                image = numpy.random.rand(512, 512, 32).astype(numpy.float32)
+            else:
+                raise ValueError(f"[ERROR] Unknown dimension {self.config.dimension}")
+        else:
+            if self.config.dimension == 2:
+                image = self._get_slice(data_index)
+            elif self.config.dimension == 3:
+                image = self._get_scan(data_index)
+            elif self.config.dimension == 2.5:
+                image = self._get_2_5(data_index)
+            else:
+                raise ValueError(f"[ERROR] Unknown dimension {self.config.dimension}")
+             
         if image is None:
             raise ValueError(f"[ERROR] Image is None at index {data_index}. File info: {self.lung_metadataframe.loc[self.lung_metadataframe['path'] == self.file_names[data_index]]}")
 

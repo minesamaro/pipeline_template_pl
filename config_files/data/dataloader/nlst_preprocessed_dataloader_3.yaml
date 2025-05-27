@@ -33,3 +33,4 @@ resize: ${..resize} # True, False
 roi: lung # lung, whole
 resample: False
 resample_z: False
+random: True
