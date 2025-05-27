@@ -16,5 +16,5 @@ class ResNet503DModel(torch.nn.Module):
         if model_input.shape[1] != 3:
             model_input = model_input.repeat(1, 3, 1, 1, 1)
 
-        print(f"[DEBUG] Model input shape: {model_input.shape}")
+        # print(f"[DEBUG] Model input shape: {model_input.shape}")
         return self.model(model_input)

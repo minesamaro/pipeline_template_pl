@@ -51,8 +51,8 @@ class ModelPipeline:
         )
 
     def finalize(self):
-        if self.config.finalization.delete_model_checkpoints:
-            self.delete_model_checkpoints()
+#        if self.config.finalization.delete_model_checkpoints:
+#            self.delete_model_checkpoints()
         if self.config.finalization.save_used_data_file_names:
             self.save_used_data_file_names()
 

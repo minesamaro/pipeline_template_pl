@@ -1,0 +1,265 @@
+Initialization time: 2025-05-26 23:34:33
+wandb: Currently logged in as: maria-i-paiva (maria-i-paiva-inesc-tec) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/wandb/run-20250526_233453-wvczb7ws
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_25d_107_160_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc/runs/wvczb7ws
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/lightning_fabric/loggers/csv_logs.py:195: UserWarning: Experiment logs directory /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/datafold_ exists and is not empty. Previous log files in this directory will be deleted when the new ones are saved!
+  rank_zero_warn(
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:617: UserWarning: Checkpoint directory /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/datafold_1/models exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+
+**************************************************  Experiment 107 | Version 160 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 213, 1: 70
+[INFO] Validation dataloader 0 label distribution: 0: 24, 1: 8
+[INFO] Test dataloader 0 label distribution: 0: 59, 1: 20
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▂▅▂▄▄▂▅▆▆▂▃▂▅▆▃▅▆▇▅▁▁▄▄▆▅▂▄▁▄▅▅▆▇▆▅▇██▆▆
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▂▄▅▃▆▄▄▃▄▁█▇▅▂▅▄▄▂▄▆▆▄▅▄▄▁▃▃▄▂▂▂▇▆▁▄▂▂▃▃
+wandb:             train_loss ▅▃▄█▃▃▃▃▃▄▃▃▃▃▅▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▁▃▃▃▃▃▃▃
+wandb:           val_accuracy █████████████████████████████▁██████████
+wandb:              val_auroc ▄▁▃▂▂▂▆▃▅▇▆▆▅▅▅▆▆▆█▇▄▇▇▇▇▆▄▃▅▇▇██▆▇▅▅▄▄▅
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss ▇▇▇▇█▇▇███████████████▁███████▇▇█▇▇█████
+wandb:          val_precision ▁███████████████████████████████████████
+wandb:             val_recall ██▁█████████████████████████████████████
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74684
+wandb:             test_auroc 0.52203
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0.74684
+wandb:            test_recall 0.74684
+wandb:            train_auroc 0.43003
+wandb:             train_loss 0.6921
+wandb:           val_accuracy 0.75
+wandb:              val_auroc 0.50521
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 0.69354
+wandb:          val_precision 0.75
+wandb:             val_recall 0.75
+wandb: 
+wandb: 🚀 View run vgg16_25d_107_160_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc/runs/wvczb7ws
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/wandb/run-20250526_233453-wvczb7ws/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/wandb/run-20250527_024151-rpw2mzsr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_25d_107_160_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc/runs/rpw2mzsr
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/lightning_fabric/loggers/csv_logs.py:195: UserWarning: Experiment logs directory /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/datafold_ exists and is not empty. Previous log files in this directory will be deleted when the new ones are saved!
+  rank_zero_warn(
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:617: UserWarning: Checkpoint directory /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/datafold_1/models exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+...model pipeline for data fold 1 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/execution_datetimes.json
+
+**************************************************  Experiment 107 | Version 160 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 213, 1: 70
+[INFO] Validation dataloader 0 label distribution: 0: 24, 1: 8
+[INFO] Test dataloader 0 label distribution: 0: 59, 1: 20
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁████▇▃▁▁▅████▁███████████████▃██████▁█
+wandb:             test_auroc ▅█▆▁▆▇▃▃▅▅▇▆▅▃▃▄▆▆▆▆▃▂▇▅▇▇▇▇▄▆▆▅▆▆▇▁▇▅█▅
+wandb: test_balanced_accuracy ▆▃▃▃▃▃█▂▆▃▁▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▇▃▃▃▃▃▃▃
+wandb:         test_precision ▄▁███▇▃█▂▁▅████▁████████████████████████
+wandb:            test_recall ▄▁████▁▁▃▅████████████████████████▃███▁█
+wandb:            train_auroc ▂▆▄▄█▅▅▃▆▅▄▃▃▂▄▅▅▁▄▃▄█▄▅▆▃▂▂▃▂▃▆▄██▃▂▂▂▃
+wandb:             train_loss █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▅████▇▄▂▁▅▆████████████████████████████
+wandb:              val_auroc █▆▅▃▆▅▇▆███▁▂▃▄▇▁▂▂▇▆▇▃▄▆▇▇▇▇▁▇▇▇▇▇▄▅▄▅▃
+wandb:  val_balanced_accuracy ▃▄▃▃▃▃▁▅▃▄▃█▂▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb:               val_loss ▆▆▆▇█▅▁█▆▂▅▇▇▇▇▆▆▇▇▇▇▇█▇▇▆▇▇▇▇▆▇▆▆▃▆▅▁▄▇
+wandb:          val_precision ▁▁██████▁▁▆██████▁██████████████████████
+wandb:             val_recall ▁▅▁██▇▄▁▆█████▁██████████████████▅██████
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74684
+wandb:             test_auroc 0.51038
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0.74684
+wandb:            test_recall 0.74684
+wandb:            train_auroc 0.45205
+wandb:             train_loss 0.69449
+wandb:           val_accuracy 0.75
+wandb:              val_auroc 0.40495
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 0.69322
+wandb:          val_precision 0.75
+wandb:             val_recall 0.75
+wandb: 
+wandb: 🚀 View run vgg16_25d_107_160_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc/runs/rpw2mzsr
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/wandb/run-20250527_024151-rpw2mzsr/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/wandb/run-20250527_035243-z8qv421j
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_25d_107_160_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc/runs/z8qv421j
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/lightning_fabric/loggers/csv_logs.py:195: UserWarning: Experiment logs directory /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/datafold_ exists and is not empty. Previous log files in this directory will be deleted when the new ones are saved!
+  rank_zero_warn(
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:617: UserWarning: Checkpoint directory /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/datafold_1/models exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+...model pipeline for data fold 1 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/execution_datetimes.json
+
+**************************************************  Experiment 107 | Version 160 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 213, 1: 70
+[INFO] Validation dataloader 0 label distribution: 0: 24, 1: 8
+[INFO] Test dataloader 0 label distribution: 0: 59, 1: 20
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ██▁█████▃█▃▄▄▆▇▅▄▇▅▄▆▄▅▃▁▅▅▅▅▃▄▆▆▆▇▄▇▆▄▅
+wandb:             test_auroc ▆█▅▆▇▇▇▇█▇▇▇▅██▇▇▇▆▄▄▄▃▄▄▃▃▃▄▃▂▄▄▅▄▄▄▄▁▂
+wandb: test_balanced_accuracy ▆▆▆▆▆▆▆██▇▇██▇▆▆▆▅▇▄▄▂▃▃▂▄▆▂▂▁▄▅▅▇▆▄▃▂▂▃
+wandb:         test_precision ██████▃█▃▃▄▃▇▅▃▅▇▅▂▅▄▅▃▆▁▅▅▄▅▄▄▆▆▆█▇▅▄▅▅
+wandb:            test_recall ██▁███▃█▃▃▄▃▇▄▅▅▇▅▄▂▆▄▅▃▆▅▅▄▇▄▆▇█▄▇▆▅▄▅▅
+wandb:            train_auroc ▁▁▂▁▁▂▃▃▁▁▂▁▃▂▃▄▄▅▅▆▇█▆▆▆▇██████████████
+wandb:             train_loss █▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▆▆▆▅▄▃▃▆▄▃▂▂▂▃▁▁▁▂▂▁▁▁▁
+wandb:           val_accuracy █▁████▃█▃▅▂▅▅▆▅▅▇▅▆▄▆▅▃█▇▅▆▇▅▆▅▅▆▇▄▅▇▇▅▇
+wandb:              val_auroc ▅▇▃▃▅▇█▇▆▇▅▅▆▆▅▅▅▄▄▅▅▄▄▅▅▃▄▅▂▃▂▁▂▂▂▂▃▄▄▃
+wandb:  val_balanced_accuracy ▅▅▅▅▅▅▅▇▅▆▇█▇▇▄▄▆▅▆▃▆▅▄▄▇▆█▃▄▆▁▂▁▂▃▄▅▄▃▆
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▃▂▁▄▄▃▃▃▂▇█▃▃▄▄▃▄
+wandb:          val_precision ██▁████▃▃▃▆▅▅▆▅▆▅▆▆▆▇█▂▇▅▅▇▅▅▄▅▅▆▇▄▅▇▇▅▇
+wandb:             val_recall █████▂█▂▂▅▄▄▆▄▅▅▃▆▆▄▂▇▁▇▄▅▆▄▅▃▄▄▅▇▃▅▆▆▄▇
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.53165
+wandb:             test_auroc 0.35508
+wandb: test_balanced_accuracy 0.40551
+wandb:         test_precision 0.53165
+wandb:            test_recall 0.53165
+wandb:            train_auroc 1
+wandb:             train_loss 0.01489
+wandb:           val_accuracy 0.6875
+wandb:              val_auroc 0.44271
+wandb:  val_balanced_accuracy 0.54167
+wandb:               val_loss 4.20659
+wandb:          val_precision 0.6875
+wandb:             val_recall 0.6875
+wandb: 
+wandb: 🚀 View run vgg16_25d_107_160_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc/runs/z8qv421j
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/wandb/run-20250527_035243-z8qv421j/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/wandb/run-20250527_053058-msojecat
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_25d_107_160_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc/runs/msojecat
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/lightning_fabric/loggers/csv_logs.py:195: UserWarning: Experiment logs directory /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/datafold_ exists and is not empty. Previous log files in this directory will be deleted when the new ones are saved!
+  rank_zero_warn(
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:617: UserWarning: Checkpoint directory /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/datafold_1/models exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+...model pipeline for data fold 1 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/execution_datetimes.json
+
+**************************************************  Experiment 107 | Version 160 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 213, 1: 70
+[INFO] Validation dataloader 0 label distribution: 0: 24, 1: 8
+[INFO] Test dataloader 0 label distribution: 0: 59, 1: 20
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy █████▄▂▁▁█████████████████▁▁▂██▂▂▂▁███▄▃
+wandb:             test_auroc ▄▁▂▄▆▆▇▇▆▅▁▄▆▆█▄▃▃▃▃▅▅▆▅▇▇▆▇▇▇▆▆▅▄▆▆▆▇▇▇
+wandb: test_balanced_accuracy ▂▂▂▂▂▂▇▆▁▄▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▃▃▂▂▂▂▃▃▃▇█▆
+wandb:         test_precision ████▂▄▇▂▁████████████████▁▂██▄▂███▂▃▃▃▄▃
+wandb:            test_recall ███▂▄▁▁▁███████████████▁▁█▄▂▂▂▂████▃▄▄▄▃
+wandb:            train_auroc ▂▂▄▅▆▆▅▃▆▅▃▃▇▅▃▃▁▂▂▃▅▆▅▄▇▅▆▄▆▇▇▅▄██▇▆▆▅▆
+wandb:             train_loss ▄▃▃▃▃▃▃▃▃▃▃▃▃▃▄▃▃▃▃▃▃▃▃▃▃▃▃▃▃▂▃▃▃▃▃█▂▁▂▂
+wandb:           val_accuracy ███▄▃▁▁████████▁████████▂▂███▃▂▂███▅▅▆▆▅
+wandb:              val_auroc ▃▁▂▂▃▆▇▇▆▆▃▅▅█▇▂▂▃▂▃▅▅▇▆▇▆▇▇▇▄▄▇▇▇▇▆▇▇▇▇
+wandb:  val_balanced_accuracy ▁▁▁▁▁▂▅▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▃▃▁▁▇▆▃▃▁▁▁▇█▇
+wandb:               val_loss █▅▅▅▅▄▄▄▅▅▅▅▅▅▄▅▅▅▅▅▅▅▅▅▄▅▅▅▄▁▅▅▅▅▄▃▃▁▁▂
+wandb:          val_precision ███▂▂▁███████████████████▂▂▂▂█▅▃▂▂▂█▃▅▅▅
+wandb:             val_recall █████▁▅█▂▁▁██████████████▂▂██▅▂▂▂███▃▄▅▅
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.41772
+wandb:             test_auroc 0.54237
+wandb: test_balanced_accuracy 0.56059
+wandb:         test_precision 0.41772
+wandb:            test_recall 0.41772
+wandb:            train_auroc 0.55084
+wandb:             train_loss 0.67761
+wandb:           val_accuracy 0.53125
+wandb:              val_auroc 0.65625
+wandb:  val_balanced_accuracy 0.64583
+wandb:               val_loss 0.65841
+wandb:          val_precision 0.53125
+wandb:             val_recall 0.53125
+wandb: 
+wandb: 🚀 View run vgg16_25d_107_160_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc/runs/msojecat
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/wandb/run-20250527_053058-msojecat/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/wandb/run-20250527_082754-b1agl2vb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_25d_107_160_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_25_norm_resize_fix_auc/runs/b1agl2vb
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/lightning_fabric/loggers/csv_logs.py:195: UserWarning: Experiment logs directory /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/datafold_ exists and is not empty. Previous log files in this directory will be deleted when the new ones are saved!
+  rank_zero_warn(
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:617: UserWarning: Checkpoint directory /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/datafold_1/models exists and is not empty.
+  rank_zero_warn(f"Checkpoint directory {dirpath} exists and is not empty.")
+...model pipeline for data fold 1 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_160/execution_datetimes.json
+
+**************************************************  Experiment 107 | Version 160 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 213, 1: 70
+[INFO] Validation dataloader 0 label distribution: 0: 24, 1: 8
+[INFO] Test dataloader 0 label distribution: 0: 59, 1: 20
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 54, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 165, in run_experiment_pipeline
+    model_pipeline.train_model()
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/model_pipeline.py", line 68, in train_model
+    self.pytorch_lightning_trainer.fit(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 532, in fit
+    call._call_and_handle_interrupt(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 571, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)

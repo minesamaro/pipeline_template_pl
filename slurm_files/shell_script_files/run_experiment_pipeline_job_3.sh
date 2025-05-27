@@ -12,6 +12,7 @@ echo "Initialization time: $init_time"
 
 # Command-line to run the script for dataset generation.
 srun python3 ../../src/scripts/run_experiment_pipeline.py --config-name main_resnet50_3
+srun python3 ../../src/scripts/run_experiment_pipeline.py --config-name main_vgg16_3
 
 finish_time=$(date +%Y-%m-%d\ %H:%M:%S)
 echo "Finish time: $finish_time"

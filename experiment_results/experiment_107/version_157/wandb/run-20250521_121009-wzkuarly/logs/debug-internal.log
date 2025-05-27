@@ -1,7 +1,0 @@
-{"time":"2025-05-21T12:10:09.506942057+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_157/wandb/run-20250521_121009-wzkuarly/logs/debug-core.log"}
-{"time":"2025-05-21T12:10:09.838518668+01:00","level":"INFO","msg":"created new stream","id":"wzkuarly"}
-{"time":"2025-05-21T12:10:09.838588035+01:00","level":"INFO","msg":"stream: started","id":"wzkuarly"}
-{"time":"2025-05-21T12:10:09.838617001+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"wzkuarly"}
-{"time":"2025-05-21T12:10:09.838653266+01:00","level":"INFO","msg":"sender: started","stream_id":"wzkuarly"}
-{"time":"2025-05-21T12:10:09.838747392+01:00","level":"INFO","msg":"handler: started","stream_id":"wzkuarly"}
-{"time":"2025-05-21T12:10:10.075307104+01:00","level":"INFO","msg":"Starting system monitor"}

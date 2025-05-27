@@ -1,5 +1,0 @@
-
-Running model pipeline for data fold 1...
-Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
-...model pipeline for data fold 1 has run!
-Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_107/version_178/execution_datetimes.json
