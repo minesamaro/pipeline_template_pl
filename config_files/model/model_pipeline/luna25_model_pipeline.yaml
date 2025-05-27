@@ -16,7 +16,7 @@ callbacks:
       patience: 50
       mode: max
       verbose: False
-enable_logging: True
+enable_logging: False
 enable_model_early_stopping: True
 finalization:
   delete_model_checkpoints: True

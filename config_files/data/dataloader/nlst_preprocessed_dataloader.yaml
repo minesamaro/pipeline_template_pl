@@ -25,7 +25,7 @@ number_of_k_folds: 0
 seed_value: ${...seed_value}
 test_fraction_of_entire_dataset: 0.2
 torch_dataloader_kwargs:
-  batch_size: 32
+  batch_size: 256
   num_workers: 8
 validation_fraction_of_train_set: 0.1
 dimension: ${..dimension} # "2D, 2.5D, 3D
