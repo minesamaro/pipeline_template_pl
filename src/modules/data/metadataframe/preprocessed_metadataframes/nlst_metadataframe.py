@@ -60,6 +60,6 @@ class NLSTPreprocessedMetaDataFrame:
             path_or_buf="{}/protocol_{}".format(
                 experiment_execution_paths.preprocessed_data_dir_path,
                 self.config.data_preprocessing_protocol_number
-            ) + "/subset_tabular_info/experiment_metadataframe.csv",
+            ) + "/experiment_metadataframe.csv",
             index=False
         )

@@ -1,4 +1,4 @@
 dataset_name: NLST # LUNA25 or NLST
-data_preprocessing_protocol_number: 4
+data_preprocessing_protocol_number: 5
 dimension: 2
-resize: True
+resize: False

@@ -236,7 +236,6 @@ class NLSTPreprocessedDataLoader(Dataset):
             lambda x: numpy.transpose(x, axes=(1, 2, 0))
                 if x.ndim == 3 else x,
             torchvision.transforms.ToTensor(),
-            torchvision.transforms.Normalize(mean=0.5, std=0.5),
         ]) #TODO: Check this transformer
 
     def _transform(self, image):
@@ -244,12 +243,10 @@ class NLSTPreprocessedDataLoader(Dataset):
             image_transformer = torchvision.transforms.Compose([
                 lambda x: numpy.transpose(x, axes=(1, 2, 0)),
                 torchvision.transforms.ToTensor(),
-                torchvision.transforms.Normalize(mean=0.5, std=0.5),
             ])
         else:
             image_transformer = torchvision.transforms.Compose([
                 torchvision.transforms.ToTensor(),
-                torchvision.transforms.Normalize(mean=0.5, std=0.5),
             ])
         return image
 
@@ -271,6 +268,12 @@ class NLSTPreprocessedDataLoader(Dataset):
             raise e
 
     def _get_data(self, data_index):
+        dataframe_row = self.lung_metadataframe.loc[
+            self.lung_metadataframe['path'] == self.file_names[data_index]
+        ]
+        pid = dataframe_row['pid'].values[0]
+        study_yr = dataframe_row['study_yr'].values[0]
+
         if getattr(self.config, "random", False):  # If config.random exists and is True
             if self.config.dimension == 2:
                 image = numpy.random.rand(512, 512).astype(numpy.float32)
@@ -282,11 +285,14 @@ class NLSTPreprocessedDataLoader(Dataset):
                 raise ValueError(f"[ERROR] Unknown dimension {self.config.dimension}")
         else:
             if self.config.dimension == 2:
-                image = self._get_slice(data_index)
+                data_path = '/nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/preprocessed_data/protocol_5/2d'
+                image = self._get_slice(data_index, data_path, pid, study_yr)
             elif self.config.dimension == 3:
-                image = self._get_scan(data_index)
+                data_path = '/nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/preprocessed_data/protocol_5/3d'
+                image = self._get_scan(data_index, data_path, pid, study_yr)
             elif self.config.dimension == 2.5:
-                image = self._get_2_5(data_index)
+                data_path = '/nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/preprocessed_data/protocol_5/25d'
+                image = self._get_2_5(data_index, data_path, pid, study_yr)
             else:
                 raise ValueError(f"[ERROR] Unknown dimension {self.config.dimension}")
              
@@ -302,6 +308,7 @@ class NLSTPreprocessedDataLoader(Dataset):
                 / (self.augmented_to_original_data_ratio + 1)
         ) and self.subset_type == "train":
             image = self.data_augmenter(image=image) #TODO: Figure this out - Change
+        
         image = self.image_transformer(image)
         data = dict(image=image)
 
@@ -322,44 +329,14 @@ class NLSTPreprocessedDataLoader(Dataset):
 
         return data
     
-    def _get_slice(self, data_index):
+    def _get_slice(self, data_index, data_path, pid, study_yr):
         try:
-            # Load the DICOM file
-            dicom_file_path = self.file_names[data_index]
-            
-            # Go to the metadataframe and get the slice number of the path == dicom_file_path
-            slice_number = self.lung_metadataframe.loc[
-                self.lung_metadataframe['path'] == dicom_file_path,
-                'sct_slice_num'
-            ].values[0]
-            
-            # List CT slices files
-            ct_dcms = os.listdir(dicom_file_path)
-
-            # List the DICOM slice files that are read with pydicom.read_file()
-            slices = [pydicom.dcmread(os.path.join(dicom_file_path, dcm)) for dcm in ct_dcms]
-
-            # Order list of slices in an ascendant way by the position z of the slice
-            slices.sort(key = lambda x: float(x.InstanceNumber))
-            image = numpy.stack([s.pixel_array for s in slices])
-            image = image.astype(numpy.int16)
-            image[image == -2000] = 0
-                
-            intercept = slices[0].RescaleIntercept
-            slope = slices[0].RescaleSlope
-
-            if slope != 1:
-                image = slope * image.astype(numpy.float64)
-                image = image.astype(numpy.int16)
-                        
-            image += numpy.int16(intercept)
-            dicom_image = numpy.array(image, dtype=numpy.int16)
-
-            # Extract the slice from the DICOM image
-            slice_image = dicom_image[slice_number - 1]
-
-            # Normalize the slice
-            slice_image = self._normalize(slice_image)
+            slice_image = numpy.load(
+                os.path.join(
+                    data_path,
+                    f"{pid}_{study_yr}.npy"
+                )
+            )
 
             if self.config.resize:
                 slice_image = numpy.resize(slice_image, (224, 224))
@@ -368,95 +345,44 @@ class NLSTPreprocessedDataLoader(Dataset):
         except Exception as e:
             print(f"Error loading slice {data_index}: {e}")
             print(f"File path: {self.file_names[data_index]}")
-            print(f"Slice number: {slice_number}")
-            print(f"Image shape: {dicom_image.shape}")
             return None
     
 
-    def _get_scan(self, data_index):
+    def _get_scan(self, data_index, data_path, pid, study_yr):
         if self.config.resample_z:
             dicom_image = numpy.load() #TODO: Insert path to the numpy file
         else:
-            # Load the DICOM file
-            dicom_file_path = self.file_names[data_index]
-            
-            # List CT slices files
-            ct_dcms = os.listdir(dicom_file_path)
+            dicom_image = numpy.load(
+                os.path.join(
+                    data_path,
+                    f"{pid}_{study_yr}.npy"
+                )
+            )
 
-            # List the DICOM slice files that are read with pydicom.read_file()
-            slices = [pydicom.dcmread(os.path.join(dicom_file_path, dcm)) for dcm in ct_dcms]
-
-            # Order list of slices in an ascendant way by the position z of the slice
-            slices.sort(key = lambda x: float(x.ImagePositionPatient[2]))
-
-            # keep only the 10 middle slices
             n_slices = 32
-            slices = slices[len(slices) // 2 - n_slices // 2: len(slices) // 2 + n_slices // 2]
 
-            image = numpy.stack([s.pixel_array for s in slices])
-            image = image.astype(numpy.int16)
-            image[image == -2000] = 0
-                
-            intercept = slices[0].RescaleIntercept
-            slope = slices[0].RescaleSlope
+            # Compute start and end slice indices
+            center = dicom_image.shape[0] // 2
+            start = max(center - n_slices // 2, 0)
+            end = min(center + n_slices // 2, dicom_image.shape[0])
 
-            if slope != 1:
-                image = slope * image.astype(numpy.float64)
-                image = image.astype(numpy.int16)
-                        
-            image += numpy.int16(intercept)
-            # Normalization
-            image = self._normalize(image)
-            
-            dicom_image = numpy.array(image, dtype=numpy.int16)
+            # Extract the central volume
+            dicom_image = dicom_image[start:end, :, :]
 
             if self.config.resize:
                 dicom_image = numpy.resize(dicom_image, (dicom_image.shape[0], 224, 224))
 
         return dicom_image
     
-    def _get_2_5(self, data_index):
-        if 'n_slices_2_5' in self.config:
-            n_slices = self.config.n_slices_2_5
-        else:
-            n_slices = 10
+    def _get_2_5(self, data_index, data_path, pid, study_yr):
+        # if different n_slices, read from 3D and change the number TODO
         
-
-        # Load the DICOM file
-        dicom_file_path = self.file_names[data_index]
-
-        # Go to the metadataframe and get the slice number of the path == dicom_file_path
-        slice_number = self.lung_metadataframe.loc[
-                self.lung_metadataframe['path'] == dicom_file_path,
-                'sct_slice_num'
-            ].values[0]
-        
-        # List CT slices files
-        ct_dcms = os.listdir(dicom_file_path)
-
-        # List the DICOM slice files that are read with pydicom.read_file()
-        slices = [pydicom.dcmread(os.path.join(dicom_file_path, dcm)) for dcm in ct_dcms]
-
-        # Order list of slices in an ascendant way by the position z of the slice
-        slices.sort(key = lambda x: float(x.ImagePositionPatient[2]))
-        image = numpy.stack([s.pixel_array for s in slices])
-        image = image.astype(numpy.int16)
-        image[image == -2000] = 0
-            
-        intercept = slices[0].RescaleIntercept
-        slope = slices[0].RescaleSlope
-
-        if slope != 1:
-            image = slope * image.astype(numpy.float64)
-            image = image.astype(numpy.int16)
-                    
-        image += numpy.int16(intercept)
-        dicom_image = numpy.array(image, dtype=numpy.int16)
-
-        dicom_image = dicom_image[slice_number - n_slices // 2: slice_number + n_slices // 2]
-
-        # Normalize the slice
-        dicom_image = self._normalize(dicom_image)
+        slice_image = numpy.load(
+                os.path.join(
+                    data_path,
+                    f"{pid}_{study_yr}.npy"
+                )
+            )
 
         if self.config.resize:
             dicom_image = numpy.resize(dicom_image, (dicom_image.shape[0], 224, 224))
@@ -471,8 +397,3 @@ class NLSTPreprocessedDataLoader(Dataset):
 
         return labels
     
-    def _normalize(self, scan, minimum=-1000, maximum=400):
-        scan = scan.astype(numpy.float32)  # ensure float
-        scan = (scan - minimum) / (maximum - minimum)
-        scan = numpy.clip(scan, 0, 1)      # clip values between 0 and 1
-        return scan
