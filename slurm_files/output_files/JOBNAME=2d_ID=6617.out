@@ -1,0 +1,11 @@
+Initialization time: 2025-05-27 12:20:44
+Cannot find primary config 'main_resnet50_3d'. Check that it's in your config search path.
+
+Config search path:
+	provider=hydra, path=pkg://hydra.conf
+	provider=main, path=file:///nas-ctm01/homes/mipaiva/pipeline_template_pl/config_files
+	provider=schema, path=structured://
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+srun: error: 02.ctm-deep-07: task 0: Exited with exit code 1
+Finish time: 2025-05-27 12:20:53
