@@ -1,0 +1,57 @@
+Initialization time: 2025-05-27 15:24:33
+wandb: Currently logged in as: maria-i-paiva (maria-i-paiva-inesc-tec) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_110/version_1/wandb/run-20250527_152444-h9to6luw
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet50_2d_110_1_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_2d_norm_resize_fix_auc
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_2d_norm_resize_fix_auc/runs/h9to6luw
+
+**************************************************  Experiment 110 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 213, 1: 70
+[INFO] Validation dataloader 0 label distribution: 0: 24, 1: 8
+[INFO] Test dataloader 0 label distribution: 0: 59, 1: 20
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁█▁█▁█▁██▁█▁█▁████▂███████▁█▁█▄███▁▁█▁▁█
+wandb:             test_auroc ▃▂▃▃▂▁▂▂▁▂▃▃▅▆▆▅▆▆▆▆▅▆▆▇▇█▇▆▆▅▅▄▅▄▅▅▃▄▄▄
+wandb: test_balanced_accuracy ▃▃▃▁▃▃▃▃▃▃▃▃▃▃▃▂▃▃▃▃▃▃▃▃▃▃▃▂▃▃▂▇▅▃▃▃▃▃█▃
+wandb:         test_precision ▁▁▄▁█████▁▁█▁███▁██▃████▁███▇▁▇████▇█▁██
+wandb:            test_recall ▁▁█▁█▁██▁███▁████▂██▂▁███▁█▁██▇▄▁▇██▁▁▁▁
+wandb:            train_auroc ▃▅▃▁▄▂▃▄▆▅▃▁▄▄▄▄▄█▃▄▅▅▂▃▄▃▁▆▃▄▅▅▆▃▂▇▅▅▂▂
+wandb:             train_loss ▆▅█▁▂▁▂▁▁▂▂▂▂▂▂▁▂▁▁▂▁▁▂▁▁▁▂▂▂▁▁▁▂▂▁▁▄▂▆▁
+wandb:           val_accuracy █▁▁▄█▁███▁████▂█████████▁█▁██▇▁▆███▁▂▁▆▁
+wandb:              val_auroc ▆▆▆▇▆▆▃▃▃▄▆███▇▆▅▅▇▇▅▃▂▁▃▅█▆▆▆▄▄▄▄▇▆▆▇▅▅
+wandb:  val_balanced_accuracy ▇▇▄▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇█▇▇▇▇▇▇▇▁▇▇▇
+wandb:               val_loss █▄▅▁▁▂▂▂▁▁▁▁▁▁▂▁▁▂▁▂▁▃▂▁▁▁▁▁▁▁▁▂▁▁▂▂▁▁▁▁
+wandb:          val_precision ▂██▂▄█▂█▂███▂███▂███▁█▂███▂███▇▃█▇████▆▂
+wandb:             val_recall ▁█▁█▁█▁█▁███▁█▁█▂██▁█▂▁███▇▂█▆█▁█▁▂▆█▁██
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74684
+wandb:             test_auroc 0.51102
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0.74684
+wandb:            test_recall 0.74684
+wandb:            train_auroc 0.42213
+wandb:             train_loss 0.7012
+wandb:           val_accuracy 0.75
+wandb:              val_auroc 0.46875
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 0.70088
+wandb:          val_precision 0.75
+wandb:             val_recall 0.75
+wandb: 
+wandb: 🚀 View run resnet50_2d_110_1_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_2d_norm_resize_fix_auc/runs/h9to6luw
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_2d_norm_resize_fix_auc
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_110/version_1/wandb/run-20250527_152444-h9to6luw/logs
+...model pipeline for data fold 1 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_110/version_1/execution_datetimes.json
+Finish time: 2025-05-27 15:34:30

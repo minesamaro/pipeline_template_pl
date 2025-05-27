@@ -1,0 +1,24 @@
+Initialization time: 2025-05-27 15:40:22
+wandb: Currently logged in as: maria-i-paiva (maria-i-paiva-inesc-tec) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_113/version_1/wandb/run-20250527_154032-xeif2j6e
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet50_3d_113_1_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_3d_norm_resize
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_3d_norm_resize/runs/xeif2j6e
+
+**************************************************  Experiment 113 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 216, 1: 72
+[INFO] Validation dataloader 0 label distribution: 0: 24, 1: 8
+[INFO] Test dataloader 0 label distribution: 0: 60, 1: 20
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchmetrics/utilities/prints.py:43: UserWarning: No negative samples in targets, false positive value should be meaningless. Returning zero tensor in false positive score
+  warnings.warn(*args, **kwargs)
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchmetrics/utilities/prints.py:43: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/sklearn/metrics/_classification.py:2524: UserWarning: y_pred contains classes not in y_true
+  warnings.warn("y_pred contains classes not in y_true")

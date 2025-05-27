@@ -1,0 +1,80 @@
+Initialization time: 2025-05-27 15:38:14
+wandb: Currently logged in as: maria-i-paiva (maria-i-paiva-inesc-tec) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_112/version_1/wandb/run-20250527_153824-srq85d08
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet50_3d_112_1_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_3d_norm_resize
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_3d_norm_resize/runs/srq85d08
+
+**************************************************  Experiment 112 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 216, 1: 72
+[INFO] Validation dataloader 0 label distribution: 0: 24, 1: 8
+[INFO] Test dataloader 0 label distribution: 0: 60, 1: 20
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 59, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 165, in run_experiment_pipeline
+    model_pipeline.train_model()
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/model_pipeline.py", line 68, in train_model
+    self.pytorch_lightning_trainer.fit(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 532, in fit
+    call._call_and_handle_interrupt(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 571, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 980, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1021, in _run_stage
+    self._run_sanity_check()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1050, in _run_sanity_check
+    val_loop.run()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/utilities.py", line 181, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 115, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 376, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_kwargs.values())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 294, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 393, in validation_step
+    return self.model.validation_step(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/resnet503d/pytorch_lightning_resnet50_3d_model.py", line 136, in validation_step
+    loss = self.criterion(
+           ^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/loss_functions/ce_loss_functions.py", line 18, in forward
+    loss = loss(
+           ^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/loss.py", line 1174, in forward
+    return F.cross_entropy(input, target, weight=self.weight,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/functional.py", line 3029, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Expected input batch_size (1) to match target batch_size (0).
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mresnet50_3d_112_1_fold1[0m at: [34mhttps://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_3d_norm_resize/runs/srq85d08[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../experiment_results/experiment_112/version_1/wandb/run-20250527_153824-srq85d08/logs[0m
+srun: error: 01.ctm-deep-07: task 0: Exited with exit code 1
+Finish time: 2025-05-27 15:38:31

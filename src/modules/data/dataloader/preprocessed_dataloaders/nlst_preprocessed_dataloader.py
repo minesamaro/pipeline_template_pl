@@ -275,7 +275,7 @@ class NLSTPreprocessedDataLoader(Dataset):
             if self.config.dimension == 2:
                 image = numpy.random.rand(512, 512).astype(numpy.float32)
             elif self.config.dimension == 2.5:
-                image = numpy.random.rand(512, 512, 10).astype(numpy.float32)
+                image = numpy.random.rand(10, 512, 512).astype(numpy.float32)
             elif self.config.dimension == 3:
                 image = numpy.random.rand(512, 512, 32).astype(numpy.float32)
             else:
