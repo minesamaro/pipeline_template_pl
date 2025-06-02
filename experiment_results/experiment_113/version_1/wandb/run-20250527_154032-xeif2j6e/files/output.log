@@ -1,9 +1,0 @@
-
-Running model pipeline for data fold 1...
-Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
-/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchmetrics/utilities/prints.py:43: UserWarning: No negative samples in targets, false positive value should be meaningless. Returning zero tensor in false positive score
-  warnings.warn(*args, **kwargs)
-/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchmetrics/utilities/prints.py:43: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
-  warnings.warn(*args, **kwargs)
-/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/sklearn/metrics/_classification.py:2524: UserWarning: y_pred contains classes not in y_true
-  warnings.warn("y_pred contains classes not in y_true")

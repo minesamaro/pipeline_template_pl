@@ -377,7 +377,7 @@ class NLSTPreprocessedDataLoader(Dataset):
     def _get_2_5(self, data_index, data_path, pid, study_yr):
         # if different n_slices, read from 3D and change the number TODO
         
-        slice_image = numpy.load(
+        dicom_image = numpy.load(
                 os.path.join(
                     data_path,
                     f"{pid}_{study_yr}.npy"

@@ -1,0 +1,96 @@
+Initialization time: 2025-05-27 23:35:47
+wandb: Currently logged in as: maria-i-paiva (maria-i-paiva-inesc-tec) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_119/version_1/wandb/run-20250527_233557-xpit9kxp
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet50_3d_119_1_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_3d_norm_resize
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/comparative_study_3d_norm_resize/runs/xpit9kxp
+
+**************************************************  Experiment 119 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 216, 1: 72
+[INFO] Validation dataloader 0 label distribution: 0: 24, 1: 8
+[INFO] Test dataloader 0 label distribution: 0: 60, 1: 20
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchmetrics/utilities/prints.py:43: UserWarning: No negative samples in targets, false positive value should be meaningless. Returning zero tensor in false positive score
+  warnings.warn(*args, **kwargs)
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchmetrics/utilities/prints.py:43: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/sklearn/metrics/_classification.py:407: UserWarning: A single label was found in 'y_true' and 'y_pred'. For the confusion matrix to have the correct shape, use the 'labels' parameter to pass all known labels.
+  warnings.warn(
+srun: got SIGCONT
+slurmstepd-01.ctm-deep-10: error: *** JOB 6895 ON 01.ctm-deep-10 CANCELLED AT 2025-05-27T23:50:54 ***
+srun: forcing job termination
+slurmstepd-01.ctm-deep-10: error: *** STEP 6895.0 ON 01.ctm-deep-10 CANCELLED AT 2025-05-27T23:50:54 ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 59, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 165, in run_experiment_pipeline
+    model_pipeline.train_model()
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/model_pipeline.py", line 68, in train_model
+    self.pytorch_lightning_trainer.fit(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 532, in fit
+    call._call_and_handle_interrupt(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 571, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 980, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1023, in _run_stage
+    self.fit_loop.run()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 203, in run
+    self.on_advance_end()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 370, in on_advance_end
+    call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 195, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/callbacks/model_checkpoint.py", line 303, in on_train_epoch_end
+    self._save_topk_checkpoint(trainer, monitor_candidates)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/callbacks/model_checkpoint.py", line 362, in _save_topk_checkpoint
+    self._save_none_monitor_checkpoint(trainer, monitor_candidates)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/callbacks/model_checkpoint.py", line 673, in _save_none_monitor_checkpoint
+    self._save_checkpoint(trainer, filepath)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/callbacks/model_checkpoint.py", line 365, in _save_checkpoint
+    trainer.save_checkpoint(filepath, self.save_weights_only)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1316, in save_checkpoint
+    self._checkpoint_connector.save_checkpoint(filepath, weights_only=weights_only, storage_options=storage_options)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/checkpoint_connector.py", line 507, in save_checkpoint
+    self.trainer.strategy.save_checkpoint(_checkpoint, filepath, storage_options=storage_options)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 466, in save_checkpoint
+    self.checkpoint_io.save_checkpoint(checkpoint, filepath, storage_options=storage_options)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/lightning_fabric/plugins/io/torch_io.py", line 59, in save_checkpoint
+    _atomic_save(checkpoint, path)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/lightning_fabric/utilities/cloud_io.py", line 74, in _atomic_save
+    f.write(bytesbuffer.getvalue())
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/fsspec/implementations/local.py", line 432, in write
+    return self.f.write(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 3985415) is killed by signal: Terminated. 
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Exception ignored in atexit callback: <function _start_and_connect_service.<locals>.teardown_atexit at 0x725daa808cc0>
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/service_connection.py", line 94, in teardown_atexit
+    conn.teardown(hooks.exit_code)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/service_connection.py", line 228, in teardown
+    self._client.send_server_request(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+srun: error: 01.ctm-deep-10: task 0: Exited with exit code 1

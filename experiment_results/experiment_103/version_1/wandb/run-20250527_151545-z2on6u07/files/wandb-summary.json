@@ -1,1 +1,0 @@
-{"val_auroc":0.4635416865348816,"val_balanced_accuracy":0.5,"_wandb":{"runtime":18},"val_accuracy":0.25,"val_loss":1.3190587759017944,"val_precision":0.25,"val_recall":0.25,"_timestamp":1.7483553578045967e+09,"_runtime":18.97721691,"_step":0}
