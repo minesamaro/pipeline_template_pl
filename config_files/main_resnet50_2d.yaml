@@ -18,8 +18,8 @@ hydra:
   output_subdir: null
   run:
     dir: .
-seed_value: 1
+seed_value: 22
 wandb:
-  project_name: "comparative_study_2d_norm_resize_fix_auc"
+  project_name: "cs_2d_roi_whole_slice"
   entity: "nlst"
   name: "resnet50_2d"

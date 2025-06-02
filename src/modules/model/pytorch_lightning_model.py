@@ -8,6 +8,8 @@ from src.modules.model.resnet503d.pytorch_lightning_resnet50_3d_model \
     import PyTorchLightningResNet503dModel
 from src.modules.model.vgg163d.pytorch_lightning_vgg163d_model \
     import PyTorchLightningVGG163dModel
+from src.modules.model.resnet182d.pytorch_lightning_resnet18_2d_model \
+    import PyTorchLightningResNet182dModel
 
 class PyTorchLightningModel:
     def __new__(cls, config, experiment_execution_paths, test_dataloader=None):
@@ -18,6 +20,12 @@ class PyTorchLightningModel:
             )
         elif config.model_name == "ResNet502d":
             return PyTorchLightningResNet502dModel(
+                config=config.hyperparameters,
+                experiment_execution_paths=experiment_execution_paths,
+                test_dataloader=test_dataloader
+            )
+        elif config.model_name == "ResNet182d":
+            return PyTorchLightningResNet182dModel(
                 config=config.hyperparameters,
                 experiment_execution_paths=experiment_execution_paths,
                 test_dataloader=test_dataloader
