@@ -9,15 +9,23 @@ class ResNet50LossFunction(torch.nn.Module):
         self.config = config
 
         self.weights = self._get_label_weights(experiment_execution_paths)
+        self.weights = self.weights[0] / self.weights[1]
+        print(f"Label weights: {self.weights}")
 
     def forward(self, logits: torch.Tensor, targets: torch.Tensor):
+        #loss = binary_cross_entropy_with_logits(
+        #    input=logits,
+        #    target=torch.nn.functional.one_hot(
+        #        targets.squeeze().long(),
+        #        num_classes=2
+        #    ).float(),
+        #    weight=self.weights
+        #)
+        
         loss = binary_cross_entropy_with_logits(
             input=logits,
-            target=torch.nn.functional.one_hot(
-                targets.squeeze().long(),
-                num_classes=2
-            ).float(),
-            weight=self.weights
+            target=targets,
+            weight=self.weights.to(logits.device)
         )
         return loss
 
