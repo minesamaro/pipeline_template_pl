@@ -90,8 +90,6 @@ class PyTorchLightningResNet182dModel(pytorch_lightning.LightningModule):
 
         model_output = self.model(data['image'].to(self.device))
         activated_labels = torch.sigmoid(model_output)
-        print(f'Logits: {model_output}')
-        print(f'Labels: {labels}')
         loss = self.criterion(
             logits=model_output,
             targets=labels
@@ -130,8 +128,6 @@ class PyTorchLightningResNet182dModel(pytorch_lightning.LightningModule):
 
         model_output = self.model(data['image'].to(self.device))
         activated_labels = torch.sigmoid(model_output)
-        print(f'Logits: {model_output}')
-        print(f'Labels: {labels}')
         loss = self.criterion(
             logits=model_output,
             targets=labels

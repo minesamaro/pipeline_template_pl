@@ -24,7 +24,7 @@ finalization:
 pytorch_lightning_model: ${..pytorch_lightning_model}
 pytorch_lightning_trainer_kwargs:
   accelerator: gpu
-  enable_checkpointing: True
+  enable_checkpointing: False # Saves or doesn't save checkpoints
   enable_model_summary: False
   enable_progress_bar: False
   log_every_n_steps: 1
