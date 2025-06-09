@@ -16,7 +16,7 @@ class VGG16Model(torch.nn.Module):
             )
         self.model.classifier[6] = torch.nn.Linear(
             in_features=self.model.classifier[6].in_features,
-            out_features=config.number_of_classes
+            out_features=1
         )
 
     def forward(self, model_input):

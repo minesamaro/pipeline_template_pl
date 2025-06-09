@@ -78,7 +78,7 @@ class PyTorchLightningResNet182dModel(pytorch_lightning.LightningModule):
         test_binary_preds = (test_preds > 0.5).int()
 
         # Print imbalance information
-        self.print_inbalance(test_binary_preds, test_labels, stage_name="Test Set")
+        #self.print_inbalance(test_binary_preds, test_labels, stage_name="Test Set")
 
 
         # Compute test metrics (customize as needed)
@@ -170,7 +170,7 @@ class PyTorchLightningResNet182dModel(pytorch_lightning.LightningModule):
         predicted_activated_labels = (predicted_labels > 0.5).int()
 
         # Print imbalance information
-        self.print_inbalance(predicted_activated_labels, labels, stage_name="Validation Set")
+        #self.print_inbalance(predicted_activated_labels, labels, stage_name="Validation Set")
 
         metrics_for_logging = {
             'val_loss': (sum(self.val_weighted_losses) / labels.shape[0]).item(),
@@ -225,7 +225,7 @@ class PyTorchLightningResNet182dModel(pytorch_lightning.LightningModule):
         predicted_activated_labels = (predicted_labels > 0.5).int()
 
         # Print imbalance information
-        self.print_inbalance(predicted_activated_labels, labels, stage_name="Test Set")
+        #self.print_inbalance(predicted_activated_labels, labels, stage_name="Test Set")
 
         metrics_for_logging = {
             'test_accuracy': accuracy(

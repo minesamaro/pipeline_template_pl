@@ -18,7 +18,7 @@ class ResNet50Model(torch.nn.Module):
             )
         self.model.fc = torch.nn.Linear(
             self.model.fc.in_features,
-            config.number_of_classes
+            1
         )
 
     def forward(self, model_input):

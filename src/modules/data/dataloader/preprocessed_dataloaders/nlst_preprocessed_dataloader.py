@@ -109,7 +109,7 @@ class NLSTPreprocessedKFoldDataLoader:
 
 
     def _set_data_splits(self, lung_metadataframe):
-        if not self.config.number_of_k_folds: #TODO: Fix problem with K = 0
+        if not self.config.number_of_k_folds:
             train_and_validation_file_name_column, test_file_name_column = \
                 train_test_split(
                     lung_metadataframe,
@@ -236,19 +236,7 @@ class NLSTPreprocessedDataLoader(Dataset):
             lambda x: numpy.transpose(x, axes=(1, 2, 0))
                 if x.ndim == 3 else x,
             torchvision.transforms.ToTensor(),
-        ]) #TODO: Check this transformer
-
-    def _transform(self, image):
-        if image.ndim == 3:
-            image_transformer = torchvision.transforms.Compose([
-                lambda x: numpy.transpose(x, axes=(1, 2, 0)),
-                torchvision.transforms.ToTensor(),
-            ])
-        else:
-            image_transformer = torchvision.transforms.Compose([
-                torchvision.transforms.ToTensor(),
-            ])
-        return image
+        ])
 
     def __len__(self):
         return len(self.file_names)
