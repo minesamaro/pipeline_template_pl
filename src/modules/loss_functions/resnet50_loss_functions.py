@@ -9,7 +9,6 @@ class ResNet50LossFunction(torch.nn.Module):
         self.config = config
 
         self.weights = self._get_label_weights(experiment_execution_paths)
-        self.weights = self.weights[0] / self.weights[1]
         print(f"Label weights: {self.weights}")
 
     def forward(self, logits: torch.Tensor, targets: torch.Tensor):
@@ -40,9 +39,9 @@ class ResNet50LossFunction(torch.nn.Module):
 
             label_counts = \
                 lung_nodule_metadataframe['label'].value_counts().sort_index()
-            label_weights = torch.tensor(
-                (label_counts.min() / label_counts).tolist()
-            ).to(self.config.device)
+            pos_weight = label_counts[0] / label_counts[1]
+            return torch.tensor([pos_weight]).to(self.config.device)
+        
         else:
             label_weights = torch.tensor([1.0, 1.0]).to(self.config.device)
         return label_weights
