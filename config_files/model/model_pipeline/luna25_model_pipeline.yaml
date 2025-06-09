@@ -20,7 +20,7 @@ enable_logging: False
 enable_model_early_stopping: True
 finalization:
   delete_model_checkpoints: True
-  save_used_data_file_names: True
+  save_used_data_file_names: False
 pytorch_lightning_model: ${..pytorch_lightning_model}
 pytorch_lightning_trainer_kwargs:
   accelerator: gpu

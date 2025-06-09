@@ -1,0 +1,2580 @@
+Initialization time: 2025-06-09 13:23:23
+wandb: Currently logged in as: maria-i-paiva (maria-i-paiva-inesc-tec) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_3/version_1/wandb/run-20250609_132557-unjkeon4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet18_2d_3_1_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass/runs/unjkeon4
+
+**************************************************  Experiment 3 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 0, 1s = 27
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 1 (minority class). It is ignoring the majority class!
+Stage: Test Set
+Predicted class distribution: 0s = 0, 1s = 132
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 1 (minority class). It is ignoring the majority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 1
+Actual label distribution:    0s = 99, 1s = 33
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 132, 1s = 0
+Actual label distribution:    0s = 99, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁███████████████████████████████████████
+wandb:             test_auroc ▁██▇▆▅▅▅▄▄▄▄▄▄▄▄▄▄▄▅▅▆▅▆▅▅▆▄▆▄▅▅▅▅▅▆▆▆▆▃
+wandb: test_balanced_accuracy ███████████████████████████████████████▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▂▁▂▂▂▅▃▂▄▅▅▄▄▅▅▅▄▄▅▅▅▅▅▅▇▆▆▆▇▆▆▆▅▇▆▇██▇▅
+wandb:             train_loss █▆▃▃▃▃▂▂▂▂▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▂
+wandb:           val_accuracy ██████████████████████████████████████▁█
+wandb:              val_auroc ▅▁▄▅▅▇▇▇▇▇▆▆▆▇█▇▇▇▇█▇█▇▇▇▆▆▆▆▇▆▇▆▇▆▆▆▆▆█
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▁▁▁▂▁▁▂▂▂▂▂▄
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74242
+wandb:             test_auroc 0.50934
+wandb: test_balanced_accuracy 0.49495
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.64796
+wandb:             train_loss 1.59826
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.57857
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.81522
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run resnet18_2d_3_1_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass/runs/unjkeon4
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_3/version_1/wandb/run-20250609_132557-unjkeon4/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_3/version_1/wandb/run-20250609_133151-13v9n5vh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet18_2d_3_1_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass/runs/13v9n5vh
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 1
+Actual label distribution:    0s = 99, 1s = 33
+✅ Model is predicting both classes.
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 126, 1s = 5
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 128, 1s = 3
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 128, 1s = 3
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 130, 1s = 1
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 128, 1s = 3
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 128, 1s = 3
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 21, 1s = 6
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 112, 1s = 19
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 128, 1s = 3
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 130, 1s = 1
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 23, 1s = 4
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 121, 1s = 10
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 130, 1s = 1
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 24, 1s = 3
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 122, 1s = 9
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 127, 1s = 4
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 21, 1s = 6
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 115, 1s = 16
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 130, 1s = 1
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 125, 1s = 6
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 127, 1s = 4
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 20, 1s = 7
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 110, 1s = 21
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 23, 1s = 4
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 122, 1s = 9
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 18, 1s = 9
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 90, 1s = 41
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 127, 1s = 4
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 16, 1s = 11
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 82, 1s = 49
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 127, 1s = 4
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 124, 1s = 7
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 128, 1s = 3
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 127, 1s = 4
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 130, 1s = 1
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 128, 1s = 3
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 20, 1s = 7
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 100, 1s = 31
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 120, 1s = 11
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 126, 1s = 5
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 24, 1s = 3
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 124, 1s = 7
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 18, 1s = 9
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 96, 1s = 35
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 18, 1s = 9
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 80, 1s = 51
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 128, 1s = 3
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 18, 1s = 9
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 102, 1s = 29
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 20, 1s = 7
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 104, 1s = 27
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 24, 1s = 3
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 117, 1s = 14
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 128, 1s = 3
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 128, 1s = 3
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 125, 1s = 6
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 99, 1s = 32
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 129, 1s = 2
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 125, 1s = 6
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 24, 1s = 3
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 120, 1s = 11
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 19, 1s = 8
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 109, 1s = 22
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 3, 1s = 24
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 21, 1s = 110
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 1, 1s = 26
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 20, 1s = 111
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 11, 1s = 16
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 43, 1s = 88
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 21, 1s = 6
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 100, 1s = 31
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 19, 1s = 8
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 90, 1s = 41
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 19, 1s = 8
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 97, 1s = 34
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 19, 1s = 8
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 91, 1s = 40
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 22, 1s = 5
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 107, 1s = 24
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 22, 1s = 5
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 105, 1s = 26
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 18, 1s = 9
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 94, 1s = 37
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 18, 1s = 9
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 94, 1s = 37
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 14, 1s = 13
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 71, 1s = 60
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 14, 1s = 13
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 75, 1s = 56
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 16, 1s = 11
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 82, 1s = 49
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 20, 1s = 7
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 100, 1s = 31
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 18, 1s = 9
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 89, 1s = 42
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 20, 1s = 7
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 94, 1s = 37
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 24, 1s = 3
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 114, 1s = 17
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 121, 1s = 10
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 124, 1s = 7
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 24, 1s = 3
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 114, 1s = 17
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 24, 1s = 3
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 111, 1s = 20
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 24, 1s = 3
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 114, 1s = 17
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 115, 1s = 16
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 123, 1s = 8
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 24, 1s = 3
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 112, 1s = 19
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 21, 1s = 6
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 98, 1s = 33
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 23, 1s = 4
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 106, 1s = 25
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 114, 1s = 17
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 24, 1s = 3
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 110, 1s = 21
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 22, 1s = 5
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 106, 1s = 25
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 25, 1s = 2
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 113, 1s = 18
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 115, 1s = 16
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 22, 1s = 5
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 99, 1s = 32
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 115, 1s = 16
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 26, 1s = 1
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+Stage: Test Set
+Predicted class distribution: 0s = 115, 1s = 16
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+Stage: Validation Set
+Predicted class distribution: 0s = 23, 1s = 4
+Actual label distribution:    0s = 20, 1s = 7
+✅ Model is predicting both classes.
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ███████████▇▇██▆█▆▆█▇█▇▃▇▂▃▇▆█▁▄▄▂▂▅▇▄▅▄
+wandb:             test_auroc ▄▂▂▂▁▁▂▂▁▁▃▂▃▃▃▄▄▄▄▄▄▄▃▃▃▄▃▄▃▄▅▅▅▆▆▆▇█▇█
+wandb: test_balanced_accuracy ██████████████████▇█▇▇▇▇█▅▆█▆█▁▇▂▆▆▄▆▇▅▄
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▆█▁▁▅▁▁██▅▅█
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁█▂▃▃▂▂▂▂▂
+wandb:            train_auroc ▂▂▁▁▂▃▁▂▃▃▂▂▃▃▄▄▄▄▄▄▄▃▄▄▄▅▆▅▅▆▇▇█▇▆█████
+wandb:             train_loss █████████████▇██▇▇▇▇██▇▇▇▇▇▇▆▆▄▄▄▇▆▁▁▁▁▁
+wandb:           val_accuracy ██████████████████▇████▇▂█▄▇█▇▇▇▂▁▁▇▇▇▅▇
+wandb:              val_auroc ▂▃▄▅▄▄▄▅▄▅▅▅▆▆▆▇▇▇▇▆▇▇▇█▇▇██▇█▅▅▅▄▃▂▂▁▁▂
+wandb:  val_balanced_accuracy ▃▃▃▃▃▃▁▃▃▃▃▃▃▃▃▃▃▃▃▁▃▁▃▃▇▇▃▃█▄▇▁▇▃▇▆▅▅▅▃
+wandb:               val_loss ▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▇▂▅▄▅▆▆▇█
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅█▃▁▁████▆▁▆▅▄▁▆▁▃▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▁▁▃▃▃▃▁▆▁▆▃▃▆▁▃▃▅▅██▃▃▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.62595
+wandb:             test_auroc 0.5322
+wandb: test_balanced_accuracy 0.45644
+wandb:         test_precision 0.16
+wandb:            test_recall 0.125
+wandb:            train_auroc 1
+wandb:             train_loss 0.0246
+wandb:           val_accuracy 0.66667
+wandb:              val_auroc 0.52857
+wandb:  val_balanced_accuracy 0.49643
+wandb:               val_loss 3.30422
+wandb:          val_precision 0.25
+wandb:             val_recall 0.14286
+wandb: 
+wandb: 🚀 View run resnet18_2d_3_1_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass/runs/13v9n5vh
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_3/version_1/wandb/run-20250609_133151-13v9n5vh/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_3/version_1/wandb/run-20250609_134252-h4c030gz
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet18_2d_3_1_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass/runs/h4c030gz
+Stage: Test Set
+Predicted class distribution: 0s = 106, 1s = 25
+Actual label distribution:    0s = 99, 1s = 32
+✅ Model is predicting both classes.
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 0, 1s = 27
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 1 (minority class). It is ignoring the majority class!
+Stage: Test Set
+Predicted class distribution: 0s = 0, 1s = 131
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 1 (minority class). It is ignoring the majority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+Stage: Validation Set
+Predicted class distribution: 0s = 27, 1s = 0
+Actual label distribution:    0s = 20, 1s = 7
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁███████████████████████████████████████
+wandb:             test_auroc ▁▂▃▆▇▅▆▅▅▅▆▆▆▆▅▅▆▆▆▇▆▆▆▆▆▇▇▇▇▇▇▇██▇██▇▇█
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▁▂▂▂▁▅▄▃▄▁▆▄▆▅▂▇▂▅▄▆▆▇▆▅▄▇▅▇▇▆▇▇▇█▆█▆▅█▇
+wandb:             train_loss █▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁███████████████████████████████████████
+wandb:              val_auroc ▆█▇▇▂▆▅▅▅▅▅▃▅▅▃▆▄▃▄▂▃▂▃▃▂▂▂▃▄▃▂▅▂▂▃▂▁▁▂▁
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▁▃▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74809
+wandb:             test_auroc 0.55782
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.68665
+wandb:             train_loss 1.6344
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.49286
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.73116
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run resnet18_2d_3_1_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass/runs/h4c030gz
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_3/version_1/wandb/run-20250609_134252-h4c030gz/logs
+Stage: Test Set
+Predicted class distribution: 0s = 131, 1s = 0
+Actual label distribution:    0s = 98, 1s = 33
+⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_3/version_1/execution_datetimes.json
+Finish time: 2025-06-09 13:46:31
