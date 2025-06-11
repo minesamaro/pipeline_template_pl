@@ -1,0 +1,16 @@
+{"time":"2025-06-09T17:12:43.908997554+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_7/version_7/wandb/run-20250609_171242-0rahozue/logs/debug-core.log"}
+{"time":"2025-06-09T17:12:44.385252425+01:00","level":"INFO","msg":"created new stream","id":"0rahozue"}
+{"time":"2025-06-09T17:12:44.385293795+01:00","level":"INFO","msg":"stream: started","id":"0rahozue"}
+{"time":"2025-06-09T17:12:44.385338142+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"0rahozue"}
+{"time":"2025-06-09T17:12:44.385362182+01:00","level":"INFO","msg":"handler: started","stream_id":"0rahozue"}
+{"time":"2025-06-09T17:12:44.385381376+01:00","level":"INFO","msg":"sender: started","stream_id":"0rahozue"}
+{"time":"2025-06-09T17:12:44.651213773+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-09T17:18:28.825553238+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-09T17:18:28.825894388+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-09T17:18:29.827912484+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.263158639,"progress":"441B/441B"},{"desc":"uploading wandb-summary.json","runtime_seconds":0.263138039,"progress":"509B/509B"},{"desc":"uploading config.yaml","runtime_seconds":0.099991063,"progress":"5.6KB/5.6KB"}],"total_operations":3}}
+{"time":"2025-06-09T17:18:29.98567761+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-09T17:18:30.192810903+01:00","level":"INFO","msg":"stream: closing","id":"0rahozue"}
+{"time":"2025-06-09T17:18:30.192877602+01:00","level":"INFO","msg":"handler: closed","stream_id":"0rahozue"}
+{"time":"2025-06-09T17:18:30.192897263+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"0rahozue"}
+{"time":"2025-06-09T17:18:30.192919046+01:00","level":"INFO","msg":"sender: closed","stream_id":"0rahozue"}
+{"time":"2025-06-09T17:18:30.193919087+01:00","level":"INFO","msg":"stream: closed","id":"0rahozue"}
