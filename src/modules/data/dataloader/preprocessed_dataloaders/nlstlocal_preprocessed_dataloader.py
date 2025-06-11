@@ -16,7 +16,7 @@ from src.modules.data.data_augmentation.ct_image_augmenter \
     import CTImageAugmenter
 
 
-class NLSTPreprocessedKFoldDataLoader:
+class NLSTLocalPreprocessedKFoldDataLoader:
     def __init__(
             self,
             config,
@@ -220,11 +220,8 @@ class NLSTPreprocessedDataLoader(Dataset):
         self.augmented_to_original_data_ratio = config.data_augmentation.augmented_to_original_data_ratio
         self.apply_data_augmentations = config.data_augmentation.apply
 
-        print(f"[INFO] Applying Data Augmentation: {self.apply_data_augmentations}")
-        print(f"[INFO] Augmented to Original Data Ratio: {self.augmented_to_original_data_ratio}")
         
         if self.apply_data_augmentations and subset_type == "train":
-            print(f"[INFO] Applying data augmentation with ratio: {self.augmented_to_original_data_ratio}")
             label_to_files = defaultdict(list)
             for file, label in zip(file_names, labels):
                 label_to_files[label].append(file)
@@ -294,7 +291,7 @@ class NLSTPreprocessedDataLoader(Dataset):
                 raise ValueError(f"[ERROR] Unknown dimension {self.config.dimension}")
         else:
             if self.config.dimension == 2:
-                data_path = '/nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/preprocessed_data/protocol_5/2d'
+                data_path = 'C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\PhantomDataset\\2d' #TODO: Change this to the correct path
                 image = self._get_slice(data_index, data_path, pid, study_yr)
             elif self.config.dimension == 3:
                 data_path = '/nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/preprocessed_data/protocol_5/3d'
@@ -308,20 +305,22 @@ class NLSTPreprocessedDataLoader(Dataset):
         if image is None:
             raise ValueError(f"[ERROR] Image is None at index {data_index}. File info: {self.lung_metadataframe.loc[self.lung_metadataframe['path'] == self.file_names[data_index]]}")
 
-        # TODO: Do the same for lung roi and 2.5D and resample
-
         image = image.astype(numpy.float32)
-        print(f"[INFO] Loaded image shape: {image.shape} at index {data_index} and subset type {self.subset_type}")
 
         # Apply augmentation only to duplicated/repeated images
         if (self.apply_data_augmentations and 
-            #data_index in self.augmented_indices and  # Change when not local
+            #data_index in self.augmented_indices and  #TODO Change when not local
             self.subset_type == "train"):
+            filename = f"augmented_slice_{data_index}.png"
+            filename_og = f"original_slice_{data_index}.png"
+
+            save_path = f"C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\PhantomDataset\\dataaug\\{filename_og}"
+
+            plt.imsave(save_path, image, cmap='gray')
             image = self.data_augmenter(image=image)
 
-            print(f"[INFO] Applying data augmentation to image at index {data_index}")
             # Save image to disk for debugging purposes
-            filename = f"augmented_slice_{data_index}.png"
+            
             save_path = f"C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\PhantomDataset\\dataaug\\{filename}"
             plt.imsave(save_path, image[-1], cmap='gray')
 
@@ -355,8 +354,8 @@ class NLSTPreprocessedDataLoader(Dataset):
                 )
             )
 
-            if self.config.resize:
-                slice_image = numpy.resize(slice_image, (224, 224))
+            #if self.config.resize:
+            #    slice_image = numpy.resize(slice_image, (224, 224))
 
             return slice_image
         except Exception as e:

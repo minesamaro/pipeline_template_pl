@@ -2,7 +2,7 @@ dataset_name: ${..dataset_name}
 data_preprocessing_protocol_number: ${..data_preprocessing_protocol_number}
 data_type: ${..metadataframe.data_type}
 data_augmentation:
-  apply: False
+  apply: True # Change to False if you do not want to apply data augmentation
   augmented_to_original_data_ratio: 2
   parameters:
     number_of_augmentations: 3
@@ -33,4 +33,4 @@ resize: ${..resize} # True, False
 roi: lung # lung, whole
 resample: False
 resample_z: False
-random: True
+random: False

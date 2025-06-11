@@ -2,6 +2,54 @@ import albumentations as A
 import cv2
 import numpy
 import random
+import torch
+import torch.nn.functional as F
+
+def patch_shuffle(img, patch_size=2):
+    if isinstance(img, numpy.ndarray):
+        img = torch.tensor(img)
+
+    if img.dim() != 3:
+        raise ValueError("Expected 3D tensor with shape (H, W, C)")
+
+    H, W, C = img.shape
+    if H % patch_size != 0 or W % patch_size != 0:
+        raise ValueError(f"Image dimensions ({H}, {W}) must be divisible by patch size {patch_size}")
+
+    # Reshape to patches: (H//p, W//p, p, p, C)
+    patches = img.view(H // patch_size, patch_size, W // patch_size, patch_size, C)
+    patches = patches.permute(0, 2, 1, 3, 4)  # (n_patches_h, n_patches_w, patch_size, patch_size, C)
+
+    # Shuffle pixels inside each patch
+    for i in range(patches.shape[0],):
+        for j in range(patches.shape[1]):
+            for c in range(C):
+                patch = patches[i, j, :, :, c]
+                flat = patch.flatten()
+                shuffled = flat[torch.randperm(flat.numel())]
+                patches[i, j, :, :, c] = shuffled.view(patch_size, patch_size)
+
+    # Reconstruct the image
+    patches = patches.permute(0, 2, 1, 3, 4).contiguous()
+    shuffled_img = patches.view(H, W, C)
+
+    return shuffled_img
+
+
+class PatchShuffleTransform(A.ImageOnlyTransform):
+    def __init__(self, patch_size=16, always_apply=False, p=1.0):
+        super().__init__(always_apply=always_apply, p=p)
+        self.patch_size = patch_size
+
+    def apply(self, img, **params):
+        if isinstance(img, torch.Tensor):
+            img = img.numpy()
+        img_tensor = torch.tensor(img)
+        shuffled_img = patch_shuffle(img_tensor, patch_size=self.patch_size)
+        return shuffled_img.numpy()
+
+    def get_transform_init_args_names(self):
+        return ("patch_size",)
 
 
 class CTImageAugmenter:
@@ -52,11 +100,10 @@ class CTImageAugmenter:
                   - random_brightness_intensity_factor (float): Brightness adjustment factor.
         """
         self.number_of_augmentations = parameters.number_of_augmentations
-        self.data_augmentations = [
+        self.number_of_augmentations = 1 #TODO Eliminate this line when the bug is fixed in the data augmentation library.
+        """self.data_augmentations = [
             A.Rotate(
                 limit=parameters.random_rotation_degrees,
-                border_mode=cv2.BORDER_CONSTANT,
-                value=0,
                 p=1.0
             ),
             A.Affine(
@@ -71,8 +118,6 @@ class CTImageAugmenter:
             A.ElasticTransform(
                 alpha=parameters.random_elastic_alpha,
                 sigma=parameters.random_elastic_sigma,
-                border_mode=cv2.BORDER_CONSTANT,
-                value=0,
                 p=1.0
             ),
             A.GaussianBlur(
@@ -81,8 +126,9 @@ class CTImageAugmenter:
                 p=1.0
             ),
             A.GaussNoise(
-                var_limit=parameters.random_gaussian_noise_variance,
-                per_channel=False,
+                std_range=(
+                    0.1,
+                    0.2),
                 p=1.0
             ),
             A.RandomBrightnessContrast(
@@ -95,6 +141,47 @@ class CTImageAugmenter:
                 contrast_limit=0,
                 p=1.0
             )
+        ]"""
+        # Choose one blur randomly among GaussianBlur, MedianBlur, or MotionBlur
+        blur_transforms = [
+            A.GaussianBlur(
+                blur_limit=parameters.random_gaussian_blur.kernel_size,
+                sigma_limit=parameters.random_gaussian_blur.sigma,
+                p=1.0
+            ),
+            A.MedianBlur(blur_limit=3, p=1.0),
+            A.MotionBlur(blur_limit=3, p=1.0)
+        ]
+        selected_blur = random.choice(blur_transforms)
+
+        # Additional transformations
+        self.data_augmentations = [
+            A.ShiftScaleRotate(
+                shift_limit=parameters.random_translation_fraction,
+                scale_limit=0.1,
+                rotate_limit=parameters.random_rotation_degrees,
+                p=1.0
+            ),
+            A.HorizontalFlip(p=1.0),
+            A.VerticalFlip(p=1.0),
+            A.ElasticTransform(
+                alpha=parameters.random_elastic_alpha,
+                sigma=parameters.random_elastic_sigma,
+                alpha_affine=0.0,
+                p=1.0
+            ),
+            selected_blur,
+            A.GaussNoise(std_range=(0.1, 0.2), p=1.0),
+            A.RandomBrightnessContrast(
+                brightness_limit=parameters.random_brightness_intensity_factor,
+                contrast_limit=parameters.random_contrast_intensity_factor,
+                p=1.0
+            ),
+            PatchShuffleTransform(patch_size=2, p=1.0)  # Now properly wrapped
+        ]
+
+        self.data_augmentations = [
+            A.GaussNoise(std_range=(0.1, 0.2), p=1.0),
         ]
 
     def __call__(self, image, mask=None):

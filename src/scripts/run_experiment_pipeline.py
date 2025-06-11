@@ -162,6 +162,7 @@ def run_experiment_pipeline(config):
             experiment_execution_ids=config.experiment_execution.ids,
             experiment_execution_paths=config.experiment_execution.paths
         )
+        
         model_pipeline.train_model()
         model_pipeline.test_model()
         model_pipeline.finalize()

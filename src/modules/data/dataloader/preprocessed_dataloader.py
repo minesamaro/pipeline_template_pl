@@ -8,6 +8,9 @@ from src.modules.data.dataloader.preprocessed_dataloaders \
     .nlst_preprocessed_dataloader \
     import NLSTPreprocessedKFoldDataLoader
 
+from src.modules.data.dataloader.preprocessed_dataloaders \
+    .nlstlocal_preprocessed_dataloader \
+    import NLSTLocalPreprocessedKFoldDataLoader
 
 
 class PreprocessedDataLoader:
@@ -22,8 +25,13 @@ class PreprocessedDataLoader:
                 config,
                 lung_nodule_metadataframe
             )
-        elif config.dataset_name == "NLST" or config.dataset_name == "NLSTLocal":
+        elif config.dataset_name == "NLST":
             return NLSTPreprocessedKFoldDataLoader(
+                config,
+                lung_nodule_metadataframe
+            )
+        elif config.dataset_name == "NLSTLocal":
+            return NLSTLocalPreprocessedKFoldDataLoader(
                 config,
                 lung_nodule_metadataframe
             )
