@@ -43,7 +43,7 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
             for batch in self.test_dataloader_ref:
                 data, labels = batch[0], batch[1]
                 outputs = self.model(data['image'].to(self.device))
-                probs = torch.softmax(outputs, dim=1)
+                probs = torch.sigmoid(outputs)
 
                 test_labels.append(labels)
                 test_preds.append(probs)
@@ -51,34 +51,68 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
         test_labels = torch.cat(test_labels, dim=0).to(self.device)
         test_preds = torch.cat(test_preds, dim=0).to(self.device)
         # Considering the model is binary classification with 1 output
-        test_binary_preds = torch.argmax(test_preds, dim=1)
+        test_binary_preds = (test_preds > 0.5).int()
+        test_binary_thr025 = (test_preds > 0.25).int()
+        test_binary_thr075 = (test_preds > 0.75).int()
+        test_binary_thr05 = (test_preds > 0.5).int()
+
+        # Print imbalance information
+        #self.print_inbalance(test_binary_preds, test_labels, stage_name="Test Set")
 
 
         # Compute test metrics (customize as needed)
         metrics_for_logging = {
-            'test_accuracy': accuracy(
+            'test_accuracy0.5': accuracy(
                 preds=test_binary_preds,
-                target=test_labels.squeeze().int(),
-                task='multiclass',
-                num_classes=2).item(),
+                target=test_labels.int(),
+                task='binary').item(),
             'test_auroc': auroc(
                 preds=test_preds,
-                target=test_labels.squeeze().int(),
-                task='multiclass',
-                num_classes=2).item(),
-            'test_precision': precision(
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_precision0.5': precision(
                 preds=test_binary_preds,
-                target=test_labels.squeeze().int(),
-                task='multiclass',
-                num_classes=2).item(),
-            'test_recall': recall(
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_recall0.5': recall(
                 preds=test_binary_preds,
-                target=test_labels.squeeze().int(),
-                task='multiclass',
-                num_classes=2).item(),
-            'test_balanced_accuracy': balanced_accuracy_score(
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_balanced_accuracy0.5': balanced_accuracy_score(
                 y_true=test_labels.cpu().numpy(),
                 y_pred=test_binary_preds.cpu().numpy()
+            ),
+            'test_accuracy0.25': accuracy(
+                preds=test_binary_thr025,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_accuracy0.75': accuracy(
+                preds=test_binary_thr075,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_precision0.25': precision(
+                preds=test_binary_thr025,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_precision0.75': precision(
+                preds=test_binary_thr075,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_recall0.25': recall(
+                preds=test_binary_thr025,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_recall0.75': recall(
+                preds=test_binary_thr075,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_balanced_accuracy0.25': balanced_accuracy_score(
+                y_true=test_labels.cpu().numpy(),
+                y_pred=test_binary_thr025.cpu().numpy()
+            ),
+            'test_balanced_accuracy0.75': balanced_accuracy_score(
+                y_true=test_labels.cpu().numpy(),
+                y_pred=test_binary_thr075.cpu().numpy()
             ),
         }
         # Log to wandb
@@ -93,7 +127,7 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
         data, labels = batch[0], batch[1]
 
         model_output = self.model(data['image'].to(self.device))
-        activated_labels = torch.softmax(model_output, dim=1)
+        activated_labels = torch.sigmoid(model_output)
         loss = self.criterion(
             logits=model_output,
             targets=labels
@@ -113,9 +147,8 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
             'train_loss': (sum(self.weighted_losses) / labels.shape[0]).item(),
             'train_auroc': auroc(
                 preds=predicted_labels,
-                target=labels.squeeze().int(),
-                task='multiclass',
-                num_classes=2).item()
+                target=labels.int(),
+                task='binary').item()
         }
         wandb.log(metrics_for_logging, step=self.current_epoch)
 
@@ -132,7 +165,7 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
         data, labels = batch[0], batch[1]
 
         model_output = self.model(data['image'].to(self.device))
-        activated_labels = torch.softmax(model_output, dim=1)
+        activated_labels = torch.sigmoid(model_output)
         loss = self.criterion(
             logits=model_output,
             targets=labels
@@ -145,35 +178,68 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
     def on_validation_epoch_end(self):
         labels = torch.cat(self.val_labels, dim=0).to(self.device)
         predicted_labels = torch.cat(self.val_predicted_labels, dim=0).to(self.device)
-        predicted_activated_labels = torch.argmax(predicted_labels, dim=1)
+        predicted_activated_labels = (predicted_labels > 0.5).int()
+        test_binary_preds = (predicted_labels > 0.5).int()
+        test_binary_thr025 = (predicted_labels > 0.25).int()
+        test_binary_thr075 = (predicted_labels > 0.75).int()
 
+        # Print imbalance information
+        #self.print_inbalance(predicted_activated_labels, labels, stage_name="Validation Set")
         metrics_for_logging = {
-            'val_loss': (sum(self.val_weighted_losses) / labels.shape[0]).item(),
-            'val_accuracy': accuracy(
-                preds=predicted_activated_labels,
-                target=labels.squeeze().int(),
-                task='multiclass',
-                num_classes=2).item(),
+            'val_accuracy0.5': accuracy(
+                preds=test_binary_preds,
+                target=labels.int(),
+                task='binary').item(),
             'val_auroc': auroc(
                 preds=predicted_labels,
-                target=labels.squeeze().int(),
-                task='multiclass',
-                num_classes=2).item(),
-            'val_precision': precision(
-                preds=predicted_activated_labels,
-                target=labels.squeeze().int(),
-                task='multiclass',
-                num_classes=2).item(),
-            'val_recall': recall(
-                preds=predicted_activated_labels,
-                target=labels.squeeze().int(),
-                task='multiclass',
-                num_classes=2).item(),
-            'val_balanced_accuracy': balanced_accuracy_score(
+                target=labels.int(),
+                task='binary').item(),
+            'val_precision0.5': precision(
+                preds=test_binary_preds,
+                target=labels.int(),
+                task='binary').item(),
+            'val_recall0.5': recall(
+                preds=test_binary_preds,
+                target=labels.int(),
+                task='binary').item(),
+            'val_balanced_accuracy0.5': balanced_accuracy_score(
                 y_true=labels.cpu().numpy(),
-                y_pred=predicted_activated_labels.cpu().numpy()
+                y_pred=test_binary_preds.cpu().numpy()
+            ),
+            'val_accuracy0.25': accuracy(
+                preds=test_binary_thr025,
+                target=labels.int(),
+                task='binary').item(),
+            'val_accuracy0.75': accuracy(
+                preds=test_binary_thr075,
+                target=labels.int(),
+                task='binary').item(),
+            'val_precision0.25': precision(
+                preds=test_binary_thr025,
+                target=labels.int(),
+                task='binary').item(),
+            'val_precision0.75': precision(
+                preds=test_binary_thr075,
+                target=labels.int(),
+                task='binary').item(),
+            'val_recall0.25': recall(
+                preds=test_binary_thr025,
+                target=labels.int(),
+                task='binary').item(),
+            'val_recall0.75': recall(
+                preds=test_binary_thr075,
+                target=labels.int(),
+                task='binary').item(),
+            'val_balanced_accuracy0.25': balanced_accuracy_score(
+                y_true=labels.cpu().numpy(),
+                y_pred=test_binary_thr025.cpu().numpy()
+            ),
+            'val_balanced_accuracy0.75': balanced_accuracy_score(
+                y_true=labels.cpu().numpy(),
+                y_pred=test_binary_thr075.cpu().numpy()
             ),
         }
+        
         wandb.log(metrics_for_logging, step=self.current_epoch)
         self.log_dict(
             metrics_for_logging,
@@ -193,40 +259,79 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
         data, labels = batch[0], batch[1]
 
         model_output = self.model(data['image'].to(self.device))
-        predicted_labels = torch.softmax(model_output, dim=1)
+        predicted_labels = torch.sigmoid(model_output)
 
         self.labels.append(labels)
         self.predicted_labels.append(predicted_labels)
 
     def on_test_epoch_end(self):
-        labels = torch.cat(self.labels, dim=0).to(self.device)
-        predicted_labels = torch.cat(self.predicted_labels, dim=0).to(self.device)
-        predicted_activated_labels = torch.argmax(predicted_labels, dim=1)
+        test_labels = torch.cat(self.labels, dim=0).to(self.device)
+        test_preds = torch.cat(self.predicted_labels, dim=0).to(self.device)
 
+        # Print imbalance information
+        #self.print_inbalance(predicted_activated_labels, labels, stage_name="Test Set")
+
+        test_binary_preds = (test_preds > 0.5).int()
+        test_binary_thr025 = (test_preds > 0.25).int()
+        test_binary_thr075 = (test_preds > 0.75).int()
+
+        # Print imbalance information
+        #self.print_inbalance(test_binary_preds, test_labels, stage_name="Test Set")
+
+
+        # Compute test metrics (customize as needed)
         metrics_for_logging = {
-            'test_accuracy': accuracy(
-                preds=predicted_activated_labels,
-                target=labels.squeeze().int(),
-                task='multiclass',
-                num_classes=2).item(),
+            'test_accuracy0.5': accuracy(
+                preds=test_binary_preds,
+                target=test_labels.int(),
+                task='binary').item(),
             'test_auroc': auroc(
-                preds=predicted_labels,
-                target=labels.squeeze().int(),
-                task='multiclass',
-                num_classes=2).item(),
-            'test_precision': precision(
-                preds=predicted_activated_labels,
-                target=labels.squeeze().int(),
-                task='multiclass',
-                num_classes=2).item(),
-            'test_recall': recall(
-                preds=predicted_activated_labels,
-                target=labels.squeeze().int(),
-                task='multiclass',
-                num_classes=2).item(),
-            'test_balanced_accuracy': balanced_accuracy_score(
-                y_true=labels.cpu().numpy(),
-                y_pred=predicted_activated_labels.cpu().numpy()
+                preds=test_preds,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_precision0.5': precision(
+                preds=test_binary_preds,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_recall0.5': recall(
+                preds=test_binary_preds,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_balanced_accuracy0.5': balanced_accuracy_score(
+                y_true=test_labels.cpu().numpy(),
+                y_pred=test_binary_preds.cpu().numpy()
+            ),
+            'test_accuracy0.25': accuracy(
+                preds=test_binary_thr025,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_accuracy0.75': accuracy(
+                preds=test_binary_thr075,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_precision0.25': precision(
+                preds=test_binary_thr025,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_precision0.75': precision(
+                preds=test_binary_thr075,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_recall0.25': recall(
+                preds=test_binary_thr025,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_recall0.75': recall(
+                preds=test_binary_thr075,
+                target=test_labels.int(),
+                task='binary').item(),
+            'test_balanced_accuracy0.25': balanced_accuracy_score(
+                y_true=test_labels.cpu().numpy(),
+                y_pred=test_binary_thr025.cpu().numpy()
+            ),
+            'test_balanced_accuracy0.75': balanced_accuracy_score(
+                y_true=test_labels.cpu().numpy(),
+                y_pred=test_binary_thr075.cpu().numpy()
             ),
         }
 
