@@ -20,6 +20,6 @@ hydra:
     dir: .
 seed_value: 22
 wandb:
-  project_name: "cs_2d_roi_whole_slice_oneclass"
+  project_name: "cs_2d_roi_whole_slice_oneclass_22"
   entity: "nlst"
   name: "resnet50_2d"

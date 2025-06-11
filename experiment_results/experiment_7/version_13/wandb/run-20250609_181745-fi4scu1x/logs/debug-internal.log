@@ -1,0 +1,18 @@
+{"time":"2025-06-09T18:17:45.153338701+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_7/version_13/wandb/run-20250609_181745-fi4scu1x/logs/debug-core.log"}
+{"time":"2025-06-09T18:17:45.430056651+01:00","level":"INFO","msg":"created new stream","id":"fi4scu1x"}
+{"time":"2025-06-09T18:17:45.430098091+01:00","level":"INFO","msg":"stream: started","id":"fi4scu1x"}
+{"time":"2025-06-09T18:17:45.43054716+01:00","level":"INFO","msg":"handler: started","stream_id":"fi4scu1x"}
+{"time":"2025-06-09T18:17:45.430568051+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"fi4scu1x"}
+{"time":"2025-06-09T18:17:45.430960621+01:00","level":"INFO","msg":"sender: started","stream_id":"fi4scu1x"}
+{"time":"2025-06-09T18:17:45.64392221+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-09T18:18:16.034922243+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-06-09T18:18:16.174237427+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-06-09T18:20:07.846000533+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-09T18:20:07.846299143+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-09T18:20:08.624698774+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-09T18:20:08.847895814+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 48-50, summary, console lines 4-5","runtime_seconds":0.22301012}],"total_operations":1}}
+{"time":"2025-06-09T18:20:08.865301432+01:00","level":"INFO","msg":"stream: closing","id":"fi4scu1x"}
+{"time":"2025-06-09T18:20:08.865340981+01:00","level":"INFO","msg":"handler: closed","stream_id":"fi4scu1x"}
+{"time":"2025-06-09T18:20:08.865360981+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"fi4scu1x"}
+{"time":"2025-06-09T18:20:08.865386331+01:00","level":"INFO","msg":"sender: closed","stream_id":"fi4scu1x"}
+{"time":"2025-06-09T18:20:08.86678902+01:00","level":"INFO","msg":"stream: closed","id":"fi4scu1x"}

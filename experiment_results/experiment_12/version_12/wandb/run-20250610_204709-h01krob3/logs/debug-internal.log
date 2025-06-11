@@ -1,0 +1,17 @@
+{"time":"2025-06-10T20:47:09.50638503+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_12/version_12/wandb/run-20250610_204709-h01krob3/logs/debug-core.log"}
+{"time":"2025-06-10T20:47:09.806454405+01:00","level":"INFO","msg":"created new stream","id":"h01krob3"}
+{"time":"2025-06-10T20:47:09.806515053+01:00","level":"INFO","msg":"stream: started","id":"h01krob3"}
+{"time":"2025-06-10T20:47:09.806553358+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"h01krob3"}
+{"time":"2025-06-10T20:47:09.806654678+01:00","level":"INFO","msg":"sender: started","stream_id":"h01krob3"}
+{"time":"2025-06-10T20:47:09.80673705+01:00","level":"INFO","msg":"handler: started","stream_id":"h01krob3"}
+{"time":"2025-06-10T20:47:39.809068181+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-06-10T20:47:42.499884854+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-10T20:53:24.698760583+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-10T20:53:24.699045004+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-10T20:53:25.434519873+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-10T20:53:25.657447003+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-10T20:53:25.665100181+01:00","level":"INFO","msg":"stream: closing","id":"h01krob3"}
+{"time":"2025-06-10T20:53:25.665138923+01:00","level":"INFO","msg":"handler: closed","stream_id":"h01krob3"}
+{"time":"2025-06-10T20:53:25.665159203+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"h01krob3"}
+{"time":"2025-06-10T20:53:25.665209206+01:00","level":"INFO","msg":"sender: closed","stream_id":"h01krob3"}
+{"time":"2025-06-10T20:53:25.66575122+01:00","level":"INFO","msg":"stream: closed","id":"h01krob3"}

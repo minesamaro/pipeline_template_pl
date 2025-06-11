@@ -1,0 +1,16 @@
+{"time":"2025-06-09T16:55:52.712432175+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_7/version_6/wandb/run-20250609_165552-f9oqxgkm/logs/debug-core.log"}
+{"time":"2025-06-09T16:55:52.994517567+01:00","level":"INFO","msg":"created new stream","id":"f9oqxgkm"}
+{"time":"2025-06-09T16:55:52.994555546+01:00","level":"INFO","msg":"stream: started","id":"f9oqxgkm"}
+{"time":"2025-06-09T16:55:52.994586815+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"f9oqxgkm"}
+{"time":"2025-06-09T16:55:52.994629607+01:00","level":"INFO","msg":"sender: started","stream_id":"f9oqxgkm"}
+{"time":"2025-06-09T16:55:52.994648657+01:00","level":"INFO","msg":"handler: started","stream_id":"f9oqxgkm"}
+{"time":"2025-06-09T16:55:53.301151083+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-09T16:58:52.98305243+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-09T16:58:52.983360647+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-09T16:58:53.98481128+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.547875038,"progress":"436B/436B"},{"desc":"uploading config.yaml","runtime_seconds":0.353314489,"progress":"5.6KB/5.6KB"}],"total_operations":2}}
+{"time":"2025-06-09T16:58:54.084890118+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-09T16:58:54.295961929+01:00","level":"INFO","msg":"stream: closing","id":"f9oqxgkm"}
+{"time":"2025-06-09T16:58:54.295984226+01:00","level":"INFO","msg":"handler: closed","stream_id":"f9oqxgkm"}
+{"time":"2025-06-09T16:58:54.296004487+01:00","level":"INFO","msg":"sender: closed","stream_id":"f9oqxgkm"}
+{"time":"2025-06-09T16:58:54.295993066+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"f9oqxgkm"}
+{"time":"2025-06-09T16:58:54.297226047+01:00","level":"INFO","msg":"stream: closed","id":"f9oqxgkm"}

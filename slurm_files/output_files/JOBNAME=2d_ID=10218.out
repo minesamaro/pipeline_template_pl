@@ -1,0 +1,2354 @@
+Initialization time: 2025-06-10 06:16:48
+wandb: Currently logged in as: maria-i-paiva (maria-i-paiva-inesc-tec) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_1/wandb/run-20250610_061704-dgx8rq8y
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_1_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/dgx8rq8y
+
+**************************************************  Experiment 10 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▂▃▁▃▄▅▄▄▃▆▃▅▄▅▅▄▅▁▄▂▄█▃▃▃▄▃▂▃▅▆▃▅▃▃▃▃▃▃▅
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc █▅▄▆▄▆▃▄▄▄▄▄▃▄▃▄█▃▃▄▃▁▁▆▂▂▆▁▅▅▁▃▃▅▆▃▃▁▄▂
+wandb:             train_loss ██▆▅▁▅▅▅▂▂▂▂▂▂▂▁▁▃▁▁▄▁▂▂▂▁▂▁▁▂▁▂▂▂▁▁▁▂▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▄▃▅▇▁▇▂▁█▃▆▄▇▃▄▅▃▂▄▃▂▂▃▄▂▅▅▆▃▆▇▄▅▅▃▄▄▄▅▃
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▂▃▁▂▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75
+wandb:             test_auroc 0.50383
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.43863
+wandb:             train_loss 1.68903
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.56429
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.73075
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_1_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/dgx8rq8y
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_1/wandb/run-20250610_061704-dgx8rq8y/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_1/wandb/run-20250610_062514-fvtxc6se
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_1_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/fvtxc6se
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▆▆▅▄▂▁█▁▃▆▅▄▇▃▃▃▂▄▅▄▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc █▄▆▇▅▄▆█▄▆▅▅▅▅▃▇▆▂▅▆█▄▁▅▆▅▅▅▄▄▃▅▃▅▆▄▂▃▅▅
+wandb:             train_loss █▃▇▃▃▂▂▁▂▁▂▂▁▁▂▂▁▁▂▂▂▃▂▂▂▁▂▁▁▁▁▂▄▂▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▃▁▄▅▅▅▅▅▃▄▄▆▃▆▄▇▆█▅▆▅▅▄▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▂▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75573
+wandb:             test_auroc 0.5
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.44963
+wandb:             train_loss 1.70727
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.5
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.72929
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_1_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/fvtxc6se
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_1/wandb/run-20250610_062514-fvtxc6se/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_1/wandb/run-20250610_063335-jknd6j94
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_1_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/jknd6j94
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▄▃▄▁▅▃▅▂▅█▅▆▃▅▃▂▆▆▂▄▁▃▄▆▅▃▂▂▄▃▅▅▃▄▆▅▆▄▂▄
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▆▅▆▄▅▂▂▆▂▃▂▃▃▁▁▃▂▂▄▃▄▃▂▄▃▂▃▅▃▂▃▆▅▂█▂▄▃▄▂
+wandb:             train_loss █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▆▅▇▅▆▂▇▅▆█▄▄▇▇▃▅▆▇▄▅▇▄▅▃▅▇▆▂▅▆▆▅▅▅▅▇▅▁▆▅
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▃▂▂▂▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74809
+wandb:             test_auroc 0.52288
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.43559
+wandb:             train_loss 1.69375
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.48214
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.72853
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_1_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/jknd6j94
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_1/wandb/run-20250610_063335-jknd6j94/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_2/wandb/run-20250610_064017-0hjzlaoc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_2_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/0hjzlaoc
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_1/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 2 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▂▂▃▅▂▃▄▂▄▆█▄▃▃▃▃▇▄▁▁▄▆▆▃▃▅▇▃▄▄▂▄▄▄▅▂▆▆▆▄
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▅▇▄▄▅▄▄▄▄▄▂▅▄▃▄▃▂▃▅▆▄▇▄▃▄▃▂▄▅▂▂▁▆▃▃▄▄▂▆█
+wandb:             train_loss █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▃▇▆▃▁▃▅█▆▂▃█▆▃▂▃▄▂▃▂▄▂▃▄▃▆▇▄▆▃▇▆▄▃▄▄▃▃▁▄
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss ▁▃█▁▂▂▂▂▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁▂▁▁▂▁▁▁▁▁▁▁▁▁▂▁▁▂
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75
+wandb:             test_auroc 0.52816
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.58703
+wandb:             train_loss 1.68381
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.55
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.74001
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_2_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/0hjzlaoc
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_2/wandb/run-20250610_064017-0hjzlaoc/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_2/wandb/run-20250610_064835-js7wm8uq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_2_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/js7wm8uq
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▆▇▇▇███▅▄▄▃▃▂▃▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▂▂▂▁▁▁▂▂▁▁▁
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▆▆▅▄▄▂▄▂▁▅█▆▄▃▄▆▆▄▁▅▅▂▆▄▆▁▃▆▆▆▂▄▆▅▅▂▇▃▇▃
+wandb:             train_loss █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc █████▄▃▁▂▃▃▃▃▄▄▄▄▃▄▄▃▃▃▃▃▃▃▄▃▃▄▄▃▄▄▄▄▃▃▃
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75573
+wandb:             test_auroc 0.45439
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.43034
+wandb:             train_loss 1.7066
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.4
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.73147
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_2_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/js7wm8uq
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_2/wandb/run-20250610_064835-js7wm8uq/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_2/wandb/run-20250610_065519-e3n0n098
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_2_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/e3n0n098
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▄▄▃▂▂▁█▃▂▂▂▄▁▄▆▄▅▃▄▂▄▅▄▆▄▄▄▅▄▄▄▄▄▄▄▇▆▄▄▇
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc █▅▃▃▄▅▂▁▅▃▄▃▅▂▂▃▃▄▅▁▅▁█▄▅▃▃▂▂▆▂▂▂▁▄▂▄▄▁▂
+wandb:             train_loss █▂▂▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▇▆▆▆▄▇▆▄▃▁▁▅▅▅█▇▇▅▆▅▆▅▆▅▅▄▅▅▅▅▅▆▅▅▅▃▄▅▅▅
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74809
+wandb:             test_auroc 0.59416
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.44271
+wandb:             train_loss 1.69914
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.5
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.73921
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_2_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/e3n0n098
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_2/wandb/run-20250610_065519-e3n0n098/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_3/wandb/run-20250610_070521-k0t21uoc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_3_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/k0t21uoc
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_2/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 3 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb: uploading data
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc █▁▁▁▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▃▃▃▃▂▃▃▃▃▂▂▃▃▃▃▃▂▂▃▃
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▂▃█▇▄▅▆▅▄▂▂▅▃▅▂▇▂▁▆▄▃▅▅▅▆▅▅▇▄▄▆▆▆▄▇▇▄▅▃▄
+wandb:             train_loss █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▅█▅▄▄▄▄▄▄▄▄▄▄▄▄▄▄▅▄▄▄▄▄▄▄▄▄▄▄▄▄▃▂▄▄▁▃▄▄▄
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss ▅█▃▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75
+wandb:             test_auroc 0.48026
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.47029
+wandb:             train_loss 1.71865
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.45
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.73061
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_3_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/k0t21uoc
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_3/wandb/run-20250610_070521-k0t21uoc/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_3/wandb/run-20250610_071321-fo3wtmsp
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_3_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/fo3wtmsp
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb: uploading history steps 122-123, summary, console lines 4-5
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy █████████████████████████▆█▃▆▃▁▆████████
+wandb:             test_auroc ▇▆▇▇▇▇▇▆▆▆▆▆▆▆▅▆▅▆▇▇▄▆▄▄▂▅▄▄▅▄▁▅█▄▇▆▅▆▆▆
+wandb: test_balanced_accuracy ███████████████████▁█▁▁▁▁███████████████
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▃▃▂▄▃▄▃▃▄▂▃▄▅▃▄▄▃▅▅▅▆▆▆▅▇█▇▆▃▅▂▄▂▁▂▃▃▃▅▂
+wandb:             train_loss █▅▅▅▆▆▆▅▅▅▅▅▅▅▆▅▅▆▅▅▄▄▄▄▃▃▂▂▁▅▅▅▅▅▅▅▅▅▅▅
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▇▇▆▆▆▆▆▇▇▇▇▆▇▆▇▆▆▅▄▄▄▄▄▅▅▇▇▅▆▇█▇▇▄▁▇▆▇▆▆
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▆▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▄▃▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▃▃▃▁▃▄▂▃▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁██▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75573
+wandb:             test_auroc 0.53441
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.45787
+wandb:             train_loss 1.70108
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.60714
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.72852
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_3_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/fo3wtmsp
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_3/wandb/run-20250610_071321-fo3wtmsp/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_3/wandb/run-20250610_073347-p1gsv9wh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_3_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/p1gsv9wh
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc █▂▃▅▃▄▅▅▅▅▅▅▆▆▆▆▆▆▆▇▇▇▇▇▇▇▆▄▇█▇▇▇▇▇▆▃▂▁▁
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▅▅▅▂▅▁▂▆▆▆▄▅▃▆▃▅▃▅▄▇▄▅▃▇▆▅▄▅▄▂▅▇▇▅▅▂▄█▄▆
+wandb:             train_loss █▆▇▄▄▂▂▁▁▂▁▁▁▁▁▂▁▁▁▁▁▁▂▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ███████████▇▇████▇▇▇▇▇▇▇▇▇▇▇██▇▇▇▇▇▆▄▄▁▄
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss ▅█▇▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▁▂▂▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74809
+wandb:             test_auroc 0.47341
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.53836
+wandb:             train_loss 1.68153
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.51429
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.72735
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_3_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/p1gsv9wh
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_3/wandb/run-20250610_073347-p1gsv9wh/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_4/wandb/run-20250610_074825-899wrxbk
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_4_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/899wrxbk
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_3/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 4 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▅▆▇▇▇█▁▂▅▇▇▄▅▄▆▂▅▃▁
+wandb:             test_auroc ▁▂▂▁▁▂▂▂▁▁▃▂▂▂▂▅▆▅▆▆▅▆██▅▃▅▆▆▆▆▇▆█▇▇▇▇▆▆
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▁▄▄▃▁▅▁▇▄▄▄█▅▃▆▇
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▇▁▇▇▇▅█▁█▇▇▇▆██▆▇
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▆▆▃▂▁▇▃▅▆▃▅▆▇█
+wandb:            train_auroc ▂▂▃▁▃▁▁▁▂▃▂▂▁▂▃▂▃▄▄▂▃▄▄▄▄▅▄▅▄▅▅▅▅▅▆▆▆▇█▇
+wandb:             train_loss ▇▆▇█▆▆▆▆▇▇▆▆▆▆▆▆▆▅▅▆▅▅▅▅▅▅▅▅▅▄▄▄▅▄▃▃▃▂▁▃
+wandb:           val_accuracy ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇█▇▇▄▇▄▄▅▅▅█▂▅▅▄▁▄▂▂▂
+wandb:              val_auroc ▆▆▅█▇▄▇▅▃▇▄▃▃▃▃▇▆▆▅▆▆▆▅▄▇▄▄▅▅▆▆▅▅▆▅▆▁▂▅▅
+wandb:  val_balanced_accuracy ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█▄▄▄█▄▅▅▄▂▅▅▄▅▁▄▂▂▂
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▂▂▃▂▃▅▇█
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁█▃▃▃▁█▃▃▂▃▂▂▂
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁█▁█████████████
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.67424
+wandb:             test_auroc 0.54729
+wandb: test_balanced_accuracy 0.57071
+wandb:         test_precision 0.35294
+wandb:            test_recall 0.36364
+wandb:            train_auroc 0.80041
+wandb:             train_loss 1.31172
+wandb:           val_accuracy 0.62963
+wandb:              val_auroc 0.48214
+wandb:  val_balanced_accuracy 0.47143
+wandb:               val_loss 5.15131
+wandb:          val_precision 0.2
+wandb:             val_recall 0.14286
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_4_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/899wrxbk
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_4/wandb/run-20250610_074825-899wrxbk/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_4/wandb/run-20250610_075601-kgoxchgt
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_4_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/kgoxchgt
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ███████▇▄▆▄▆▆▄▁▄▃▃▃▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:             test_auroc ▇█▆█▄▂▂▁▅▄▅▆▃▄▂▂▄▁▁▂▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb: test_balanced_accuracy ███████████▆▅▁▆▂▁█▂▆▆▇▁▃▃▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▇█▇▅▇█▆▆▇▆▇▇▇▅▅▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▆▇▃█▅▆▅█▆▅▄▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:            train_auroc ▁▂▂▂▃▃▄▆▆▆▇▇████████████████████████████
+wandb:             train_loss ▇▇▇█▇▇▇▇▆▆▆▅▅▃▃▁▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▅▅▅▅▅▅▅▅▅▅█▂▂▂▅▅▁▂▂▂▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▅▅▅▅
+wandb:              val_auroc ▁▁▃▃▃▂▂▆▂▆▇▅▅▅▆▄▄▅▄█▇▇▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆
+wandb:  val_balanced_accuracy ▂▂▂▂▂▂▂▂▂▂▄▁▅▅▃▄▆▃█▇▆▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▅
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▃▃▁▄▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇█
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▇█▅▇▇▇▇▅▇▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▇▇
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▃▂▆▆▃▇█▆▇▆▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▆▆▆
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.63359
+wandb:             test_auroc 0.52494
+wandb: test_balanced_accuracy 0.49321
+wandb:         test_precision 0.23333
+wandb:            test_recall 0.21875
+wandb:            train_auroc 1
+wandb:             train_loss 0.0
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.75
+wandb:  val_balanced_accuracy 0.68571
+wandb:               val_loss 11.81965
+wandb:          val_precision 0.5
+wandb:             val_recall 0.57143
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_4_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/kgoxchgt
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_4/wandb/run-20250610_075601-kgoxchgt/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_4/wandb/run-20250610_080442-n4lw2386
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_4_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/n4lw2386
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ████████████████████▁█▂█▆▅▃▅▄▅▄▆▅▅▆▄▆▅▆▄
+wandb:             test_auroc ▂▂▂▂▂▁▁▁▄▂▆▆▅▅▆▆▃▆▄▇▄▅▆▆▅▆▆▅▅▆█▆▇▇▇█▆▇▆▆
+wandb: test_balanced_accuracy ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▅█▆▄▄▁▅▄▅▄▆▇▅█▃▅▅▅▆
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▇▁▆▆█▆▄▆▆▆▇▇█▅▆▆▆▇
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▆▂▂▃▂▃▃▅▃▃▄▃▂▃▃▃▄
+wandb:            train_auroc ▂▁▂▁▂▂▂▁▂▂▃▃▃▃▃▃▄▄▄▅▅▆▄▅▆▇▇▇████████████
+wandb:             train_loss ▇▇▇██▇▇▇▇▇▇▇▇▇▇▇▇▇▇▆▆▆▇▆▅▅▄▄▃▃▂▂▃▂▂▂▂▂▂▁
+wandb:           val_accuracy ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▁▇▇▂▆▇▅█▆▆▅▆▆█▅█▆█▆▆
+wandb:              val_auroc █▇▇▁▄▄▃▃▃▄▂▂▂▂▁▁▂▁▂▂▃▄▂▃▄▃▃▄▂▃▇▄▃▅▆▅▅▆▄▄
+wandb:  val_balanced_accuracy ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▂▂▆▄▁▅▄█▂▂▆▆▄▄▄
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▂▃▂▅▂▃▆▅▃▅▆▆▇▇█
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▁▃▃█▃▁▅▄▃▆▃▃▄█▃▃▃
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▆▃▁▃▃▃▆▆▃▆▃▃▆▃▃▃
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.62595
+wandb:             test_auroc 0.60451
+wandb: test_balanced_accuracy 0.52891
+wandb:         test_precision 0.28947
+wandb:            test_recall 0.33333
+wandb:            train_auroc 1
+wandb:             train_loss 0.01339
+wandb:           val_accuracy 0.7037
+wandb:              val_auroc 0.43571
+wandb:  val_balanced_accuracy 0.52143
+wandb:               val_loss 18.24609
+wandb:          val_precision 0.33333
+wandb:             val_recall 0.14286
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_4_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/n4lw2386
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_4/wandb/run-20250610_080442-n4lw2386/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_5/wandb/run-20250610_081016-eqvlm96e
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_5_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/eqvlm96e
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_4/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 5 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ████████████████████████▁██▇█▇▆█▄▅▂█▇▆█▆
+wandb:             test_auroc ▁▂▁▂▂▂▂▁▁▂▂▂▂▂▂▂▃▃▄▄▂▃▄▃▄▄▂▆▆▆▅▅█▇▅▆█▅▆▇
+wandb: test_balanced_accuracy ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▄▁▃▃▄▆▂█▅▃▅▆
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▅▁▅▅▁▆▄▅█▅▆▅▁▇▆▆
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▄▁▂▃▁▅▃▂▅█▇▇▅▃▅▆
+wandb:            train_auroc ▁▁▃▂▁▂▂▃▃▃▃▂▃▂▃▂▃▄▄▄▅▅▄▃▄▅▅▅▅▅▆▆▆▆▆▇▇▇██
+wandb:             train_loss █▆▆▅▅▅▆▅▅▅▆▅▅▅▅▅▅▅▅▅▅▅▄▄▅▅▅▄▄▄▄▄▄▃▃▄▃▂▂▁
+wandb:           val_accuracy ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▁▆▆▆▆▁▁▃▃▁▁▃█▆▆▆
+wandb:              val_auroc █▄▆▄▅▄▅▅▄▄▅▇▄▃▄▄▃▆▅▆▄▅▅▅▅▃▄▅▆▄▃▁▁▂▂▃▄▂▂▂
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▁▁▁▁▃▁▁▄▆██▃██
+wandb:               val_loss ▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▁▂▂▂▂▃▃▄▃▃▄▄▃█▇█
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▅▁▁▆▁▅▅▅▅▆▇██▆██
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▅▁▁▅▁▅▅▅▅▅█▅█▅██
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.70455
+wandb:             test_auroc 0.60545
+wandb: test_balanced_accuracy 0.57071
+wandb:         test_precision 0.38462
+wandb:            test_recall 0.30303
+wandb:            train_auroc 0.92889
+wandb:             train_loss 0.88738
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.40714
+wandb:  val_balanced_accuracy 0.59286
+wandb:               val_loss 3.80131
+wandb:          val_precision 0.5
+wandb:             val_recall 0.28571
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_5_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/eqvlm96e
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_5/wandb/run-20250610_081016-eqvlm96e/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_5/wandb/run-20250610_081624-nv3423rd
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_5_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/nv3423rd
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ███████████████▇▅▂▄▃▂▄▄▆▄▆▁▄▄▄▄▃▃▄▄▄▄▄▄▄
+wandb:             test_auroc ▅▅▅▅▅▃▄▄▅▄▄▃▃▄▁▄▃▆▄▅▄█▅▆▅▆▆▆▆▅▅▅▅▅▅▆▆▅▅▅
+wandb: test_balanced_accuracy ▄▄▄▄▄▄▄▄▄▄▄▄▇▂▆▇▄▇▇█▇▇▄▁▄▄▅▅▅▅▅▄▄▅▄▄▄▄▆▆
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▆▇▄▆▇▆█▇▆▆▇▆▆▆▆▆▆▆▆▆▇▆▇▆▇
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▅▅▅█▄▅▆▄▄▆▅▅▅▅▅▅▅▅▅▅▆▅▅
+wandb:            train_auroc ▁▁▁▂▁▂▂▂▂▂▃▄▄▄▅▆▆▇▇▇▇███████████████████
+wandb:             train_loss █▇▇▇▇▇▇▇▇▆▆▆▆▆▅▅▅▄▄▄▂▃▃▂▁▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▇▅▄▅▁▁▁▂▅▅█▅▅▄▄▄▅▄▅▅▅▅▅
+wandb:              val_auroc ▁▂▂▂▂▂▃▃▄▅▅▅▄▆▆▇█▆▇▇▄▅▄▆▇▆▆▆▆▅▆▆▆▆▆▆▆▆▆▆
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▁▄█▄▄▄▆▄▅▅▄▄▄▄▇▇▇▄▇▇▇▇▇▇
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▄▃▄▂▃▄▄▅▆▆▇▇▇▇▇████
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁██▇▇▇▇▆▆▆▆▇███▇▇▇▇▇▇█▇████
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▃▃▅▅▅▅▃▅█▅▅▅▅▅▆▆▅▆▆▆▆▆▆▆
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.64122
+wandb:             test_auroc 0.57481
+wandb: test_balanced_accuracy 0.54056
+wandb:         test_precision 0.2973
+wandb:            test_recall 0.34375
+wandb:            train_auroc 1
+wandb:             train_loss 1e-05
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.75714
+wandb:  val_balanced_accuracy 0.68571
+wandb:               val_loss 14.65725
+wandb:          val_precision 0.5
+wandb:             val_recall 0.57143
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_5_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/nv3423rd
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_5/wandb/run-20250610_081624-nv3423rd/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_5/wandb/run-20250610_082736-c5472nki
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_5_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/c5472nki
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ██████████████████████████▇▇▃█▇▆▆▆▅▆▄▁▂▆
+wandb:             test_auroc ▁▁▁▂▂▃▃▄▄▃▃▄▅▆▃▆▆▆▆▆▇▇██▇▆▆▅█▆▆▇▇▇█▇█▆▇▇
+wandb: test_balanced_accuracy ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▅▂▅▇▄▇█▆▆▇▄▇▅▇▁▆▄
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▆▁▄▃█▃▃▄▄▃▄▃▃▃▃▃
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▃▇▁▅▄▄▅▄▄▅█▅▅▃
+wandb:            train_auroc ▁▂▂▁▁▂▁▂▂▂▂▃▃▃▂▃▂▄▂▃▃▃▄▅▅▆▆▆▇▇▇▇▇██▇████
+wandb:             train_loss █▇▆▆▆▆▆▆▇▆▆▆▆▆▇▆▆▆▆▆▆▆▆▆▅▅▄▅▄▄▄▄▃▂▂▃▂▂▁▁
+wandb:           val_accuracy ████████████████████████▇█▇▁▇▆▇█▅██▆▆▆▅▆
+wandb:              val_auroc ▇█▇███▇▇▇▇▆▄▃▅▅▃▄▃▄▂▂▁▂▂▁▃▂▅▄▅▄▅▅▅▄▅▃▄▅▄
+wandb:  val_balanced_accuracy ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▅▁▅▅▅▆▄█▅▅▆▅▆
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▂▂▂▃▃▂▅▅▃█
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▅▁▁▅
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁█▁▁█
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.70229
+wandb:             test_auroc 0.60019
+wandb: test_balanced_accuracy 0.51964
+wandb:         test_precision 0.3125
+wandb:            test_recall 0.15152
+wandb:            train_auroc 0.99952
+wandb:             train_loss 0.08765
+wandb:           val_accuracy 0.66667
+wandb:              val_auroc 0.41429
+wandb:  val_balanced_accuracy 0.49643
+wandb:               val_loss 22.90258
+wandb:          val_precision 0.25
+wandb:             val_recall 0.14286
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_5_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/c5472nki
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_5/wandb/run-20250610_082736-c5472nki/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_6/wandb/run-20250610_083515-lxegzgfm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_6_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/lxegzgfm
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_5/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 6 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ███████████▇▆▇▇█▇▇▄█▅▄▇▇▁▇▇█▇▆▅▆▆▇▇▆▆▇▇▆
+wandb:             test_auroc ▁▁▂▁▂▂▃▄▄▃▃▆▅▃▄▆▅▅▃▆▄▅▆▆▅▇▆▇▆▆▆▆▇▇▇███▇▅
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▄▃▁▃▁▂▄▃▃▄▂▃▃▂▅▅▅▅▅█▃▃█▅▅▇▅▄▃▃
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▅▄▁▅▁▁▁▅▄▅█▄▅▄▅▅▅▅▅▅▅▆▅▅▅▅▅▅▅
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▄▃▁▂▃▃▁▁▁▅▂▃█▂▅▇▅▇▇▃▅▅▆█▅▅▅▃▃
+wandb:            train_auroc ▁▁▃▃▃▂▃▂▂▃▄▃▄▄▄▅▅▄▅▄▅▅▇▆▆▇▇▇▇▇█▇████████
+wandb:             train_loss █▇▇▆▇▇▆▇▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▅▅▅▅▅▄▄▃▃▄▃▃▂▁▁▁▂
+wandb:           val_accuracy ███████████▅▇█▇██▇█▇▅▇▇▇▇▇▇▇▇▅▅▅▇▅▇▂▁▄▅▄
+wandb:              val_auroc ▅▄▅▄▄▅▅▄▄▄▆▆▆▆▆██▄▆▆▅▃▄▅▄▄▃▅▄▄▆▆▅▅▃▃▁▂▂▄
+wandb:  val_balanced_accuracy ▄▄▄▄▄▄▄▄▄▄▄▄▄▅▄▅▇▆▅▇▆▅▇▅▄█▅▇▇▇▄▃▅▄▄▁▆█▂▃
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▃▃▄▂▂▂▃▃▇██▃
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▆▁▆▆▆▆▁▆▆▆▇▆▆▅█▆▇▆▅▅▆▆█▃▃▅▆▄
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▅▅▅▅▅▅▁▁█▅▅▅█▅▅█▅██▅▅▅▅██▅▅█▅▅
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.71212
+wandb:             test_auroc 0.58586
+wandb: test_balanced_accuracy 0.52525
+wandb:         test_precision 0.33333
+wandb:            test_recall 0.15152
+wandb:            train_auroc 0.9924
+wandb:             train_loss 0.31898
+wandb:           val_accuracy 0.62963
+wandb:              val_auroc 0.40714
+wandb:  val_balanced_accuracy 0.47143
+wandb:               val_loss 5.64533
+wandb:          val_precision 0.2
+wandb:             val_recall 0.14286
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_6_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/lxegzgfm
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_6/wandb/run-20250610_083515-lxegzgfm/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_6/wandb/run-20250610_084830-be2btvga
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_6_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/be2btvga
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ███████████▇█▃▃▇▂▄▇█▄▅▁▅▃▆▅▅▁▂▄▄▃▄▄▃▃▃▃▃
+wandb:             test_auroc ▄▅▄▃▃▁▁▃▃▃▃▄▄▄▅█▃▃▂▄▂▅▅▆▆▄▄▃▃▂▂▂▂▂▂▂▂▂▂▂
+wandb: test_balanced_accuracy ▃▃▃▃▃▃▃▃▃▁▄▇▄▃▆▁▂▇█▂▃▄▅▆▆▃▂▂▂▃▄▃▄▄▄▃▃▃▃▃
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▇▁▇▁▇█▇▇█▇▇█▇█▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▃▃▅▂▆▅▅▅▃▇▄█▇▆▅▄▅▅▅▄▅▅▅▅▅▅▅▅
+wandb:            train_auroc ▁▁▂▃▃▄▄▃▄▄▅▅▅▆▆▆▇▇▇█▇▇██████████████████
+wandb:             train_loss █▇▇▇▇▇▇▇▇▇▇▇▇▇▆▅▅▄▃▃▄▃▂▃▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▇▇▇▇▇▇▇▇▇▇▇▇▅▅▅▇▅█▅▇▄▄█▇▇▁▄▅▇▇▅▅▅▅▅▅▅▅▅▅
+wandb:              val_auroc ▂▂▂▂▃▃▃▅▂▃▇▆▅▅▇██▇▁▇█▇▄▅▇▇▇███▇▇▇▇▇▇▇▇▇▇
+wandb:  val_balanced_accuracy ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▄▇▂█▆▃▅▂▂▄▃▄▄▆▆▆▃▃▃▃▃▃▃▃
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▃▂▃▃▂▂▅▅▆▆▇██████████
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▅▁▆▇▇▇█▇▇▇▄▅▄▄▅▅▆▆▅▇▇▆▆▆▆▆▆▆▆
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▂▁▅▂▇▂▂█▂▇▇▇▄▇▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.61832
+wandb:             test_auroc 0.53046
+wandb: test_balanced_accuracy 0.50426
+wandb:         test_precision 0.25
+wandb:            test_recall 0.28125
+wandb:            train_auroc 1
+wandb:             train_loss 4e-05
+wandb:           val_accuracy 0.7037
+wandb:              val_auroc 0.725
+wandb:  val_balanced_accuracy 0.56786
+wandb:               val_loss 14.40594
+wandb:          val_precision 0.4
+wandb:             val_recall 0.28571
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_6_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/be2btvga
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_6/wandb/run-20250610_084830-be2btvga/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_6/wandb/run-20250610_090225-sspr4lda
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_6_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/sspr4lda
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ███████████████████████████████████▇▇▆▃▁
+wandb:             test_auroc ▂▁▁▁▁▂▂▂▂▂▂▂▃▃▄▄▄▄▅▅▆▅▄▅▄▅▅▆▆▆▇▇▇▇▇██▇▇▅
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▅█▅
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▆▇▆▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▅▇█▇
+wandb:            train_auroc ▂▃▂▁▃▂▂▃▃▁▄▃▂▄▂▄▄▅▅▅▅▄▄▂▅▃▄▅▅▆▅▆▆▆▆▆▇▇██
+wandb:             train_loss █▆▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▃▄▃▄▄▄▄▄▄▄▄▃▃▄▄▃▃▃▂▂▁▁▁
+wandb:           val_accuracy ███████████████████████████████████▇▅▂▁▂
+wandb:              val_auroc ██▇▇██▇▇▇▇▆▇▆▅▃▃▂▂▂▂▅▇▆▇▇▆▄▅▃▂▃▂▂▂▂▃▂▁▁▂
+wandb:  val_balanced_accuracy ███████████████████████████████████▆▆▄▁▁
+wandb:               val_loss ▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▃▂▃▁▁▁▁▂▁▁▁▂▂▃▂▄▃▂▅▅█▆▄
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.67939
+wandb:             test_auroc 0.56679
+wandb: test_balanced_accuracy 0.54453
+wandb:         test_precision 0.33333
+wandb:            test_recall 0.27273
+wandb:            train_auroc 0.84609
+wandb:             train_loss 1.31949
+wandb:           val_accuracy 0.59259
+wandb:              val_auroc 0.35
+wandb:  val_balanced_accuracy 0.4
+wandb:               val_loss 2.54867
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_6_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/sspr4lda
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_6/wandb/run-20250610_090225-sspr4lda/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_7/wandb/run-20250610_091138-ujld5msx
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_7_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/ujld5msx
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_6/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 7 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy █████▇▇▄▇▂▇▇▄▇▅▁▄▂▄▄▃▃▃▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:             test_auroc ▁▁▁▂▁▂▂▂▃▃▄▆▅▇█▅▇▆▃▃▃▄▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+wandb: test_balanced_accuracy ▄▄▄▄▄▄▄▄▄▄▃█▄█▃▅▄▄▅▄▄▁▄▆▇▅▂▂▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▅█▆▅▅▅▄▄▃▄▃▄▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:            test_recall ▁▁▁▁▁▁▁▁▂▅▁█▄▄▇▅▂█▆▄▄▅▆▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:            train_auroc ▁▁▃▃▃▂▃▄▄▅▅▅▅▅▆▆▇▇▇▇▇███████████████████
+wandb:             train_loss ███▇▇▇▇▇▇▇▆▆▆▆▆▅▅▅▄▄▄▄▃▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▅▅▅▇▅▇▇▄▄▇▁█▇▇█▇▇▇▇▇▇▇▇▇▇▇
+wandb:              val_auroc ▅▄▄▄▄▃▃▃▂▂▂▃▁▄▃▄█▄▃▄▆▅▇▆████████████████
+wandb:  val_balanced_accuracy ▃▃▃▃▃▃▃▃▃▃▁▂▂▆▂▂▆▂▅▃▆▆▇▃█▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▃▃▄▄▃▅▅▆▆▆▇▇▇▇▇▇▇▇▇▇█████
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▂▁▁▁▃▂▁▂▃█▃▁▅█▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▅▅▁▁▅▁█▁▅▅█▁▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.68182
+wandb:             test_auroc 0.50505
+wandb: test_balanced_accuracy 0.49495
+wandb:         test_precision 0.23529
+wandb:            test_recall 0.12121
+wandb:            train_auroc 1
+wandb:             train_loss 0.0006
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.56429
+wandb:  val_balanced_accuracy 0.54643
+wandb:               val_loss 9.42826
+wandb:          val_precision 0.5
+wandb:             val_recall 0.14286
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_7_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/ujld5msx
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_7/wandb/run-20250610_091138-ujld5msx/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_7/wandb/run-20250610_093047-36jeorxj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_7_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/36jeorxj
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ████████████▇▇▃▁▃▂▃▄▃▂▂▂▂▂▂▁▂▂▂▂▂▂▂▂▂▂▂▂
+wandb:             test_auroc ▅▄▄▃▄▅▄▇▄▆▅▆▂▆▆▄▄█▁▆▆▆▆▆▆▆▆▆▆▆▆▅▅▆▅▅▅▅▅▅
+wandb: test_balanced_accuracy ▃▃▃▃▃▃▃▃▃█▄▅▃▄▂▃▆▃▆▂▂▆▁▂▂▂▂▁▁▂▂▂▂▁▂▂▂▂▂▂
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁█▁▁▅▅▅▄▅▄▄▆▅▅▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:            test_recall ▁▁▁▁▁▁▁▁▃▁▁▁▄▆▃▃▂▅▅▄▆█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:            train_auroc ▁▂▂▂▃▃▄▄▄▄▄▅▅▅▆▇▇▇▇█████████████████████
+wandb:             train_loss ███████▇▇▇▆▇▇▆▆▅▅▄▅▄▃▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ████████████████▅█▅▅▁▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:              val_auroc ▁▁▂▄▄▄▄▃▄▄▄▅▅▄▅▇▇▇█▇▇▇███▇██▇███████████
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▄▄▁▁▂▁▅▅▂▄▅▄▄█▄▄▁▄▃▂▃▃▃▃▃▃▃▃▃▃▃
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▂▁▁▂▁▁▂▂▂▂▄▃▃▄▄▄▅▆▆▆▆▆▇▇▇▇████
+wandb:          val_precision ▁▁▁▁▁▁▁▁▆█▁▆▁▆▆▆▆▇▆▅▆▅▆▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:             val_recall ▁▁▁▁▁▁▄▁▄▂▅▂▄█▅█▅▄▅▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.61069
+wandb:             test_auroc 0.55871
+wandb: test_balanced_accuracy 0.47806
+wandb:         test_precision 0.21212
+wandb:            test_recall 0.21875
+wandb:            train_auroc 1
+wandb:             train_loss 0.00041
+wandb:           val_accuracy 0.7037
+wandb:              val_auroc 0.82143
+wandb:  val_balanced_accuracy 0.56786
+wandb:               val_loss 5.52863
+wandb:          val_precision 0.4
+wandb:             val_recall 0.28571
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_7_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/36jeorxj
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_7/wandb/run-20250610_093047-36jeorxj/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_7/wandb/run-20250610_095003-88xbxotg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_7_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/88xbxotg
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy █████████████████▆██▅█▇▇▇▅▆▂▇▅▁▇▂▆▅▆▄▃▅▅
+wandb:             test_auroc ▁▂▃▄▅▅▆▆▆▇▇▇██▇█▇███▇█▆▇▇▇█▄▄▆▇▆▆▆▆▅▆▅▆▆
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▃▂▂▁▁▃▂█▂▅▅▄▅▅▄▃▃▆▄▄
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▁▁█▆▁▁▁▆▅▅▆▁▇▆▇▆▇▆▆▅▆▅
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▂▁▁▁▄▃▄▇▃▆▄▄▅▄▄▄▄█▅
+wandb:            train_auroc ▁▂▂▂▂▃▃▃▃▃▃▄▃▄▄▃▄▅▄▅▅▅▅▆▆▇▇▇▇▇▇█████████
+wandb:             train_loss █▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▆▆▆▆▆▆▅▄▄▄▄▄▃▂▂▂▃▂▁▂▂▁
+wandb:           val_accuracy ▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▂▅▅▅▄▅▅▅▅▅▂▄▁▂▁▇▅▅▇▄▅█▂▅
+wandb:              val_auroc █▇██▇▆▅▅▄▃▃▃▂▃▁▂▄▁▃▃▃▄▃▅▃▅▅▆▅▅▅▇▆▇▆▆▆▆▇▅
+wandb:  val_balanced_accuracy ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▂▃▃▃▃▃▃▃▃▁▃▄▂▃▄▅▆▅▅▃▅▇▆█
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▁▂▁▂▂▂▂▂▆▃▅▄▅▃▅▇▄▆█
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▃▃▃█▅▅▄▁▅▄▆
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▁▃▁▃▆▃▃▃▁▃█▃▃
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.70992
+wandb:             test_auroc 0.5773
+wandb: test_balanced_accuracy 0.54484
+wandb:         test_precision 0.36842
+wandb:            test_recall 0.21212
+wandb:            train_auroc 0.99961
+wandb:             train_loss 0.10851
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.49286
+wandb:  val_balanced_accuracy 0.54643
+wandb:               val_loss 6.12717
+wandb:          val_precision 0.5
+wandb:             val_recall 0.14286
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_7_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/88xbxotg
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_7/wandb/run-20250610_095003-88xbxotg/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_8/wandb/run-20250610_095534-47zxrtqo
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_8_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/47zxrtqo
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_7/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 8 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy █████████████████▇▇▇▆▇▇▇▇▆▇▆▆▅▆▃▅▄▁▇▅▅▅▆
+wandb:             test_auroc ▁▁▂▂▂▂▂▂▃▃▃▃▄▄▃▄▄▄▄▄▄▄▅▆▆▇▆▇▇▇▇▆█▅▅▇▅▇▆▄
+wandb: test_balanced_accuracy ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▂▃▂▁▃▄▂▂▂▃█▁▄▃▃▂▃▄▄▂▂▂
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▆▁▄▄▁▅▅█▃▆▅▆▅▅▅▇▆▅▅▄
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▄▁▂▁▂▃▂█▆▃▃▆▄█▃▅▃▂
+wandb:            train_auroc ▁▁▂▂▃▃▃▄▄▄▃▄▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇▇████
+wandb:             train_loss █▇▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▅▅▅▅▅▅▅▄▄▄▄▃▃▃▃▃▃▂▂▁▂
+wandb:           val_accuracy ██████████████████████▁████████▁██▁█▁▁██
+wandb:              val_auroc ██▆▇▇▅▆▆▅▆▅▅▅▄▃▄▃▄▄▃▃▂▁▁▁▁▂▂▁▂▂▂▅▃▃▃▇▄▃▆
+wandb:  val_balanced_accuracy ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▁▄▄▄▄▄▁█▁██▁▁▁▁█▁▄
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▂▂▂▂▂▂▂▃▃▃▃▃▃▄▃▅▃▄▆█
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁██▁▁█▁▁▁▁█▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁█▁██▁█▁▁█▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.7197
+wandb:             test_auroc 0.54392
+wandb: test_balanced_accuracy 0.4899
+wandb:         test_precision 0.16667
+wandb:            test_recall 0.0303
+wandb:            train_auroc 0.90775
+wandb:             train_loss 0.97088
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.45
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 3.99639
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_8_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/47zxrtqo
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_8/wandb/run-20250610_095534-47zxrtqo/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_8/wandb/run-20250610_100106-w35yp52e
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_8_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/w35yp52e
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy █████████████▂▄▁▄▇▇▁▅▇▂▃▄▂▃▂▂▂▂▂▂▂▂▂▂▂▂▂
+wandb:             test_auroc ▄▃▃▂▁▁▂▄▃▄▄▄▄▄▅▅▃▄▁█▄▂▃▅▂▄▅▅▄▄▄▄▄▄▄▄▄▄▄▃
+wandb: test_balanced_accuracy ▄▄▄▄▄▄▄▄▄▄▅▅▃▇▆▅▃▇▅▆█▄▅▅▂▄▂▁▂▁▁▂▃▃▃▃▃▃▃▃
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁█▅▇▅▅▅▅▅▅▅▆▅▅▄▄▅▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▆▁▇▃█▇▄▇▄▅▅▅▄▄▄▄▄▅▅▅▅▅▅▅▅▅▅
+wandb:            train_auroc ▂▁▁▂▂▂▃▃▄▃▃▄▅▅▅▆▆▆▆▇▇▇██████████████████
+wandb:             train_loss █████▇▇▇▇▇▆▆▅▅▄▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▄▄▄▄▄▄▄▄▄▄▁█▄▄▄█▁▄▄█▄▄▄▄▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▁▂▃▃▃▄▄▅▄▄▄▃▃▄▄▄▅▄▆▆▇▇▇█████████████████
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▃▇▄▅▇▃▆▄█▃▃▄▃▃▃▃▃▃▃▃▃▃▃
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▃▃▄▅▅▆▆▆▆▇▇▇▇█████
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▆▇▇▇▆▇▇█▆█▇▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▃▁▅▅▆▃▅█▆▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.63359
+wandb:             test_auroc 0.55271
+wandb: test_balanced_accuracy 0.49321
+wandb:         test_precision 0.23333
+wandb:            test_recall 0.21875
+wandb:            train_auroc 1
+wandb:             train_loss 0.00065
+wandb:           val_accuracy 0.7037
+wandb:              val_auroc 0.82857
+wandb:  val_balanced_accuracy 0.56786
+wandb:               val_loss 5.89383
+wandb:          val_precision 0.4
+wandb:             val_recall 0.28571
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_8_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/w35yp52e
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_8/wandb/run-20250610_100106-w35yp52e/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_8/wandb/run-20250610_101440-2parzi9j
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_8_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/2parzi9j
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy █████████████████▇██▁███▆▅▅▇▇▅▆█▇▆▆▁▃▅▇▂
+wandb:             test_auroc ▁▂▃▄▄▆▆▆▆▇▇█▇███████▇▇▇▆▇▇▆▆▅▅▆▆▅▆▅▅▅▅▄▄
+wandb: test_balanced_accuracy ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▃▂▃▄▇▂▃▃▆█▂▁▆▄▄▁▁▃▂▅▃▃▃▂
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▆▁▁▇▆▆▁▆▆▃▇▄▁▆█▁▁▅▄▆▅▆▅▅
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▂█▁▁▅▄▂▇▁▅▆▂▁▁▆▃▂▃▄
+wandb:            train_auroc ▁▁▂▂▂▂▃▃▃▃▄▄▃▄▄▄▄▄▄▅▅▅▅▆▆▆▇▇▇▇█▇████████
+wandb:             train_loss █▇▇▇▇▇▇▇▇▇▇▇▇▇▆▆▆▆▆▆▆▆▆▆▅▅▅▄▄▄▃▃▃▂▂▅▃▂▁▁
+wandb:           val_accuracy ██████████████████▅█▇▁███▁▅▂███▇██▇▇▇█▇▇
+wandb:              val_auroc ██▇█▇▅▅▄▄▄▃▄▃▃▂▃▁▁▁▃▂▁▂▂▂▃▃▄▄▆▅▅▆▆▆▆▆▅▆█
+wandb:  val_balanced_accuracy ▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▃▅▄▄▅▅▅▁▃▃▅▅▅█▄▅▅▆▄▅▄▇
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▂▂▂▂▂▂▂▂▂▂▃▃▃▂▃▃▄▃▄▆▅█▄█
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▄▁▁▁▁▃▁▁▁█▁▁▁▅▆▁▁▇
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▁▁▁▁▁▁▁▁▁▅▁▁▁█
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.64122
+wandb:             test_auroc 0.54545
+wandb: test_balanced_accuracy 0.49892
+wandb:         test_precision 0.25
+wandb:            test_recall 0.21212
+wandb:            train_auroc 0.99119
+wandb:             train_loss 0.33758
+wandb:           val_accuracy 0.7037
+wandb:              val_auroc 0.57143
+wandb:  val_balanced_accuracy 0.56786
+wandb:               val_loss 3.79287
+wandb:          val_precision 0.4
+wandb:             val_recall 0.28571
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_8_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/2parzi9j
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_8/wandb/run-20250610_101440-2parzi9j/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_9/wandb/run-20250610_102203-7n0smnmd
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_9_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/7n0smnmd
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_8/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 9 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy █████████████████████████▇▃▇▂▇▇▂▁▂▁▁▇▁▃▇
+wandb:             test_auroc ▁▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▄▄▄▄▄▅▅▅▅▆▅▆▆▆▇▇▆▇▆█▆▇▆▇
+wandb: test_balanced_accuracy ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▂▁▂▃▂▂▃▁▂▃█▃▃▃▃
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▆▃▅▆█▇▆▆▇
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▅▁▃▂▂▁█▂▄▂
+wandb:            train_auroc ▁▁▁▂▂▃▃▄▄▄▃▄▄▅▄▅▄▅▅▅▅▅▅▅▅▅▆▆▆▆▆▆▆▆▆▇▇▇██
+wandb:             train_loss █▆▅▅▅▅▅▅▅▅▅▅▅▅▅▄▄▄▄▄▄▄▄▄▄▄▄▃▄▃▃▃▃▃▃▂▂▂▁▁
+wandb:           val_accuracy █████████████████████████████▁████████▁█
+wandb:              val_auroc █▅▅▆▆▆▆▅▅▅▄▄▄▅▄▄▄▄▃▃▃▂▃▃▃▂▃▂▂▂▁▁▁▁▃▂▂▂▂▂
+wandb:  val_balanced_accuracy ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▁▃▃▃▃▃▃▃█▁▃
+wandb:               val_loss ▃▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂▃▂▃▃▃▄▄▅▅▄▇▅▅▆█▆█▇
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁██
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁█▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74242
+wandb:             test_auroc 0.58861
+wandb: test_balanced_accuracy 0.50505
+wandb:         test_precision 0.33333
+wandb:            test_recall 0.0303
+wandb:            train_auroc 0.86538
+wandb:             train_loss 1.22934
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.35714
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 2.89679
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_9_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/7n0smnmd
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_9/wandb/run-20250610_102203-7n0smnmd/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_9/wandb/run-20250610_102929-uusbwi4w
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_9_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/uusbwi4w
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ███████████▇▆▇▁▂▅▃▄▇▃▃▄▂▂▅▂▂▃▂▂▂▂▂▂▂▂▂▂▂
+wandb:             test_auroc ▅▆▄▃▂▂▂▂▃▂▄▅▅▅▆▆▄▆▄▅█▃▄▅▄▄▁▆▆▅▅▅▄▄▄▄▄▄▄▄
+wandb: test_balanced_accuracy ▄▄▄▄▄▄▄▄▄▅█▇█▅▄▆▅▇▆▄▄▄▂▄▄▂▁▃▁▁▁▁▁▁▂▂▁▂▂▂
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁█▅▇▆▅▆▅▇▅▅▅▆▆▅▅▆▅▄▅▄▄▄▄▄▄▄▅▅▅▅
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▇▄▄▅▄▅▆▅▆█▇▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:            train_auroc ▁▂▂▂▂▃▃▃▃▃▄▄▅▅▅▇▇▇██████████████████████
+wandb:             train_loss █████████▇▇▇▇▇▆▅▅▅▄▄▃▂▂▂▃▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▆▆▆▆▆▆▆▆▃▆█▁▃▆▆▆▃██▁▃▆▆▆▆▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb:              val_auroc ▁▁▁▂▃▃▃▃▃▄▄▄▄▄▅▅▅▆▆▆▇▇▇▆▇██▇████████████
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▄▄▄▃▄▃█▃█▃▃▃▆▃▄▃▃▃▃▃▃▃▃▃▃▃▃
+wandb:               val_loss ▁▁▁▁▁▁▁▁▁▂▁▁▁▃▂▄▃▄▄▅▅▄▅▅▄▆▆▆▆▆▇▇▇▇▇█████
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▅▃▄█▅▅█▅▅▅▅▅▅▅▅▄▅▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▄▄▂▄▇▅▇▂▂▅██▂▄▅▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.59542
+wandb:             test_auroc 0.54956
+wandb: test_balanced_accuracy 0.46796
+wandb:         test_precision 0.2
+wandb:            test_recall 0.21875
+wandb:            train_auroc 1
+wandb:             train_loss 0.00119
+wandb:           val_accuracy 0.7037
+wandb:              val_auroc 0.82857
+wandb:  val_balanced_accuracy 0.56786
+wandb:               val_loss 4.64482
+wandb:          val_precision 0.4
+wandb:             val_recall 0.28571
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_9_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/uusbwi4w
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_9/wandb/run-20250610_102929-uusbwi4w/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_9/wandb/run-20250610_105256-oo2b5huc
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_9_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/oo2b5huc
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: uploading history steps 55-56, summary, console lines 4-5
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ██████████████████████████▆██▅▇▅█▃▁▆█▅▇▇
+wandb:             test_auroc ▁▂▂▃▃▄▅▅▅▆▆▆▆▆▇▇▇▇▇▇███████████▇▇▇▇▇▇▇▆▆
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁▃▂▂██▅
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▅▁▅▁▆▁█▄█▄▇█▇▇█
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▃▂▃▃▃▂▄▃▃▄██▅
+wandb:            train_auroc ▂▁▂▂▂▃▃▃▃▃▄▄▄▄▄▄▄▅▅▅▅▅▄▆▆▆▆▅▅▆▆▆▇▇▇▇▇███
+wandb:             train_loss █▆▆▆▆▆▆▆▆▆▆▆▅▆▅▅▅▅▅▅▅▅▅▅▅▅▄▄▅▄▄▄▄▄▃▃▂▂▂▁
+wandb:           val_accuracy ███████████████████████████▇▅█▇█▇▂█▇▁▄▂▇
+wandb:              val_auroc █▇▇▇▇█▇▇▇▆▇▆▆▅▄▅▅▄▃▃▂▂▁▁▁▁▂▁▁▁▁▂▂▁▂▂▂▃▃▅
+wandb:  val_balanced_accuracy ███████████████████████████▇█▅█▇▂█▁▁▄▁▅▇
+wandb:               val_loss ▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▃▃▃▄▄▄▄▅▄▅▅▄▆▆▅▆▆█
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74809
+wandb:             test_auroc 0.5739
+wandb: test_balanced_accuracy 0.55025
+wandb:         test_precision 0.5
+wandb:            test_recall 0.15152
+wandb:            train_auroc 0.9168
+wandb:             train_loss 0.9402
+wandb:           val_accuracy 0.7037
+wandb:              val_auroc 0.5
+wandb:  val_balanced_accuracy 0.475
+wandb:               val_loss 2.4481
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_9_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/oo2b5huc
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_9/wandb/run-20250610_105256-oo2b5huc/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_10/wandb/run-20250610_110241-e2fzfzc5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_10_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/e2fzfzc5
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_9/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 10 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▁▃▄▅▅▅▅▅▅▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇███████
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▁▁▅▅▃▄▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇█▇████████████
+wandb:             train_loss █▇▆▄▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ██▆▆▅▄▄▄▄▃▄▄▄▄▄▄▄▄▃▃▃▃▃▃▃▂▂▂▂▁▁▁▁▁▂▂▂▂▁▁
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▆▃▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▃▃
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75
+wandb:             test_auroc 0.52189
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.65995
+wandb:             train_loss 1.61712
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.4
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.79675
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_10_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/e2fzfzc5
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_10/wandb/run-20250610_110241-e2fzfzc5/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_10/wandb/run-20250610_111227-srfkvmhn
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_10_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/srfkvmhn
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb: uploading output.log; uploading config.yaml
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ██████████████████████████████████▇▇▇▇▅▁
+wandb:             test_auroc ▆▇▆▆▆▇█▇▆▆▇▅▆▅▄▂▂▁▃▂▃▄▄▃▄▅▅▅▅▅▅▆▆▆▆▇▇█▇▆
+wandb: test_balanced_accuracy ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▄▁▁▄▄▁▂█▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁██▅█▅▇▆
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▃▃█▃
+wandb:            train_auroc ▂▁▁▂▃▃▃▄▄▄▄▄▄▄▄▄▅▅▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▆▇▇▇██
+wandb:             train_loss ████████▇▇▇▇▇▇▇▇▇▇▇▆▆▆▆▆▆▅▅▅▅▅▄▄▄▄▃▃▃▂▂▁
+wandb:           val_accuracy ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▁█▁
+wandb:              val_auroc ▂▁▁▂▃▃▄▅▅▅▆▆▆▆▆▆▆▆▇▇▇▇█▇███████▇▇▇▆▆▇▆▆▆
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃█
+wandb:               val_loss █▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▃
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅█
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▅
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74046
+wandb:             test_auroc 0.56566
+wandb: test_balanced_accuracy 0.50047
+wandb:         test_precision 0.25
+wandb:            test_recall 0.03125
+wandb:            train_auroc 0.82888
+wandb:             train_loss 1.30588
+wandb:           val_accuracy 0.77778
+wandb:              val_auroc 0.65714
+wandb:  val_balanced_accuracy 0.57143
+wandb:               val_loss 1.74549
+wandb:          val_precision 1
+wandb:             val_recall 0.14286
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_10_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/srfkvmhn
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_10/wandb/run-20250610_111227-srfkvmhn/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_10/wandb/run-20250610_113632-thyceb6y
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_10_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/thyceb6y
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▁▁▂▂▂▃▃▄▄▄▄▄▄▅▅▅▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇█████
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▂▄▁▄▃▄▄▄▅▄▅▆▅▅▅▆▆▆▆▆▆▇▆▇▇▇▇▇▇▇▇▇▇▇█████▇
+wandb:             train_loss █▇▅▄▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▇▇██▇█▇▆▇▇▇██▇▇▇▇▇▇▆▆▇▇▇▆▆▆▆▅▆▄▄▄▃▃▃▃▃▂▁
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▆▃▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▂▂▂▂▂▂▂▂▂▂▂▂
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74809
+wandb:             test_auroc 0.6008
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.66069
+wandb:             train_loss 1.61828
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.48571
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.75558
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_10_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/thyceb6y
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_10/wandb/run-20250610_113632-thyceb6y/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_11/wandb/run-20250610_114842-ws240olr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_11_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/ws240olr
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_10/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 11 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb: updating run config
+wandb: uploading history steps 50-51, summary, console lines 4-5
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▁▃▄▅▅▆▆▆▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇████████████
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▁▁▅▅▂▄▅▅▄▄▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇█████████
+wandb:             train_loss █▇▇▆▅▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ███▇▆▅▄▄▃▃▃▃▃▄▄▃▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▁▂▂▁▂▂▁▁
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▇▆▅▄▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75
+wandb:             test_auroc 0.50077
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.64777
+wandb:             train_loss 1.64529
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.42857
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.75585
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_11_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/ws240olr
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_11/wandb/run-20250610_114842-ws240olr/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_11/wandb/run-20250610_115604-7dwpx4k6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_11_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/7dwpx4k6
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ████████████████████████████████████▅▆▃▁
+wandb:             test_auroc ▇▆▇█▇▇██▆▆▅▅▅▅▄▄▂▂▂▁▂▁▂▃▂▂▃▂▃▃▃▄▄▅▃▄▄▃▃▃
+wandb: test_balanced_accuracy ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▁▁▃▃▃█
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▇▇█
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁
+wandb:            train_auroc ▁▁▂▂▂▃▄▄▄▄▄▄▅▅▅▅▅▅▅▅▆▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇███
+wandb:             train_loss █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▃▃▃▃▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▅▁▁▂▃▂▂▃▂▄▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇███████▇▇██▇▆▆▇
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▇▅▄▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.70992
+wandb:             test_auroc 0.54956
+wandb: test_balanced_accuracy 0.51199
+wandb:         test_precision 0.28571
+wandb:            test_recall 0.125
+wandb:            train_auroc 0.78512
+wandb:             train_loss 1.40592
+wandb:           val_accuracy 0.7037
+wandb:              val_auroc 0.65714
+wandb:  val_balanced_accuracy 0.52143
+wandb:               val_loss 1.68332
+wandb:          val_precision 0.33333
+wandb:             val_recall 0.14286
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_11_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/7dwpx4k6
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_11/wandb/run-20250610_115604-7dwpx4k6/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_11/wandb/run-20250610_121002-j4m9hmqd
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_11_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/j4m9hmqd
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▁▂▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇██████
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▄▂▁▅▄▃▃▃▃▃▄▄▄▄▅▅▅▅▅▆▆▅▆▆▆▆▅▇▇▇▇▇▇▇▇█▇███
+wandb:             train_loss █▇▆▅▄▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc █▇▅▇▇▇▅▅▇▅▅▂▂▅▅▅███▇▅▇▄▄▄▅▄▅▄▄▁▁▂▅▇▅▅▅▂▂
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▇▆▄▃▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74809
+wandb:             test_auroc 0.57699
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.64636
+wandb:             train_loss 1.64737
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.58571
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.71944
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_11_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/j4m9hmqd
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_11/wandb/run-20250610_121002-j4m9hmqd/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_12/wandb/run-20250610_121535-hkvm3epq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_12_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/hkvm3epq
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_11/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 12 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▁▂▄▄▅▅▅▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇██████████
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▂▁▅▄▂▅▅▅▃▆▅▅▅▅▅▅▅▅▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇██████
+wandb:             train_loss ██▇▇▇▆▅▅▄▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc █▇▇▇▇▇▇▅▅▄▃▃▃▂▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂▂▂▂▂
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss ██▇▇▆▅▅▄▄▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75
+wandb:             test_auroc 0.49587
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.61183
+wandb:             train_loss 1.6651
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.46429
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.74057
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_12_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/hkvm3epq
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_12/wandb/run-20250610_121535-hkvm3epq/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_12/wandb/run-20250610_122134-zo8u39bs
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_12_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/zo8u39bs
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▂▂▄▄▄▅▄▄▅▅▆▇▆▇▇▅▆▇▆▅▄▃▂▂▂▂▁▃▃▃▅▇▆▆▆█▅▅▄▃
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▄▂▆▄▃▁▂▂▃▂▁▂▂▂▁▃▃▃▃▄▄▄▄▅▅▅▆▆▆▆▆▇▇▇▇▇████
+wandb:             train_loss ██▇▇▆▅▅▄▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc █▅▂▁▁▂▃▂▃▃▃▃▂▂▁▃▃▃▃▃▃▃▃▃▃▃▂▂▂▃▃▃▃▃▃▃▄▃▃▄
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss ██▇▇▆▅▅▃▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75573
+wandb:             test_auroc 0.55619
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.57244
+wandb:             train_loss 1.68876
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.57857
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.71043
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_12_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/zo8u39bs
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_12/wandb/run-20250610_122134-zo8u39bs/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_12/wandb/run-20250610_122813-emqyn6p6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_12_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/emqyn6p6
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: uploading history steps 50-50, summary, console lines 4-5
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▁▁▂▂▃▃▃▃▄▄▄▄▄▄▄▄▅▅▅▅▆▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇████
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▄▅▁▁▅▂▄▄▃▃▄▃▃▄▄▄▄▅▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇▇████
+wandb:             train_loss █▇▆▆▅▄▃▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc █▂▂▂▂▂▂▂▂▂▂▂▂▂▁▂▂▂▂▂▁▁▂▂▂▂▂▁▁▂▂▂▁▁▁▂▂▂▁▁
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █▇▇▆▅▃▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74809
+wandb:             test_auroc 0.54113
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.60093
+wandb:             train_loss 1.66625
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.59286
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.70844
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_12_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/emqyn6p6
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_12/wandb/run-20250610_122813-emqyn6p6/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_13/wandb/run-20250610_123534-m2vf7nhv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_13_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/m2vf7nhv
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_12/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 13 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb: uploading history steps 51-51, summary, console lines 4-5
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▁▁▂▂▃▄▄▅▅▅▅▅▆▆▆▆▇▇▇▇▇▇▇▇▇███████████████
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▁▁▇▇▄▆▆▆▅▇▆▇▆▇▆▆▅▇▇▇▇▆▆▆▇▇▇▇▇▇█▇▇▇▇▇████
+wandb:             train_loss █████▇▇▇▇▇▆▆▆▆▅▅▅▄▄▄▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▇█▆▅▆▆▆▆▆▆▆▆▆▅▆▅▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▃▃▂▂▂▁▁▁
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss ████▇▇▇▇▆▆▆▆▆▅▅▅▄▄▄▄▃▃▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75
+wandb:             test_auroc 0.47077
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.54101
+wandb:             train_loss 1.68554
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.47143
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.72854
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_13_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/m2vf7nhv
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_13/wandb/run-20250610_123534-m2vf7nhv/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_13/wandb/run-20250610_124351-65hn5ltl
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_13_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/65hn5ltl
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▁▃▇▆▇████▇▇▇▇█▇▇▇▇▇▇███████████████▇███▇
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc █▇▄▇▃▂▃▂▁▅▃▄▃▃▄▄▆▄▅▄▄▅▃▅▄▄▄▅▅▅▅▅▅▅▆▅▅▆▆▆
+wandb:             train_loss ████▇▇▇▇▇▆▆▆▆▅▅▅▅▄▄▄▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc █▇▇▇▅▄▂▂▂▂▂▂▂▃▂▁▁▁▁▁▁▂▂▂▂▂▂▂▂▂▂▂▃▃▂▂▂▂▂▃
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss ████▇▇▇▇▆▆▆▆▅▅▅▅▄▄▄▄▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75573
+wandb:             test_auroc 0.5565
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.47869
+wandb:             train_loss 1.71284
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.57143
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.72074
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_13_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/65hn5ltl
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_13/wandb/run-20250610_124351-65hn5ltl/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_13/wandb/run-20250610_125233-sj1f2bea
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_13_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/sj1f2bea
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▂▂▁▂▃▄▅▅▅▅▅▅▅▆▆▆▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇█████
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ██▅▃▁▆▆▆▅▄▄▆▅▆▄▅▅▄▄▄▅▄▄▅▅▅▄▅▅▅▅▄▅▅▅▅▅▆▆▆
+wandb:             train_loss ████▇▇▇▆▆▆▅▅▅▄▄▄▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▅██▄▂▂▁▂▂▂▂▂▂▂▁▁▁▁▁▁▂▂▂▂▂▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss ███▇▇▆▆▆▆▅▅▅▄▄▄▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74809
+wandb:             test_auroc 0.48392
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.52383
+wandb:             train_loss 1.68391
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.61429
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.69927
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_13_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/sj1f2bea
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_13/wandb/run-20250610_125233-sj1f2bea/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_14/wandb/run-20250610_130208-a3ym18yt
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_14_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/a3ym18yt
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_13/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 14 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb: uploading history steps 51-52, summary, console lines 4-5
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▁▁▁▁▂▃▃▃▄▄▅▅▅▅▅▅▆▆▆▆▇▇▇▇▇▇▇▇▇▇██████████
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▂▁▆▆▄▆▇▅▇▆▇▆▇▇▆▅▇▇▇▇▇▇▆▆█▇▇▇█▇█▇▇▇█▇█▇▇█
+wandb:             train_loss █████▇▇▇▇▇▇▇▆▆▆▆▆▅▅▅▅▅▅▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▆▇█▇▅▄▅▅▅▆▆▆▆▆▅▅▅▅▅▅▆▆▅▄▄▄▄▄▃▃▃▃▂▂▂▂▂▁▁▁
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss ████▇▇▇▇▇▇▇▇▆▆▆▆▆▅▅▅▅▅▅▄▄▄▄▃▃▃▃▃▂▂▂▂▂▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75
+wandb:             test_auroc 0.45975
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.52581
+wandb:             train_loss 1.79197
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.51429
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.80551
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_14_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/a3ym18yt
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_14/wandb/run-20250610_130208-a3ym18yt/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_14/wandb/run-20250610_131218-fun1598y
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_14_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/fun1598y
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▁▂▃▄▅▇▇▇▇▇████████▇▇▇▇▇▇▇▇▇▇▇▇▇█▇▇██████
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc █▃▅▃▇▅▂▃▂▄▂▃▂▁▄▃▄▂▂▂▂▂▂▂▂▃▂▁▂▃▂▃▂▃▂▃▃▃▂▃
+wandb:             train_loss █████▇▇▇▇▇▇▇▇▆▆▆▆▆▆▅▅▅▅▅▅▄▄▄▄▃▃▃▃▂▂▂▂▂▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc █▇▆▆▆▆▄▄▄▄▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █████▇▇▇▇▇▇▆▆▆▆▆▆▅▅▅▅▅▅▄▄▄▄▄▄▃▃▃▂▂▂▂▂▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75573
+wandb:             test_auroc 0.5584
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.45131
+wandb:             train_loss 1.79625
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.54286
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.7953
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_14_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/fun1598y
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_14/wandb/run-20250610_131218-fun1598y/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_14/wandb/run-20250610_132241-ixsrksz1
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_14_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/ixsrksz1
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▆▄▃▁▁▁▁▃▃▃▅▅▆▆▆▆▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇▇███
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc █▅▄▁▂▅▄▄▅▅▅▄▆▅▄▃▄▄▅▃▄▄▄▄▄▅▄▄▅▄▄▄▄▅▄▄▄▄▅▄
+wandb:             train_loss █████▇▇▇▇▇▆▆▆▆▆▅▅▅▅▅▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▂▁▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▂▅▇█▆▂▂▂▂▁▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss █████▇▇▇▇▇▆▆▆▆▆▅▅▅▅▅▄▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▁▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74809
+wandb:             test_auroc 0.47032
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.50562
+wandb:             train_loss 1.72725
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.60714
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.73171
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_14_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/ixsrksz1
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_14/wandb/run-20250610_132241-ixsrksz1/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_15/wandb/run-20250610_133420-zhiwc3wj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_15_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/zhiwc3wj
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_14/execution_datetimes.json
+
+**************************************************  Experiment 10 | Version 15 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+[INFO] Train dataloader 0 label distribution: 0: 177, 1: 58
+[INFO] Train dataloader 1 label distribution: 0: 177, 1: 59
+[INFO] Train dataloader 2 label distribution: 0: 178, 1: 58
+[INFO] Validation dataloader 0 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 1 label distribution: 0: 20, 1: 7
+[INFO] Validation dataloader 2 label distribution: 0: 20, 1: 7
+[INFO] Test dataloader 0 label distribution: 0: 99, 1: 33
+[INFO] Test dataloader 1 label distribution: 0: 99, 1: 32
+[INFO] Test dataloader 2 label distribution: 0: 98, 1: 33
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▂▁▁▁▁▂▂▃▃▃▃▄▄▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇▇████
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc █▁▁▅▃▅▆▄▇▅▆▆▆▆▆▅▆▆▆▇▆▆▆▇▇▆▆▇▆▇▇▆▆▆▆▆▆█▆▇
+wandb:             train_loss █████▇▇▇▇▇▇▆▆▆▆▆▆▅▅▅▅▅▅▅▄▄▄▄▄▃▃▃▃▃▂▂▂▂▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▅██▇▆▅▅▄▃▃▄▄▃▄▃▄▄▄▅▅▄▄▄▃▃▃▃▃▃▁▂▂▂▂▂▂▃▃▃▃
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss ████▇▇▇▇▇▇▇▆▆▆▆▆▆▆▅▅▅▅▄▄▄▄▄▄▃▃▃▃▃▂▂▂▂▂▂▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75
+wandb:             test_auroc 0.43649
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.52221
+wandb:             train_loss 1.95554
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.56429
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.95831
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_15_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/zhiwc3wj
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_15/wandb/run-20250610_133420-zhiwc3wj/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_15/wandb/run-20250610_134623-8phrkn8q
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_15_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/8phrkn8q
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc ▁▁▂▂▃▄▆▆▆▆▇▇▇▇▇▇▇▇▇▇█████████████▇▇▇▇▇██
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc █▆▂▄▄▅▂▃▆▃▃▂▂▂▁▃▁▂▂▂▂▃▁▂▂▂▁▂▂▂▂▂▁▂▂▂▂▂▂▂
+wandb:             train_loss ████▇▇▇▇▇▇▆▆▆▆▆▆▅▅▅▅▅▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ██▇▆▆▆▆▆▆▆▆▄▄▄▄▃▃▃▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss ████▇▇▇▇▇▇▆▆▆▆▆▆▆▅▅▅▅▅▅▄▄▄▄▄▄▃▃▃▃▃▂▂▂▂▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.75573
+wandb:             test_auroc 0.55871
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.44757
+wandb:             train_loss 1.94155
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.55
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.93989
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_15_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/8phrkn8q
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_15/wandb/run-20250610_134623-8phrkn8q/logs
+wandb: creating run
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_15/wandb/run-20250610_135817-5zf5f556
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vgg16_2d_10_15_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/5zf5f556
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             test_auroc █▇▅▃▃▂▂▂▁▁▁▂▂▂▃▄▄▅▅▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▇▇▇▇▇
+wandb: test_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            train_auroc ▁▆▆█▆▆▅▅▆▆▇▇▆▇▅▆▆▅▆▆▆▆▆▆▅▆▆▆▆▅▅▆▆▆▆▆▆▆▆▆
+wandb:             train_loss ███▇▇▇▇▇▇▆▆▆▆▆▅▅▅▅▅▅▄▄▄▄▄▄▃▃▃▃▃▃▂▂▂▂▂▁▁▁
+wandb:           val_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:              val_auroc ▁▃▄▇█▇▆▅▄▃▂▂▂▂▂▂▂▁▁▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  val_balanced_accuracy ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:               val_loss ████▇▇▇▇▇▇▇▆▆▆▆▆▆▆▅▅▅▅▅▅▄▄▄▄▄▃▃▃▃▂▂▂▂▁▁▁
+wandb:          val_precision ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy 0.74809
+wandb:             test_auroc 0.46104
+wandb: test_balanced_accuracy 0.5
+wandb:         test_precision 0
+wandb:            test_recall 0
+wandb:            train_auroc 0.50407
+wandb:             train_loss 1.87956
+wandb:           val_accuracy 0.74074
+wandb:              val_auroc 0.60714
+wandb:  val_balanced_accuracy 0.5
+wandb:               val_loss 1.8793
+wandb:          val_precision 0
+wandb:             val_recall 0
+wandb: 
+wandb: 🚀 View run vgg16_2d_10_15_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321/runs/5zf5f556
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_756321
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_15/wandb/run-20250610_135817-5zf5f556/logs
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_10/version_15/execution_datetimes.json
+Finish time: 2025-06-10 14:12:20
