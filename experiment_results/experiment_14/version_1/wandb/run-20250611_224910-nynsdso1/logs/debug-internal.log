@@ -1,0 +1,17 @@
+{"time":"2025-06-11T22:49:11.990260376+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_14/version_1/wandb/run-20250611_224910-nynsdso1/logs/debug-core.log"}
+{"time":"2025-06-11T22:49:12.297964801+01:00","level":"INFO","msg":"created new stream","id":"nynsdso1"}
+{"time":"2025-06-11T22:49:12.298076487+01:00","level":"INFO","msg":"stream: started","id":"nynsdso1"}
+{"time":"2025-06-11T22:49:12.29813645+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"nynsdso1"}
+{"time":"2025-06-11T22:49:12.298227797+01:00","level":"INFO","msg":"sender: started","stream_id":"nynsdso1"}
+{"time":"2025-06-11T22:49:12.298282237+01:00","level":"INFO","msg":"handler: started","stream_id":"nynsdso1"}
+{"time":"2025-06-11T22:49:12.510320314+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-11T23:15:28.12990383+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22/nynsdso1/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-11T23:16:27.650004811+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-11T23:16:27.650332784+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-11T23:16:28.377081567+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-11T23:16:28.616857562+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-11T23:16:28.625945246+01:00","level":"INFO","msg":"stream: closing","id":"nynsdso1"}
+{"time":"2025-06-11T23:16:28.626005601+01:00","level":"INFO","msg":"handler: closed","stream_id":"nynsdso1"}
+{"time":"2025-06-11T23:16:28.626025326+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"nynsdso1"}
+{"time":"2025-06-11T23:16:28.626055633+01:00","level":"INFO","msg":"sender: closed","stream_id":"nynsdso1"}
+{"time":"2025-06-11T23:16:28.626637106+01:00","level":"INFO","msg":"stream: closed","id":"nynsdso1"}

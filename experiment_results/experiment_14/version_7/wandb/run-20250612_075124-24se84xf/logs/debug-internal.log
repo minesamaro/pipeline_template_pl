@@ -1,0 +1,17 @@
+{"time":"2025-06-12T07:51:25.654037586+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_14/version_7/wandb/run-20250612_075124-24se84xf/logs/debug-core.log"}
+{"time":"2025-06-12T07:51:25.932973633+01:00","level":"INFO","msg":"created new stream","id":"24se84xf"}
+{"time":"2025-06-12T07:51:25.933050519+01:00","level":"INFO","msg":"stream: started","id":"24se84xf"}
+{"time":"2025-06-12T07:51:25.933083603+01:00","level":"INFO","msg":"handler: started","stream_id":"24se84xf"}
+{"time":"2025-06-12T07:51:25.933084991+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"24se84xf"}
+{"time":"2025-06-12T07:51:25.933099363+01:00","level":"INFO","msg":"sender: started","stream_id":"24se84xf"}
+{"time":"2025-06-12T07:51:26.162825642+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-12T08:06:57.63154373+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-06-12T08:20:40.379205139+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-12T08:20:40.379633109+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-12T08:20:41.109274595+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-12T08:20:41.32464666+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-12T08:20:41.335421446+01:00","level":"INFO","msg":"stream: closing","id":"24se84xf"}
+{"time":"2025-06-12T08:20:41.335458433+01:00","level":"INFO","msg":"handler: closed","stream_id":"24se84xf"}
+{"time":"2025-06-12T08:20:41.335478206+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"24se84xf"}
+{"time":"2025-06-12T08:20:41.335566772+01:00","level":"INFO","msg":"sender: closed","stream_id":"24se84xf"}
+{"time":"2025-06-12T08:20:41.336512963+01:00","level":"INFO","msg":"stream: closed","id":"24se84xf"}
