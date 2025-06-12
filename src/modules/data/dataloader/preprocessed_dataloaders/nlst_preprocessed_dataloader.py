@@ -104,15 +104,10 @@ class NLSTPreprocessedKFoldDataLoader:
                             self.config.torch_dataloader_kwargs
                     )
                 )
-                # print the label distribution of each subset_type
-                labels, counts = numpy.unique(self.data_splits[subset_type]['labels'][datafold_id], return_counts=True)
-                label_dist_str = ", ".join([f"{label}: {count}" for label, count in zip(labels, counts)])
-                print(f"[INFO] {subset_type.capitalize()} dataloader {datafold_id} label distribution: {label_dist_str}")
 
 
     def _set_data_splits(self, lung_metadataframe):
         metadata_with_splits = lung_metadataframe.copy()
-        print(f"Seed: {self.config.seed_value}")
 
         # === Step 1: Fixed stratified test split ===
         train_val_df, test_df = train_test_split(
@@ -147,12 +142,6 @@ class NLSTPreprocessedKFoldDataLoader:
             metadata_with_splits.loc[train_split.index, f'split_fold_{fold_id}'] = 'train'
             metadata_with_splits.loc[val_split.index, f'split_fold_{fold_id}'] = 'val'
 
-            # Debug print: label distribution
-            print(f"\nFold {fold_id} label distributions:")
-            print("Train:\n", train_split['label'].value_counts(normalize=True))
-            print("Validation:\n", val_split['label'].value_counts(normalize=True))
-            print("Test:\n", test_df['label'].value_counts(normalize=True))
-
             # Save in internal structure if needed
             self.data_splits['train']['file_names'].append(train_split['path'].tolist())
             self.data_splits['train']['labels'].append(train_split['label'].tolist())
@@ -185,12 +174,8 @@ class NLSTPreprocessedDataLoader(Dataset):
         self.lung_metadataframe = lung_metadataframe
         self.augmented_to_original_data_ratio = config.data_augmentation.augmented_to_original_data_ratio
         self.apply_data_augmentations = config.data_augmentation.apply
-
-        print(f"[INFO] Applying Data Augmentation: {self.apply_data_augmentations}")
-        print(f"[INFO] Augmented to Original Data Ratio: {self.augmented_to_original_data_ratio}")
         
         if self.apply_data_augmentations and subset_type == "train":
-            print(f"[INFO] Applying data augmentation with ratio: {self.augmented_to_original_data_ratio}")
             label_to_files = defaultdict(list)
             for file, label in zip(file_names, labels):
                 label_to_files[label].append(file)
@@ -277,15 +262,12 @@ class NLSTPreprocessedDataLoader(Dataset):
         # TODO: Do the same for lung roi and 2.5D and resample
 
         image = image.astype(numpy.float32)
-        print(f"[INFO] Loaded image shape: {image.shape} at index {data_index} and subset type {self.subset_type}")
-
         # Apply augmentation only to duplicated/repeated images
         if (self.apply_data_augmentations and 
             #data_index in self.augmented_indices and  # Change when not local
             self.subset_type == "train"):
             image = self.data_augmenter(image=image)
 
-            print(f"[INFO] Applying data augmentation to image at index {data_index}")
             # Save image to disk for debugging purposes
             filename = f"augmented_slice_{data_index}.png"
             save_path = f"C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\PhantomDataset\\dataaug\\{filename}"

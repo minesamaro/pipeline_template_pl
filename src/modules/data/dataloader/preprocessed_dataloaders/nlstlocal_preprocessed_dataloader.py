@@ -104,11 +104,6 @@ class NLSTLocalPreprocessedKFoldDataLoader:
                             self.config.torch_dataloader_kwargs
                     )
                 )
-                # print the label distribution of each subset_type
-                labels, counts = numpy.unique(self.data_splits[subset_type]['labels'][datafold_id], return_counts=True)
-                label_dist_str = ", ".join([f"{label}: {count}" for label, count in zip(labels, counts)])
-                print(f"[INFO] {subset_type.capitalize()} dataloader {datafold_id} label distribution: {label_dist_str}")
-
 
     def _set_data_splits(self, lung_metadataframe):
         metadata_with_splits = lung_metadataframe.copy()
@@ -145,12 +140,6 @@ class NLSTLocalPreprocessedKFoldDataLoader:
             # Assign to DataFrame
             metadata_with_splits.loc[train_split.index, f'split_fold_{fold_id}'] = 'train'
             metadata_with_splits.loc[val_split.index, f'split_fold_{fold_id}'] = 'val'
-
-            # Debug print: label distribution
-            print(f"\nFold {fold_id} label distributions:")
-            print("Train:\n", train_split['label'].value_counts(normalize=True))
-            print("Validation:\n", val_split['label'].value_counts(normalize=True))
-            print("Test:\n", test_df['label'].value_counts(normalize=True))
 
             # Save in internal structure if needed
             self.data_splits['train']['file_names'].append(train_split['path'].tolist())
