@@ -20,6 +20,6 @@ hydra:
     dir: .
 seed_value: 22
 wandb:
-  project_name: "cs_2d_roi_whole_slice_oneclass_22"
+  project_name: "cs_2d_roi_whole_slice_oneclass_22_splits"
   entity: "nlst"
   name: "vgg16_2d"

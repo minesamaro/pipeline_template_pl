@@ -15,6 +15,6 @@ hyperparameter_grid:
     - 64
 #    - 128
   seed_value:
-    - 12345
-#    - 30
+    - 22
+    - 123761
 #    - 900
