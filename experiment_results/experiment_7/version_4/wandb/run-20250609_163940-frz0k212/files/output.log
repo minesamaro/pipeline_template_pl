@@ -1,6 +1,0 @@
-
-Running model pipeline for data fold 3...
-Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
-Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
-...model pipeline for data fold 3 has run!
-Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_7/version_4/execution_datetimes.json

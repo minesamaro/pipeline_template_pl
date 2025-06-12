@@ -2,7 +2,7 @@ dataset_name: ${..dataset_name}
 data_preprocessing_protocol_number: ${..data_preprocessing_protocol_number}
 data_type: ${..metadataframe.data_type}
 data_augmentation:
-  apply: True # Change to False if you do not want to apply data augmentation
+  apply: False # Change to False if you do not want to apply data augmentation
   augmented_to_original_data_ratio: 2
   parameters:
     number_of_augmentations: 3
@@ -21,7 +21,7 @@ data_augmentation:
     random_elastic_alpha: 10.0
     random_elastic_sigma: 5.0
 image_numpy_arrays_dir_path: ${...experiment_execution.paths.preprocessed_data_dir_path}/protocol_${..data_preprocessing_protocol_number}/${..metadataframe.data_type}_numpy_arrays #TODO change here
-number_of_k_folds: 0
+number_of_k_folds: 3
 seed_value: ${...seed_value}
 test_fraction_of_entire_dataset: 0.2
 torch_dataloader_kwargs:

@@ -111,96 +111,61 @@ class NLSTLocalPreprocessedKFoldDataLoader:
 
 
     def _set_data_splits(self, lung_metadataframe):
+        metadata_with_splits = lung_metadataframe.copy()
+
+        # === Step 1: Fixed stratified test split ===
+        train_val_df, test_df = train_test_split(
+            lung_metadataframe,
+            test_size=self.config.test_fraction_of_entire_dataset,
+            random_state=self.config.seed_value,
+            stratify=lung_metadataframe['label']
+        )
+
         if not self.config.number_of_k_folds:
-            train_and_validation_file_name_column, test_file_name_column = \
-                train_test_split(
-                    lung_metadataframe,
-                    test_size=self.config.test_fraction_of_entire_dataset,
-                    random_state=self.config.seed_value,
-                    stratify=lung_metadataframe['label']
-                )
-           
+            self.config.number_of_k_foldsfold = 1
 
-            train_file_name_column, validation_file_name_column = \
-                train_test_split(
-                    train_and_validation_file_name_column,
-                    test_size=self.config.validation_fraction_of_train_set,
-                    random_state=self.config.seed_value,
-                    stratify=train_and_validation_file_name_column['label']
-                )
+        # Assign test split once (same for all folds)
+        for fold_id in range(1, self.config.number_of_k_folds + 1):
+            metadata_with_splits.loc[test_df.index, f'split_fold_{fold_id}'] = 'test'
 
-            self.data_names_by_subset['train'] = \
-                train_file_name_column['path'].tolist()
-            self.data_names_by_subset['validation'] = \
-                validation_file_name_column['path'].tolist()
-            self.data_names_by_subset['test'] = \
-                test_file_name_column['path'].tolist()
+        # === Step 2: Stratified K-Fold on train_val_df only ===
+        skf = StratifiedKFold(
+            n_splits=self.config.number_of_k_folds,
+            shuffle=True,
+            random_state=self.config.seed_value
+        )
+        # Missing a generator, no??
 
-            self.data_splits['train']['file_names'].append(
-                train_file_name_column['path'].tolist()
-            )
-            self.data_splits['train']['labels'].append(
-                train_file_name_column['label'].tolist()
-            )
-            self.data_splits['validation']['file_names'].append(
-                validation_file_name_column['path'].tolist()
-            )
-            self.data_splits['validation']['labels'].append(
-                validation_file_name_column['label'].tolist()
-            )
-            self.data_splits['test']['file_names'].append(
-                test_file_name_column['path'].tolist()
-            )
-            self.data_splits['test']['labels'].append(
-                test_file_name_column['label'].tolist()
-            )
-        
-            
-        else:
-            skf_cross_validator = StratifiedKFold(
-                n_splits=self.config.number_of_k_folds,
-                shuffle=True,
-                random_state=self.config.seed_value
-            )
-            skf_split_generator = skf_cross_validator.split(
-                X=lung_metadataframe,
-                y=lung_metadataframe['label']
-            )
+        for fold_id, (train_idx, val_idx) in enumerate(
+            skf.split(train_val_df, train_val_df['label']), 1
+        ):
+            train_split = train_val_df.iloc[train_idx]
+            val_split = train_val_df.iloc[val_idx]
 
-            for datafold_id, (train_and_validation_indexes, test_indexes) \
-                    in enumerate(skf_split_generator, 1):
-                test_lung_metadataframe = \
-                    lung_metadataframe.iloc[test_indexes]
-                (
-                    train_lung_metadataframe,
-                    validation_lung_metadataframe
-                ) = train_test_split(
-                    lung_metadataframe \
-                        .iloc[train_and_validation_indexes],
-                    test_size=self.config.validation_fraction_of_train_set,
-                    random_state=self.config.seed_value,
-                    stratify=lung_metadataframe['label'] \
-                        .iloc[train_and_validation_indexes]
-                )
+            # Assign to DataFrame
+            metadata_with_splits.loc[train_split.index, f'split_fold_{fold_id}'] = 'train'
+            metadata_with_splits.loc[val_split.index, f'split_fold_{fold_id}'] = 'val'
 
-                self.data_splits['train']['file_names'].append(
-                    train_lung_metadataframe['path'].tolist()
-                )
-                self.data_splits['train']['labels'].append(
-                    train_lung_metadataframe['label'].tolist()
-                )
-                self.data_splits['validation']['file_names'].append(
-                    validation_lung_metadataframe['path'].tolist()
-                )
-                self.data_splits['validation']['labels'].append(
-                    validation_lung_metadataframe['label'].tolist()
-                )
-                self.data_splits['test']['file_names'].append(
-                    test_lung_metadataframe['path'].tolist()
-                )
-                self.data_splits['test']['labels'].append(
-                    test_lung_metadataframe['label'].tolist()
-                )
+            # Debug print: label distribution
+            print(f"\nFold {fold_id} label distributions:")
+            print("Train:\n", train_split['label'].value_counts(normalize=True))
+            print("Validation:\n", val_split['label'].value_counts(normalize=True))
+            print("Test:\n", test_df['label'].value_counts(normalize=True))
+
+            # Save in internal structure if needed
+            self.data_splits['train']['file_names'].append(train_split['path'].tolist())
+            self.data_splits['train']['labels'].append(train_split['label'].tolist())
+            self.data_splits['validation']['file_names'].append(val_split['path'].tolist())
+            self.data_splits['validation']['labels'].append(val_split['label'].tolist())
+            self.data_splits['test']['file_names'].append(test_df['path'].tolist())
+            self.data_splits['test']['labels'].append(test_df['label'].tolist())
+
+        # === Save annotated DataFrame to CSV ===
+        metadata_with_splits.to_csv(
+            'C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\PhantomDataset\\lung_metadata_with_splits.csv',
+            index=False
+        )
+        print("\n✅ Saved split assignments to 'lung_metadata_with_splits.csv'")
 
 
 class NLSTPreprocessedDataLoader(Dataset):

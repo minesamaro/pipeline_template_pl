@@ -157,6 +157,8 @@ class NLSTPreprocessedKFoldDataLoader:
         
             
         else:
+            metadata_with_splits = lung_metadataframe.copy()
+            
             skf_cross_validator = StratifiedKFold(
                 n_splits=self.config.number_of_k_folds,
                 shuffle=True,
@@ -169,38 +171,39 @@ class NLSTPreprocessedKFoldDataLoader:
 
             for datafold_id, (train_and_validation_indexes, test_indexes) \
                     in enumerate(skf_split_generator, 1):
-                test_lung_metadataframe = \
-                    lung_metadataframe.iloc[test_indexes]
-                (
-                    train_lung_metadataframe,
-                    validation_lung_metadataframe
-                ) = train_test_split(
-                    lung_metadataframe \
-                        .iloc[train_and_validation_indexes],
+                test_lung_metadataframe = lung_metadataframe.iloc[test_indexes]
+
+                train_val_df = lung_metadataframe.iloc[train_and_validation_indexes]
+                train_lung_metadataframe, validation_lung_metadataframe = train_test_split(
+                    train_val_df,
                     test_size=self.config.validation_fraction_of_train_set,
                     random_state=self.config.seed_value,
-                    stratify=lung_metadataframe['label'] \
-                        .iloc[train_and_validation_indexes]
+                    stratify=train_val_df['label']
                 )
+                             
 
-                self.data_splits['train']['file_names'].append(
-                    train_lung_metadataframe['path'].tolist()
-                )
-                self.data_splits['train']['labels'].append(
-                    train_lung_metadataframe['label'].tolist()
-                )
-                self.data_splits['validation']['file_names'].append(
-                    validation_lung_metadataframe['path'].tolist()
-                )
-                self.data_splits['validation']['labels'].append(
-                    validation_lung_metadataframe['label'].tolist()
-                )
-                self.data_splits['test']['file_names'].append(
-                    test_lung_metadataframe['path'].tolist()
-                )
-                self.data_splits['test']['labels'].append(
-                    test_lung_metadataframe['label'].tolist()
-                )
+                # Save split info into main DataFrame
+                metadata_with_splits.loc[train_lung_metadataframe.index, f'split_fold_{datafold_id}'] = 'train'
+                metadata_with_splits.loc[validation_lung_metadataframe.index, f'split_fold_{datafold_id}'] = 'val'
+                metadata_with_splits.loc[test_lung_metadataframe.index, f'split_fold_{datafold_id}'] = 'test'
+
+                # Optional debug print
+                print(f"\nFold {datafold_id} label distributions:")
+                print("Train:\n", train_lung_metadataframe['label'].value_counts(normalize=True))
+                print("Validation:\n", validation_lung_metadataframe['label'].value_counts(normalize=True))
+                print("Test:\n", test_lung_metadataframe['label'].value_counts(normalize=True))
+
+                # Store paths and labels in your data_splits if needed
+                self.data_splits['train']['file_names'].append(train_lung_metadataframe['path'].tolist())
+                self.data_splits['train']['labels'].append(train_lung_metadataframe['label'].tolist())
+                self.data_splits['validation']['file_names'].append(validation_lung_metadataframe['path'].tolist())
+                self.data_splits['validation']['labels'].append(validation_lung_metadataframe['label'].tolist())
+                self.data_splits['test']['file_names'].append(test_lung_metadataframe['path'].tolist())
+                self.data_splits['test']['labels'].append(test_lung_metadataframe['label'].tolist())
+
+            # Save the updated DataFrame with split annotations
+            metadata_with_splits.to_csv('lung_metadata_with_splits.csv', index=False)
+            print("\nSaved split assignments to 'lung_metadata_with_splits.csv'")
 
 
 class NLSTPreprocessedDataLoader(Dataset):
