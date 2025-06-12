@@ -113,8 +113,6 @@ def run_experiment_pipeline(config):
     kfold_dataloaders = dataloader.get_dataloaders()
     kfold_data_names = dataloader.get_data_names()
 
-    quit()
-
     setup.set_seed(seed_value=config.seed_value)
 
     n_datafolds = len(kfold_dataloaders['train'])
