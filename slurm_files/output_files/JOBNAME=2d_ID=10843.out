@@ -1,0 +1,85 @@
+Initialization time: 2025-06-12 14:53:27
+
+**************************************************  Experiment 17 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+
+Fold 1 label distributions:
+Train:
+ label
+0    0.752381
+1    0.247619
+Name: proportion, dtype: float64
+Validation:
+ label
+0    0.752381
+1    0.247619
+Name: proportion, dtype: float64
+Test:
+ label
+0    0.746835
+1    0.253165
+Name: proportion, dtype: float64
+
+Fold 2 label distributions:
+Train:
+ label
+0    0.752381
+1    0.247619
+Name: proportion, dtype: float64
+Validation:
+ label
+0    0.752381
+1    0.247619
+Name: proportion, dtype: float64
+Test:
+ label
+0    0.746835
+1    0.253165
+Name: proportion, dtype: float64
+
+Fold 3 label distributions:
+Train:
+ label
+0    0.752381
+1    0.247619
+Name: proportion, dtype: float64
+Validation:
+ label
+0    0.752381
+1    0.247619
+Name: proportion, dtype: float64
+Test:
+ label
+0    0.746835
+1    0.253165
+Name: proportion, dtype: float64
+
+✅ Saved split assignments to 'lung_metadata_with_splits.csv'
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Train dataloader 0 label distribution: 0: 158, 1: 52
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Train dataloader 1 label distribution: 0: 158, 1: 52
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Train dataloader 2 label distribution: 0: 158, 1: 52
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Validation dataloader 0 label distribution: 0: 79, 1: 26
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Validation dataloader 1 label distribution: 0: 79, 1: 26
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Validation dataloader 2 label distribution: 0: 79, 1: 26
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Test dataloader 0 label distribution: 0: 59, 1: 20
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Test dataloader 1 label distribution: 0: 59, 1: 20
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Test dataloader 2 label distribution: 0: 59, 1: 20
+Finish time: 2025-06-12 14:53:43

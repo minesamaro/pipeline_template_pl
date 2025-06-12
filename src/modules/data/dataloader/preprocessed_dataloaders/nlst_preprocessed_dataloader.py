@@ -112,6 +112,7 @@ class NLSTPreprocessedKFoldDataLoader:
 
     def _set_data_splits(self, lung_metadataframe):
         metadata_with_splits = lung_metadataframe.copy()
+        print(f"Seed: {self.config.seed_value}")
 
         # === Step 1: Fixed stratified test split ===
         train_val_df, test_df = train_test_split(

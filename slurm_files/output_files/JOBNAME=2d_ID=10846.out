@@ -1,0 +1,138 @@
+Initialization time: 2025-06-12 15:00:51
+
+**************************************************  Experiment 19 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Seed: 12345
+
+Fold 1 label distributions:
+Train:
+ label
+0    0.75
+1    0.25
+Name: proportion, dtype: float64
+Validation:
+ label
+0    0.761905
+1    0.238095
+Name: proportion, dtype: float64
+Test:
+ label
+0    0.746835
+1    0.253165
+Name: proportion, dtype: float64
+
+Fold 2 label distributions:
+Train:
+ label
+0    0.75
+1    0.25
+Name: proportion, dtype: float64
+Validation:
+ label
+0    0.761905
+1    0.238095
+Name: proportion, dtype: float64
+Test:
+ label
+0    0.746835
+1    0.253165
+Name: proportion, dtype: float64
+
+Fold 3 label distributions:
+Train:
+ label
+0    0.753968
+1    0.246032
+Name: proportion, dtype: float64
+Validation:
+ label
+0    0.746032
+1    0.253968
+Name: proportion, dtype: float64
+Test:
+ label
+0    0.746835
+1    0.253165
+Name: proportion, dtype: float64
+
+Fold 4 label distributions:
+Train:
+ label
+0    0.753968
+1    0.246032
+Name: proportion, dtype: float64
+Validation:
+ label
+0    0.746032
+1    0.253968
+Name: proportion, dtype: float64
+Test:
+ label
+0    0.746835
+1    0.253165
+Name: proportion, dtype: float64
+
+Fold 5 label distributions:
+Train:
+ label
+0    0.753968
+1    0.246032
+Name: proportion, dtype: float64
+Validation:
+ label
+0    0.746032
+1    0.253968
+Name: proportion, dtype: float64
+Test:
+ label
+0    0.746835
+1    0.253165
+Name: proportion, dtype: float64
+
+✅ Saved split assignments to 'lung_metadata_with_splits.csv'
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Train dataloader 0 label distribution: 0: 189, 1: 63
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Train dataloader 1 label distribution: 0: 189, 1: 63
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Train dataloader 2 label distribution: 0: 190, 1: 62
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Train dataloader 3 label distribution: 0: 190, 1: 62
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Train dataloader 4 label distribution: 0: 190, 1: 62
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Validation dataloader 0 label distribution: 0: 48, 1: 15
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Validation dataloader 1 label distribution: 0: 48, 1: 15
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Validation dataloader 2 label distribution: 0: 47, 1: 16
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Validation dataloader 3 label distribution: 0: 47, 1: 16
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Validation dataloader 4 label distribution: 0: 47, 1: 16
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Test dataloader 0 label distribution: 0: 59, 1: 20
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Test dataloader 1 label distribution: 0: 59, 1: 20
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Test dataloader 2 label distribution: 0: 59, 1: 20
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Test dataloader 3 label distribution: 0: 59, 1: 20
+[INFO] Applying Data Augmentation: False
+[INFO] Augmented to Original Data Ratio: 2
+[INFO] Test dataloader 4 label distribution: 0: 59, 1: 20
+Finish time: 2025-06-12 15:01:06
