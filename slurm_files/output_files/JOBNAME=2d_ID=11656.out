@@ -1,0 +1,109 @@
+Initialization time: 2025-06-15 23:02:48
+
+**************************************************  Experiment 27 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+
+✅ Saved split assignments to 'lung_metadata_with_splits.csv'
+
+✅ Set train dataloaders with 3 folds
+  - Fold 1: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 5, 1.0: 11}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 5, 1.0: 11}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 2}
+  - Fold 2: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {1.0: 2}
+  - Fold 3: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 2}
+
+✅ Set validation dataloaders with 3 folds
+  - Fold 1: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 6, 1.0: 3}
+  - Fold 2: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 5, 1.0: 4}
+  - Fold 3: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 8, 1.0: 1}
+
+✅ Set test dataloaders with 3 folds
+  - Fold 1: 79 samples
+    Label distribution: {0: 59, 1: 20}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+  - Fold 2: 79 samples
+    Label distribution: {0: 59, 1: 20}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+  - Fold 3: 79 samples
+    Label distribution: {0: 59, 1: 20}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+Finish time: 2025-06-15 23:02:59
