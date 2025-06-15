@@ -1,7 +1,7 @@
 from collections import defaultdict
 from sklearn.model_selection import StratifiedKFold, train_test_split
 from torch.utils.data import Dataset
-from torch.utils.data import DataLoader as TorchDataLoader
+from torch.utils.data import DataLoader as TorchDataLoader, WeightedRandomSampler
 import numpy
 import random
 import torch
@@ -65,21 +65,44 @@ class NLSTPreprocessedKFoldDataLoader:
             subset_type,
             torch_dataloader_kwargs
     ):
-        torch_dataloader = TorchDataLoader(
-            dataset=NLSTPreprocessedDataLoader(
-                config=self.config,
-                file_names=file_names,
-                labels=labels,
-                load_data_name=self.load_data_name,
-                subset_type=subset_type,
-                lung_metadataframe=self.lung_metadataframe
-            ),
-            generator=self.torch_generator,
-            shuffle=True if subset_type == "train" else False,
-            worker_init_fn=self._get_torch_dataloader_worker_init_fn,
-            **torch_dataloader_kwargs
+        dataset = NLSTPreprocessedDataLoader(
+            config=self.config,
+            file_names=file_names,
+            labels=labels,
+            load_data_name=self.load_data_name,
+            subset_type=subset_type,
+            lung_metadataframe=self.lung_metadataframe
         )
-                
+
+        if subset_type == "train":
+            # Convert labels to numpy for processing
+            labels_np = numpy.array(labels)
+            class_counts = numpy.bincount(labels_np)
+            class_weights = 1. / class_counts
+            # Assign weight to each sample
+            sample_weights = class_weights[labels_np]
+            sampler = WeightedRandomSampler(
+                weights=sample_weights,
+                num_samples=len(sample_weights),
+                replacement=True
+            )
+            shuffle = False  # Disable shuffle when using sampler
+            torch_dataloader = TorchDataLoader(
+                dataset=dataset,
+                sampler=sampler,
+                generator=self.torch_generator,
+                worker_init_fn=self._get_torch_dataloader_worker_init_fn,
+                **torch_dataloader_kwargs
+            )
+        else:
+            torch_dataloader = TorchDataLoader(
+                dataset=dataset,
+                shuffle=False,  # Validation/test can be shuffled normally or not
+                generator=self.torch_generator,
+                worker_init_fn=self._get_torch_dataloader_worker_init_fn,
+                **torch_dataloader_kwargs
+            )
+
         return torch_dataloader
 
     def _get_torch_dataloader_worker_init_fn(self, worker_id):
@@ -104,6 +127,20 @@ class NLSTPreprocessedKFoldDataLoader:
                             self.config.torch_dataloader_kwargs
                     )
                 )
+            print(f"\n✅ Set {subset_type} dataloaders with {len(self.dataloaders[subset_type])} folds")
+            # Print the number of samples in batches for each fold
+            for fold_id, dataloader in enumerate(self.dataloaders[subset_type], 1):
+                num_samples = len(dataloader.dataset)
+                print(f"  - Fold {fold_id}: {num_samples} samples")
+                
+                # Print the distribution of labels in the fold
+                
+                labels = dataloader.dataset.labels
+                unique_labels, counts = numpy.unique(labels, return_counts=True)
+                label_distribution = dict(zip(unique_labels, counts))
+                print(f"    Label distribution: {label_distribution}")
+
+        quit()
 
 
     def _set_data_splits(self, lung_metadataframe):
