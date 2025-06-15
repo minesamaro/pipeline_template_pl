@@ -34,3 +34,4 @@ roi: lung # lung, whole
 resample: False
 resample_z: False
 random: False
+weighted_random_sampler: False
