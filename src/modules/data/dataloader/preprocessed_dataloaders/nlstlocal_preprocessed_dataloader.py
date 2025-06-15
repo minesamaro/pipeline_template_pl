@@ -141,6 +141,15 @@ class NLSTLocalPreprocessedKFoldDataLoader:
                 label_distribution = dict(zip(unique_labels, counts))
                 print(f"    Label distribution: {label_distribution}")
 
+                # Print the distribution of the batches
+                for batch in dataloader:
+                    # Print the distribution of 0 and 1 labels in the batch
+                    labels = batch[1]
+                    unique_labels, counts = numpy.unique(labels, return_counts=True)
+                    label_distribution = dict(zip(unique_labels, counts))
+                    print(f"    Batch label distribution: {label_distribution}")
+
+
         quit()
 
 
