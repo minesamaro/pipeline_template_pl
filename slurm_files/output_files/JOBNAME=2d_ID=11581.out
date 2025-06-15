@@ -1,0 +1,37 @@
+Initialization time: 2025-06-15 17:55:00
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 54, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 99, in run_experiment_pipeline
+    metadataframe = MetadataFrame(
+                    ^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/metadataframe/metadataframe.py", line 23, in __new__
+    return NLSTPreprocessedMetaDataFrame(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/metadataframe/preprocessed_metadataframes/nlst_metadataframe.py", line 18, in __init__
+    self._save_metadataframe_as_csv(
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/metadataframe/preprocessed_metadataframes/nlst_metadataframe.py", line 59, in _save_metadataframe_as_csv
+    self.lung_metadataframe.to_csv(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pandas/core/generic.py", line 3967, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pandas/io/formats/format.py", line 1014, in to_csv
+    csv_formatter.save()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pandas/io/formats/csvs.py", line 251, in save
+    with get_handle(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pandas/io/common.py", line 157, in __exit__
+    self.close()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pandas/io/common.py", line 144, in close
+    handle.close()
+OSError: [Errno 122] Disk quota exceeded
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+
+**************************************************  Experiment 24 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+srun: error: 01.ctm-deep-05: task 0: Exited with exit code 1
+Finish time: 2025-06-15 17:56:01

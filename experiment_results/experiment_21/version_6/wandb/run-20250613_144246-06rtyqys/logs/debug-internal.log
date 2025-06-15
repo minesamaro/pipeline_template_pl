@@ -1,0 +1,17 @@
+{"time":"2025-06-13T14:42:46.780127807+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_21/version_6/wandb/run-20250613_144246-06rtyqys/logs/debug-core.log"}
+{"time":"2025-06-13T14:42:47.065396112+01:00","level":"INFO","msg":"created new stream","id":"06rtyqys"}
+{"time":"2025-06-13T14:42:47.065468912+01:00","level":"INFO","msg":"stream: started","id":"06rtyqys"}
+{"time":"2025-06-13T14:42:47.065531588+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"06rtyqys"}
+{"time":"2025-06-13T14:42:47.065575604+01:00","level":"INFO","msg":"sender: started","stream_id":"06rtyqys"}
+{"time":"2025-06-13T14:42:47.065619212+01:00","level":"INFO","msg":"handler: started","stream_id":"06rtyqys"}
+{"time":"2025-06-13T14:42:47.335259801+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-13T14:50:50.646346029+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/06rtyqys/file_stream\": dial tcp: lookup api.wandb.ai on 127.0.0.53:53: read udp 127.0.0.1:35542->127.0.0.53:53: i/o timeout"}
+{"time":"2025-06-13T15:16:01.986685502+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-13T15:16:01.986909732+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-13T15:16:02.686694472+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-13T15:16:02.876531404+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-13T15:16:02.887478372+01:00","level":"INFO","msg":"stream: closing","id":"06rtyqys"}
+{"time":"2025-06-13T15:16:02.887513108+01:00","level":"INFO","msg":"handler: closed","stream_id":"06rtyqys"}
+{"time":"2025-06-13T15:16:02.887531577+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"06rtyqys"}
+{"time":"2025-06-13T15:16:02.887616545+01:00","level":"INFO","msg":"sender: closed","stream_id":"06rtyqys"}
+{"time":"2025-06-13T15:16:02.888062106+01:00","level":"INFO","msg":"stream: closed","id":"06rtyqys"}

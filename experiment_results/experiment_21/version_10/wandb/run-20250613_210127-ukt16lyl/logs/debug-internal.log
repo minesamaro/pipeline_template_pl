@@ -1,0 +1,17 @@
+{"time":"2025-06-13T21:01:27.115206303+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_21/version_10/wandb/run-20250613_210127-ukt16lyl/logs/debug-core.log"}
+{"time":"2025-06-13T21:01:27.399648029+01:00","level":"INFO","msg":"created new stream","id":"ukt16lyl"}
+{"time":"2025-06-13T21:01:27.399741515+01:00","level":"INFO","msg":"stream: started","id":"ukt16lyl"}
+{"time":"2025-06-13T21:01:27.399796949+01:00","level":"INFO","msg":"sender: started","stream_id":"ukt16lyl"}
+{"time":"2025-06-13T21:01:27.399787883+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"ukt16lyl"}
+{"time":"2025-06-13T21:01:27.399864257+01:00","level":"INFO","msg":"handler: started","stream_id":"ukt16lyl"}
+{"time":"2025-06-13T21:01:27.639576506+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-13T21:30:28.264503167+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/ukt16lyl/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-13T21:31:54.298833804+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-13T21:31:54.299015936+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-13T21:31:55.07577659+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-13T21:31:55.29112188+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-13T21:31:55.301491714+01:00","level":"INFO","msg":"stream: closing","id":"ukt16lyl"}
+{"time":"2025-06-13T21:31:55.301526881+01:00","level":"INFO","msg":"handler: closed","stream_id":"ukt16lyl"}
+{"time":"2025-06-13T21:31:55.301542687+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ukt16lyl"}
+{"time":"2025-06-13T21:31:55.301594227+01:00","level":"INFO","msg":"sender: closed","stream_id":"ukt16lyl"}
+{"time":"2025-06-13T21:31:55.302215307+01:00","level":"INFO","msg":"stream: closed","id":"ukt16lyl"}

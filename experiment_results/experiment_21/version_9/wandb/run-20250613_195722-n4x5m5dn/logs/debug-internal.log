@@ -1,0 +1,17 @@
+{"time":"2025-06-13T19:57:23.743889373+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_21/version_9/wandb/run-20250613_195722-n4x5m5dn/logs/debug-core.log"}
+{"time":"2025-06-13T19:57:24.004454448+01:00","level":"INFO","msg":"created new stream","id":"n4x5m5dn"}
+{"time":"2025-06-13T19:57:24.004500904+01:00","level":"INFO","msg":"stream: started","id":"n4x5m5dn"}
+{"time":"2025-06-13T19:57:24.00452766+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"n4x5m5dn"}
+{"time":"2025-06-13T19:57:24.004570961+01:00","level":"INFO","msg":"sender: started","stream_id":"n4x5m5dn"}
+{"time":"2025-06-13T19:57:24.004534375+01:00","level":"INFO","msg":"handler: started","stream_id":"n4x5m5dn"}
+{"time":"2025-06-13T19:57:24.203022911+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-13T20:05:44.825295446+01:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/n4x5m5dn/file_stream","body":"{\"error\":\"context deadline exceeded\"}"}
+{"time":"2025-06-13T20:29:36.797900425+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-13T20:29:36.7980563+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-13T20:29:37.574182742+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-13T20:29:37.800335133+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-13T20:29:37.806334322+01:00","level":"INFO","msg":"stream: closing","id":"n4x5m5dn"}
+{"time":"2025-06-13T20:29:37.806357107+01:00","level":"INFO","msg":"handler: closed","stream_id":"n4x5m5dn"}
+{"time":"2025-06-13T20:29:37.806369154+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"n4x5m5dn"}
+{"time":"2025-06-13T20:29:37.806387834+01:00","level":"INFO","msg":"sender: closed","stream_id":"n4x5m5dn"}
+{"time":"2025-06-13T20:29:37.806898666+01:00","level":"INFO","msg":"stream: closed","id":"n4x5m5dn"}
