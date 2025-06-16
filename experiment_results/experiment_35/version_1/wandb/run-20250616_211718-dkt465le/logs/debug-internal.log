@@ -1,0 +1,15 @@
+{"time":"2025-06-16T21:17:18.454602676+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_35/version_1/wandb/run-20250616_211718-dkt465le/logs/debug-core.log"}
+{"time":"2025-06-16T21:17:20.078440871+01:00","level":"INFO","msg":"created new stream","id":"dkt465le"}
+{"time":"2025-06-16T21:17:20.078496465+01:00","level":"INFO","msg":"stream: started","id":"dkt465le"}
+{"time":"2025-06-16T21:17:20.07855396+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"dkt465le"}
+{"time":"2025-06-16T21:17:20.07856119+01:00","level":"INFO","msg":"sender: started","stream_id":"dkt465le"}
+{"time":"2025-06-16T21:17:20.07864696+01:00","level":"INFO","msg":"handler: started","stream_id":"dkt465le"}
+{"time":"2025-06-16T21:17:20.334483859+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-16T21:17:35.687216055+01:00","level":"INFO","msg":"stream: closing","id":"dkt465le"}
+{"time":"2025-06-16T21:17:35.687282196+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-16T21:17:35.687454304+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-16T21:17:36.504056449+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-16T21:17:36.71178708+01:00","level":"INFO","msg":"handler: closed","stream_id":"dkt465le"}
+{"time":"2025-06-16T21:17:36.711857478+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"dkt465le"}
+{"time":"2025-06-16T21:17:36.711884513+01:00","level":"INFO","msg":"sender: closed","stream_id":"dkt465le"}
+{"time":"2025-06-16T21:17:36.712825418+01:00","level":"INFO","msg":"stream: closed","id":"dkt465le"}

@@ -1,0 +1,17 @@
+{"time":"2025-06-16T19:10:29.610173919+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_2/wandb/run-20250616_191028-7xslogfh/logs/debug-core.log"}
+{"time":"2025-06-16T19:10:29.882959799+01:00","level":"INFO","msg":"created new stream","id":"7xslogfh"}
+{"time":"2025-06-16T19:10:29.883005182+01:00","level":"INFO","msg":"stream: started","id":"7xslogfh"}
+{"time":"2025-06-16T19:10:29.88305125+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"7xslogfh"}
+{"time":"2025-06-16T19:10:29.883085876+01:00","level":"INFO","msg":"sender: started","stream_id":"7xslogfh"}
+{"time":"2025-06-16T19:10:29.883133295+01:00","level":"INFO","msg":"handler: started","stream_id":"7xslogfh"}
+{"time":"2025-06-16T19:10:30.134973238+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-16T20:01:45.766954159+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/7xslogfh/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-16T20:10:35.674447183+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-16T20:10:35.674867342+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-16T20:10:36.492386093+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-16T20:10:36.63803406+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 995-999, summary, console lines 4-5","runtime_seconds":0.14513049}],"total_operations":1}}
+{"time":"2025-06-16T20:10:36.712413605+01:00","level":"INFO","msg":"stream: closing","id":"7xslogfh"}
+{"time":"2025-06-16T20:10:36.712449257+01:00","level":"INFO","msg":"handler: closed","stream_id":"7xslogfh"}
+{"time":"2025-06-16T20:10:36.712468866+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"7xslogfh"}
+{"time":"2025-06-16T20:10:36.712485351+01:00","level":"INFO","msg":"sender: closed","stream_id":"7xslogfh"}
+{"time":"2025-06-16T20:10:36.712903211+01:00","level":"INFO","msg":"stream: closed","id":"7xslogfh"}
