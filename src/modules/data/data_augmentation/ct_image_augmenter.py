@@ -81,108 +81,58 @@ class CTImageAugmenter:
         data_augmentations (list): A list of augmentation transformations to randomly choose from.
     """
     def __init__(self, parameters):
-        """
-        Initializes the RandomDataAugmenter2D with the provided configuration.
+        self.parameters = parameters
 
-        Args:
-            parameters (DictConfig): A configuration object (from OmegaConf) containing the parameters for augmentations.
-                It includes attributes for rotation, translation, shearing, elastic deformation, blurring, and brightness/contrast settings.
-                Expected keys:
-                  - number_of_augmentations (int): Number of augmentations to apply.
-                  - random_rotation_degrees (float): Maximum rotation in degrees.
-                  - random_translation_fraction (float): Fraction of image to translate.
-                  - random_elastic_alpha (float): Strength of elastic transformation.
-                  - random_elastic_sigma (float): Smoothing factor for elastic transformation.
-                  - random_gaussian_blur (Dict): Dictionary with kernel size and sigma for Gaussian blur.
-                      - kernel_size (int): Range of the Gaussian kernel size in pixels.
-                      - sigma (float): Range of the Gaussian kernel standard deviation.
-                  - random_contrast_intensity_factor (float): Contrast adjustment factor.
-                  - random_brightness_intensity_factor (float): Brightness adjustment factor.
-        """
-        self.number_of_augmentations = parameters.number_of_augmentations
-        self.number_of_augmentations = 1 #TODO Eliminate this line when the bug is fixed in the data augmentation library.
-        """self.data_augmentations = [
-            A.Rotate(
-                limit=parameters.random_rotation_degrees,
-                p=1.0
-            ),
-            A.Affine(
-                translate_percent=(
-                    -parameters.random_translation_fraction,
-                    parameters.random_translation_fraction
-                ),
-                p=1.0
-            ),
+        # Basic augmentations (Albumentations-compatible)
+        self.basic_geometric = [
             A.HorizontalFlip(p=1.0),
             A.VerticalFlip(p=1.0),
-            A.ElasticTransform(
-                alpha=parameters.random_elastic_alpha,
-                sigma=parameters.random_elastic_sigma,
-                p=1.0
-            ),
-            A.GaussianBlur(
-                blur_limit=parameters.random_gaussian_blur.kernel_size,
-                sigma_limit=parameters.random_gaussian_blur.sigma,
-                p=1.0
-            ),
-            A.GaussNoise(
-                std_range=(
-                    0.1,
-                    0.2),
-                p=1.0
-            ),
-            A.RandomBrightnessContrast(
-                brightness_limit=0.0,
-                contrast_limit=parameters.random_contrast_intensity_factor,
-                p=1.0
-            ),
-            A.RandomBrightnessContrast(
-                brightness_limit=parameters.random_brightness_intensity_factor,
-                contrast_limit=0,
-                p=1.0
-            )
-        ]"""
-        # Choose one blur randomly among GaussianBlur, MedianBlur, or MotionBlur
-        blur_transforms = [
-            A.GaussianBlur(
-                blur_limit=parameters.random_gaussian_blur.kernel_size,
-                sigma_limit=parameters.random_gaussian_blur.sigma,
-                p=1.0
-            ),
-            A.MedianBlur(blur_limit=3, p=1.0),
-            A.MotionBlur(blur_limit=3, p=1.0)
-        ]
-        selected_blur = random.choice(blur_transforms)
-
-        # Additional transformations
-        self.data_augmentations = [
-            A.ShiftScaleRotate(
-                shift_limit=parameters.random_translation_fraction,
+            A.ShiftScaleRotate( # values tested on NLST dataset
+                shift_limit=0.05,
                 scale_limit=0.1,
-                rotate_limit=parameters.random_rotation_degrees,
+                rotate_limit=15,
                 p=1.0
             ),
-            A.HorizontalFlip(p=1.0),
-            A.VerticalFlip(p=1.0),
-            A.ElasticTransform(
-                alpha=parameters.random_elastic_alpha,
-                sigma=parameters.random_elastic_sigma,
-                alpha_affine=0.0,
-                p=1.0
-            ),
-            selected_blur,
-            A.GaussNoise(std_range=(0.1, 0.2), p=1.0),
-            A.RandomBrightnessContrast(
-                brightness_limit=parameters.random_brightness_intensity_factor,
-                contrast_limit=parameters.random_contrast_intensity_factor,
-                p=1.0
-            ),
-            PatchShuffleTransform(patch_size=2, p=1.0)  # Now properly wrapped
+            A.Affine(shear=(-5, 5), p=1.0)
         ]
 
-        self.data_augmentations = [
-            A.GaussNoise(std_range=(0.1, 0.2), p=1.0),
+        self.basic_occlusion = [
+            A.CoarseDropout(max_holes=8, max_height=8, max_width=8, p=0.7)
         ]
+
+        self.basic_intensity_ops = [
+            A.RandomGamma(gamma_limit=(50, 150), p=0.7),
+            A.CLAHE(clip_limit=1.1, p=0.7),
+            A.RandomBrightnessContrast(
+                brightness_limit=(-0.2, 0.2),
+                contrast_limit=(-0.3, 0.3),
+                p=0.7
+            )
+        ]
+
+        self.basic_noise = [
+            A.GaussNoise(std_range= (0.1, 0.15), mean = (0.0, 0.0), p=1.0), # Introduces too much noise
+            #A.ISONoise(p=0.7),
+            A.SaltAndPepper(amount= (0.005, 0.005), p=0.7),
+        ]
+
+        self.basic_filtering = [
+            A.MotionBlur(blur_limit=5, p=0.7),
+            A.MedianBlur(blur_limit=5, p=0.7),
+            A.GaussianBlur(blur_limit=7, p=0.7),
+            PatchShuffleTransform(patch_size=4, p=0.7)
+        ]
+
+        # Deformable augmentations
+        self.deformable = [
+            A.ElasticTransform(
+                alpha=50.0,
+                sigma=20.0,
+                p=0.7
+            ),
+            A.OpticalDistortion(distort_limit=0.2, shift_limit=0.0, p=0.7)
+        ]
+
 
     def __call__(self, image, mask=None):
         """
@@ -202,35 +152,40 @@ class CTImageAugmenter:
             W = Width of the image
             C = Number of channels in the image
         """
-        data_augmenter = A.Compose([
-            *random.sample(
-                population=self.data_augmentations,
-                k=self.number_of_augmentations
-            )
-        ])
-
         if image.ndim == 2:  # Check if the numpy array image shape is (H, W)
             image = image.reshape(1, *image.shape)  # Convert numpy array image from (H, W) to (1, H, W).
-        image = numpy.transpose(image, axes=(1, 2, 0))  # Convert numpy array image from (C, H, W) to (H, W, C).
-        if mask is None:
-            transformed_data = data_augmenter(image=image)
-            for data_type in transformed_data:
-                transformed_data[data_type] = numpy.transpose(
-                    transformed_data[data_type],
-                    axes=(2, 0, 1)
-                )  # Convert numpy array image from (H, W, C) to (C, H, W).
-            return transformed_data['image']
-        else:
-            if mask.ndim == 2:  # Check if the numpy array mask shape is (H, W)
-                mask = mask.reshape(1, *mask.shape)  # Convert numpy array mask from (H, W) to (1, H, W).
-            mask = numpy.transpose(mask, axes=(1, 2, 0))  # Convert numpy array mask from (C, H, W) to (H, W, C).
-            transformed_data = data_augmenter(
-                image=image,
-                mask=mask
-            )
-            for data_type in transformed_data:
-                transformed_data[data_type] = numpy.transpose(
-                    transformed_data[data_type],
-                    axes=(2, 0, 1)
-                )  # Convert numpy array image from (H, W, C) to (C, H, W).
-            return transformed_data['image'], transformed_data['mask']
+        image = numpy.transpose(image, axes=(1, 2, 0))
+        #image_np = image.transpose(1, 2, 0)  # to HWC
+        #print(image.shape)
+        #print(image.dtype)
+
+        # Choose 3 random augmentations from the basic set
+        basic_aug_1 = random.choice(
+            self.basic_geometric)
+        #print(f"Applying basic augmentation: {basic_aug_1.__class__.__name__}")
+        basic_aug_2 = random.choice(
+            self.basic_occlusion +
+            self.basic_intensity_ops)
+        #print(f"Applying basic augmentation: {basic_aug_2.__class__.__name__}")
+        basic_aug_3 = random.choice(
+            self.basic_noise +
+            self.basic_filtering
+        )
+        # Apply basic augmentation
+        #print(f"Applying basic augmentation: {basic_aug_3.__class__.__name__}")
+        #if isinstance(basic_aug, A.BasicTransform):
+        image_np = basic_aug_1(image=image)['image']
+        image_np = basic_aug_2(image=image_np)['image']
+        image_np = basic_aug_3(image=image_np)['image']
+
+        deform_aug = random.choice(self.deformable)
+        #print(f"Applying deformable augmentation: {deform_aug.__class__.__name__}")
+        image_np = deform_aug(image=image_np)['image']
+        #print(f"Image shape after augmentations: {image_np.shape}")
+        #print(f"Image dtype after augmentations: {image_np.dtype}")
+        # Convert back to tensor and permute to C, H, W
+        image_tensor = torch.tensor(image_np.transpose(2, 0, 1))
+
+        #image_tensor = torch.tensor(image_np.transpose(2, 0, 1))
+
+        return image_np if mask is None else (image_tensor, mask)

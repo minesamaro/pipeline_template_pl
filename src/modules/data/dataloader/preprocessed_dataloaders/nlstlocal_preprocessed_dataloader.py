@@ -326,39 +326,17 @@ class NLSTPreprocessedDataLoader(Dataset):
 
         # Apply augmentation only to duplicated/repeated images
         if (self.apply_data_augmentations and 
-            #data_index in self.augmented_indices and  #TODO Change when not local
+            data_index in self.augmented_indices and  #TODO Change when not local
             self.subset_type == "train"):
-            filename = f"augmented_slice_{data_index}.png"
-            filename_og = f"original_slice_{data_index}.png"
-
-            save_path = f"C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\PhantomDataset\\dataaug\\{filename_og}"
-
-            plt.imsave(save_path, image, cmap='gray')
-            image = self.data_augmenter(image=image)
-
-            # Save image to disk for debugging purposes
             
-            save_path = f"C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\PhantomDataset\\dataaug\\{filename}"
-            plt.imsave(save_path, image[-1], cmap='gray')
+            image = self.data_augmenter(image=image)
+            # Squeeze the image to remove single-dimensional entries
+            if image.ndim == 3:
+                image = numpy.squeeze(image)
 
         
         image = self.image_transformer(image)
         data = dict(image=image)
-
-        # Get the metadata row corresponding to the current file
-        #meta_row = self.lung_metadataframe.loc[
-        #    self.lung_metadataframe['path'] == self.file_names[data_index]
-        #]
-
-#        if not meta_row.empty:
-#            pid = meta_row['pid'].values[0]
-#            study = meta_row['study_yr'].values[0]
-#            
-#            filename = f"slice_{pid}_{study}.png"
-#            save_path = f"/nas-ctm01/homes/mipaiva/experiment_figures/{filename}"
-#            plt.imsave(save_path, image[-1], cmap='gray')
-#        else:
-#            print(f"[WARNING] No metadata found for file: {self.file_names[data_index]}")
 
         return data
     
