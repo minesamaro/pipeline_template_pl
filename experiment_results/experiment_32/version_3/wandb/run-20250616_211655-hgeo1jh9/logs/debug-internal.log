@@ -5,3 +5,14 @@
 {"time":"2025-06-16T21:16:57.286282745+01:00","level":"INFO","msg":"handler: started","stream_id":"hgeo1jh9"}
 {"time":"2025-06-16T21:16:57.286339106+01:00","level":"INFO","msg":"sender: started","stream_id":"hgeo1jh9"}
 {"time":"2025-06-16T21:16:57.551848218+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-16T21:39:58.17452676+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/hgeo1jh9/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-16T22:17:16.300424338+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-06-16T22:23:29.736663213+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-16T22:23:29.736874891+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-16T22:23:30.627180386+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-16T22:23:30.738837053+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 996-999, summary, console lines 4-5","runtime_seconds":0.111305351}],"total_operations":1}}
+{"time":"2025-06-16T22:23:30.840912767+01:00","level":"INFO","msg":"stream: closing","id":"hgeo1jh9"}
+{"time":"2025-06-16T22:23:30.84095082+01:00","level":"INFO","msg":"handler: closed","stream_id":"hgeo1jh9"}
+{"time":"2025-06-16T22:23:30.840969565+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"hgeo1jh9"}
+{"time":"2025-06-16T22:23:30.841004551+01:00","level":"INFO","msg":"sender: closed","stream_id":"hgeo1jh9"}
+{"time":"2025-06-16T22:23:30.841603515+01:00","level":"INFO","msg":"stream: closed","id":"hgeo1jh9"}

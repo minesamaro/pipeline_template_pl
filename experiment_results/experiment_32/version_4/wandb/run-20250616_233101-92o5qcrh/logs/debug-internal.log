@@ -1,0 +1,20 @@
+{"time":"2025-06-16T23:31:01.820643921+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_4/wandb/run-20250616_233101-92o5qcrh/logs/debug-core.log"}
+{"time":"2025-06-16T23:31:02.094412504+01:00","level":"INFO","msg":"created new stream","id":"92o5qcrh"}
+{"time":"2025-06-16T23:31:02.094457576+01:00","level":"INFO","msg":"stream: started","id":"92o5qcrh"}
+{"time":"2025-06-16T23:31:02.094476976+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"92o5qcrh"}
+{"time":"2025-06-16T23:31:02.094514085+01:00","level":"INFO","msg":"handler: started","stream_id":"92o5qcrh"}
+{"time":"2025-06-16T23:31:02.094483669+01:00","level":"INFO","msg":"sender: started","stream_id":"92o5qcrh"}
+{"time":"2025-06-16T23:31:02.350903941+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-16T23:35:17.850668895+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-06-16T23:35:32.968878098+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/92o5qcrh/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-17T00:24:36.159332323+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-06-17T00:25:12.511355499+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/92o5qcrh/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-17T00:26:20.733482977+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-17T00:26:20.734111639+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-17T00:26:21.469827896+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-17T00:26:21.736616827+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 998-999, summary, console lines 4-5","runtime_seconds":0.266534134}],"total_operations":1}}
+{"time":"2025-06-17T00:26:21.790533644+01:00","level":"INFO","msg":"stream: closing","id":"92o5qcrh"}
+{"time":"2025-06-17T00:26:21.790550124+01:00","level":"INFO","msg":"handler: closed","stream_id":"92o5qcrh"}
+{"time":"2025-06-17T00:26:21.790557229+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"92o5qcrh"}
+{"time":"2025-06-17T00:26:21.790570793+01:00","level":"INFO","msg":"sender: closed","stream_id":"92o5qcrh"}
+{"time":"2025-06-17T00:26:21.790889817+01:00","level":"INFO","msg":"stream: closed","id":"92o5qcrh"}
