@@ -1,0 +1,172 @@
+Initialization time: 2025-06-17 00:51:11
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/albumentations/core/validation.py:87: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/data_augmentation/ct_image_augmenter.py:100: UserWarning: Argument(s) 'max_holes, max_height, max_width' are not valid for transform CoarseDropout
+  A.CoarseDropout(max_holes=8, max_height=8, max_width=8, p=0.7)
+/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/data_augmentation/ct_image_augmenter.py:114: UserWarning: Argument(s) 'mean' are not valid for transform GaussNoise
+  A.GaussNoise(std_range= (0.1, 0.15), mean = (0.0, 0.0), p=1.0), # Introduces too much noise
+/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/data_augmentation/ct_image_augmenter.py:41: UserWarning: Argument(s) 'always_apply' are not valid for transform BasicTransform
+  super().__init__(always_apply=always_apply, p=p)
+/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/data_augmentation/ct_image_augmenter.py:133: UserWarning: Argument(s) 'shift_limit' are not valid for transform OpticalDistortion
+  A.OpticalDistortion(distort_limit=0.2, shift_limit=0.0, p=0.7)
+
+**************************************************  Experiment 42 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+
+✅ Saved split assignments to 'lung_metadata_with_splits.csv'
+
+Using regular DataLoader for train subset
+Data Aug
+Original shape: 210, New Shape: 316
+
+Using regular DataLoader for train subset
+Data Aug
+Original shape: 210, New Shape: 316
+
+Using regular DataLoader for train subset
+Data Aug
+Original shape: 210, New Shape: 316
+
+✅ Set train dataloaders with 3 folds
+  - Fold 1: 316 samples
+    Label distribution: {0: 158, 1: 158}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 5, 1.0: 11}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 5, 1.0: 11}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 7, 1.0: 5}
+  - Fold 2: 316 samples
+    Label distribution: {0: 158, 1: 158}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 6, 1.0: 6}
+  - Fold 3: 316 samples
+    Label distribution: {0: 158, 1: 158}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 5, 1.0: 11}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 8, 1.0: 8}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 7, 1.0: 9}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 5, 1.0: 7}
+
+Using regular DataLoader for validation subset
+
+Using regular DataLoader for validation subset
+
+Using regular DataLoader for validation subset
+
+✅ Set validation dataloaders with 3 folds
+  - Fold 1: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 6, 1.0: 3}
+  - Fold 2: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 5, 1.0: 4}
+  - Fold 3: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 8, 1.0: 1}
+
+Using regular DataLoader for test subset
+
+Using regular DataLoader for test subset
+
+Using regular DataLoader for test subset
+
+✅ Set test dataloaders with 3 folds
+  - Fold 1: 79 samples
+    Label distribution: {0: 59, 1: 20}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+  - Fold 2: 79 samples
+    Label distribution: {0: 59, 1: 20}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+  - Fold 3: 79 samples
+    Label distribution: {0: 59, 1: 20}
+wandb: Currently logged in as: maria-i-paiva (maria-i-paiva-inesc-tec) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_42/version_1/wandb/run-20250617_005137-r6t047w9
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet18_2d_42_1_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_test_da
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_test_da/runs/r6t047w9
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)

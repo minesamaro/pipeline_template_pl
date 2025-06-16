@@ -1,0 +1,12 @@
+Initialization time: 2025-06-17 00:47:52
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 14, in <module>
+    from src.modules.data.dataloader.preprocessed_dataloader \
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloader.py", line 7, in <module>
+    from src.modules.data.dataloader.preprocessed_dataloaders \
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 262
+    print(f"Original shape: {original_count), New Shape: {len(self.file_names)}")
+                                                                                ^
+SyntaxError: f-string: unmatched ')'
+srun: error: 02.ctm-deep-04: task 0: Exited with exit code 1
+Finish time: 2025-06-17 00:48:00
