@@ -19,8 +19,8 @@ hydra:
   run:
     dir: .
 seed_value: 22
-weighted_random_sampler: True
+weighted_random_sampler: False
 wandb:
-  project_name: "cs_2d_roi_whole_slice_oneclass_22_splits_wrs"
+  project_name: "cs_2d_roi_whole_slice_oneclass_22_splits"
   entity: "nlst"
   name: "vgg16_2d"
