@@ -126,7 +126,7 @@ def run_experiment_pipeline(config):
         | {"batch_size": config.data.dataloader.torch_dataloader_kwargs["batch_size"]} \
         | {"learning_rate": config.model.pytorch_lightning_model.hyperparameters.optimiser.kwargs["lr"]}
 
-    quit()
+    #quit()
     for datafold_id in range(1, n_datafolds + 1):
 
         # Initalize wandb
