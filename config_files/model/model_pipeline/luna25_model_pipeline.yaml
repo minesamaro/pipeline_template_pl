@@ -12,8 +12,8 @@ callbacks:
       save_top_k: 1
     - filename: mod=${....model_id}-exp=X-ver=Y-dtf=Z-{epoch}-var=last_epoch
   model_early_stoppings:
-    - monitor: val_auroc
-      patience: 1000
+    - monitor: train_auroc
+      patience: 150
       mode: max
       verbose: False
 enable_logging: False

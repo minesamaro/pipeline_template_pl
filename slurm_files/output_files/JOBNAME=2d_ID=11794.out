@@ -1,0 +1,255 @@
+Initialization time: 2025-06-16 12:02:38
+In 'main_resnet18_2d_one_class_noda': Could not find 'data/dataloader/nlst_preprocessed_dataloader_noda'
+
+Available options in 'data/dataloader':
+	lidc_idri_preprocessed_dataloader
+	luna25_preprocessed_dataloader
+	nlst_preprocessed_dataloader
+	nlst_preprocessed_dataloader_25
+	nlst_preprocessed_dataloader_3
+	nlstlocal_preprocessed_dataloader
+Config search path:
+	provider=hydra, path=pkg://hydra.conf
+	provider=main, path=file:///nas-ctm01/homes/mipaiva/pipeline_template_pl/config_files
+	provider=schema, path=structured://
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+srun: error: 02.ctm-deep-04: task 0: Exited with exit code 1
+
+**************************************************  Experiment 30 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+
+✅ Saved split assignments to 'lung_metadata_with_splits.csv'
+
+Using regular DataLoader for train subset
+
+Using regular DataLoader for train subset
+
+Using regular DataLoader for train subset
+
+✅ Set train dataloaders with 3 folds
+  - Fold 1: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 15, 1.0: 1}
+    Batch label distribution: {0.0: 5, 1.0: 11}
+    Batch label distribution: {0.0: 15, 1.0: 1}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 2}
+  - Fold 2: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 15, 1.0: 1}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 15, 1.0: 1}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+  - Fold 3: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 2}
+
+Using regular DataLoader for validation subset
+
+Using regular DataLoader for validation subset
+
+Using regular DataLoader for validation subset
+
+✅ Set validation dataloaders with 3 folds
+  - Fold 1: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 6, 1.0: 3}
+  - Fold 2: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 5, 1.0: 4}
+  - Fold 3: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 8, 1.0: 1}
+
+Using regular DataLoader for test subset
+
+Using regular DataLoader for test subset
+
+Using regular DataLoader for test subset
+
+✅ Set test dataloaders with 3 folds
+  - Fold 1: 79 samples
+    Label distribution: {0: 59, 1: 20}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+  - Fold 2: 79 samples
+    Label distribution: {0: 59, 1: 20}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+  - Fold 3: 79 samples
+    Label distribution: {0: 59, 1: 20}
+wandb: Currently logged in as: maria-i-paiva (maria-i-paiva-inesc-tec) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_30/version_1/wandb/run-20250616_120307-nfd3ekd1
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet50_2d_30_1_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/nfd3ekd1
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+srun: got SIGCONT
+slurmstepd-02.ctm-deep-04: error: *** JOB 11794 ON 02.ctm-deep-04 CANCELLED AT 2025-06-16T12:05:55 ***
+srun: forcing job termination
+slurmstepd-02.ctm-deep-04: error: *** STEP 11794.1 ON 02.ctm-deep-04 CANCELLED AT 2025-06-16T12:05:55 ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7838629b3920>
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1477, in __del__
+    def __del__(self):
+
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 84654) is killed by signal: Terminated. 
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 54, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 166, in run_experiment_pipeline
+    model_pipeline.train_model()
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/model_pipeline.py", line 68, in train_model
+    self.pytorch_lightning_trainer.fit(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 532, in fit
+    call._call_and_handle_interrupt(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 571, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 980, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1023, in _run_stage
+    self.fit_loop.run()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 203, in run
+    self.on_advance_end()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 369, in on_advance_end
+    call._call_lightning_module_hook(trainer, "on_train_epoch_end")
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 146, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/resnet502d/pytorch_lightning_resnet50_2d_model.py", line 180, in on_train_epoch_end
+    self.evaluate_on_test_set()
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/resnet502d/pytorch_lightning_resnet50_2d_model.py", line 69, in evaluate_on_test_set
+    outputs = self.model(data['image'].to(self.device))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/resnet502d/resnet502d_model.py", line 30, in forward
+    model_output = self.model(model_input)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchvision/models/resnet.py", line 276, in _forward_impl
+    x = self.layer4(x)
+        ^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchvision/models/resnet.py", line 148, in forward
+    out = self.relu(out)
+          ^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/modules/activation.py", line 103, in forward
+    return F.relu(input, inplace=self.inplace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/nn/functional.py", line 1455, in relu
+    result = torch.relu_(input)
+             ^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 84808) is killed by signal: Terminated. 
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Exception ignored in atexit callback: <function _start_and_connect_service.<locals>.teardown_atexit at 0x78382d4467a0>
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/service_connection.py", line 94, in teardown_atexit
+    conn.teardown(hooks.exit_code)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/service_connection.py", line 228, in teardown
+    self._client.send_server_request(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+srun: error: 02.ctm-deep-04: task 0: Exited with exit code 1

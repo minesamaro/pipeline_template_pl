@@ -1,0 +1,845 @@
+Initialization time: 2025-06-16 14:27:39
+
+**************************************************  Experiment 32 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+
+✅ Saved split assignments to 'lung_metadata_with_splits.csv'
+
+Using regular DataLoader for train subset
+
+Using regular DataLoader for train subset
+
+Using regular DataLoader for train subset
+
+✅ Set train dataloaders with 3 folds
+  - Fold 1: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 15, 1.0: 1}
+    Batch label distribution: {0.0: 5, 1.0: 11}
+    Batch label distribution: {0.0: 15, 1.0: 1}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 2}
+  - Fold 2: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 15, 1.0: 1}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 9, 1.0: 7}
+    Batch label distribution: {0.0: 15, 1.0: 1}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+  - Fold 3: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 6, 1.0: 10}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 2}
+
+Using regular DataLoader for validation subset
+
+Using regular DataLoader for validation subset
+
+Using regular DataLoader for validation subset
+
+✅ Set validation dataloaders with 3 folds
+  - Fold 1: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 6, 1.0: 3}
+  - Fold 2: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 14, 1.0: 2}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 5, 1.0: 4}
+  - Fold 3: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 6}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 8, 1.0: 1}
+
+Using regular DataLoader for test subset
+
+Using regular DataLoader for test subset
+
+Using regular DataLoader for test subset
+
+✅ Set test dataloaders with 3 folds
+  - Fold 1: 79 samples
+    Label distribution: {0: 59, 1: 20}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+  - Fold 2: 79 samples
+    Label distribution: {0: 59, 1: 20}
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+  - Fold 3: 79 samples
+    Label distribution: {0: 59, 1: 20}
+wandb: Currently logged in as: maria-i-paiva (maria-i-paiva-inesc-tec) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_1/wandb/run-20250616_142806-p6r0fyw8
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet18_2d_32_1_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/p6r0fyw8
+    Batch label distribution: {0.0: 12, 1.0: 4}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 11, 1.0: 5}
+    Batch label distribution: {0.0: 13, 1.0: 3}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy0.25 ▁▂▂▃▆▅▅▆▄▅▄▆▅▃▄▆▇▅█▅▆▇▄▇▅▇▇▆▄▅██▆▇▆▆▇▇▇▇
+wandb:           test_accuracy0.5 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▆▇▇▆▇▆▇▆▆▇▅▄█▄▄▄▁▅▅▄▄▆▅
+wandb:          test_accuracy0.75 █████████████████████████▁▁███▁████▁█▁█▁
+wandb:                 test_auroc █▅▃▂▂▁▁▂▂▃▄▄▆▇▆▆▇▅▆▆▅▆▆▅▅▃▃▃▃▄▃▃▄▄▄▄▄▄▄▄
+wandb: test_balanced_accuracy0.25 ▂▅▂▁▁▁▅▁▂▅▄▂▅▃▅▄▆▇▆▄▅█▅▅▂▂▆▁▆▃▅▅▅▅▄▃▂▄▄▄
+wandb:  test_balanced_accuracy0.5 ▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▃▂▁▂▃▃▄█▅▃▄▃▃▅▄▅█▅▄▃▆▄▆
+wandb: test_balanced_accuracy0.75 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▃▂▃▄▃▄▃▄▃▃▃█▅▃
+wandb:         test_precision0.25 ▂▂▂▁▄▁▂▂▄▃▃▃▃▂▁▃▄▄▅▃▃▃▂█▄▂▃▄▃▄▃▃▄▄▅▃▄█▂█
+wandb:          test_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁████▇▇▄▅▇▄▅▆▅▆▇▇▆▆▇▇▆█▇▇
+wandb:         test_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▆▆▆██▆▆▆▆▆▆▆
+wandb:            test_recall0.25 ▇▇▅▄▇█▃█▅▅▅▅▆▅▅▇▆▅▆▅▄▇▄▅▅▄▆▅▃▃▃▃▅▃▂▃▃▁▃▃
+wandb:             test_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▃▁▂▁▃▃▃▃▃▃▅▂▂▅▂█▃▂▃▃▄▅▅▄
+wandb:            test_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▅▅▅█▅▅▅▅▅▅▅▅█
+wandb:                train_auroc ▁▁▂▃▃▅▅▄▅▆▆▆▇▇▆▇▇▇▇▇█▇█▇████████████████
+wandb:                 train_loss ███████████▇▇▇▇▇▇▇▆▆▅▅▅▅▅▅▅▄▃▃▃▃▂▂▂▂▂▂▁▁
+wandb:           val_accuracy0.25 ▅▂█▁▇▃▃▄▅▂▆▂▅▃▅▃▆▄▅▅▄▅▆▄▆▄▆▄▄▄▇▆▆▆▆▆▇▆▇▇
+wandb:            val_accuracy0.5 ████████████████▇█▇▆▆▆█▇▇█▇█▁▇▇▅▄▆▃▃▅▄▃▃
+wandb:           val_accuracy0.75 █████████████████▅▆▅▆▅▅▆▆▅▅▁▆▅▅█▆▆▆▅▅▆▆▆
+wandb:                  val_auroc ▁▁▁▁▁▂▃▂▃▃▄▄▄▄▄▅▅▅▆▆▅▆▅▅▆▆▆▆▆▇▇▇█▇▇▆▆▆▆▆
+wandb:  val_balanced_accuracy0.25 ▃▃▄▁▅▅▆▆▇▆▆▅▆▅▆▅▃▄▄▃▆▆▅▇▆▇▇▅▅▆▅█▇▇██▇▇██
+wandb:   val_balanced_accuracy0.5 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▇▃▇▅▆▅▇▃▇▇▇█▆▆▆▅▅▅█▄▃
+wandb:  val_balanced_accuracy0.75 ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▂▂▁▁▁▁▁▁▄▇▄▁▄▇▄█▄▄▄▄
+wandb:          val_precision0.25 ▂▁▁▁▂▁▁▂▁▂▂▂▁▂▂▃▂▁▁▁▃▂▁▂▁▂▄▁█▂▃▂▅▂▃▂▅▄▁▂
+wandb:           val_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▆█▇▁▆▇▇█▆▆▆▅▆▅▅▅
+wandb:          val_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▆▁▁▁▆▁▁▆▆▆▆█▅▇
+wandb:             val_recall0.25 █▁▇▆▅▅▃▆▇▅▆▅▅▅▆▄▅▅▄▂▃▂▄▄▄▅▃▆▅▃▆▄▄▄▅▄▂▃▃▄
+wandb:              val_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▂▃▄▅▄▂▄█▄▅▅▅▄▃▄▄▄▂▄
+wandb:             val_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▃▁▁▁▃▁▁▃▃▃▁▃█▃
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy0.25 0.68354
+wandb:           test_accuracy0.5 0.73418
+wandb:          test_accuracy0.75 0.73418
+wandb:                 test_auroc 0.59322
+wandb: test_balanced_accuracy0.25 0.58983
+wandb:  test_balanced_accuracy0.5 0.57415
+wandb: test_balanced_accuracy0.75 0.50805
+wandb:         test_precision0.25 0.38095
+wandb:          test_precision0.5 0.45455
+wandb:         test_precision0.75 0.33333
+wandb:            test_recall0.25 0.4
+wandb:             test_recall0.5 0.25
+wandb:            test_recall0.75 0.05
+wandb:                train_auroc 1
+wandb:                 train_loss 0.08601
+wandb:           val_accuracy0.25 0.67619
+wandb:            val_accuracy0.5 0.68571
+wandb:           val_accuracy0.75 0.74286
+wandb:                  val_auroc 0.59202
+wandb:  val_balanced_accuracy0.25 0.57838
+wandb:   val_balanced_accuracy0.5 0.5073
+wandb:  val_balanced_accuracy0.75 0.51947
+wandb:          val_precision0.25 0.35714
+wandb:           val_precision0.5 0.26667
+wandb:          val_precision0.75 0.4
+wandb:             val_recall0.25 0.38462
+wandb:              val_recall0.5 0.15385
+wandb:             val_recall0.75 0.07692
+wandb: 
+wandb: 🚀 View run resnet18_2d_32_1_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/p6r0fyw8
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_1/wandb/run-20250616_142806-p6r0fyw8/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_1/wandb/run-20250616_152208-236csi7x
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet18_2d_32_1_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/236csi7x
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb: uploading history steps 995-999, summary, console lines 4-5
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy0.25 █▇▁▂▄▅▆▂▆▅▁▃▄▄▂▂▄▅▃▃▄▆▄▆▆▆▆▆▆▆▅▆▆▅▅▄▅▅▆▆
+wandb:           test_accuracy0.5 ██████████████████▇▇▇█▇▇▆▅▅▅▇▅▄▅▃▁▄▅▅▅▅▅
+wandb:          test_accuracy0.75 ███████████████████████████████▁▃▃█▃▃▃▃▁
+wandb:                 test_auroc ▃▄▄▆▆▆▇▇█▇▇▆▆▇▆▆▅▇▇▇▇▇▇▇▇▆▇▆▆▆▅▄▄▄▃▂▂▁▂▁
+wandb: test_balanced_accuracy0.25 ▃▃▁▃▃▃▃▁▅▄▄▃▄▆▅▆█▇▇▆▃▇▇▃▇▃▃▆▃▆▃▄▅▄▂▂▃▂▃▂
+wandb:  test_balanced_accuracy0.5 ▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▄▄▃█▃▆▄▁▄▂▆▅▄▂▃
+wandb: test_balanced_accuracy0.75 ██████████████████████████████▄▄▁▄▄▅▂▁▂▂
+wandb:         test_precision0.25 ▆▁▆▆▆▆▇▆█▆█▆▇▆▆▇▇▆▇▇▇██▇▇▇▇▇▆▆▆▆▆▇▆▆▆▆▅▅
+wandb:          test_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▆▄▆▁█▆█▁▁▆▇▁▁▁▆▇
+wandb:         test_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb:            test_recall0.25 ▁▇▁▁▇▄▆▆▇▆▇▅▆▆█▆▆▆▆▅▅▆▆▆▃▆▇▇▁▃▄▅▆▄▅▄▃▃▅▄
+wandb:             test_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▇▃▅▁▄▃▄▄█▁▁▁▅
+wandb:            test_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                train_auroc ▁▂▅▅▄▃▄▄▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇█▇███████████████
+wandb:                 train_loss ███████▇▇▇▇▇▇▇▇▇▇▇▇▇▆▆▅▅▅▅▄▄▄▃▃▃▂▂▂▂▂▁▂▁
+wandb:           val_accuracy0.25 ▁▁█▇▄▆▃▃▅▅▃▄▄▅▅▅▄▆▄▄▄▅▅▅▄▅▇▄▅▅▇▆▅▅▆▇▅▆▇▇
+wandb:            val_accuracy0.5 █████████████████████████▇█▇▆▁▇▅█▅▅▅▆▅▇▇
+wandb:           val_accuracy0.75 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▅▇█▇█▇█▁▄▄▂▇
+wandb:                  val_auroc ▇▆▆▇█▄▂▂▁▄▄▃▄▃▄▃▃▇▃▄▃▆▂▄▅▄▄▅▅▄▃▃▄▃▂▂▂▂▂▁
+wandb:  val_balanced_accuracy0.25 ▆▄▆▇█▅▂▂▅▅▃▅▄█▁█▇█▄▁▆▃▆▃▃▇▅▅▃▃▅▄▃▅▅▄▃▄▄▁
+wandb:   val_balanced_accuracy0.5 ▄▄▄▄▄▄▄▄▄▄▃▄▄▄▄▄▄▄▄█▆▆▆▇█▄█▆▂▅▆▆▆▁▃▆▆▂▇▅
+wandb:  val_balanced_accuracy0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁█▁█▆▃▁█▃
+wandb:          val_precision0.25 ▅▆▂▇▆█▆▅▆▅▆▃▁▆▅▅▄▆▂▄▅▆▅▇▅▅▆▄▄▄▆▆▆▄▇█▄▇█▃
+wandb:           val_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁██▁▃▃▃▃▃██▂▂▃▃▃▃▂▃▂
+wandb:          val_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁█▅▃█▁██▃▃▂▃█
+wandb:             val_recall0.25 ██▆▃▆▆▅▇▅▁▄▆▂▇▄▄▃▃▆▃▃▂▃▂▃▃▃▃▂▃▄▂▂▃▃▃▂▂▁▂
+wandb:              val_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▂▂▂▂▂▂▁▂▄█▄▁▄▅▄▂▅▄
+wandb:             val_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▁▅▅█▅▅▅█
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy0.25 0.55696
+wandb:           test_accuracy0.5 0.62025
+wandb:          test_accuracy0.75 0.6962
+wandb:                 test_auroc 0.51864
+wandb: test_balanced_accuracy0.25 0.52161
+wandb:  test_balanced_accuracy0.5 0.48136
+wandb: test_balanced_accuracy0.75 0.49915
+wandb:         test_precision0.25 0.27273
+wandb:          test_precision0.5 0.22222
+wandb:         test_precision0.75 0.25
+wandb:            test_recall0.25 0.45
+wandb:             test_recall0.5 0.2
+wandb:            test_recall0.75 0.1
+wandb:                train_auroc 0.99915
+wandb:                 train_loss 0.23852
+wandb:           val_accuracy0.25 0.55238
+wandb:            val_accuracy0.5 0.66667
+wandb:           val_accuracy0.75 0.72381
+wandb:                  val_auroc 0.50487
+wandb:  val_balanced_accuracy0.25 0.49611
+wandb:   val_balanced_accuracy0.5 0.50755
+wandb:  val_balanced_accuracy0.75 0.50682
+wandb:          val_precision0.25 0.2439
+wandb:           val_precision0.5 0.26316
+wandb:          val_precision0.75 0.28571
+wandb:             val_recall0.25 0.38462
+wandb:              val_recall0.5 0.19231
+wandb:             val_recall0.75 0.07692
+wandb: 
+wandb: 🚀 View run resnet18_2d_32_1_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/236csi7x
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_1/wandb/run-20250616_152208-236csi7x/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_1/wandb/run-20250616_161738-1cpsr8gm
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet18_2d_32_1_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/1cpsr8gm
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy0.25 ▁██▄▃▅▅▃▂▄▄▄▂▆▄▅▃▅▅▅▆▄▄▆▅▅▆▇▇█▇▅▇▅▆▅▇▇▆▆
+wandb:           test_accuracy0.5 ██████████████████▅▅▄▄▅█▇▅▅▅▅▄▂▄▄█▇▄▂▁▂▅
+wandb:          test_accuracy0.75 ██████████████████████████████████▁█████
+wandb:                 test_auroc ▁▇▇█▇▇▇▇█▇▇▇▇▇▆▇▇▆▆▆▇▇▇▇▇▇▇▇▇▇▇█▇▇█▇████
+wandb: test_balanced_accuracy0.25 ▄▅▅▃▄▆▅▅▇▅▇▆▇▇▆▆▄▁▁▂▅▃▅▇▆█▅▃▅▆▃▇▄██▅▅▇▅▅
+wandb:  test_balanced_accuracy0.5 ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▁▃▃▂▅▂▂▂▄▂▃▅▃▃▆▁▆▅▃▇██▃█
+wandb: test_balanced_accuracy0.75 ▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▇▁▅▅█
+wandb:         test_precision0.25 ▃▃▄▃▃▅▃▄▁▃▄▃▃▂▂▄▁▁▂▅▂▂▃▁▃█▄▁▇▃▂▇▄▆▂▃▂▄▅▃
+wandb:          test_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▇▁▁▆▇▇▇█▅▁▄▇█▇█▅▇█
+wandb:         test_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁
+wandb:            test_recall0.25 ▃█▇█▆█▁▃▇█▄▆▅█▇▄▄▄▄▄▃▃▄▆▄▄▄▃▂▃▄▃▃▃▄▄▃▄▄▃
+wandb:             test_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▁▂▄▁▇██▂█▄▄█▄█
+wandb:            test_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁██
+wandb:                train_auroc ▁▁▁▂▂▂▃▃▃▄▅▅▆▆▆▆▆▅▆▇▇▇▇▇▇█▇▇█▇██████████
+wandb:                 train_loss █████████████▇▇▇▇▇▇▇▆▆▆▆▅▅▄▄▄▃▃▃▂▂▂▂▁▁▁▁
+wandb:           val_accuracy0.25 ▁▃▅▂▅▃▂▂▃▄▂▂▄▄▄▄▄▅▆▅▃▃▅▃▇▅█▅▇▆▆█▆█▆▅▅▅█▇
+wandb:            val_accuracy0.5 ████████████████████████▇▇▇▅▅▅▂▅▅▄▂▆▃▁▄▅
+wandb:           val_accuracy0.75 ██████████████████████████▇▄▅▄▄▄▁▄▄▄▄▂▄▄
+wandb:                  val_auroc ▃▄▄▅▄▅▅▆▆▇▇▇▇▇▇▇████▇█▇▇▇▆▆▆▅▅▄▄▅▄▄▃▃▂▂▁
+wandb:  val_balanced_accuracy0.25 ▂▄▅▅▅▄▄▃▆▄▅▇▇▅▅▇█▅▄▇▆▇▆▅▇▅▄▆▃▃▅▄▆█▄▂▁▃▃▄
+wandb:   val_balanced_accuracy0.5 ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▄▃▄▃▂▃▃▁▅▃▂▃▃▅▅▅██▅▅▅
+wandb:  val_balanced_accuracy0.75 ▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▄▄▅▅█▅▅▂▇▁▅▃▃▂▃▃▃▃█▅▂
+wandb:          val_precision0.25 ▅▃▂▂▂▃▃▂▂▃▂▂▄▄▄▄▄▄▃▄▆▄▄▂▅▄▅▅█▅▃▄▅▃▄▅▃▂▁▄
+wandb:           val_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▇▆▆▆▆▁▇▇▇▁▇▇█▇▇▇█
+wandb:          val_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall0.25 ▃▅▁▆▃▅▇█▆▅██▄█▆▄▆▆██▆▆▆▆▆▆▄▆▄▅▅▃▅▅▄▃▁▃▁▄
+wandb:              val_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▃▂▃▂▇▃█▃▃▄▄▂▄▄▅▄▃▃▃
+wandb:             val_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▁▁▁▁▁▁▁▁▁▁▁▁█▁█▁▁▁█▁▃
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy0.25 0.68354
+wandb:           test_accuracy0.5 0.72152
+wandb:          test_accuracy0.75 0.73418
+wandb:                 test_auroc 0.53898
+wandb: test_balanced_accuracy0.25 0.54025
+wandb:  test_balanced_accuracy0.5 0.54915
+wandb: test_balanced_accuracy0.75 0.50805
+wandb:         test_precision0.25 0.33333
+wandb:          test_precision0.5 0.4
+wandb:         test_precision0.75 0.33333
+wandb:            test_recall0.25 0.25
+wandb:             test_recall0.5 0.2
+wandb:            test_recall0.75 0.05
+wandb:                train_auroc 1
+wandb:                 train_loss 0.10558
+wandb:           val_accuracy0.25 0.6
+wandb:            val_accuracy0.5 0.71429
+wandb:           val_accuracy0.75 0.71429
+wandb:                  val_auroc 0.52045
+wandb:  val_balanced_accuracy0.25 0.48905
+wandb:   val_balanced_accuracy0.5 0.53919
+wandb:  val_balanced_accuracy0.75 0.50049
+wandb:          val_precision0.25 0.23333
+wandb:           val_precision0.5 0.35714
+wandb:          val_precision0.75 0.25
+wandb:             val_recall0.25 0.26923
+wandb:              val_recall0.5 0.19231
+wandb:             val_recall0.75 0.07692
+wandb: 
+wandb: 🚀 View run resnet18_2d_32_1_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/1cpsr8gm
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_1/wandb/run-20250616_161738-1cpsr8gm/logs
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_1/execution_datetimes.json
+
+**************************************************  Experiment 32 | Version 2 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+
+✅ Saved split assignments to 'lung_metadata_with_splits.csv'
+
+Using regular DataLoader for train subset
+
+Using regular DataLoader for train subset
+
+Using regular DataLoader for train subset
+
+✅ Set train dataloaders with 3 folds
+  - Fold 1: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 24, 1.0: 8}
+    Batch label distribution: {0.0: 23, 1.0: 9}
+    Batch label distribution: {0.0: 25, 1.0: 7}
+    Batch label distribution: {0.0: 29, 1.0: 3}
+    Batch label distribution: {0.0: 20, 1.0: 12}
+    Batch label distribution: {0.0: 23, 1.0: 9}
+    Batch label distribution: {0.0: 14, 1.0: 4}
+  - Fold 2: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 25, 1.0: 7}
+    Batch label distribution: {0.0: 21, 1.0: 11}
+    Batch label distribution: {0.0: 24, 1.0: 8}
+    Batch label distribution: {0.0: 27, 1.0: 5}
+    Batch label distribution: {0.0: 24, 1.0: 8}
+    Batch label distribution: {0.0: 24, 1.0: 8}
+    Batch label distribution: {0.0: 13, 1.0: 5}
+  - Fold 3: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 26, 1.0: 6}
+    Batch label distribution: {0.0: 25, 1.0: 7}
+    Batch label distribution: {0.0: 26, 1.0: 6}
+    Batch label distribution: {0.0: 17, 1.0: 15}
+    Batch label distribution: {0.0: 23, 1.0: 9}
+    Batch label distribution: {0.0: 26, 1.0: 6}
+    Batch label distribution: {0.0: 15, 1.0: 3}
+
+Using regular DataLoader for validation subset
+
+Using regular DataLoader for validation subset
+
+Using regular DataLoader for validation subset
+
+✅ Set validation dataloaders with 3 folds
+  - Fold 1: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 25, 1.0: 7}
+    Batch label distribution: {0.0: 24, 1.0: 8}
+    Batch label distribution: {0.0: 24, 1.0: 8}
+    Batch label distribution: {0.0: 6, 1.0: 3}
+  - Fold 2: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 26, 1.0: 6}
+    Batch label distribution: {0.0: 26, 1.0: 6}
+    Batch label distribution: {0.0: 22, 1.0: 10}
+    Batch label distribution: {0.0: 5, 1.0: 4}
+  - Fold 3: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 22, 1.0: 10}
+    Batch label distribution: {0.0: 26, 1.0: 6}
+    Batch label distribution: {0.0: 23, 1.0: 9}
+    Batch label distribution: {0.0: 8, 1.0: 1}
+
+Using regular DataLoader for test subset
+
+Using regular DataLoader for test subset
+
+Using regular DataLoader for test subset
+
+✅ Set test dataloaders with 3 folds
+  - Fold 1: 79 samples
+    Label distribution: {0: 59, 1: 20}
+    Batch label distribution: {0.0: 25, 1.0: 7}
+    Batch label distribution: {0.0: 24, 1.0: 8}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+  - Fold 2: 79 samples
+    Label distribution: {0: 59, 1: 20}
+    Batch label distribution: {0.0: 25, 1.0: 7}
+    Batch label distribution: {0.0: 24, 1.0: 8}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+  - Fold 3: 79 samples
+    Label distribution: {0: 59, 1: 20}
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_2/wandb/run-20250616_171347-2r6amhdn
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet18_2d_32_2_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/2r6amhdn
+    Batch label distribution: {0.0: 25, 1.0: 7}
+    Batch label distribution: {0.0: 24, 1.0: 8}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy0.25 █▃▇▂▆▂▃▄▄▃▄▂▃▃▄▅▃▄▃▂▁▄▂▆▇▂▅▅▃▃▄▆▆▅▇▆▅▇▆▃
+wandb:           test_accuracy0.5 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▆▇▇▆▆▇▇████▄█▅▇▁▄▇▅▄▄▄▇
+wandb:          test_accuracy0.75 █████████████████████████████▁▁▁▁▁▁▁▁▁▁▁
+wandb:                 test_auroc ▃▇▅▄▃▂▂▂▂▁▃▄▄▄▄▄▅▇▇█▇▇▇▇▇▇██████▇▇▇▇▇██▇
+wandb: test_balanced_accuracy0.25 ▃▅▅▃▄▁▆▂▅▄▄▃▅▃▄▄▃▄▂█▄▂▄▃▇▄▆▆▆▆▇▄▆▆▃▃▆▃▅▅
+wandb:  test_balanced_accuracy0.5 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▅▁▃▅▃▅▅▅▂▃▄█
+wandb: test_balanced_accuracy0.75 ▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▁▁▁▁▁███▁█
+wandb:         test_precision0.25 ▃▃▂▃▂▃▁▄▃▃▄▄▂▄▄▅▂▇▆▄▅▃▂▃▃▃▃█▃▇▅▂▃▅▆▆▇▆▆▄
+wandb:          test_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▆▅▅▆▆▄█▆▆▅▅▃▄▃▄▆▃▅▅▅▅
+wandb:         test_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁██▆▁
+wandb:            test_recall0.25 █▁▅▄▅▅▅▄▅▆▆▅▆▆▅▅▃▅▆▅▄▅▅▅▅▅▅▅▆▄▅▅▄▅▅▅▄▅▄▄
+wandb:             test_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▃▃▃▃▃▃▃▃▃▃▂█▃▃
+wandb:            test_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▅▅▅▅▅▅▁██
+wandb:                train_auroc ▁▁▁▁▂▂▂▂▂▂▃▃▄▄▄▄▄▄▄▅▅▅▇▇▇▇▇▇▇▇██████████
+wandb:                 train_loss █▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▄▄▄▅▄▄▄▄▄▃▃▃▃▂▂▁▁▁▁
+wandb:           val_accuracy0.25 ▁██▇▄▄▄▄▅▅▃▄▅▄▅▄▄▅▄▄▅▅▅▅▆▅▄▆▄▄▇▇▄▄▄▆▅▅▆▅
+wandb:            val_accuracy0.5 ██████████████████████▆▆▆▆█▆▆▇█▂█▆▆█▅▇█▁
+wandb:           val_accuracy0.75 ███████████████████████████▅▁█▁▁▁▅▁▁▁▁▁▁
+wandb:                  val_auroc ▁▁▁▂▃▄▄▅▅▅▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▇▇█▇▇█████
+wandb:  val_balanced_accuracy0.25 ▁▃▁▁▂▃▅▄▆█▄▅▅▅▃█▅▇▆▅▆▅▄▃▅▆▃▃▃▄▆▄▅▅▄▅▄▅▃▅
+wandb:   val_balanced_accuracy0.5 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▁▁▄▄▄▄▄▄▆▄▄█▆▆▅▇▅
+wandb:  val_balanced_accuracy0.75 ███████████████████████████▅▅▅▁▁▁▁▁▁▁▅▁▁
+wandb:          val_precision0.25 ▃█▁▁▄▁▁▅▃▂▃▄▄▃▃▃▂▄▄▅▄▄▂▃▂▅▄▄▄▃▃▂▃▃▂▃▁▂▄▆
+wandb:           val_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▇████▇█▆█▇▇▇▆▆▆
+wandb:          val_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall0.25 █▁▇▃▂▄▃▄▄▂▅▄▃▄▄▅▅▅▄▃▃▄▂▄▄▄▄▃▅▅▆▂▄▃▃▄▂▄▄▄
+wandb:              val_recall0.5 █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂▂▂▄▂▂▃▂
+wandb:             val_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy0.25 0.63291
+wandb:           test_accuracy0.5 0.70886
+wandb:          test_accuracy0.75 0.73418
+wandb:                 test_auroc 0.59746
+wandb: test_balanced_accuracy0.25 0.55593
+wandb:  test_balanced_accuracy0.5 0.50763
+wandb: test_balanced_accuracy0.75 0.50805
+wandb:         test_precision0.25 0.32
+wandb:          test_precision0.5 0.28571
+wandb:         test_precision0.75 0.33333
+wandb:            test_recall0.25 0.4
+wandb:             test_recall0.5 0.1
+wandb:            test_recall0.75 0.05
+wandb:                train_auroc 0.99988
+wandb:                 train_loss 0.50155
+wandb:           val_accuracy0.25 0.61905
+wandb:            val_accuracy0.5 0.75238
+wandb:           val_accuracy0.75 0.73333
+wandb:                  val_auroc 0.56573
+wandb:  val_balanced_accuracy0.25 0.52751
+wandb:   val_balanced_accuracy0.5 0.5387
+wandb:  val_balanced_accuracy0.75 0.48734
+wandb:          val_precision0.25 0.28125
+wandb:           val_precision0.5 0.5
+wandb:          val_precision0.75 0
+wandb:             val_recall0.25 0.34615
+wandb:              val_recall0.5 0.11538
+wandb:             val_recall0.75 0
+wandb: 
+wandb: 🚀 View run resnet18_2d_32_2_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/2r6amhdn
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_2/wandb/run-20250616_171347-2r6amhdn/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_2/wandb/run-20250616_181137-v0olbant
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet18_2d_32_2_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/v0olbant
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy0.25 ▁█▇▆▆▆▅▆▇▅▆▅▅▃▄▆▅▅▄▄▄▄▄▆▆▆▆▆▆▆▆▅▇▇▆▇▆▆▆▆
+wandb:           test_accuracy0.5 ████████████████████████████▇█▅▄▂▂▄▃▄▇█▁
+wandb:          test_accuracy0.75 ██████████████████████████████████▁████▁
+wandb:                 test_auroc ▁▂▃▄▄▅▅▆▆▆▆▆▆▆▇▇▇██▇▇▇▇▇▆▆▆▆▇▇▇██▇▇▇▇▆▆▆
+wandb: test_balanced_accuracy0.25 ▂▂▂▂▁▅▁▇▅▃▆▁▅▆▆▆▆▄▅▇█▇▇▇▂█▅▃████▅▆█▇▁▂▃▂
+wandb:  test_balanced_accuracy0.5 ████████████████████████▅█▇▇▅█▅█▁▆▄█▅▆▄▄
+wandb: test_balanced_accuracy0.75 █████████████████████████████████████▁▄█
+wandb:         test_precision0.25 ▄▁▆▆▆▆▆▇▄▅▅█▅▅▅▅▅▆▆▅▆▆▆▆██▅█▆██▆█▅▆▇▁▆▄▆
+wandb:          test_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▇█▆▆▆▆▇▁
+wandb:         test_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall0.25 ▇▄▆▃▂▇▇▇▆▇▆▇██▇▇▇▆▇▆▆▆▆▇▄▆▇▆▆▇▆▃▄▇▇▃▇▃▄▁
+wandb:             test_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▃▆▃▁▆▃█▁
+wandb:            test_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁
+wandb:                train_auroc ▁▁▂▃▃▄▄▄▄▃▃▄▄▄▄▅▅▅▅▅▆▆▆▅▆▆▆▆▇▇▇▇▇▇▇█████
+wandb:                 train_loss ███████████▇▇▇▇▆▆▆▆▆▅▅▄▄▄▃▃▃▃▃▃▂▂▂▂▂▁▂▁▁
+wandb:           val_accuracy0.25 █▇▇▁▄▇▄▃▄▆▃▄▃▄▄▄▄▄▄▄▃▄▃▃▆▃▆▃▆▇▅▅▇▆▄▄▅▆▅▇
+wandb:            val_accuracy0.5 ██████████████████████████▇▇▇▇▆▇▆▆▇▆▃▁▆▇
+wandb:           val_accuracy0.75 █████████████████████████████████▁█▁██▁█
+wandb:                  val_auroc ██▆▆▅▃▃▂▁▁▁▁▂▂▂▄▃▄▄▄▄▄▃▄▄▄▄▄▄▅▅▄▄▄▄▃▄▃▃▃
+wandb:  val_balanced_accuracy0.25 ▅▄▂▅▂▃▆▃▄▄▁▆▆█▃▂▆▃▃▃▃▃▃▃▆▃▃▄▄▄▆▁▃▄▂▄▂▃▃▃
+wandb:   val_balanced_accuracy0.5 ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆██▅▅███▇▇██▅▇▅▇▅▄▅█▅▆▂▄▁▇
+wandb:  val_balanced_accuracy0.75 ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▁▁▃█▁█▁
+wandb:          val_precision0.25 ▃▆▄▄█▅▆▆▆▆▇█▅▅▃▅▆▅▆▄▆▅█▇▅█▆▇▇▇▇▇▄▆▇▇▃▁▁█
+wandb:           val_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█████▄▆▄▄▃▃▅▅▄▅
+wandb:          val_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁█▄▅
+wandb:             val_recall0.25 ▁▁▆▃▅▆▄▅▄▄▆█▇█▇▄█▃▆▆▃▆▆▄▅██▅▃▃▅▄▄█▄█▆▃▁▁
+wandb:              val_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▅▅▅▅▅▅█▅▅▅████
+wandb:             val_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁██
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy0.25 0.62025
+wandb:           test_accuracy0.5 0.6962
+wandb:          test_accuracy0.75 0.74684
+wandb:                 test_auroc 0.5339
+wandb: test_balanced_accuracy0.25 0.46483
+wandb:  test_balanced_accuracy0.5 0.48263
+wandb: test_balanced_accuracy0.75 0.5
+wandb:         test_precision0.25 0.1875
+wandb:          test_precision0.5 0.16667
+wandb:         test_precision0.75 0
+wandb:            test_recall0.25 0.15
+wandb:             test_recall0.5 0.05
+wandb:            test_recall0.75 0
+wandb:                train_auroc 0.99209
+wandb:                 train_loss 0.64801
+wandb:           val_accuracy0.25 0.65714
+wandb:            val_accuracy0.5 0.73333
+wandb:           val_accuracy0.75 0.74286
+wandb:                  val_auroc 0.52337
+wandb:  val_balanced_accuracy0.25 0.47541
+wandb:   val_balanced_accuracy0.5 0.51315
+wandb:  val_balanced_accuracy0.75 0.49367
+wandb:          val_precision0.25 0.1875
+wandb:           val_precision0.5 0.33333
+wandb:          val_precision0.75 0
+wandb:             val_recall0.25 0.11538
+wandb:              val_recall0.5 0.07692
+wandb:             val_recall0.75 0
+wandb: 
+wandb: 🚀 View run resnet18_2d_32_2_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/v0olbant
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_2/wandb/run-20250616_181137-v0olbant/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_2/wandb/run-20250616_191028-7xslogfh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet18_2d_32_2_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/7xslogfh
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy0.25 ▁▇▇▅▇▅▅▆▄▄▅▅▅▄▅▅▄█▆▄▅▅▆▆▅▅▅▇▅▆▆▇███████▇
+wandb:           test_accuracy0.5 █████████████████████▆█▆▆▆▆▆▅▆▁█▅▅▅▃▅▁▁▁
+wandb:          test_accuracy0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                 test_auroc █▆▅▅▅▄▄▄▄▄▃▂▂▃▄▃▂▂▁▁▁▂▂▂▃▃▃▄▄▄▄▄▄▄▄▅▅▅▅▅
+wandb: test_balanced_accuracy0.25 ▅█▇▇█▇██▆▄▇▇▇▆▇▅▅▄▃▆▆▆▁▁▂▆▄▄▃▃▄▄▅▄▇▇▅▇▇▇
+wandb:  test_balanced_accuracy0.5 ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▃▃▃▃█▃▃▁▁▆▆▆▃▆▆██▆█
+wandb: test_balanced_accuracy0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision0.25 ▅▇▇▇▆▆▅▆▅▆▆▆▆▆▆▆▆▅▅▅▃▂▄▂▄▃▄█▁▆▁▄▃▆▆▆▆▆▇█
+wandb:          test_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▆▁▁▅▅▅▇▅▅█
+wandb:         test_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall0.25 ▅▅▆█▆▅▆▆█▆▇██▆█▇▇▅▆▅█▂▁▂▂▁▁▁▁▁▁▁▂▁▁▁▂▂▁▂
+wandb:             test_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▃▃▆▆▆█
+wandb:            test_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                train_auroc ▁▁▁▁▁▂▁▂▂▂▂▂▂▂▃▃▄▄▅▅▅▅▆▆▆▆▆▆▆▇▇▇████████
+wandb:                 train_loss ████████████▇▇▇▇▇▇▇▇▆▆▆▆▆▅▅▅▅▄▄▄▃▃▂▂▂▂▁▁
+wandb:           val_accuracy0.25 ▆▃▅▁▂▁▂▂▂▅▂▂▂▃▃▃▂▄▄▄▄▄▅▅▃▆▄▆█▃█▆▆▅▅█▆▄▇▆
+wandb:            val_accuracy0.5 ████████████████████▆▆▇▇▃▆▆▃▆▆▆▃▆▂▃▁▂▂▃▂
+wandb:           val_accuracy0.75 ███████████████████████████████████▁███▁
+wandb:                  val_auroc ▁▃▄▄▄▄▄▄▄▄▄▄▆▇▇▇▇▇▇▇▇████▇▇▇▇▆▆▆▆▆▆▇▆▆▅▃
+wandb:  val_balanced_accuracy0.25 ▅▂▃▂▃▂▁▅▅▆▄▄▅▂▅▂▅▄▆▆▆▄▆▆▄▆▅▅█▆▆▅█▆▄▄▆▃▅▂
+wandb:   val_balanced_accuracy0.5 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▃▄█▄▅▃▃▁▆▄▃▄▄▆▅
+wandb:  val_balanced_accuracy0.75 █████████████████████████████████████▁▁▁
+wandb:          val_precision0.25 ▁▂▂▂▂▃▂▂▃▂▁▃▃▂▄▅▃▃▅▃▅▇▄▃▆▅▃█▆▄▇▆▇▆▄▆▄▅▃▄
+wandb:           val_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▇▁▆▆▁▅▆█▇▇▆▆▇▇▅▇
+wandb:          val_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall0.25 ▅▆▆▅▅▄▅▄▇▆▅▅▅▅▅▆▄▃█▃▅▁▅▃▅▅▅▅▅▅▄▅▄▄▄▄▄▁▄▅
+wandb:              val_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▂▃▂▂▃▂▂█▂▅▅▅▅▅▇
+wandb:             val_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy0.25 0.56962
+wandb:           test_accuracy0.5 0.68354
+wandb:          test_accuracy0.75 0.73418
+wandb:                 test_auroc 0.53051
+wandb: test_balanced_accuracy0.25 0.51356
+wandb:  test_balanced_accuracy0.5 0.5072
+wandb: test_balanced_accuracy0.75 0.49153
+wandb:         test_precision0.25 0.26667
+wandb:          test_precision0.5 0.27273
+wandb:         test_precision0.75 0
+wandb:            test_recall0.25 0.4
+wandb:             test_recall0.5 0.15
+wandb:            test_recall0.75 0
+wandb:                train_auroc 0.99038
+wandb:                 train_loss 0.68262
+wandb:           val_accuracy0.25 0.54286
+wandb:            val_accuracy0.5 0.65714
+wandb:           val_accuracy0.75 0.73333
+wandb:                  val_auroc 0.53797
+wandb:  val_balanced_accuracy0.25 0.55428
+wandb:   val_balanced_accuracy0.5 0.52702
+wandb:  val_balanced_accuracy0.75 0.50024
+wandb:          val_precision0.25 0.28846
+wandb:           val_precision0.5 0.29167
+wandb:          val_precision0.75 0.25
+wandb:             val_recall0.25 0.57692
+wandb:              val_recall0.5 0.26923
+wandb:             val_recall0.75 0.03846
+wandb: 
+wandb: 🚀 View run resnet18_2d_32_2_fold3 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/7xslogfh
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_2/wandb/run-20250616_191028-7xslogfh/logs
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_2/execution_datetimes.json
+
+**************************************************  Experiment 32 | Version 3 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+
+✅ Saved split assignments to 'lung_metadata_with_splits.csv'
+
+Using regular DataLoader for train subset
+
+Using regular DataLoader for train subset
+
+Using regular DataLoader for train subset
+
+✅ Set train dataloaders with 3 folds
+  - Fold 1: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 47, 1.0: 17}
+    Batch label distribution: {0.0: 54, 1.0: 10}
+    Batch label distribution: {0.0: 43, 1.0: 21}
+    Batch label distribution: {0.0: 14, 1.0: 4}
+  - Fold 2: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 46, 1.0: 18}
+    Batch label distribution: {0.0: 51, 1.0: 13}
+    Batch label distribution: {0.0: 48, 1.0: 16}
+    Batch label distribution: {0.0: 13, 1.0: 5}
+  - Fold 3: 210 samples
+    Label distribution: {0: 158, 1: 52}
+    Batch label distribution: {0.0: 51, 1.0: 13}
+    Batch label distribution: {0.0: 43, 1.0: 21}
+    Batch label distribution: {0.0: 49, 1.0: 15}
+    Batch label distribution: {0.0: 15, 1.0: 3}
+
+Using regular DataLoader for validation subset
+
+Using regular DataLoader for validation subset
+
+Using regular DataLoader for validation subset
+
+✅ Set validation dataloaders with 3 folds
+  - Fold 1: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 49, 1.0: 15}
+    Batch label distribution: {0.0: 30, 1.0: 11}
+  - Fold 2: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 52, 1.0: 12}
+    Batch label distribution: {0.0: 27, 1.0: 14}
+  - Fold 3: 105 samples
+    Label distribution: {0: 79, 1: 26}
+    Batch label distribution: {0.0: 48, 1.0: 16}
+    Batch label distribution: {0.0: 31, 1.0: 10}
+
+Using regular DataLoader for test subset
+
+Using regular DataLoader for test subset
+
+Using regular DataLoader for test subset
+
+✅ Set test dataloaders with 3 folds
+  - Fold 1: 79 samples
+    Label distribution: {0: 59, 1: 20}
+    Batch label distribution: {0.0: 49, 1.0: 15}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+  - Fold 2: 79 samples
+    Label distribution: {0: 59, 1: 20}
+    Batch label distribution: {0.0: 49, 1.0: 15}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+  - Fold 3: 79 samples
+    Label distribution: {0: 59, 1: 20}
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_3/wandb/run-20250616_201046-zp1e3j32
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet18_2d_32_3_fold1
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/zp1e3j32
+    Batch label distribution: {0.0: 49, 1.0: 15}
+    Batch label distribution: {0.0: 10, 1.0: 5}
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy0.25 ▁▆▇▅▃▆▃▆▅▇▇▆▆▆▆▅▅▆▆▅▆▆▅▆▆▆▆▆▅▅▅▅▇▅▇█▇█▇▇
+wandb:           test_accuracy0.5 █████████████████████████████████▁▁█▁▁▁▁
+wandb:          test_accuracy0.75 ██████████████████████████████████████▁█
+wandb:                 test_auroc ▇▇▆▄▃▃▄▄▃▃▃▂▂▂▁▁▁▁▁▁▁▂▁▂▂▃▄▄▄▅▅▆▆▇▇▇████
+wandb: test_balanced_accuracy0.25 ▂▂▃▅▅▄▅▄▄▃▄▂▅▃▅▅▄▄▂▅▁▂▂▅▄▅▂▅▅▅▄▄▄▃▅▅▆▇█▆
+wandb:  test_balanced_accuracy0.5 ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▁▁▃▁▁▁▆█▆
+wandb: test_balanced_accuracy0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:         test_precision0.25 ▁▆▆▆▆▆▆▆▅▆▆▆▆▆▆▅▆▆▆▆▇▆▆▆▅▆▆▆▆▆▆▆▆▇▇▇█▇▆▇
+wandb:          test_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁█▁
+wandb:         test_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            test_recall0.25 ██▁▂▄▇▄▄▅▃▇▆▄▆▅▃▃▇▅▃▇▇▇▃▆▅▄▅▆▅▆▅▅▅▅▅▄▅▆▅
+wandb:             test_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅█▅▅▁█
+wandb:            test_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                train_auroc ▁▂▂▂▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▅▅▅▅▅▅▅▅▆▆▆▆▇▇▇▇▇▇▇██
+wandb:                 train_loss █▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▅▅▅▅▅▅▅▅▅▅▅▅▄▄▄▃▃▂▂▁
+wandb:           val_accuracy0.25 ▃▂▂▃▂▃▃▁▁▅▅▂▂▄▄▂▂▂▂▃▃▃▂▂▂▅▆▄▂▄▄█▄▅▅▆▃▆▄▄
+wandb:            val_accuracy0.5 ████████████████████████████████▅▅▅█▁▁▁▁
+wandb:           val_accuracy0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                  val_auroc ▅▃▂▂▂▁▁▂▂▂▃▄▅▄▅▅▅▅▆▆▆▇▆▇███▇▇▇███▇▆▅▅▆▇▆
+wandb:  val_balanced_accuracy0.25 ▃▃▅▄▃▁▇▆█▇▃▁▂▁▁▁▂▁▂▄▄▅▃▂▂▃▃▄▁▄▃▅▁▂▂▁▅▃▂▃
+wandb:   val_balanced_accuracy0.5 ▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▂▁▁█▁
+wandb:  val_balanced_accuracy0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:          val_precision0.25 ▄▄▆▆▆▃▁▇▂▅▅█▆▇▂▃▃▅▄▆▃▃▃▅▄▃▇▄▅▆▃▅▅█▆▁▆▅▃▃
+wandb:           val_precision0.5 ▆▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁
+wandb:          val_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:             val_recall0.25 █▇▂█▃▃▂▄█▅▂▁▂▃▅▂▅▂▂▂▃▆▃▄▅▃▄▃▅▂▅▂▁▃▅▂▅▂▃▄
+wandb:              val_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁
+wandb:             val_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy0.25 0.5443
+wandb:           test_accuracy0.5 0.74684
+wandb:          test_accuracy0.75 0.74684
+wandb:                 test_auroc 0.60085
+wandb: test_balanced_accuracy0.25 0.57924
+wandb:  test_balanced_accuracy0.5 0.53305
+wandb: test_balanced_accuracy0.75 0.5
+wandb:         test_precision0.25 0.30952
+wandb:          test_precision0.5 0.5
+wandb:         test_precision0.75 0
+wandb:            test_recall0.25 0.65
+wandb:             test_recall0.5 0.1
+wandb:            test_recall0.75 0
+wandb:                train_auroc 0.92052
+wandb:                 train_loss 1.18633
+wandb:           val_accuracy0.25 0.46667
+wandb:            val_accuracy0.5 0.75238
+wandb:           val_accuracy0.75 0.75238
+wandb:                  val_auroc 0.53311
+wandb:  val_balanced_accuracy0.25 0.50365
+wandb:   val_balanced_accuracy0.5 0.5258
+wandb:  val_balanced_accuracy0.75 0.5
+wandb:          val_precision0.25 0.25
+wandb:           val_precision0.5 0.5
+wandb:          val_precision0.75 0
+wandb:             val_recall0.25 0.57692
+wandb:              val_recall0.5 0.07692
+wandb:             val_recall0.75 0
+wandb: 
+wandb: 🚀 View run resnet18_2d_32_3_fold1 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/zp1e3j32
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_3/wandb/run-20250616_201046-zp1e3j32/logs
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_32/version_3/wandb/run-20250616_211655-hgeo1jh9
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet18_2d_32_3_fold2
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/hgeo1jh9
+...model pipeline for data fold 1 has run!
+
+Running model pipeline for data fold 2...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)

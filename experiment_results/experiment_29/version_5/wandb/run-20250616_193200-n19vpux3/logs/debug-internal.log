@@ -1,0 +1,17 @@
+{"time":"2025-06-16T19:32:01.541449746+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_29/version_5/wandb/run-20250616_193200-n19vpux3/logs/debug-core.log"}
+{"time":"2025-06-16T19:32:01.82965309+01:00","level":"INFO","msg":"created new stream","id":"n19vpux3"}
+{"time":"2025-06-16T19:32:01.829691713+01:00","level":"INFO","msg":"stream: started","id":"n19vpux3"}
+{"time":"2025-06-16T19:32:01.829854941+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"n19vpux3"}
+{"time":"2025-06-16T19:32:01.829870551+01:00","level":"INFO","msg":"handler: started","stream_id":"n19vpux3"}
+{"time":"2025-06-16T19:32:01.829892733+01:00","level":"INFO","msg":"sender: started","stream_id":"n19vpux3"}
+{"time":"2025-06-16T19:32:02.082583526+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-16T19:50:32.786128193+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits_wrs/n19vpux3/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-16T20:44:29.794738942+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-16T20:44:29.79496533+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-16T20:44:30.517745048+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-16T20:44:30.716288539+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-16T20:44:30.721783971+01:00","level":"INFO","msg":"stream: closing","id":"n19vpux3"}
+{"time":"2025-06-16T20:44:30.721807977+01:00","level":"INFO","msg":"handler: closed","stream_id":"n19vpux3"}
+{"time":"2025-06-16T20:44:30.721819508+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"n19vpux3"}
+{"time":"2025-06-16T20:44:30.72185226+01:00","level":"INFO","msg":"sender: closed","stream_id":"n19vpux3"}
+{"time":"2025-06-16T20:44:30.722292442+01:00","level":"INFO","msg":"stream: closed","id":"n19vpux3"}
