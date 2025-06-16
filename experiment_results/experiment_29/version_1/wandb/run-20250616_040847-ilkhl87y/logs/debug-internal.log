@@ -1,0 +1,16 @@
+{"time":"2025-06-16T04:08:47.67142519+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_29/version_1/wandb/run-20250616_040847-ilkhl87y/logs/debug-core.log"}
+{"time":"2025-06-16T04:08:48.092691631+01:00","level":"INFO","msg":"created new stream","id":"ilkhl87y"}
+{"time":"2025-06-16T04:08:48.0927441+01:00","level":"INFO","msg":"stream: started","id":"ilkhl87y"}
+{"time":"2025-06-16T04:08:48.092772403+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"ilkhl87y"}
+{"time":"2025-06-16T04:08:48.092819442+01:00","level":"INFO","msg":"sender: started","stream_id":"ilkhl87y"}
+{"time":"2025-06-16T04:08:48.092916545+01:00","level":"INFO","msg":"handler: started","stream_id":"ilkhl87y"}
+{"time":"2025-06-16T04:08:48.357016476+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-16T05:16:12.134209026+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-16T05:16:12.134413071+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-16T05:16:13.136079193+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.535990176,"progress":"441B/441B"},{"desc":"uploading config.yaml","runtime_seconds":0.378276871,"progress":"5.7KB/5.7KB"}],"total_operations":2}}
+{"time":"2025-06-16T05:16:13.338064484+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-16T05:16:13.539566011+01:00","level":"INFO","msg":"stream: closing","id":"ilkhl87y"}
+{"time":"2025-06-16T05:16:13.539585888+01:00","level":"INFO","msg":"handler: closed","stream_id":"ilkhl87y"}
+{"time":"2025-06-16T05:16:13.539595917+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ilkhl87y"}
+{"time":"2025-06-16T05:16:13.539616666+01:00","level":"INFO","msg":"sender: closed","stream_id":"ilkhl87y"}
+{"time":"2025-06-16T05:16:13.540113284+01:00","level":"INFO","msg":"stream: closed","id":"ilkhl87y"}
