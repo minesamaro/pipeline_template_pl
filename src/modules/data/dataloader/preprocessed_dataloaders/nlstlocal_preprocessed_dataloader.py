@@ -168,10 +168,6 @@ class NLSTLocalPreprocessedKFoldDataLoader:
                     label_distribution = dict(zip(unique_labels, counts))
                     print(f"    Batch label distribution: {label_distribution}")
 
-
-        quit()
-
-
     def _set_data_splits(self, lung_metadataframe):
         metadata_with_splits = lung_metadataframe.copy()
 
@@ -184,7 +180,7 @@ class NLSTLocalPreprocessedKFoldDataLoader:
         )
 
         if not self.config.number_of_k_folds:
-            self.config.number_of_k_foldsfold = 1
+            self.config.number_of_k_folds = 1
 
         # Assign test split once (same for all folds)
         for fold_id in range(1, self.config.number_of_k_folds + 1):

@@ -175,6 +175,13 @@ class PyTorchLightningResNet182dModel(pytorch_lightning.LightningModule):
                 task='binary').item()
         }
         wandb.log(metrics_for_logging, step=self.current_epoch)
+        self.log_dict(
+            metrics_for_logging,
+            batch_size=labels.shape[0],
+            on_epoch=True,
+            on_step=False,
+            prog_bar=False
+        )
 
         if self.test_dataloader_ref is not None:
             self.evaluate_on_test_set()
