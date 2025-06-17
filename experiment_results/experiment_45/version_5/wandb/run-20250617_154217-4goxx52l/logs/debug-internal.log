@@ -1,0 +1,17 @@
+{"time":"2025-06-17T15:42:17.158654314+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_45/version_5/wandb/run-20250617_154217-4goxx52l/logs/debug-core.log"}
+{"time":"2025-06-17T15:42:17.429374877+01:00","level":"INFO","msg":"created new stream","id":"4goxx52l"}
+{"time":"2025-06-17T15:42:17.4294355+01:00","level":"INFO","msg":"stream: started","id":"4goxx52l"}
+{"time":"2025-06-17T15:42:17.42946121+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"4goxx52l"}
+{"time":"2025-06-17T15:42:17.429469133+01:00","level":"INFO","msg":"sender: started","stream_id":"4goxx52l"}
+{"time":"2025-06-17T15:42:17.42952558+01:00","level":"INFO","msg":"handler: started","stream_id":"4goxx52l"}
+{"time":"2025-06-17T15:42:17.689022501+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-17T16:07:03.333586673+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/4goxx52l/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-17T16:10:57.714802603+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-17T16:10:57.715129226+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-17T16:10:58.716704184+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.646154881,"progress":"441B/441B"},{"desc":"uploading config.yaml","runtime_seconds":0.47438464,"progress":"5.7KB/5.7KB"}],"total_operations":2}}
+{"time":"2025-06-17T16:10:58.824627414+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-17T16:10:59.058647153+01:00","level":"INFO","msg":"stream: closing","id":"4goxx52l"}
+{"time":"2025-06-17T16:10:59.058687977+01:00","level":"INFO","msg":"handler: closed","stream_id":"4goxx52l"}
+{"time":"2025-06-17T16:10:59.058709225+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"4goxx52l"}
+{"time":"2025-06-17T16:10:59.058759634+01:00","level":"INFO","msg":"sender: closed","stream_id":"4goxx52l"}
+{"time":"2025-06-17T16:10:59.05928315+01:00","level":"INFO","msg":"stream: closed","id":"4goxx52l"}
