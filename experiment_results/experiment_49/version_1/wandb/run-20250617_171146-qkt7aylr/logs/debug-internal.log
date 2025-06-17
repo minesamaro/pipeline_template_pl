@@ -1,0 +1,16 @@
+{"time":"2025-06-17T17:11:47.8337303+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\pytorch_lightning_dl_pipeline_template\\experiment_results\\experiment_49\\version_1\\wandb\\run-20250617_171146-qkt7aylr\\logs\\debug-core.log"}
+{"time":"2025-06-17T17:11:48.1973551+01:00","level":"INFO","msg":"created new stream","id":"qkt7aylr"}
+{"time":"2025-06-17T17:11:48.1973551+01:00","level":"INFO","msg":"stream: started","id":"qkt7aylr"}
+{"time":"2025-06-17T17:11:48.1973551+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"qkt7aylr"}
+{"time":"2025-06-17T17:11:48.1973551+01:00","level":"INFO","msg":"sender: started","stream_id":"qkt7aylr"}
+{"time":"2025-06-17T17:11:48.1973551+01:00","level":"INFO","msg":"handler: started","stream_id":"qkt7aylr"}
+{"time":"2025-06-17T17:11:48.8624323+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-17T17:11:52.0211896+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-17T17:11:52.0211896+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-17T17:11:53.2686388+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading config.yaml","runtime_seconds":0.4035034,"progress":"5.4KB/5.4KB"}],"total_operations":1}}
+{"time":"2025-06-17T17:11:53.3387225+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-17T17:11:54.0004682+01:00","level":"INFO","msg":"stream: closing","id":"qkt7aylr"}
+{"time":"2025-06-17T17:11:54.0004682+01:00","level":"INFO","msg":"handler: closed","stream_id":"qkt7aylr"}
+{"time":"2025-06-17T17:11:54.0004682+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"qkt7aylr"}
+{"time":"2025-06-17T17:11:54.0004682+01:00","level":"INFO","msg":"sender: closed","stream_id":"qkt7aylr"}
+{"time":"2025-06-17T17:11:54.0009804+01:00","level":"INFO","msg":"stream: closed","id":"qkt7aylr"}

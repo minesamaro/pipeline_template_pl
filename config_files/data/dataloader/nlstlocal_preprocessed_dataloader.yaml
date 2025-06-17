@@ -30,8 +30,9 @@ torch_dataloader_kwargs:
 validation_fraction_of_train_set: 0.25
 dimension: ${..dimension} # "2D, 2.5D, 3D
 resize: ${..resize} # True, False
-roi: lung # lung, whole
+roi: masked # lung, masked
 resample: False
 resample_z: False
 random: False
 weighted_random_sampler: False
+visualize_imgur: ${...visualize_imgur} # True, False

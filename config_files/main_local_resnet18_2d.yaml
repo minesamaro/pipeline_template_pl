@@ -23,3 +23,4 @@ wandb:
   project_name: "comparative_study_2d_local"
   entity: "nlst"
   name: "resnet18_2d"
+visualize_imgur: False

@@ -1,0 +1,24 @@
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new']
+Label weights: tensor([1.], device='cuda:0', dtype=torch.float64)
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, val_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+❌ Upload failed
+❌ Upload failed
+❌ Upload failed
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+❌ Upload failed
+❌ Upload failed
+❌ Upload failed
+❌ Upload failed
+❌ Upload failed
+❌ Upload failed
+❌ Upload failed
+❌ Upload failed
+❌ Upload failed
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\call.py:53: UserWarning: Detected KeyboardInterrupt, attempting graceful shutdown...
+  rank_zero_warn("Detected KeyboardInterrupt, attempting graceful shutdown...")
+...model pipeline for data fold 1 has run!
+[34m[1mwandb[0m: Finishing previous runs because reinit is set to True.

@@ -15,6 +15,9 @@ import random
 from src.modules.data.data_augmentation.ct_image_augmenter \
     import CTImageAugmenter
 
+from src.modules.data.dataloader.visualizationuploader \
+    import VisualizationUploader
+
 
 class NLSTLocalPreprocessedKFoldDataLoader:
     def __init__(
@@ -236,6 +239,20 @@ class NLSTPreprocessedDataLoader(Dataset):
         self.lung_metadataframe = lung_metadataframe
         self.augmented_to_original_data_ratio = config.data_augmentation.augmented_to_original_data_ratio
         self.apply_data_augmentations = config.data_augmentation.apply
+        
+        # Check if there is a roi parameter in config
+        if 'roi' in config:
+            self.roi = config.roi
+        else:
+            self.roi = None
+
+        self.visualization = config.visualize_imgur
+        if self.visualization:
+            print("\n✅ Visualization enabled for NLSTLocalPreprocessedDataLoader")
+            self.visualization_uploader = VisualizationUploader(
+                client_id='f5a89997db63c60',
+                album_id='WC0PErb6jxLRWHt'
+            )
 
         
         if self.apply_data_augmentations and subset_type == "train":
@@ -309,7 +326,11 @@ class NLSTPreprocessedDataLoader(Dataset):
         else:
             if self.config.dimension == 2:
                 data_path = 'C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\PhantomDataset\\2d' #TODO: Change this to the correct path
+                data_path = os.path.join(data_path, self.roi) if self.roi else data_path
                 image = self._get_slice(data_index, data_path, pid, study_yr)
+                # Upload the image to the imgur API
+                
+            # TODO refix the other dimensions
             elif self.config.dimension == 3:
                 data_path = '/nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/preprocessed_data/protocol_5/3d'
                 image = self._get_scan(data_index, data_path, pid, study_yr)
@@ -333,8 +354,14 @@ class NLSTPreprocessedDataLoader(Dataset):
             # Squeeze the image to remove single-dimensional entries
             if image.ndim == 3:
                 image = numpy.squeeze(image)
+            
+        if self.visualization:
+            self.visualization_uploader.upload_image(
+                image=image,  # Assuming the last slice is the one to visualize
+                file_name= f"slice_{pid}_{study_yr}.png",
+                dataset_name="NLSTLocalPreprocessed"
+            )
 
-        
         image = self.image_transformer(image)
         data = dict(image=image)
 

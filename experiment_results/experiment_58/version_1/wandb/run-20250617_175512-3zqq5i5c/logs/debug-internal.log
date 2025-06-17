@@ -1,0 +1,16 @@
+{"time":"2025-06-17T17:55:14.6891458+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\pytorch_lightning_dl_pipeline_template\\experiment_results\\experiment_58\\version_1\\wandb\\run-20250617_175512-3zqq5i5c\\logs\\debug-core.log"}
+{"time":"2025-06-17T17:55:15.2266074+01:00","level":"INFO","msg":"created new stream","id":"3zqq5i5c"}
+{"time":"2025-06-17T17:55:15.2271488+01:00","level":"INFO","msg":"stream: started","id":"3zqq5i5c"}
+{"time":"2025-06-17T17:55:15.2271488+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"3zqq5i5c"}
+{"time":"2025-06-17T17:55:15.2271488+01:00","level":"INFO","msg":"handler: started","stream_id":"3zqq5i5c"}
+{"time":"2025-06-17T17:55:15.2271488+01:00","level":"INFO","msg":"sender: started","stream_id":"3zqq5i5c"}
+{"time":"2025-06-17T17:55:16.6685485+01:00","level":"INFO","msg":"stream: closing","id":"3zqq5i5c"}
+{"time":"2025-06-17T17:55:16.8988899+01:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2025-06-17T17:55:16.8993976+01:00","level":"ERROR","msg":"runfiles: CreateRunFiles returned error: returned error 404: {\"data\":{\"createRunFiles\":null},\"errors\":[{\"message\":\"project /comparative_study_2d_local not found during createRunFiles\",\"path\":[\"createRunFiles\"]}]}"}
+{"time":"2025-06-17T17:55:17.1125922+01:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2025-06-17T17:55:17.1125922+01:00","level":"ERROR","msg":"runfiles: CreateRunFiles returned error: returned error 404: {\"data\":{\"createRunFiles\":null},\"errors\":[{\"message\":\"project /comparative_study_2d_local not found during createRunFiles\",\"path\":[\"createRunFiles\"]}]}"}
+{"time":"2025-06-17T17:55:17.1125922+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-17T17:55:17.1125922+01:00","level":"INFO","msg":"handler: closed","stream_id":"3zqq5i5c"}
+{"time":"2025-06-17T17:55:17.1125922+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"3zqq5i5c"}
+{"time":"2025-06-17T17:55:17.1125922+01:00","level":"INFO","msg":"sender: closed","stream_id":"3zqq5i5c"}
+{"time":"2025-06-17T17:55:17.1131026+01:00","level":"INFO","msg":"stream: closed","id":"3zqq5i5c"}

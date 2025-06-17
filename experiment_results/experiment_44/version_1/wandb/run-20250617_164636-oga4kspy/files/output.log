@@ -1,0 +1,96 @@
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new']
+Label weights: tensor([1.], device='cuda:0', dtype=torch.float64)
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, val_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+❌ Upload failed (429): {'errors': [{'id': 'legacy-api-79b8ddd657-vv8m6/Q5JSZWnEHv-059970', 'code': '429', 'status': 'Too Many Requests', 'detail': 'Too Many Requests'}]}
+[ERROR] Error in __getitem__ at index 2: Expecting value: line 2 column 1 (char 1)
+File path: C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\PhantomDataset/133934/1.000000-0OPAGELSPLUSLUNG3802.5120102.50.11.5-81149
+Label: 0
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\requests\models.py", line 974, in json
+    return complexjson.loads(self.text, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\scripts\run_experiment_pipeline.py", line 59, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\scripts\run_experiment_pipeline.py", line 167, in run_experiment_pipeline
+    model_pipeline.train_model()
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\model\model_pipeline.py", line 68, in train_model
+    self.pytorch_lightning_trainer.fit(
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 532, in fit
+    call._call_and_handle_interrupt(
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 571, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 980, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1023, in _run_stage
+    self.fit_loop.run()
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\fit_loop.py", line 202, in run
+    self.advance()
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\fit_loop.py", line 355, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\training_epoch_loop.py", line 133, in run
+    self.advance(data_fetcher)
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\training_epoch_loop.py", line 190, in advance
+    batch = next(data_fetcher)
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\fetchers.py", line 126, in __next__
+    batch = super().__next__()
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\fetchers.py", line 58, in __next__
+    batch = next(self.iterator)
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\utilities\combined_loader.py", line 285, in __next__
+    out = next(self._iterator)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\utilities\combined_loader.py", line 65, in __next__
+    out[i] = next(self.iterators[i])
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\torch\utils\data\dataloader.py", line 733, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\torch\utils\data\dataloader.py", line 789, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 52, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\data\dataloader\preprocessed_dataloaders\nlstlocal_preprocessed_dataloader.py", line 299, in __getitem__
+    raise e
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\data\dataloader\preprocessed_dataloaders\nlstlocal_preprocessed_dataloader.py", line 289, in __getitem__
+    data = self._get_data(data_index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\data\dataloader\preprocessed_dataloaders\nlstlocal_preprocessed_dataloader.py", line 347, in _get_data
+    self.visualization_uploader.upload_image(
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\data\dataloader\visualizationuploader.py", line 57, in upload_image
+    print(f"❌ Upload failed ({response.status_code}):", response.json())
+                                                         ^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\requests\models.py", line 978, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

@@ -1,0 +1,28 @@
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new']
+Label weights: tensor([1.], device='cuda:0', dtype=torch.float64)
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, val_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Exception ignored in: <function WeakSet.__init__.<locals>._remove at 0x0000028C4E361BC0>
+Traceback (most recent call last):
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\_weakrefset.py", line 39, in _remove
+    def _remove(item, selfref=ref(self)):
+
+KeyboardInterrupt:
+[DEBUG] Saving image for debugging at C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\PhantomDataset\visualize_roi
+[DEBUG] Saving image for debugging at C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\PhantomDataset\visualize_roi
+[DEBUG] Saving image for debugging at C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\PhantomDataset\visualize_roi
+[DEBUG] Saving image for debugging at C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\PhantomDataset\visualize_roi
+[DEBUG] Saving image for debugging at C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\PhantomDataset\visualize_roi
+[DEBUG] Saving image for debugging at C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\PhantomDataset\visualize_roi
+[DEBUG] Saving image for debugging at C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\PhantomDataset\visualize_roi
+C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\data\dataloader\preprocessed_dataloaders\nlstlocal_preprocessed_dataloader.py:370: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  plt.figure(figsize=(6, 6))
+[DEBUG] Saving image for debugging at C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\PhantomDataset\visualize_roi
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\call.py:53: UserWarning: Detected KeyboardInterrupt, attempting graceful shutdown...
+  rank_zero_warn("Detected KeyboardInterrupt, attempting graceful shutdown...")
+...model pipeline for data fold 3 has run!
+Saving execution datetimes to C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template/experiment_results/experiment_57/version_1/execution_datetimes.json
