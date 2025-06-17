@@ -1,0 +1,16 @@
+{"time":"2025-06-17T14:44:22.40302169+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_46/version_3/wandb/run-20250617_144421-ssd940vz/logs/debug-core.log"}
+{"time":"2025-06-17T14:44:22.694040695+01:00","level":"INFO","msg":"created new stream","id":"ssd940vz"}
+{"time":"2025-06-17T14:44:22.694096396+01:00","level":"INFO","msg":"stream: started","id":"ssd940vz"}
+{"time":"2025-06-17T14:44:22.694200087+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"ssd940vz"}
+{"time":"2025-06-17T14:44:22.694268968+01:00","level":"INFO","msg":"sender: started","stream_id":"ssd940vz"}
+{"time":"2025-06-17T14:44:22.694322409+01:00","level":"INFO","msg":"handler: started","stream_id":"ssd940vz"}
+{"time":"2025-06-17T14:44:23.148955742+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-17T15:07:36.617786255+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-17T15:07:36.61811105+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-17T15:07:37.360730223+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-17T15:07:37.618050684+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-17T15:07:37.624862624+01:00","level":"INFO","msg":"stream: closing","id":"ssd940vz"}
+{"time":"2025-06-17T15:07:37.624899814+01:00","level":"INFO","msg":"handler: closed","stream_id":"ssd940vz"}
+{"time":"2025-06-17T15:07:37.624915064+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ssd940vz"}
+{"time":"2025-06-17T15:07:37.624998957+01:00","level":"INFO","msg":"sender: closed","stream_id":"ssd940vz"}
+{"time":"2025-06-17T15:07:37.625782348+01:00","level":"INFO","msg":"stream: closed","id":"ssd940vz"}
