@@ -1,11 +1,11 @@
 defaults:
   - data: data
-  - data/dataloader: nlst_preprocessed_dataloader
+  - data/dataloader: nlst_preprocessed_dataloader_da
   - data/metadataframe: nlst_preprocessed_metadataframe
   - experiment_execution/ids: ids
   - experiment_execution/info: info
   - experiment_execution/paths: paths
-  - hyperparameter_grid_based_execution: resnet2d_hyperparameter_grid_based_execution # Change this if necessary
+  - hyperparameter_grid_based_execution: luna25_hyperparameter_grid_based_execution # Change this if necessary
   - model: model_resnet18
   - model/model_pipeline: luna25_model_pipeline # Change this if necessary
   - model/pytorch_lightning_model: nlst_pytorch_lightning_resnet502d
@@ -19,9 +19,9 @@ hydra:
   run:
     dir: .
 seed_value: 22
-weighted_random_sampler: True
+weighted_random_sampler: False
 visualize_imgur: False
 wandb:
-  project_name: "cs_2d_roi_whole_slice_oneclass_22_splits_wrs"
+  project_name: "cs_2d_roi_whole_slice_test_da"
   entity: "nlst"
   name: "resnet18_2d"
