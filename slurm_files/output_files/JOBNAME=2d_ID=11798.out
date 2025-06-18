@@ -3812,3 +3812,175 @@ wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole
 Running model pipeline for data fold 2...
 Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
 Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+wandb: Finishing previous runs because reinit is set to True.
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: 
+wandb: uploading history steps 286-287, summary, console lines 4-5
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          test_accuracy0.25 ▁▁▁▁▁█▂██▁█▇█▂▁█▇▄▄▆▆▆▇▅▇▅▆▅▆▆▆▆▆▆▆▆▆▆▆▆
+wandb:           test_accuracy0.5 ██████████████▃▄▅▄▆▁▅▄▄▄▄▄▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb:          test_accuracy0.75 ██████████████████▆█▆▄▄▅▁▆▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:                 test_auroc ▇▄▃▆▇▇▇█▇█▇▇█▆▅▁▅▅▄▄▄▄▄▄▄▄▄▄▃▃▃▃▃▃▃▃▃▃▃▃
+wandb: test_balanced_accuracy0.25 ▅▅▅▅▅▅▅▅▅▅▆▅▇▇▆▂█▆▁▇██▅▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:  test_balanced_accuracy0.5 ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▁▆▇▆▅▄█▇▇▇▇▆▆▆▆▆▆▆▆▆▆▆▆
+wandb: test_balanced_accuracy0.75 ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▅▁▇▄▂▃▃▆▇█████████▇▇▇▇▇
+wandb:         test_precision0.25 ▁▆▆▆▆▁▁▆▆▁▆▆▆▇▇▅▇▇▅█▇▅▆▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:          test_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▅▅▁▄▅▆▇██▃▅▇▇▆▇▆▆▆▆▆▆▆▆▆▆▆▆▆▆
+wandb:         test_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▅▆▃▅▅▄▆███▇▇▇▇▇▇▇▇▇▇
+wandb:            test_recall0.25 ██▂▇▁▁▁█▆▇▅▂▄▄▃▃▂▃▄▄▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb:             test_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▄▁█▄▅▆▃▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:            test_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▄▄▁▆▆▆▆▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:                train_auroc ▂▂▂▁▄▂▃▃▂▃▃▃▄▄▅▄██▇█▇███████████████████
+wandb:                 train_loss ██████████████▇▅▆▄▃▂▂▄▃▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           val_accuracy0.25 ████▁█▃▃▅█▅▇▄▅▅▅▆▇▇▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆
+wandb:            val_accuracy0.5 █████████████▅█▅▁▅▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb:           val_accuracy0.75 ██████████████▁▇▃▇▁▅▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb:                  val_auroc ▄▇▁▇▇▇▇▇▇▃▆▇█▇▇▄▄▅▆▂▂▄▂▂▁▁▁▁▁▁▂▂▂▂▂▂▂▂▂▂
+wandb:  val_balanced_accuracy0.25 ▄▄▄▄▄▄▄▇▆▄▄█▇█▆▃▄▆▁▂▁▂▄▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃▃
+wandb:   val_balanced_accuracy0.5 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇█▇█▅▅▁▆▄▄▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+wandb:  val_balanced_accuracy0.75 ▆▆▆▆▆▆▆▆▆▆▆▆▆▆▆▇▅▃▄▂█▃▁▆▄▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+wandb:          val_precision0.25 ▆▆▁▁▁▇▇▁▁█▁▁▇▇▆▄▃▄▅▄▃▄▆▅▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:           val_precision0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▄▅▁█▇▄▅▅▃▁▃▅▄▄▃▃▃▃▃▃▃▃▃▃
+wandb:          val_precision0.75 ▁▁▁▁▁▁▁▁▁▁▁▃█▅▅▅▅▅▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+wandb:             val_recall0.25 ▁██▁▁▁███▁█▆▁█▅▂▄▅▂▆▂▂▃▃▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+wandb:              val_recall0.5 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▇▄▁█▇▄▂▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:             val_recall0.75 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▄▄▂▄▄▂▂▇▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb: 
+wandb: Run summary:
+wandb:          test_accuracy0.25 0.58228
+wandb:           test_accuracy0.5 0.62025
+wandb:          test_accuracy0.75 0.67089
+wandb:                 test_auroc 0.4822
+wandb: test_balanced_accuracy0.25 0.47246
+wandb:  test_balanced_accuracy0.5 0.49788
+wandb: test_balanced_accuracy0.75 0.51525
+wandb:         test_precision0.25 0.21739
+wandb:          test_precision0.5 0.25
+wandb:         test_precision0.75 0.28571
+wandb:            test_recall0.25 0.25
+wandb:             test_recall0.5 0.25
+wandb:            test_recall0.75 0.2
+wandb:                train_auroc 1
+wandb:                 train_loss 1e-05
+wandb:           val_accuracy0.25 0.62857
+wandb:            val_accuracy0.5 0.6381
+wandb:           val_accuracy0.75 0.64762
+wandb:                  val_auroc 0.41091
+wandb:  val_balanced_accuracy0.25 0.45643
+wandb:   val_balanced_accuracy0.5 0.46276
+wandb:  val_balanced_accuracy0.75 0.46908
+wandb:          val_precision0.25 0.15789
+wandb:           val_precision0.5 0.16667
+wandb:          val_precision0.75 0.17647
+wandb:             val_recall0.25 0.11538
+wandb:              val_recall0.5 0.11538
+wandb:             val_recall0.75 0.11538
+wandb: 
+wandb: 🚀 View run resnet50_2d_45_6_fold2 at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/c9blvp26
+wandb: ⭐️ View project at: https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_45/version_6/wandb/run-20250617_175640-c9blvp26/logs
+wandb: creating run
+wandb: Tracking run with wandb version 0.19.11
+wandb: Run data is saved locally in /nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_45/version_6/wandb/run-20250617_182733-uqm94sbj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resnet50_2d_45_6_fold3
+wandb: ⭐️ View project at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits
+wandb: 🚀 View run at https://wandb.ai/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_oneclass_22_splits/runs/uqm94sbj
+...model pipeline for data fold 2 has run!
+
+Running model pipeline for data fold 3...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+Label weights: tensor([3.0204], device='cuda:0', dtype=torch.float64)
+srun: got SIGCONT
+slurmstepd-01.ctm-deep-05: error: *** STEP 11798.1 ON 01.ctm-deep-05 CANCELLED AT 2025-06-17T18:30:36 ***
+slurmstepd-01.ctm-deep-05: error: *** JOB 11798 ON 01.ctm-deep-05 CANCELLED AT 2025-06-17T18:30:36 ***
+srun: forcing job termination
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 54, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 167, in run_experiment_pipeline
+    model_pipeline.train_model()
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/model_pipeline.py", line 68, in train_model
+    self.pytorch_lightning_trainer.fit(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 532, in fit
+    call._call_and_handle_interrupt(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 571, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 980, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1023, in _run_stage
+    self.fit_loop.run()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 202, in run
+    self.advance()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 355, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 133, in run
+    self.advance(data_fetcher)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 195, in advance
+    batch = call._call_strategy_hook(trainer, "batch_to_device", batch, dataloader_idx=0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 294, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 270, in batch_to_device
+    return model._apply_batch_transfer_handler(batch, device=device, dataloader_idx=dataloader_idx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/core/module.py", line 332, in _apply_batch_transfer_handler
+    batch = self._call_batch_hook("transfer_batch_to_device", batch, device, dataloader_idx)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/core/module.py", line 321, in _call_batch_hook
+    return trainer_method(trainer, hook_name, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 146, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/core/hooks.py", line 571, in transfer_batch_to_device
+    return move_data_to_device(batch, device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/lightning_fabric/utilities/apply_func.py", line 101, in move_data_to_device
+    return apply_to_collection(batch, dtype=_TransferableDataType, function=batch_to)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/lightning_utilities/core/apply_func.py", line 74, in apply_to_collection
+    return _apply_to_collection_slow(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/lightning_utilities/core/apply_func.py", line 127, in _apply_to_collection_slow
+    v = _apply_to_collection_slow(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/lightning_utilities/core/apply_func.py", line 106, in _apply_to_collection_slow
+    v = _apply_to_collection_slow(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/lightning_utilities/core/apply_func.py", line 98, in _apply_to_collection_slow
+    return function(data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/lightning_fabric/utilities/apply_func.py", line 95, in batch_to
+    data_output = data.to(device, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 3593425) is killed by signal: Terminated. 
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Exception ignored in atexit callback: <function _start_and_connect_service.<locals>.teardown_atexit at 0x7b6de56d6660>
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/service_connection.py", line 94, in teardown_atexit
+    conn.teardown(hooks.exit_code)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/service_connection.py", line 228, in teardown
+    self._client.send_server_request(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/wandb/sdk/lib/sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+srun: error: 01.ctm-deep-05: task 0: Exited with exit code 1

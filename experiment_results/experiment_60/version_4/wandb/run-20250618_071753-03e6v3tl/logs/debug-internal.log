@@ -1,0 +1,9 @@
+{"time":"2025-06-18T07:17:54.140961617+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_60/version_4/wandb/run-20250618_071753-03e6v3tl/logs/debug-core.log"}
+{"time":"2025-06-18T07:17:54.40891303+01:00","level":"INFO","msg":"created new stream","id":"03e6v3tl"}
+{"time":"2025-06-18T07:17:54.408993521+01:00","level":"INFO","msg":"stream: started","id":"03e6v3tl"}
+{"time":"2025-06-18T07:17:54.409054886+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"03e6v3tl"}
+{"time":"2025-06-18T07:17:54.409124684+01:00","level":"INFO","msg":"sender: started","stream_id":"03e6v3tl"}
+{"time":"2025-06-18T07:17:54.409072189+01:00","level":"INFO","msg":"handler: started","stream_id":"03e6v3tl"}
+{"time":"2025-06-18T07:17:54.62811592+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-18T07:20:43.936156812+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.61.11.24:37904->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-18T07:22:55.924516383+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.61.11.24:46716->35.186.228.49:443: read: connection reset by peer"}

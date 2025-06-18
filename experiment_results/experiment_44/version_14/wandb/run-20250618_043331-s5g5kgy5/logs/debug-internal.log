@@ -1,0 +1,17 @@
+{"time":"2025-06-18T04:33:31.517261176+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_44/version_14/wandb/run-20250618_043331-s5g5kgy5/logs/debug-core.log"}
+{"time":"2025-06-18T04:33:31.793717219+01:00","level":"INFO","msg":"created new stream","id":"s5g5kgy5"}
+{"time":"2025-06-18T04:33:31.793804678+01:00","level":"INFO","msg":"stream: started","id":"s5g5kgy5"}
+{"time":"2025-06-18T04:33:31.79388689+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"s5g5kgy5"}
+{"time":"2025-06-18T04:33:31.793925177+01:00","level":"INFO","msg":"handler: started","stream_id":"s5g5kgy5"}
+{"time":"2025-06-18T04:33:31.793996044+01:00","level":"INFO","msg":"sender: started","stream_id":"s5g5kgy5"}
+{"time":"2025-06-18T04:33:32.240983091+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-18T04:43:03.328985181+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-06-18T05:34:13.49033321+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-18T05:34:13.490681833+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-18T05:34:14.281020713+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-18T05:34:14.491996034+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 997-999, summary, console lines 4-5","runtime_seconds":0.21072729}],"total_operations":1}}
+{"time":"2025-06-18T05:34:14.513883607+01:00","level":"INFO","msg":"stream: closing","id":"s5g5kgy5"}
+{"time":"2025-06-18T05:34:14.513918127+01:00","level":"INFO","msg":"handler: closed","stream_id":"s5g5kgy5"}
+{"time":"2025-06-18T05:34:14.513935447+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"s5g5kgy5"}
+{"time":"2025-06-18T05:34:14.514160218+01:00","level":"INFO","msg":"sender: closed","stream_id":"s5g5kgy5"}
+{"time":"2025-06-18T05:34:14.514404817+01:00","level":"INFO","msg":"stream: closed","id":"s5g5kgy5"}

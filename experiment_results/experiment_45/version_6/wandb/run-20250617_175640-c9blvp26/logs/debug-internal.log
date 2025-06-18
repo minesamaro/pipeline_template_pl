@@ -5,3 +5,12 @@
 {"time":"2025-06-17T17:56:41.688365074+01:00","level":"INFO","msg":"sender: started","stream_id":"c9blvp26"}
 {"time":"2025-06-17T17:56:41.68837624+01:00","level":"INFO","msg":"handler: started","stream_id":"c9blvp26"}
 {"time":"2025-06-17T17:56:41.987406583+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-17T18:27:33.204843657+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-17T18:27:33.205104655+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-17T18:27:34.213950603+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.063807046},{"desc":"uploading wandb-summary.json","runtime_seconds":0.063794654}],"total_operations":2}}
+{"time":"2025-06-17T18:27:36.0466041+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-17T18:27:36.279161136+01:00","level":"INFO","msg":"stream: closing","id":"c9blvp26"}
+{"time":"2025-06-17T18:27:36.279177667+01:00","level":"INFO","msg":"handler: closed","stream_id":"c9blvp26"}
+{"time":"2025-06-17T18:27:36.279189568+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"c9blvp26"}
+{"time":"2025-06-17T18:27:36.279193689+01:00","level":"INFO","msg":"sender: closed","stream_id":"c9blvp26"}
+{"time":"2025-06-17T18:27:36.279684234+01:00","level":"INFO","msg":"stream: closed","id":"c9blvp26"}

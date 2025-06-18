@@ -5,3 +5,12 @@
 {"time":"2025-06-17T17:43:28.438547012+01:00","level":"INFO","msg":"handler: started","stream_id":"tmb28x83"}
 {"time":"2025-06-17T17:43:28.438586842+01:00","level":"INFO","msg":"sender: started","stream_id":"tmb28x83"}
 {"time":"2025-06-17T17:43:28.741644133+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-17T18:06:14.985569183+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-17T18:06:14.985808978+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-17T18:06:15.988706226+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading config.yaml","runtime_seconds":0.24429874,"progress":"5.7KB/5.7KB"}],"total_operations":1}}
+{"time":"2025-06-17T18:06:15.994538351+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-17T18:06:16.211948257+01:00","level":"INFO","msg":"stream: closing","id":"tmb28x83"}
+{"time":"2025-06-17T18:06:16.211984548+01:00","level":"INFO","msg":"handler: closed","stream_id":"tmb28x83"}
+{"time":"2025-06-17T18:06:16.211997878+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"tmb28x83"}
+{"time":"2025-06-17T18:06:16.212078929+01:00","level":"INFO","msg":"sender: closed","stream_id":"tmb28x83"}
+{"time":"2025-06-17T18:06:16.2128078+01:00","level":"INFO","msg":"stream: closed","id":"tmb28x83"}
