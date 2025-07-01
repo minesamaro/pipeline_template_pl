@@ -1,0 +1,76 @@
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new']
+Label weights: tensor([1.], device='cuda:0', dtype=torch.float64)
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, val_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, test_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Grad-CAM target layer: BasicBlock(
+  (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+)
+Processing test step 0...
+Test step 0 completed.
+Batch idx: 0, Labels shape: torch.Size([2, 1]), Predicted labels shape: torch.Size([2, 1])
+Applying Grad-CAM for batch 0...
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\scripts\run_experiment_pipeline.py", line 59, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\scripts\run_experiment_pipeline.py", line 168, in run_experiment_pipeline
+    model_pipeline.test_model()
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\model\model_pipeline.py", line 83, in test_model
+    self.pytorch_lightning_trainer.test(
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 742, in test
+    return call._call_and_handle_interrupt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 785, in _test_impl
+    results = self._run(model, ckpt_path=ckpt_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 980, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1016, in _run_stage
+    return self._evaluation_loop.run()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\utilities.py", line 181, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\evaluation_loop.py", line 115, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx)
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\evaluation_loop.py", line 376, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_kwargs.values())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\call.py", line 294, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\strategies\strategy.py", line 403, in test_step
+    return self.model.test_step(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\model\resnet182d\pytorch_lightning_resnet18_2d_model_oneclass.py", line 319, in test_step
+    grayscale_cam = cam(input_tensor=input_tensor, targets=[ClassifierOutputTarget(0)])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_grad_cam\base_cam.py", line 209, in __call__
+    return self.forward(input_tensor, targets, eigen_smooth)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_grad_cam\base_cam.py", line 111, in forward
+    loss.backward(retain_graph=True)
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\torch\_tensor.py", line 648, in backward
+    torch.autograd.backward(
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\torch\autograd\__init__.py", line 353, in backward
+    _engine_run_backward(
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\torch\autograd\graph.py", line 824, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: element 0 of tensors does not require grad and does not have a grad_fn
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

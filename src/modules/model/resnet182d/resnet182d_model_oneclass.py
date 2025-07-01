@@ -21,6 +21,8 @@ class ResNet18Model(torch.nn.Module):
             1
         )
 
+        self.gradcam_layer = self.model.layer4[-1]
+
     def forward(self, model_input):
         if model_input.shape[1] == 1:
             # If the input has only one channel, repeat it to make it 3 channels

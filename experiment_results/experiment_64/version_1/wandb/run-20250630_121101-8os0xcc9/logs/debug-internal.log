@@ -1,0 +1,16 @@
+{"time":"2025-06-30T12:11:01.8741167+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\pytorch_lightning_dl_pipeline_template\\experiment_results\\experiment_64\\version_1\\wandb\\run-20250630_121101-8os0xcc9\\logs\\debug-core.log"}
+{"time":"2025-06-30T12:11:02.590349+01:00","level":"INFO","msg":"created new stream","id":"8os0xcc9"}
+{"time":"2025-06-30T12:11:02.590349+01:00","level":"INFO","msg":"stream: started","id":"8os0xcc9"}
+{"time":"2025-06-30T12:11:02.590349+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"8os0xcc9"}
+{"time":"2025-06-30T12:11:02.590349+01:00","level":"INFO","msg":"sender: started","stream_id":"8os0xcc9"}
+{"time":"2025-06-30T12:11:02.590349+01:00","level":"INFO","msg":"handler: started","stream_id":"8os0xcc9"}
+{"time":"2025-06-30T12:11:02.8747173+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-30T12:11:05.1160301+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-30T12:11:05.1160301+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-30T12:11:05.7590112+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-30T12:11:06.1234669+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 0-1, summary, console lines 0-9","runtime_seconds":0.3633756}],"total_operations":1}}
+{"time":"2025-06-30T12:11:06.3450381+01:00","level":"INFO","msg":"stream: closing","id":"8os0xcc9"}
+{"time":"2025-06-30T12:11:06.3450381+01:00","level":"INFO","msg":"sender: closed","stream_id":"8os0xcc9"}
+{"time":"2025-06-30T12:11:06.3455452+01:00","level":"INFO","msg":"handler: closed","stream_id":"8os0xcc9"}
+{"time":"2025-06-30T12:11:06.3455452+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"8os0xcc9"}
+{"time":"2025-06-30T12:11:06.3455452+01:00","level":"INFO","msg":"stream: closed","id":"8os0xcc9"}

@@ -1,0 +1,82 @@
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new']
+Label weights: tensor([1.], device='cuda:0', dtype=torch.float64)
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, val_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, test_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+Processing test step 0...
+Test step 0 completed.
+Batch idx: 0, Labels shape: torch.Size([2, 1]), Predicted labels shape: torch.Size([2, 1])
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\scripts\run_experiment_pipeline.py", line 59, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\scripts\run_experiment_pipeline.py", line 168, in run_experiment_pipeline
+    model_pipeline.test_model()
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\model\model_pipeline.py", line 83, in test_model
+    self.pytorch_lightning_trainer.test(
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 742, in test
+    return call._call_and_handle_interrupt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 785, in _test_impl
+    results = self._run(model, ckpt_path=ckpt_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 980, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1016, in _run_stage
+    return self._evaluation_loop.run()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\utilities.py", line 181, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\evaluation_loop.py", line 115, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx)
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\evaluation_loop.py", line 376, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_kwargs.values())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\call.py", line 294, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\strategies\strategy.py", line 403, in test_step
+    return self.model.test_step(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\model\resnet182d\pytorch_lightning_resnet18_2d_model_oneclass.py", line 320, in test_step
+    saliency_maps = explain(
+                    ^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\quantus\functions\explanation_func.py", line 127, in explain
+    explanation = get_explanation(model, inputs, targets, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\quantus\functions\explanation_func.py", line 183, in get_explanation
+    return generate_captum_explanation(model, inputs, targets, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\quantus\functions\explanation_func.py", line 636, in generate_captum_explanation
+    explanation = attr_func(model, **xai_lib_kwargs).attribute(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\captum\log\dummy_log.py", line 39, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\captum\attr\_core\layer\grad_cam.py", line 201, in attribute
+    layer_gradients, layer_evals = compute_layer_gradients_and_eval(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\captum\_utils\gradient.py", line 671, in compute_layer_gradients_and_eval
+    saved_layer, output = _forward_layer_distributed_eval(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\captum\_utils\gradient.py", line 339, in _forward_layer_distributed_eval
+    output = _run_forward(
+             ^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\captum\_utils\common.py", line 599, in _run_forward
+    return _select_targets(output, target)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\captum\_utils\common.py", line 655, in _select_targets
+    raise AssertionError(
+AssertionError: Tensor target dimension torch.Size([2, 1]) is not valid. torch.Size([2, 1])
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

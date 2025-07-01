@@ -1,0 +1,15 @@
+{"time":"2025-07-01T11:23:35.0357606+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\pytorch_lightning_dl_pipeline_template\\experiment_results\\experiment_85\\version_1\\wandb\\run-20250701_112334-gfp99g7b\\logs\\debug-core.log"}
+{"time":"2025-07-01T11:23:35.409584+01:00","level":"INFO","msg":"created new stream","id":"gfp99g7b"}
+{"time":"2025-07-01T11:23:35.4101084+01:00","level":"INFO","msg":"stream: started","id":"gfp99g7b"}
+{"time":"2025-07-01T11:23:35.4101084+01:00","level":"INFO","msg":"handler: started","stream_id":"gfp99g7b"}
+{"time":"2025-07-01T11:23:35.4106705+01:00","level":"INFO","msg":"sender: started","stream_id":"gfp99g7b"}
+{"time":"2025-07-01T11:23:35.4106705+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"gfp99g7b"}
+{"time":"2025-07-01T11:23:35.676659+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-01T11:23:40.126237+01:00","level":"INFO","msg":"stream: closing","id":"gfp99g7b"}
+{"time":"2025-07-01T11:23:40.1267872+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-01T11:23:40.1267872+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-01T11:23:40.7655325+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-01T11:23:41.0272801+01:00","level":"INFO","msg":"sender: closed","stream_id":"gfp99g7b"}
+{"time":"2025-07-01T11:23:41.0278495+01:00","level":"INFO","msg":"handler: closed","stream_id":"gfp99g7b"}
+{"time":"2025-07-01T11:23:41.0278495+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"gfp99g7b"}
+{"time":"2025-07-01T11:23:41.0278495+01:00","level":"INFO","msg":"stream: closed","id":"gfp99g7b"}

@@ -1,0 +1,16 @@
+{"time":"2025-06-30T12:14:00.4067526+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\pytorch_lightning_dl_pipeline_template\\experiment_results\\experiment_66\\version_1\\wandb\\run-20250630_121359-5fz5mo5f\\logs\\debug-core.log"}
+{"time":"2025-06-30T12:14:00.8092372+01:00","level":"INFO","msg":"created new stream","id":"5fz5mo5f"}
+{"time":"2025-06-30T12:14:00.8092372+01:00","level":"INFO","msg":"stream: started","id":"5fz5mo5f"}
+{"time":"2025-06-30T12:14:00.8092372+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"5fz5mo5f"}
+{"time":"2025-06-30T12:14:00.809772+01:00","level":"INFO","msg":"sender: started","stream_id":"5fz5mo5f"}
+{"time":"2025-06-30T12:14:00.809772+01:00","level":"INFO","msg":"handler: started","stream_id":"5fz5mo5f"}
+{"time":"2025-06-30T12:14:01.0417792+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-30T12:14:02.1735467+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-30T12:14:02.1735467+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-30T12:14:02.9612998+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-30T12:14:03.1865472+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 0-1, summary, console lines 2-9","runtime_seconds":0.2252474}],"total_operations":1}}
+{"time":"2025-06-30T12:14:03.2084465+01:00","level":"INFO","msg":"stream: closing","id":"5fz5mo5f"}
+{"time":"2025-06-30T12:14:03.2084465+01:00","level":"INFO","msg":"handler: closed","stream_id":"5fz5mo5f"}
+{"time":"2025-06-30T12:14:03.2084465+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"5fz5mo5f"}
+{"time":"2025-06-30T12:14:03.2084465+01:00","level":"INFO","msg":"sender: closed","stream_id":"5fz5mo5f"}
+{"time":"2025-06-30T12:14:03.2090141+01:00","level":"INFO","msg":"stream: closed","id":"5fz5mo5f"}

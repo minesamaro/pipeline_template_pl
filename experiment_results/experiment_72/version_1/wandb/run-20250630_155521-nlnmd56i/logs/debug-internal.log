@@ -1,0 +1,15 @@
+{"time":"2025-06-30T15:55:21.4533185+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\pytorch_lightning_dl_pipeline_template\\experiment_results\\experiment_72\\version_1\\wandb\\run-20250630_155521-nlnmd56i\\logs\\debug-core.log"}
+{"time":"2025-06-30T15:55:23.4889272+01:00","level":"INFO","msg":"created new stream","id":"nlnmd56i"}
+{"time":"2025-06-30T15:55:23.4889272+01:00","level":"INFO","msg":"stream: started","id":"nlnmd56i"}
+{"time":"2025-06-30T15:55:23.4889272+01:00","level":"INFO","msg":"handler: started","stream_id":"nlnmd56i"}
+{"time":"2025-06-30T15:55:23.4889272+01:00","level":"INFO","msg":"sender: started","stream_id":"nlnmd56i"}
+{"time":"2025-06-30T15:55:23.4894702+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"nlnmd56i"}
+{"time":"2025-06-30T15:55:23.9983417+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-30T15:55:31.844433+01:00","level":"INFO","msg":"stream: closing","id":"nlnmd56i"}
+{"time":"2025-06-30T15:55:31.844433+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-30T15:55:31.8449897+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-30T15:55:32.8319566+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-30T15:55:33.255061+01:00","level":"INFO","msg":"sender: closed","stream_id":"nlnmd56i"}
+{"time":"2025-06-30T15:55:33.2561396+01:00","level":"INFO","msg":"handler: closed","stream_id":"nlnmd56i"}
+{"time":"2025-06-30T15:55:33.2561396+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"nlnmd56i"}
+{"time":"2025-06-30T15:55:33.2561396+01:00","level":"INFO","msg":"stream: closed","id":"nlnmd56i"}

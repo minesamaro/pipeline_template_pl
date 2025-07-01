@@ -79,6 +79,12 @@ class ModelPipeline:
                     dataloaders=self.dataloaders['test'],
                     verbose=False
                 )
+            else:
+                self.pytorch_lightning_trainer.test(
+                    model=self.pytorch_lightning_model,
+                    dataloaders=self.dataloaders['test'],
+                    verbose=False
+                )
 
     def _get_model_trainer_callbacks(self):
         trainer_callbacks = []
