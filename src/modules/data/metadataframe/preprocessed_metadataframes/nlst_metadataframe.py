@@ -9,7 +9,7 @@ class NLSTPreprocessedMetaDataFrame:
             filepath_or_buffer="{}/protocol_{}".format(
                 experiment_execution_paths.preprocessed_data_dir_path,
                 self.config.data_preprocessing_protocol_number
-            ) + "/subset_tabular_info/cancer_info.csv" #TODO change this
+            ) + "/subset_tabular_info/cancer_info_final_mapped.csv" #TODO change this
         )
         self.dimension = int(self.config.dimension)
         # Apply transformations to the metadataframe
@@ -41,19 +41,15 @@ class NLSTPreprocessedMetaDataFrame:
         if (self.config.dimension == 2) or (self.config.dimension == 2.5):
             self.lung_metadataframe = self.lung_metadataframe[self.lung_metadataframe['sct_nod_err'] != 1 ]
 
-        if self.config.resample:
-            self.lung_metadataframe['sct_slice_num'] = \
-                self.lung_metadataframe['sct_slice_num_rs']
-        else:
-            self.lung_metadataframe['sct_slice_num'] = \
-                self.lung_metadataframe['sct_slice_num_og']
+        self.lung_metadataframe['sct_slice_num'] = \
+            self.lung_metadataframe['sct_slice_final_mapped']
             
         self.lung_metadataframe['key'] = \
             self.lung_metadataframe['pid'].astype(str) + "_" + \
             self.lung_metadataframe['study_yr'].astype(str)
         
         self.lung_metadataframe = \
-            self.lung_metadataframe[['pid', 'study_yr', 'path', 'key', 'label', 'sct_slice_num']]
+            self.lung_metadataframe[['pid', 'study_yr', 'path', 'key', 'label', 'sct_slice_num', 'reversed']]
     
     def _save_metadataframe_as_csv(self, experiment_execution_paths):
         self.lung_metadataframe.to_csv(

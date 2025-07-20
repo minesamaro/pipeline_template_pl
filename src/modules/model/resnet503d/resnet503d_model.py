@@ -7,7 +7,7 @@ class ResNet503DModel(torch.nn.Module):
         super(ResNet503DModel, self).__init__()
 
         self.config = config
-        self.num_classes = config.number_of_classes
+        self.num_classes = 1
         self.model = monai_nets.resnet50(pretrained=False, spatial_dims=3, num_classes=self.num_classes)
         return
 

@@ -245,9 +245,9 @@ class NLSTPreprocessedDataLoader(Dataset):
         if 'roi' in config:
             self.roi = config.roi
             if self.roi not in ['lung', 'masked']:
-                self.roi = None
+                self.roi = 'whole_slice'
         else:
-            self.roi = None
+            self.roi = 'whole_slice'
 
         self.visualization = config.visualize_imgur
         if self.visualization:
@@ -317,6 +317,8 @@ class NLSTPreprocessedDataLoader(Dataset):
         ]
         pid = dataframe_row['pid'].values[0]
         study_yr = dataframe_row['study_yr'].values[0]
+        reversed = dataframe_row['reversed'].values[0]
+        slice_idx = int(dataframe_row['sct_slice_num'].values[0])
 
         if getattr(self.config, "random", False):  # If config.random exists and is True
             if self.config.dimension == 2:
@@ -333,11 +335,11 @@ class NLSTPreprocessedDataLoader(Dataset):
                 data_path = os.path.join(data_path, self.roi) if self.roi else data_path
                 image = self._get_slice(data_index, data_path, pid, study_yr)
 
-            # TODO refix the other dimensions
             elif self.config.dimension == 3:
-                data_path = '/nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/preprocessed_data/protocol_5/3d'
-                image = self._get_scan(data_index, data_path, pid, study_yr)
-            elif self.config.dimension == 2.5:
+                data_path = '/nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/preprocessed_data/protocol_5/general_shift_crop'
+                data_path = os.path.join(data_path, self.roi) if self.roi else data_path
+                image = self._get_scan(data_index, data_path, pid, study_yr, slice_idx, reversed)
+            elif self.config.dimension == 2.5: # TODO refix the other dimensions
                 data_path = '/nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/preprocessed_data/protocol_5/25d'
                 image = self._get_2_5(data_index, data_path, pid, study_yr)
             else:
@@ -390,26 +392,71 @@ class NLSTPreprocessedDataLoader(Dataset):
             return None
     
 
-    def _get_scan(self, data_index, data_path, pid, study_yr):
+    def get_slice_range(total_slices, slice_idx, n_slices):
+        """
+        Calculates a robust slice range around slice_idx, always returning n_slices if possible.
+        If slice_idx is None, it defaults to the center of the volume.
+        """
+        if slice_idx is None:
+            slice_idx = total_slices // 2
+
+        half = n_slices // 2
+
+        # Initial guess
+        start = slice_idx - half
+        end = slice_idx + half + (0 if n_slices % 2 == 0 else 1)
+
+        # Clamp to volume bounds
+        if start < 0:
+            end += abs(start)
+            start = 0
+        if end > total_slices:
+            excess = end - total_slices
+            start = max(0, start - excess)
+            end = total_slices
+
+        # Final adjustment to ensure exactly n_slices
+        current_len = end - start
+        if current_len < n_slices:
+            if start > 0:
+                missing = n_slices - current_len
+                shift = min(missing, start)
+                start -= shift
+                current_len = end - start
+            if current_len < n_slices and end < total_slices:
+                missing = n_slices - current_len
+                shift = min(missing, total_slices - end)
+                end += shift
+
+        return start, end
+
+    
+    def _get_scan(self, data_index, data_path, pid, study_yr, slice_idx, reversed):
         if self.config.resample_z:
             dicom_image = numpy.load() #TODO: Insert path to the numpy file
         else:
             dicom_image = numpy.load(
                 os.path.join(
                     data_path,
-                    f"{pid}_{study_yr}.npy"
+                    f"{pid}_{self.roi}.npy"
                 )
             )
 
-            n_slices = 32
+            n_slices = 9
 
-            # Compute start and end slice indices
-            center = dicom_image.shape[0] // 2
-            start = max(center - n_slices // 2, 0)
-            end = min(center + n_slices // 2, dicom_image.shape[0])
+            # Compute start and end slice indices from the center of the nodule
+            # Based on the metadataframe
+            start, end = self.get_slice_range(
+                total_slices=dicom_image.shape[0],
+                slice_idx= slice_idx,
+                n_slices=n_slices
+            )
 
             # Extract the central volume
             dicom_image = dicom_image[start:end, :, :]
+
+            if reversed:
+                dicom_image = numpy.flip(dicom_image, axis=0)
 
             if self.config.resize:
                 dicom_image = numpy.resize(dicom_image, (dicom_image.shape[0], 224, 224))
