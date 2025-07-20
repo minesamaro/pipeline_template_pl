@@ -13,6 +13,11 @@ import torchvision.transforms.functional as TF
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+from monai.visualize import GradCAM
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+import torch.nn.functional as F
 
 
 from src.modules.model.resnet182d.resnet182d_model_oneclass \
@@ -298,64 +303,35 @@ class PyTorchLightningResNet182dModel(pytorch_lightning.LightningModule):
         self.predicted_labels = []
 
 
+
     def test_step(self, batch, batch_idx):
         print(f"Processing test step {batch_idx}...")
+
         data, labels = batch[0], batch[1]
-        images = data['image'].to(self.device)
-        #images.requires_grad = True
-        # Turn images into numpy array for Grad-CAM
+        images = data["image"].to(self.device)
 
-        model_output = self.model(images)
-        predicted_labels = torch.sigmoid(model_output)
+        # Forward pass
+        outputs = self.model(images)
 
-        self.labels.append(labels)
-        self.predicted_labels.append(predicted_labels)
+        # === Apply MONAI Grad-CAM for first few batches ===
+        if batch_idx < 10:
+            # Prepare GradCAM object
+            cam = GradCAM(nn_module=self.model, target_layers="model.layer4",)
 
-        print(f"Test step {batch_idx} completed.")
-        print(f"Batch idx: {batch_idx}, Labels shape: {labels.shape}, Predicted labels shape: {predicted_labels.shape}")
-
-        # === Apply Quantus + Captum Grad-CAM ===
-        if batch_idx < 10:  # Limit to first few batches
-            if isinstance(images, torch.Tensor):
-                images = images.to(self.device)
-
-            if isinstance(labels, torch.Tensor):
-                labels = labels.to(self.device)
-
-
-            # Ensure 4D shape: [B, C, H, W]
-            if images.dim() == 3:
-                images = images.unsqueeze(0)
-
-            # If single channel (C=1), repeat to make 3-channel input (like RGB)
-            if images.shape[1] == 1:
-                images = images.repeat(1, 3, 1, 1)
-
-            # Convert label to int
-            #if isinstance(labels, torch.Tensor) and labels.dim() > 0:
-            #    labels = int(labels.item())
-
-            saliency_maps = explain(
-                model=self.model,
-                inputs=images,
-                targets=labels,
-                method="LayerGradCam",
-                xai_lib="captum",
-                gc_layer=self.model.gradcam_layer,  # You must set this attribute in the model
-                channel_first=True,  # Ensure channel-first format
-            )
-            
+            with self.model.eval():
+                # Compute saliency map (Grad-CAM result)
+                saliency_maps = cam(x=images)
 
             for i in range(images.size(0)):
-                print(f"Explaining image {i}: shape {images.shape}, label {labels}")
+                print(f"Explaining image {i} in batch {batch_idx}")
 
-                saliency = saliency_maps[i]  # (1, H, W)
+                # Resize saliency to match input image size
                 upsampled = F.interpolate(
-                    saliency.unsqueeze(0),  # (1, 1, H', W')
-                    size=images.shape[2:],  # target size (H, W)
+                    saliency_maps[i].unsqueeze(0).unsqueeze(0),  # (1, 1, H', W')
+                    size=images.shape[2:],  # (H, W)
                     mode='bilinear',
                     align_corners=False
-                ).squeeze().detach().cpu().numpy()  # (H, W)
+                ).squeeze().detach().cpu().numpy()
 
                 # Normalize saliency map
                 upsampled = (upsampled - upsampled.min()) / (upsampled.max() - upsampled.min() + 1e-8)
@@ -367,17 +343,102 @@ class PyTorchLightningResNet182dModel(pytorch_lightning.LightningModule):
                 img_np = np.transpose(img_np, (1, 2, 0))  # (H, W, C)
                 img_np = (img_np - img_np.min()) / (img_np.max() - img_np.min() + 1e-8)
 
-                # Overlay heatmap
-                heatmap = plt.cm.jet(upsampled)[..., :3]  # RGB colormap
+                # Create heatmap overlay
+                heatmap = plt.cm.jet(upsampled)[..., :3]
                 cam_image = (heatmap * 0.5 + img_np * 0.5)
                 cam_image = np.clip(cam_image, 0, 1)
 
-                # Save
+                # Save Grad-CAM image
                 save_dir = os.path.join("gradcam_outputs", f"epoch{self.current_epoch}")
                 os.makedirs(save_dir, exist_ok=True)
                 save_path = os.path.join(save_dir, f"sample_{batch_idx}_{i}.png")
                 plt.imsave(save_path, cam_image)
-                print(f"Saved Quantus-Captum Grad-CAM for batch {batch_idx}, sample {i} at {save_path}")
+                print(f"Saved MONAI Grad-CAM for batch {batch_idx}, sample {i} at {save_path}")
+
+
+
+    # def test_step(self, batch, batch_idx):
+    #     print(f"Processing test step {batch_idx}...")
+    #     data, labels = batch[0], batch[1]
+    #     images = data['image'].to(self.device)
+
+
+        #images.requires_grad = True
+        # Turn images into numpy array for Grad-CAM
+
+        # model_output = self.model(images)
+        # predicted_labels = torch.sigmoid(model_output)
+
+        # self.labels.append(labels)
+        # self.predicted_labels.append(predicted_labels)
+
+        # print(f"Test step {batch_idx} completed.")
+        # print(f"Batch idx: {batch_idx}, Labels shape: {labels.shape}, Predicted labels shape: {predicted_labels.shape}")
+
+        # # === Apply Quantus + Captum Grad-CAM ===
+        # if batch_idx < 10:  # Limit to first few batches
+        #     if isinstance(images, torch.Tensor):
+        #         images = images.to(self.device)
+
+        #     if isinstance(labels, torch.Tensor):
+        #         labels = labels.to(self.device)
+
+
+        #     # Ensure 4D shape: [B, C, H, W]
+        #     if images.dim() == 3:
+        #         images = images.unsqueeze(0)
+
+        #     # If single channel (C=1), repeat to make 3-channel input (like RGB)
+        #     if images.shape[1] == 1:
+        #         images = images.repeat(1, 3, 1, 1)
+
+        #     # Convert label to int
+        #     #if isinstance(labels, torch.Tensor) and labels.dim() > 0:
+        #     #    labels = int(labels.item())
+
+        #     saliency_maps = explain(
+        #         model=self.model,
+        #         inputs=images,
+        #         targets=labels,
+        #         method="LayerGradCam",
+        #         xai_lib="captum",
+        #         gc_layer=self.model.gradcam_layer,  # You must set this attribute in the model
+        #         channel_first=True,  # Ensure channel-first format
+        #     )
+            
+
+        #     for i in range(images.size(0)):
+        #         print(f"Explaining image {i}: shape {images.shape}, label {labels}")
+
+        #         saliency = saliency_maps[i]  # (1, H, W)
+        #         upsampled = F.interpolate(
+        #             saliency.unsqueeze(0),  # (1, 1, H', W')
+        #             size=images.shape[2:],  # target size (H, W)
+        #             mode='bilinear',
+        #             align_corners=False
+        #         ).squeeze().detach().cpu().numpy()  # (H, W)
+
+        #         # Normalize saliency map
+        #         upsampled = (upsampled - upsampled.min()) / (upsampled.max() - upsampled.min() + 1e-8)
+
+        #         # Convert image to numpy
+        #         img_np = images[i].detach().cpu().numpy()
+        #         if img_np.shape[0] == 1:
+        #             img_np = np.repeat(img_np, 3, axis=0)  # Grayscale to RGB
+        #         img_np = np.transpose(img_np, (1, 2, 0))  # (H, W, C)
+        #         img_np = (img_np - img_np.min()) / (img_np.max() - img_np.min() + 1e-8)
+
+        #         # Overlay heatmap
+        #         heatmap = plt.cm.jet(upsampled)[..., :3]  # RGB colormap
+        #         cam_image = (heatmap * 0.5 + img_np * 0.5)
+        #         cam_image = np.clip(cam_image, 0, 1)
+
+        #         # Save
+        #         save_dir = os.path.join("gradcam_outputs", f"epoch{self.current_epoch}")
+        #         os.makedirs(save_dir, exist_ok=True)
+        #         save_path = os.path.join(save_dir, f"sample_{batch_idx}_{i}.png")
+        #         plt.imsave(save_path, cam_image)
+        #         print(f"Saved Quantus-Captum Grad-CAM for batch {batch_idx}, sample {i} at {save_path}")
 
     def on_test_epoch_end(self):
         test_labels = torch.cat(self.labels, dim=0).to(self.device)
