@@ -1,0 +1,18 @@
+{"time":"2025-06-27T18:52:04.726564539+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_77/version_10/wandb/run-20250627_185204-o8sntw68/logs/debug-core.log"}
+{"time":"2025-06-27T18:52:05.00710963+01:00","level":"INFO","msg":"created new stream","id":"o8sntw68"}
+{"time":"2025-06-27T18:52:05.007186655+01:00","level":"INFO","msg":"stream: started","id":"o8sntw68"}
+{"time":"2025-06-27T18:52:05.007202579+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"o8sntw68"}
+{"time":"2025-06-27T18:52:05.007216178+01:00","level":"INFO","msg":"handler: started","stream_id":"o8sntw68"}
+{"time":"2025-06-27T18:52:05.007278485+01:00","level":"INFO","msg":"sender: started","stream_id":"o8sntw68"}
+{"time":"2025-06-27T18:52:05.291919122+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-27T19:23:07.374163911+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-06-27T19:23:35.987941723+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_whole_da/o8sntw68/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-27T19:52:49.107390787+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-27T19:52:49.107762885+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-27T19:52:49.815142161+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-27T19:52:50.020372814+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-27T19:52:50.031419385+01:00","level":"INFO","msg":"stream: closing","id":"o8sntw68"}
+{"time":"2025-06-27T19:52:50.031454954+01:00","level":"INFO","msg":"handler: closed","stream_id":"o8sntw68"}
+{"time":"2025-06-27T19:52:50.031472236+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"o8sntw68"}
+{"time":"2025-06-27T19:52:50.031510782+01:00","level":"INFO","msg":"sender: closed","stream_id":"o8sntw68"}
+{"time":"2025-06-27T19:52:50.032175233+01:00","level":"INFO","msg":"stream: closed","id":"o8sntw68"}

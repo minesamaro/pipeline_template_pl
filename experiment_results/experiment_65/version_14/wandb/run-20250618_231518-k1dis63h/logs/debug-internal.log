@@ -1,0 +1,17 @@
+{"time":"2025-06-18T23:15:18.017594792+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_65/version_14/wandb/run-20250618_231518-k1dis63h/logs/debug-core.log"}
+{"time":"2025-06-18T23:15:18.277254209+01:00","level":"INFO","msg":"created new stream","id":"k1dis63h"}
+{"time":"2025-06-18T23:15:18.277288654+01:00","level":"INFO","msg":"stream: started","id":"k1dis63h"}
+{"time":"2025-06-18T23:15:18.277310154+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"k1dis63h"}
+{"time":"2025-06-18T23:15:18.277343798+01:00","level":"INFO","msg":"sender: started","stream_id":"k1dis63h"}
+{"time":"2025-06-18T23:15:18.277381479+01:00","level":"INFO","msg":"handler: started","stream_id":"k1dis63h"}
+{"time":"2025-06-18T23:15:18.482561649+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-18T23:31:50.284124017+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-06-18T23:35:34.649443214+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-18T23:35:34.649570474+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-18T23:35:35.37158789+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-18T23:35:35.58349127+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-18T23:35:35.588924414+01:00","level":"INFO","msg":"stream: closing","id":"k1dis63h"}
+{"time":"2025-06-18T23:35:35.588949952+01:00","level":"INFO","msg":"handler: closed","stream_id":"k1dis63h"}
+{"time":"2025-06-18T23:35:35.588963498+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"k1dis63h"}
+{"time":"2025-06-18T23:35:35.589015105+01:00","level":"INFO","msg":"sender: closed","stream_id":"k1dis63h"}
+{"time":"2025-06-18T23:35:35.589472309+01:00","level":"INFO","msg":"stream: closed","id":"k1dis63h"}

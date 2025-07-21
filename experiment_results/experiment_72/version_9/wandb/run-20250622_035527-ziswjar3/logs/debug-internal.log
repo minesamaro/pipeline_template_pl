@@ -1,0 +1,16 @@
+{"time":"2025-06-22T03:55:27.728763833+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_72/version_9/wandb/run-20250622_035527-ziswjar3/logs/debug-core.log"}
+{"time":"2025-06-22T03:55:28.072654538+01:00","level":"INFO","msg":"created new stream","id":"ziswjar3"}
+{"time":"2025-06-22T03:55:28.072702368+01:00","level":"INFO","msg":"stream: started","id":"ziswjar3"}
+{"time":"2025-06-22T03:55:28.072752588+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"ziswjar3"}
+{"time":"2025-06-22T03:55:28.072780258+01:00","level":"INFO","msg":"handler: started","stream_id":"ziswjar3"}
+{"time":"2025-06-22T03:55:28.072847938+01:00","level":"INFO","msg":"sender: started","stream_id":"ziswjar3"}
+{"time":"2025-06-22T03:55:28.389763167+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-22T04:16:49.081495455+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-22T04:16:49.081695485+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-22T04:16:50.083913631+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.68180473,"progress":"441B/441B"},{"desc":"uploading config.yaml","runtime_seconds":0.500552133,"progress":"5.8KB/5.8KB"}],"total_operations":2}}
+{"time":"2025-06-22T04:16:50.117272944+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-22T04:16:50.330754554+01:00","level":"INFO","msg":"stream: closing","id":"ziswjar3"}
+{"time":"2025-06-22T04:16:50.330777364+01:00","level":"INFO","msg":"handler: closed","stream_id":"ziswjar3"}
+{"time":"2025-06-22T04:16:50.330788209+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ziswjar3"}
+{"time":"2025-06-22T04:16:50.330861587+01:00","level":"INFO","msg":"sender: closed","stream_id":"ziswjar3"}
+{"time":"2025-06-22T04:16:50.332191987+01:00","level":"INFO","msg":"stream: closed","id":"ziswjar3"}

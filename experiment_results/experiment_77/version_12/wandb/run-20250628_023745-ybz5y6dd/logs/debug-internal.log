@@ -1,0 +1,16 @@
+{"time":"2025-06-28T02:37:45.063680231+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_77/version_12/wandb/run-20250628_023745-ybz5y6dd/logs/debug-core.log"}
+{"time":"2025-06-28T02:37:45.354867075+01:00","level":"INFO","msg":"created new stream","id":"ybz5y6dd"}
+{"time":"2025-06-28T02:37:45.354930524+01:00","level":"INFO","msg":"stream: started","id":"ybz5y6dd"}
+{"time":"2025-06-28T02:37:45.354963899+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"ybz5y6dd"}
+{"time":"2025-06-28T02:37:45.354980711+01:00","level":"INFO","msg":"handler: started","stream_id":"ybz5y6dd"}
+{"time":"2025-06-28T02:37:45.355037179+01:00","level":"INFO","msg":"sender: started","stream_id":"ybz5y6dd"}
+{"time":"2025-06-28T02:37:45.587753963+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-28T04:18:52.556542072+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-28T04:18:52.556812561+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-28T04:18:53.558827153+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.653519936,"progress":"441B/441B"},{"desc":"uploading wandb-summary.json","runtime_seconds":0.653494608,"progress":"1.2KB/1.2KB"},{"desc":"uploading config.yaml","runtime_seconds":0.493333565,"progress":"5.8KB/5.8KB"}],"total_operations":3}}
+{"time":"2025-06-28T04:18:53.665194922+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-28T04:18:53.880398334+01:00","level":"INFO","msg":"stream: closing","id":"ybz5y6dd"}
+{"time":"2025-06-28T04:18:53.880445061+01:00","level":"INFO","msg":"handler: closed","stream_id":"ybz5y6dd"}
+{"time":"2025-06-28T04:18:53.880465956+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ybz5y6dd"}
+{"time":"2025-06-28T04:18:53.880518127+01:00","level":"INFO","msg":"sender: closed","stream_id":"ybz5y6dd"}
+{"time":"2025-06-28T04:18:53.881060666+01:00","level":"INFO","msg":"stream: closed","id":"ybz5y6dd"}

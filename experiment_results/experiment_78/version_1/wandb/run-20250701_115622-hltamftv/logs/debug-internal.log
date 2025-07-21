@@ -1,0 +1,17 @@
+{"time":"2025-07-01T11:56:22.409989673+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_78/version_1/wandb/run-20250701_115622-hltamftv/logs/debug-core.log"}
+{"time":"2025-07-01T11:56:22.8742053+01:00","level":"INFO","msg":"created new stream","id":"hltamftv"}
+{"time":"2025-07-01T11:56:22.874304181+01:00","level":"INFO","msg":"stream: started","id":"hltamftv"}
+{"time":"2025-07-01T11:56:22.874334401+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"hltamftv"}
+{"time":"2025-07-01T11:56:22.874411837+01:00","level":"INFO","msg":"handler: started","stream_id":"hltamftv"}
+{"time":"2025-07-01T11:56:22.874457821+01:00","level":"INFO","msg":"sender: started","stream_id":"hltamftv"}
+{"time":"2025-07-01T11:56:23.231032424+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-01T12:04:47.348676572+01:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_lung_resnet50_da/hltamftv/file_stream","body":"{\"error\":\"context deadline exceeded\"}"}
+{"time":"2025-07-01T12:11:19.874203039+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-01T12:11:19.874352253+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-01T12:11:20.709162318+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-01T12:11:20.877288541+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 147-150, summary, console lines 4-5","runtime_seconds":0.167814055}],"total_operations":1}}
+{"time":"2025-07-01T12:11:20.94340737+01:00","level":"INFO","msg":"stream: closing","id":"hltamftv"}
+{"time":"2025-07-01T12:11:20.94344555+01:00","level":"INFO","msg":"handler: closed","stream_id":"hltamftv"}
+{"time":"2025-07-01T12:11:20.943473874+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"hltamftv"}
+{"time":"2025-07-01T12:11:20.943555381+01:00","level":"INFO","msg":"sender: closed","stream_id":"hltamftv"}
+{"time":"2025-07-01T12:11:20.944075983+01:00","level":"INFO","msg":"stream: closed","id":"hltamftv"}

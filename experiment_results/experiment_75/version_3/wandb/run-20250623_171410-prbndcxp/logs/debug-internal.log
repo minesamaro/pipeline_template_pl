@@ -1,0 +1,17 @@
+{"time":"2025-06-23T17:14:11.427813172+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_75/version_3/wandb/run-20250623_171410-prbndcxp/logs/debug-core.log"}
+{"time":"2025-06-23T17:14:11.705939779+01:00","level":"INFO","msg":"created new stream","id":"prbndcxp"}
+{"time":"2025-06-23T17:14:11.706014719+01:00","level":"INFO","msg":"stream: started","id":"prbndcxp"}
+{"time":"2025-06-23T17:14:11.706051872+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"prbndcxp"}
+{"time":"2025-06-23T17:14:11.706131909+01:00","level":"INFO","msg":"sender: started","stream_id":"prbndcxp"}
+{"time":"2025-06-23T17:14:11.706065793+01:00","level":"INFO","msg":"handler: started","stream_id":"prbndcxp"}
+{"time":"2025-06-23T17:14:11.986091034+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-23T18:04:27.582866653+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_whole_simple/prbndcxp/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-23T18:12:42.946443819+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-23T18:12:42.946875745+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-23T18:12:43.682270946+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-23T18:12:43.921600911+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 332-333, summary, console lines 4-5","runtime_seconds":0.239063678}],"total_operations":1}}
+{"time":"2025-06-23T18:12:43.973860632+01:00","level":"INFO","msg":"stream: closing","id":"prbndcxp"}
+{"time":"2025-06-23T18:12:43.973897547+01:00","level":"INFO","msg":"handler: closed","stream_id":"prbndcxp"}
+{"time":"2025-06-23T18:12:43.973915266+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"prbndcxp"}
+{"time":"2025-06-23T18:12:43.973956852+01:00","level":"INFO","msg":"sender: closed","stream_id":"prbndcxp"}
+{"time":"2025-06-23T18:12:43.97480348+01:00","level":"INFO","msg":"stream: closed","id":"prbndcxp"}

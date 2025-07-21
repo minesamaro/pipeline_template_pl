@@ -1,0 +1,16 @@
+{"time":"2025-06-23T12:14:39.526530928+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_74/version_1/wandb/run-20250623_121438-stdrpje2/logs/debug-core.log"}
+{"time":"2025-06-23T12:14:39.836299379+01:00","level":"INFO","msg":"created new stream","id":"stdrpje2"}
+{"time":"2025-06-23T12:14:39.83636212+01:00","level":"INFO","msg":"stream: started","id":"stdrpje2"}
+{"time":"2025-06-23T12:14:39.83641357+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"stdrpje2"}
+{"time":"2025-06-23T12:14:39.836459001+01:00","level":"INFO","msg":"handler: started","stream_id":"stdrpje2"}
+{"time":"2025-06-23T12:14:39.836525412+01:00","level":"INFO","msg":"sender: started","stream_id":"stdrpje2"}
+{"time":"2025-06-23T12:14:40.129300832+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-23T12:38:57.947578077+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-23T12:38:57.947915202+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-23T12:38:58.950574766+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.678810858,"progress":"1.1KB/1.1KB"},{"desc":"uploading config.yaml","runtime_seconds":0.51928169,"progress":"5.8KB/5.8KB"}],"total_operations":2}}
+{"time":"2025-06-23T12:38:59.062915753+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-23T12:38:59.306211158+01:00","level":"INFO","msg":"stream: closing","id":"stdrpje2"}
+{"time":"2025-06-23T12:38:59.306245829+01:00","level":"INFO","msg":"handler: closed","stream_id":"stdrpje2"}
+{"time":"2025-06-23T12:38:59.306260549+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"stdrpje2"}
+{"time":"2025-06-23T12:38:59.30629416+01:00","level":"INFO","msg":"sender: closed","stream_id":"stdrpje2"}
+{"time":"2025-06-23T12:38:59.307430677+01:00","level":"INFO","msg":"stream: closed","id":"stdrpje2"}

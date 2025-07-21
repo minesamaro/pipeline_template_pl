@@ -18,8 +18,11 @@ hydra:
   output_subdir: null
   run:
     dir: .
-seed_value: 1
+seed_value: 22
+weighted_random_sampler: False
+visualize_imgur: False
+roi: whole_slice
 wandb:
-  project_name: "comparative_study_3d_norm_resize"
+  project_name: "cs_ws_resnet50_3d_test"
   entity: "nlst"
   name: "resnet50_3d"

@@ -1,0 +1,16 @@
+{"time":"2025-06-26T04:07:39.492177394+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_76/version_9/wandb/run-20250626_040738-bzump571/logs/debug-core.log"}
+{"time":"2025-06-26T04:07:39.873341904+01:00","level":"INFO","msg":"created new stream","id":"bzump571"}
+{"time":"2025-06-26T04:07:39.873375082+01:00","level":"INFO","msg":"stream: started","id":"bzump571"}
+{"time":"2025-06-26T04:07:39.873387303+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"bzump571"}
+{"time":"2025-06-26T04:07:39.87342144+01:00","level":"INFO","msg":"handler: started","stream_id":"bzump571"}
+{"time":"2025-06-26T04:07:39.873478973+01:00","level":"INFO","msg":"sender: started","stream_id":"bzump571"}
+{"time":"2025-06-26T04:07:40.130031851+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-26T04:58:42.758888044+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-26T04:58:42.759067258+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-26T04:58:43.761398843+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.65277036,"progress":"441B/441B"},{"desc":"uploading config.yaml","runtime_seconds":0.502166132,"progress":"5.8KB/5.8KB"}],"total_operations":2}}
+{"time":"2025-06-26T04:58:43.870595727+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-26T04:58:44.083500943+01:00","level":"INFO","msg":"stream: closing","id":"bzump571"}
+{"time":"2025-06-26T04:58:44.083531856+01:00","level":"INFO","msg":"handler: closed","stream_id":"bzump571"}
+{"time":"2025-06-26T04:58:44.083555802+01:00","level":"INFO","msg":"sender: closed","stream_id":"bzump571"}
+{"time":"2025-06-26T04:58:44.08354641+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"bzump571"}
+{"time":"2025-06-26T04:58:44.084095647+01:00","level":"INFO","msg":"stream: closed","id":"bzump571"}

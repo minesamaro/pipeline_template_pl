@@ -1,0 +1,17 @@
+{"time":"2025-06-23T23:39:36.849731733+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_74/version_10/wandb/run-20250623_233935-8bx3mjt6/logs/debug-core.log"}
+{"time":"2025-06-23T23:39:37.117487567+01:00","level":"INFO","msg":"created new stream","id":"8bx3mjt6"}
+{"time":"2025-06-23T23:39:37.117609809+01:00","level":"INFO","msg":"stream: started","id":"8bx3mjt6"}
+{"time":"2025-06-23T23:39:37.117715+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"8bx3mjt6"}
+{"time":"2025-06-23T23:39:37.117806331+01:00","level":"INFO","msg":"sender: started","stream_id":"8bx3mjt6"}
+{"time":"2025-06-23T23:39:37.117849012+01:00","level":"INFO","msg":"handler: started","stream_id":"8bx3mjt6"}
+{"time":"2025-06-23T23:39:37.384134415+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-23T23:44:22.658754681+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-06-24T00:06:09.864563319+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-24T00:06:09.864886533+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-24T00:06:10.715060063+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-24T00:06:10.867446106+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 361-361, summary","runtime_seconds":0.152185361}],"total_operations":1}}
+{"time":"2025-06-24T00:06:10.918210742+01:00","level":"INFO","msg":"stream: closing","id":"8bx3mjt6"}
+{"time":"2025-06-24T00:06:10.918255161+01:00","level":"INFO","msg":"handler: closed","stream_id":"8bx3mjt6"}
+{"time":"2025-06-24T00:06:10.918271102+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"8bx3mjt6"}
+{"time":"2025-06-24T00:06:10.918305423+01:00","level":"INFO","msg":"sender: closed","stream_id":"8bx3mjt6"}
+{"time":"2025-06-24T00:06:10.919042622+01:00","level":"INFO","msg":"stream: closed","id":"8bx3mjt6"}

@@ -1,0 +1,83 @@
+Initialization time: 2025-07-14 00:24:14
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/albumentations/core/validation.py:87: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/data_augmentation/ct_image_augmenter.py:100: UserWarning: Argument(s) 'max_holes, max_height, max_width' are not valid for transform CoarseDropout
+  A.CoarseDropout(max_holes=8, max_height=8, max_width=8, p=0.7)
+/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/data_augmentation/ct_image_augmenter.py:114: UserWarning: Argument(s) 'mean' are not valid for transform GaussNoise
+  A.GaussNoise(std_range= (0.1, 0.15), mean = (0.0, 0.0), p=1.0), # Introduces too much noise
+/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/data_augmentation/ct_image_augmenter.py:41: UserWarning: Argument(s) 'always_apply' are not valid for transform BasicTransform
+  super().__init__(always_apply=always_apply, p=p)
+/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/data_augmentation/ct_image_augmenter.py:133: UserWarning: Argument(s) 'shift_limit' are not valid for transform OpticalDistortion
+  A.OpticalDistortion(distort_limit=0.2, shift_limit=0.0, p=0.7)
+
+**************************************************  Experiment 83 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+
+✅ Saved split assignments to 'lung_metadata_with_splits.csv'
+
+Using regular DataLoader for train subset
+Data Aug
+Original shape: 210, New Shape: 316
+
+Using regular DataLoader for train subset
+Data Aug
+Original shape: 210, New Shape: 316
+
+Using regular DataLoader for train subset
+Data Aug
+Original shape: 210, New Shape: 316
+
+✅ Set train dataloaders with 3 folds
+  - Fold 1: 316 samples
+    Label distribution: {0: 158, 1: 158}
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 54, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 109, in run_experiment_pipeline
+    dataloader = PreprocessedDataLoader(
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloader.py", line 29, in __new__
+    return NLSTPreprocessedKFoldDataLoader(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 49, in __init__
+    self._set_dataloaders()
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 165, in _set_dataloaders
+    for batch in dataloader:
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/_utils.py", line 644, in reraise
+    raise exception
+ValueError: Caught ValueError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 312, in __getitem__
+    raise e
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 302, in __getitem__
+    data = self._get_data(data_index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 347, in _get_data
+    raise ValueError(f"[ERROR] Image is None at index {data_index}. File info: {self.lung_metadataframe.loc[self.lung_metadataframe['path'] == self.file_names[data_index]]}")
+ValueError: [ERROR] Image is None at index 255. File info:         pid  study_yr  ... label sct_slice_num
+399  218368         0  ...     1            46
+
+[1 rows x 6 columns]
+
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+srun: error: 01.ctm-deep-05: task 0: Exited with exit code 1
+Finish time: 2025-07-14 00:25:42

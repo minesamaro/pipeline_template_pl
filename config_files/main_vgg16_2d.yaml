@@ -21,7 +21,8 @@ hydra:
 seed_value: 22
 weighted_random_sampler: True
 visualize_imgur: False
+roi: lung
 wandb:
-  project_name: "cs_2d_roi_whole_slice_oneclass_22_splits_wrs"
+  project_name: "cs_lung_vgg_wrs"
   entity: "nlst"
   name: "vgg16_2d"

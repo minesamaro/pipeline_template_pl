@@ -1,0 +1,19 @@
+{"time":"2025-06-26T03:23:31.752736899+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_76/version_9/wandb/run-20250626_032331-496zgizv/logs/debug-core.log"}
+{"time":"2025-06-26T03:23:32.049527913+01:00","level":"INFO","msg":"created new stream","id":"496zgizv"}
+{"time":"2025-06-26T03:23:32.049606232+01:00","level":"INFO","msg":"stream: started","id":"496zgizv"}
+{"time":"2025-06-26T03:23:32.049643133+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"496zgizv"}
+{"time":"2025-06-26T03:23:32.049664172+01:00","level":"INFO","msg":"sender: started","stream_id":"496zgizv"}
+{"time":"2025-06-26T03:23:32.049714181+01:00","level":"INFO","msg":"handler: started","stream_id":"496zgizv"}
+{"time":"2025-06-26T03:23:32.349032919+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-26T03:29:48.062660029+01:00","level":"INFO","msg":"api: retrying HTTP error","status":429,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_whole_vgg_wrs/496zgizv/file_stream","body":"{\"error\":\"rate limit exceeded\"}"}
+{"time":"2025-06-26T03:29:50.280628706+01:00","level":"INFO","msg":"api: retrying HTTP error","status":429,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_whole_vgg_wrs/496zgizv/file_stream","body":"{\"error\":\"rate limit exceeded\"}"}
+{"time":"2025-06-26T03:30:01.58532703+01:00","level":"INFO","msg":"api: retrying HTTP error","status":429,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_whole_vgg_wrs/496zgizv/file_stream","body":"{\"error\":\"rate limit exceeded\"}"}
+{"time":"2025-06-26T04:07:38.122470366+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-26T04:07:38.122752826+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-26T04:07:39.127239553+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.672961469,"progress":"441B/441B"},{"desc":"uploading config.yaml","runtime_seconds":0.517638412,"progress":"5.8KB/5.8KB"}],"total_operations":2}}
+{"time":"2025-06-26T04:07:39.192135394+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-26T04:07:39.438119061+01:00","level":"INFO","msg":"stream: closing","id":"496zgizv"}
+{"time":"2025-06-26T04:07:39.438134028+01:00","level":"INFO","msg":"handler: closed","stream_id":"496zgizv"}
+{"time":"2025-06-26T04:07:39.43814774+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"496zgizv"}
+{"time":"2025-06-26T04:07:39.438159414+01:00","level":"INFO","msg":"sender: closed","stream_id":"496zgizv"}
+{"time":"2025-06-26T04:07:39.438418363+01:00","level":"INFO","msg":"stream: closed","id":"496zgizv"}

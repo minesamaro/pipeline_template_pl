@@ -1,0 +1,17 @@
+{"time":"2025-06-23T18:12:44.016041071+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_75/version_3/wandb/run-20250623_181242-vve6hxcg/logs/debug-core.log"}
+{"time":"2025-06-23T18:12:44.301326227+01:00","level":"INFO","msg":"created new stream","id":"vve6hxcg"}
+{"time":"2025-06-23T18:12:44.301384782+01:00","level":"INFO","msg":"stream: started","id":"vve6hxcg"}
+{"time":"2025-06-23T18:12:44.301424606+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"vve6hxcg"}
+{"time":"2025-06-23T18:12:44.301510055+01:00","level":"INFO","msg":"sender: started","stream_id":"vve6hxcg"}
+{"time":"2025-06-23T18:12:44.301596588+01:00","level":"INFO","msg":"handler: started","stream_id":"vve6hxcg"}
+{"time":"2025-06-23T18:12:44.57482705+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-23T18:23:46.163385021+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-06-23T19:08:09.860681958+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-23T19:08:09.86091814+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-23T19:08:10.617357389+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-23T19:08:10.863669943+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 291-292, summary, console lines 4-5","runtime_seconds":0.245560184}],"total_operations":1}}
+{"time":"2025-06-23T19:08:10.889269291+01:00","level":"INFO","msg":"stream: closing","id":"vve6hxcg"}
+{"time":"2025-06-23T19:08:10.889305885+01:00","level":"INFO","msg":"handler: closed","stream_id":"vve6hxcg"}
+{"time":"2025-06-23T19:08:10.889324969+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"vve6hxcg"}
+{"time":"2025-06-23T19:08:10.889407861+01:00","level":"INFO","msg":"sender: closed","stream_id":"vve6hxcg"}
+{"time":"2025-06-23T19:08:10.890241613+01:00","level":"INFO","msg":"stream: closed","id":"vve6hxcg"}

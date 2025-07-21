@@ -21,15 +21,17 @@ data_augmentation:
     random_elastic_alpha: 10.0
     random_elastic_sigma: 5.0
 image_numpy_arrays_dir_path: ${...experiment_execution.paths.preprocessed_data_dir_path}/protocol_${..data_preprocessing_protocol_number}/${..metadataframe.data_type}_numpy_arrays #TODO change here
-number_of_k_folds: 0
+number_of_k_folds: 3
 seed_value: ${...seed_value}
 test_fraction_of_entire_dataset: 0.2
 torch_dataloader_kwargs:
-  batch_size: 2
+  batch_size: 32
   num_workers: 8
 validation_fraction_of_train_set: 0.1
 dimension: ${..dimension} # "2D, 2.5D, 3D
 resize: ${..resize} # True, False
-roi: lung # lung, whole
+roi: ${...roi} # lung, whole
 resample: False
 resample_z: False
+weighted_random_sampler: ${...weighted_random_sampler}
+visualize_imgur: ${...visualize_imgur} # True, False

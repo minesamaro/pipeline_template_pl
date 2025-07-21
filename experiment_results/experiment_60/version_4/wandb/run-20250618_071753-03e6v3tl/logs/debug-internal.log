@@ -7,3 +7,12 @@
 {"time":"2025-06-18T07:17:54.62811592+01:00","level":"INFO","msg":"Starting system monitor"}
 {"time":"2025-06-18T07:20:43.936156812+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.61.11.24:37904->35.186.228.49:443: read: connection reset by peer"}
 {"time":"2025-06-18T07:22:55.924516383+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.61.11.24:46716->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-06-18T07:32:17.278237503+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-18T07:32:17.278790093+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-18T07:32:18.090958103+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-18T07:32:18.268969273+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 364-367, summary, console lines 4-5","runtime_seconds":0.177781102}],"total_operations":1}}
+{"time":"2025-06-18T07:32:18.301273698+01:00","level":"INFO","msg":"stream: closing","id":"03e6v3tl"}
+{"time":"2025-06-18T07:32:18.301309498+01:00","level":"INFO","msg":"handler: closed","stream_id":"03e6v3tl"}
+{"time":"2025-06-18T07:32:18.301323906+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"03e6v3tl"}
+{"time":"2025-06-18T07:32:18.301392035+01:00","level":"INFO","msg":"sender: closed","stream_id":"03e6v3tl"}
+{"time":"2025-06-18T07:32:18.302136032+01:00","level":"INFO","msg":"stream: closed","id":"03e6v3tl"}

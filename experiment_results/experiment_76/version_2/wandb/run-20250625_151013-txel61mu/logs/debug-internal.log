@@ -1,0 +1,16 @@
+{"time":"2025-06-25T15:10:14.301079602+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_76/version_2/wandb/run-20250625_151013-txel61mu/logs/debug-core.log"}
+{"time":"2025-06-25T15:10:14.583136447+01:00","level":"INFO","msg":"created new stream","id":"txel61mu"}
+{"time":"2025-06-25T15:10:14.583192923+01:00","level":"INFO","msg":"stream: started","id":"txel61mu"}
+{"time":"2025-06-25T15:10:14.583299361+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"txel61mu"}
+{"time":"2025-06-25T15:10:14.58338534+01:00","level":"INFO","msg":"handler: started","stream_id":"txel61mu"}
+{"time":"2025-06-25T15:10:14.583476211+01:00","level":"INFO","msg":"sender: started","stream_id":"txel61mu"}
+{"time":"2025-06-25T15:10:14.866396992+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-25T15:54:46.350413126+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-25T15:54:46.350730302+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-25T15:54:47.073897384+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-25T15:54:47.30467408+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-25T15:54:47.316854195+01:00","level":"INFO","msg":"stream: closing","id":"txel61mu"}
+{"time":"2025-06-25T15:54:47.316896819+01:00","level":"INFO","msg":"handler: closed","stream_id":"txel61mu"}
+{"time":"2025-06-25T15:54:47.316915155+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"txel61mu"}
+{"time":"2025-06-25T15:54:47.317051031+01:00","level":"INFO","msg":"sender: closed","stream_id":"txel61mu"}
+{"time":"2025-06-25T15:54:47.317726043+01:00","level":"INFO","msg":"stream: closed","id":"txel61mu"}

@@ -1,0 +1,16 @@
+{"time":"2025-07-03T04:36:56.435980469+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_78/version_21/wandb/run-20250703_043654-mwcf0j0z/logs/debug-core.log"}
+{"time":"2025-07-03T04:36:56.737593716+01:00","level":"INFO","msg":"created new stream","id":"mwcf0j0z"}
+{"time":"2025-07-03T04:36:56.737644109+01:00","level":"INFO","msg":"stream: started","id":"mwcf0j0z"}
+{"time":"2025-07-03T04:36:56.737699303+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"mwcf0j0z"}
+{"time":"2025-07-03T04:36:56.73774646+01:00","level":"INFO","msg":"sender: started","stream_id":"mwcf0j0z"}
+{"time":"2025-07-03T04:36:56.73771184+01:00","level":"INFO","msg":"handler: started","stream_id":"mwcf0j0z"}
+{"time":"2025-07-03T04:36:57.139007167+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-03T06:21:11.632531891+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-03T06:21:11.632844802+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-03T06:21:12.635816941+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.663152489,"progress":"441B/441B"},{"desc":"uploading config.yaml","runtime_seconds":0.486667222,"progress":"5.8KB/5.8KB"},{"desc":"uploading history steps 997-999, summary, console lines 4-5","runtime_seconds":0.013785686}],"total_operations":3}}
+{"time":"2025-07-03T06:21:12.709997492+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-03T06:21:13.093644297+01:00","level":"INFO","msg":"stream: closing","id":"mwcf0j0z"}
+{"time":"2025-07-03T06:21:13.093684071+01:00","level":"INFO","msg":"handler: closed","stream_id":"mwcf0j0z"}
+{"time":"2025-07-03T06:21:13.093701219+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"mwcf0j0z"}
+{"time":"2025-07-03T06:21:13.093746749+01:00","level":"INFO","msg":"sender: closed","stream_id":"mwcf0j0z"}
+{"time":"2025-07-03T06:21:13.094492618+01:00","level":"INFO","msg":"stream: closed","id":"mwcf0j0z"}

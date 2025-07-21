@@ -1,0 +1,16 @@
+{"time":"2025-06-24T01:39:50.25402826+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_74/version_11/wandb/run-20250624_013949-f7c4qz87/logs/debug-core.log"}
+{"time":"2025-06-24T01:39:50.531037919+01:00","level":"INFO","msg":"created new stream","id":"f7c4qz87"}
+{"time":"2025-06-24T01:39:50.53110654+01:00","level":"INFO","msg":"stream: started","id":"f7c4qz87"}
+{"time":"2025-06-24T01:39:50.531175851+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"f7c4qz87"}
+{"time":"2025-06-24T01:39:50.531263032+01:00","level":"INFO","msg":"handler: started","stream_id":"f7c4qz87"}
+{"time":"2025-06-24T01:39:50.531340303+01:00","level":"INFO","msg":"sender: started","stream_id":"f7c4qz87"}
+{"time":"2025-06-24T01:39:50.769748728+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-24T02:45:57.595804567+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-24T02:45:57.596199873+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-24T02:45:58.334346761+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-24T02:45:58.5519708+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-24T02:45:58.55870908+01:00","level":"INFO","msg":"stream: closing","id":"f7c4qz87"}
+{"time":"2025-06-24T02:45:58.55874582+01:00","level":"INFO","msg":"handler: closed","stream_id":"f7c4qz87"}
+{"time":"2025-06-24T02:45:58.55875851+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"f7c4qz87"}
+{"time":"2025-06-24T02:45:58.558806201+01:00","level":"INFO","msg":"sender: closed","stream_id":"f7c4qz87"}
+{"time":"2025-06-24T02:45:58.560235302+01:00","level":"INFO","msg":"stream: closed","id":"f7c4qz87"}

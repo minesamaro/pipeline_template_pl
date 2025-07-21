@@ -1,0 +1,18 @@
+{"time":"2025-06-23T22:01:07.396804071+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_75/version_5/wandb/run-20250623_220106-fic1i1q7/logs/debug-core.log"}
+{"time":"2025-06-23T22:01:07.698041891+01:00","level":"INFO","msg":"created new stream","id":"fic1i1q7"}
+{"time":"2025-06-23T22:01:07.698100951+01:00","level":"INFO","msg":"stream: started","id":"fic1i1q7"}
+{"time":"2025-06-23T22:01:07.698162562+01:00","level":"INFO","msg":"handler: started","stream_id":"fic1i1q7"}
+{"time":"2025-06-23T22:01:07.698155271+01:00","level":"INFO","msg":"sender: started","stream_id":"fic1i1q7"}
+{"time":"2025-06-23T22:01:07.698140656+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"fic1i1q7"}
+{"time":"2025-06-23T22:01:07.978774066+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-23T22:21:05.006041376+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/graphql","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-23T22:21:53.606139714+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_whole_simple/fic1i1q7/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-23T22:39:03.593039832+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-23T22:39:03.593342076+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-23T22:39:04.411364707+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-23T22:39:04.595716148+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 210-211, summary, console lines 4-5","runtime_seconds":0.184083366}],"total_operations":1}}
+{"time":"2025-06-23T22:39:04.645413987+01:00","level":"INFO","msg":"stream: closing","id":"fic1i1q7"}
+{"time":"2025-06-23T22:39:04.645448143+01:00","level":"INFO","msg":"handler: closed","stream_id":"fic1i1q7"}
+{"time":"2025-06-23T22:39:04.645465849+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"fic1i1q7"}
+{"time":"2025-06-23T22:39:04.645545504+01:00","level":"INFO","msg":"sender: closed","stream_id":"fic1i1q7"}
+{"time":"2025-06-23T22:39:04.64620306+01:00","level":"INFO","msg":"stream: closed","id":"fic1i1q7"}

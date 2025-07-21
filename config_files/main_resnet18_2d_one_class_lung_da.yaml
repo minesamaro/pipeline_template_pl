@@ -25,3 +25,4 @@ wandb:
   project_name: "cs_2d_roi_whole_slice_test_da"
   entity: "nlst"
   name: "resnet18_2d"
+roi: lung

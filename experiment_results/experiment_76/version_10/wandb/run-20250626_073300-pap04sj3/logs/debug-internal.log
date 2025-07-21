@@ -1,0 +1,17 @@
+{"time":"2025-06-26T07:33:01.336691903+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_76/version_10/wandb/run-20250626_073300-pap04sj3/logs/debug-core.log"}
+{"time":"2025-06-26T07:33:01.681005566+01:00","level":"INFO","msg":"created new stream","id":"pap04sj3"}
+{"time":"2025-06-26T07:33:01.681086175+01:00","level":"INFO","msg":"stream: started","id":"pap04sj3"}
+{"time":"2025-06-26T07:33:01.681123534+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"pap04sj3"}
+{"time":"2025-06-26T07:33:01.681152475+01:00","level":"INFO","msg":"handler: started","stream_id":"pap04sj3"}
+{"time":"2025-06-26T07:33:01.681250192+01:00","level":"INFO","msg":"sender: started","stream_id":"pap04sj3"}
+{"time":"2025-06-26T07:33:01.911436138+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-26T08:04:50.295352364+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-06-26T08:19:54.624390293+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-26T08:19:54.624575818+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-26T08:19:55.410595952+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-26T08:19:55.626623395+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 293-293, summary, console lines 4-5","runtime_seconds":0.21591974}],"total_operations":1}}
+{"time":"2025-06-26T08:19:55.671193991+01:00","level":"INFO","msg":"stream: closing","id":"pap04sj3"}
+{"time":"2025-06-26T08:19:55.671213569+01:00","level":"INFO","msg":"handler: closed","stream_id":"pap04sj3"}
+{"time":"2025-06-26T08:19:55.671223237+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"pap04sj3"}
+{"time":"2025-06-26T08:19:55.671249659+01:00","level":"INFO","msg":"sender: closed","stream_id":"pap04sj3"}
+{"time":"2025-06-26T08:19:55.673874863+01:00","level":"INFO","msg":"stream: closed","id":"pap04sj3"}

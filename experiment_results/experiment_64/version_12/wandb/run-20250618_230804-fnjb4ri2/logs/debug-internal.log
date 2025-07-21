@@ -1,0 +1,19 @@
+{"time":"2025-06-18T23:08:04.760291602+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_64/version_12/wandb/run-20250618_230804-fnjb4ri2/logs/debug-core.log"}
+{"time":"2025-06-18T23:08:05.062382961+01:00","level":"INFO","msg":"created new stream","id":"fnjb4ri2"}
+{"time":"2025-06-18T23:08:05.062460792+01:00","level":"INFO","msg":"stream: started","id":"fnjb4ri2"}
+{"time":"2025-06-18T23:08:05.062549115+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"fnjb4ri2"}
+{"time":"2025-06-18T23:08:05.062620216+01:00","level":"INFO","msg":"sender: started","stream_id":"fnjb4ri2"}
+{"time":"2025-06-18T23:08:05.062655162+01:00","level":"INFO","msg":"handler: started","stream_id":"fnjb4ri2"}
+{"time":"2025-06-18T23:08:05.298280828+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-18T23:31:37.423062917+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-06-18T23:32:20.916969632+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_test_da/fnjb4ri2/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-18T23:33:22.484955054+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-06-19T00:10:11.559233575+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-19T00:10:11.559542845+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-19T00:10:12.302871886+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-19T00:10:12.50835873+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-06-19T00:10:12.511878861+01:00","level":"INFO","msg":"stream: closing","id":"fnjb4ri2"}
+{"time":"2025-06-19T00:10:12.511924061+01:00","level":"INFO","msg":"handler: closed","stream_id":"fnjb4ri2"}
+{"time":"2025-06-19T00:10:12.511943021+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"fnjb4ri2"}
+{"time":"2025-06-19T00:10:12.512218598+01:00","level":"INFO","msg":"sender: closed","stream_id":"fnjb4ri2"}
+{"time":"2025-06-19T00:10:12.512900115+01:00","level":"INFO","msg":"stream: closed","id":"fnjb4ri2"}

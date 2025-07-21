@@ -1,0 +1,35 @@
+Initialization time: 2025-06-23 10:02:10
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 54, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 109, in run_experiment_pipeline
+    dataloader = PreprocessedDataLoader(
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloader.py", line 29, in __new__
+    return NLSTPreprocessedKFoldDataLoader(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 49, in __init__
+    self._set_dataloaders()
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 141, in _set_dataloaders
+    self._get_torch_dataloader(
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 113, in _get_torch_dataloader
+    dataset=NLSTPreprocessedDataLoader(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 246, in __init__
+    self.roi = config.roi
+               ^^^^^^^^^^
+omegaconf.errors.InterpolationKeyError: Interpolation key 'roi' not found
+    full_key: data.dataloader.roi
+    object_type=dict
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+
+**************************************************  Experiment 73 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err']
+
+✅ Saved split assignments to 'lung_metadata_with_splits.csv'
+
+Using regular DataLoader for train subset
+srun: error: 02.ctm-deep-07: task 0: Exited with exit code 1
+Finish time: 2025-06-23 10:04:04

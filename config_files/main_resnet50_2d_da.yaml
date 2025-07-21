@@ -21,7 +21,8 @@ hydra:
 seed_value: 22
 weighted_random_sampler: False
 visualize_imgur: False
+roi: lung
 wandb:
-  project_name: "cs_2d_roi_whole_slice_test_da"
+  project_name: "cs_lung_resnet50_da"
   entity: "nlst"
   name: "resnet50_2d"
