@@ -1,0 +1,16 @@
+{"time":"2025-07-22T12:09:06.315619895+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_85/version_14/wandb/run-20250722_120905-igl192x1/logs/debug-core.log"}
+{"time":"2025-07-22T12:09:06.607061288+01:00","level":"INFO","msg":"created new stream","id":"igl192x1"}
+{"time":"2025-07-22T12:09:06.607129808+01:00","level":"INFO","msg":"stream: started","id":"igl192x1"}
+{"time":"2025-07-22T12:09:06.60717567+01:00","level":"INFO","msg":"handler: started","stream_id":"igl192x1"}
+{"time":"2025-07-22T12:09:06.607166276+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"igl192x1"}
+{"time":"2025-07-22T12:09:06.607230775+01:00","level":"INFO","msg":"sender: started","stream_id":"igl192x1"}
+{"time":"2025-07-22T12:09:06.860450603+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-22T13:20:14.209932882+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-22T13:20:14.210206651+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-22T13:20:15.212361609+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.510737667,"progress":"1.0KB/1.0KB"},{"desc":"uploading config.yaml","runtime_seconds":0.325206685,"progress":"5.8KB/5.8KB"}],"total_operations":2}}
+{"time":"2025-07-22T13:20:15.433521198+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-22T13:20:15.732470236+01:00","level":"INFO","msg":"stream: closing","id":"igl192x1"}
+{"time":"2025-07-22T13:20:15.732499036+01:00","level":"INFO","msg":"handler: closed","stream_id":"igl192x1"}
+{"time":"2025-07-22T13:20:15.732515412+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"igl192x1"}
+{"time":"2025-07-22T13:20:15.732607196+01:00","level":"INFO","msg":"sender: closed","stream_id":"igl192x1"}
+{"time":"2025-07-22T13:20:15.733202258+01:00","level":"INFO","msg":"stream: closed","id":"igl192x1"}
