@@ -245,9 +245,9 @@ class NLSTPreprocessedDataLoader(Dataset):
         if 'roi' in config:
             self.roi = config.roi
             if self.roi not in ['lung', 'masked']:
-                if self.dimension == 2:
+                if self.config.dimension == 2:
                     self.roi = 'ws'
-                elif self.dimension == 3:
+                elif self.config.dimension == 3:
                     self.roi = 'whole_slice'
             print(f"Using ROI: {self.roi}")
         else:
