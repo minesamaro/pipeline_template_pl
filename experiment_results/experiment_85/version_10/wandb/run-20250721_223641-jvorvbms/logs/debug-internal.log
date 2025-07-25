@@ -1,0 +1,17 @@
+{"time":"2025-07-21T22:36:42.524979548+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_85/version_10/wandb/run-20250721_223641-jvorvbms/logs/debug-core.log"}
+{"time":"2025-07-21T22:36:42.821495948+01:00","level":"INFO","msg":"created new stream","id":"jvorvbms"}
+{"time":"2025-07-21T22:36:42.821564797+01:00","level":"INFO","msg":"stream: started","id":"jvorvbms"}
+{"time":"2025-07-21T22:36:42.821602429+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"jvorvbms"}
+{"time":"2025-07-21T22:36:42.821632709+01:00","level":"INFO","msg":"handler: started","stream_id":"jvorvbms"}
+{"time":"2025-07-21T22:36:42.821675223+01:00","level":"INFO","msg":"sender: started","stream_id":"jvorvbms"}
+{"time":"2025-07-21T22:36:43.106195539+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-21T22:51:59.014504281+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-07-21T23:23:23.845211727+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-21T23:23:23.84551762+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-21T23:23:24.614077323+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-21T23:23:24.84726819+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 827-829, summary, console lines 4-5","runtime_seconds":0.232942991}],"total_operations":1}}
+{"time":"2025-07-21T23:23:24.905855917+01:00","level":"INFO","msg":"stream: closing","id":"jvorvbms"}
+{"time":"2025-07-21T23:23:24.905874156+01:00","level":"INFO","msg":"handler: closed","stream_id":"jvorvbms"}
+{"time":"2025-07-21T23:23:24.905884283+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"jvorvbms"}
+{"time":"2025-07-21T23:23:24.905905759+01:00","level":"INFO","msg":"sender: closed","stream_id":"jvorvbms"}
+{"time":"2025-07-21T23:23:24.906414464+01:00","level":"INFO","msg":"stream: closed","id":"jvorvbms"}

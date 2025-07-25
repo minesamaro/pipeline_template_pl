@@ -1,0 +1,17 @@
+{"time":"2025-07-21T16:20:15.279730046+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_85/version_6/wandb/run-20250721_162015-hfm5m7kl/logs/debug-core.log"}
+{"time":"2025-07-21T16:20:15.625674718+01:00","level":"INFO","msg":"created new stream","id":"hfm5m7kl"}
+{"time":"2025-07-21T16:20:15.625736593+01:00","level":"INFO","msg":"stream: started","id":"hfm5m7kl"}
+{"time":"2025-07-21T16:20:15.625786675+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"hfm5m7kl"}
+{"time":"2025-07-21T16:20:15.625837919+01:00","level":"INFO","msg":"sender: started","stream_id":"hfm5m7kl"}
+{"time":"2025-07-21T16:20:15.625797628+01:00","level":"INFO","msg":"handler: started","stream_id":"hfm5m7kl"}
+{"time":"2025-07-21T16:20:15.832499077+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-21T16:37:46.461076187+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_2d_roi_whole_slice_test_da/hfm5m7kl/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-07-21T16:50:15.129600616+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-21T16:50:15.129805226+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-21T16:50:15.971687345+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-21T16:50:16.132053597+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 309-311, summary, console lines 4-5","runtime_seconds":0.160092206}],"total_operations":1}}
+{"time":"2025-07-21T16:50:16.285124081+01:00","level":"INFO","msg":"stream: closing","id":"hfm5m7kl"}
+{"time":"2025-07-21T16:50:16.285169429+01:00","level":"INFO","msg":"handler: closed","stream_id":"hfm5m7kl"}
+{"time":"2025-07-21T16:50:16.285190464+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"hfm5m7kl"}
+{"time":"2025-07-21T16:50:16.285277091+01:00","level":"INFO","msg":"sender: closed","stream_id":"hfm5m7kl"}
+{"time":"2025-07-21T16:50:16.285880782+01:00","level":"INFO","msg":"stream: closed","id":"hfm5m7kl"}
