@@ -1,11 +1,11 @@
 defaults:
   - data: datalocal3
-  - data/dataloader: nlstlocal_preprocessed_dataloader
+  - data/dataloader: nlstlocal_preprocessed_dataloader_3
   - data/metadataframe: nlst_preprocessed_metadataframe
   - experiment_execution/ids: ids
   - experiment_execution/info: info
   - experiment_execution/paths: paths
-  - hyperparameter_grid_based_execution: luna25_hyperparameter_grid_based_execution # Change this if necessary
+  - hyperparameter_grid_based_execution: false_hyperparameter_grid_based_execution3d # Change this if necessary
   - model: model_resnet503d
   - model/model_pipeline: luna25_model_pipeline # Change this if necessary
   - model/pytorch_lightning_model: nlst_pytorch_lightning_resnet502d
@@ -18,11 +18,11 @@ hydra:
   output_subdir: null
   run:
     dir: .
-seed_value: 1
+seed_value: 22
 weighted_random_sampler: False
 visualize_imgur: False
 roi: whole_slice
 wandb:
-  project_name: "comparative_study_3d"
+  project_name: "local_3d_test"
   entity: "nlst"
-  name: "resnet50_3d_local"
+  name: "resnet50_3d"

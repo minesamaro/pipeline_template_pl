@@ -318,7 +318,12 @@ class NLSTPreprocessedDataLoader(Dataset):
         pid = dataframe_row['pid'].values[0]
         study_yr = dataframe_row['study_yr'].values[0]
         reversed = dataframe_row['reversed'].values[0]
-        slice_idx = int(dataframe_row['sct_slice_num'].values[0])
+        if dataframe_row['sct_slice_num'].values[0] is None:
+            slice_idx = None
+            print(f"[WARNING] No slice index found for {self.file_names[data_index]}. Using None.")
+        else:
+            slice_idx = int(dataframe_row['sct_slice_num'].values[0])
+
 
         if getattr(self.config, "random", False):  # If config.random exists and is True
             if self.config.dimension == 2:

@@ -306,6 +306,44 @@ class NLSTPreprocessedDataLoader(Dataset):
             print(f"File path: {self.file_names[data_index]}")
             print(f"Label: {self.labels[data_index]}")
             raise e
+        
+    def get_slice_range(self, total_slices, slice_idx, n_slices):
+        """
+        Calculates a robust slice range around slice_idx, always returning n_slices if possible.
+        If slice_idx is None, it defaults to the center of the volume.
+        """
+        if slice_idx is None:
+            slice_idx = total_slices // 2
+
+        half = n_slices // 2
+
+        # Initial guess
+        start = slice_idx - half
+        end = slice_idx + half + (0 if n_slices % 2 == 0 else 1)
+
+        # Clamp to volume bounds
+        if start < 0:
+            end += abs(start)
+            start = 0
+        if end > total_slices:
+            excess = end - total_slices
+            start = max(0, start - excess)
+            end = total_slices
+
+        # Final adjustment to ensure exactly n_slices
+        current_len = end - start
+        if current_len < n_slices:
+            if start > 0:
+                missing = n_slices - current_len
+                shift = min(missing, start)
+                start -= shift
+                current_len = end - start
+            if current_len < n_slices and end < total_slices:
+                missing = n_slices - current_len
+                shift = min(missing, total_slices - end)
+                end += shift
+
+        return start, end
 
     def _get_data(self, data_index):
         dataframe_row = self.lung_metadataframe.loc[
@@ -333,7 +371,27 @@ class NLSTPreprocessedDataLoader(Dataset):
             # TODO refix the other dimensions
             elif self.config.dimension == 3:
                 data_path = '/nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/preprocessed_data/protocol_5/3d'
-                image = self._get_scan(data_index, data_path, pid, study_yr)
+                image = numpy.load(r"C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\PhantomDataset\3d\132036_ws.npy")
+                print(f"Image shape: {image.shape[0]}")
+                n_slices = 9
+
+                # Compute start and end slice indices from the center of the nodule
+                # Based on the metadataframe
+                start, end = self.get_slice_range(
+                    total_slices=image.shape[0],
+                    slice_idx= 40,
+                    n_slices=n_slices
+                )
+
+                # Extract the central volume
+                image = image[start:end, :, :]
+
+                # if reversed:
+                #     dicom_image = numpy.flip(dicom_image, axis=0)
+
+                # if self.config.resize:
+                #     dicom_image = numpy.resize(dicom_image, (dicom_image.shape[0], 224, 224))
+                # image = self._get_scan(data_index, data_path, pid, study_yr)
             elif self.config.dimension == 2.5:
                 data_path = '/nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/preprocessed_data/protocol_5/25d'
                 image = self._get_2_5(data_index, data_path, pid, study_yr)
