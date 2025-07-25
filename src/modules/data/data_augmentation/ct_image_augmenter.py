@@ -189,3 +189,166 @@ class CTImageAugmenter:
         #image_tensor = torch.tensor(image_np.transpose(2, 0, 1))
 
         return image_np if mask is None else (image_tensor, mask)
+
+
+class CTImageAugmenter3D:
+    """
+    A class to apply consistent 2D augmentations slice-wise to 3D CT images and masks using ReplayCompose.
+
+    This version enforces that one augmentation from each category is selected, and applied identically to all slices.
+    """
+
+    def __init__(self, parameters):
+        self.parameters = parameters
+
+        # --- Define augmentation categories ---
+        # Basic augmentations (Albumentations-compatible)
+        self.basic_geometric = [
+            A.HorizontalFlip(p=1.0),
+            A.VerticalFlip(p=1.0),
+            A.ShiftScaleRotate( # values tested on NLST dataset
+                shift_limit=0.05,
+                scale_limit=0.1,
+                rotate_limit=15,
+                p=1.0
+            ),
+            A.Affine(shear=(-5, 5), p=1.0)
+        ]
+
+        self.basic_occlusion = [
+            A.CoarseDropout3D(
+                num_holes_range=(3, 6),
+                hole_depth_range=(0.1, 0.2),
+                hole_height_range=(0.1, 0.2),
+                hole_width_range=(0.1, 0.2),
+                fill=0,  # Updated key name for latest Albumentations
+                p=0.7
+            )
+        ]
+
+        self.basic_intensity_ops = [
+            A.RandomGamma(gamma_limit=(50, 150), p=0.7),
+            A.CLAHE(clip_limit=1.1, p=0.7),
+            A.RandomBrightnessContrast(
+                brightness_limit=(-0.2, 0.2),
+                contrast_limit=(-0.3, 0.3),
+                p=0.7
+            )
+        ]
+
+        self.basic_noise = [
+            A.GaussNoise(std_range= (0.1, 0.15), mean = (0.0, 0.0), p=1.0), # Introduces too much noise
+            #A.ISONoise(p=0.7),
+            A.SaltAndPepper(amount= (0.005, 0.005), p=0.7),
+        ]
+
+        self.basic_filtering = [
+            A.MotionBlur(blur_limit=5, p=0.7),
+            A.MedianBlur(blur_limit=5, p=0.7),
+            A.GaussianBlur(blur_limit=7, p=0.7),
+        ]
+
+        self.deformable = [
+            A.ElasticTransform(
+                alpha=50.0,
+                sigma=20.0,
+                p=0.7
+            ),
+            A.OpticalDistortion(distort_limit=0.2, shift_limit=0.0, p=0.7)
+        ]
+
+
+    def __call__(self, volume, mask=None):
+        """
+        Apply consistent random 2D augmentations to all slices in a 3D volume (and mask, if provided).
+
+        Args:
+            volume (np.ndarray): 3D numpy array of shape (Z, H, W)
+            mask (np.ndarray): Optional mask of shape (Z, H, W)
+
+        Returns:
+            Augmented volume (and mask if provided)
+        """
+        assert volume.ndim == 3, "Volume must have shape (Z, H, W)"
+        Z, H, W = volume.shape
+        print(f"Volume shape: {volume.shape}")
+
+        if mask is not None:
+            assert mask.shape == volume.shape, "Mask must have the same shape as volume"
+
+        # Convert to ZHWC
+        if volume.ndim == 3:
+            volume = numpy.expand_dims(volume, axis=-1)
+            print(volume.shape)
+        if mask is not None and mask.ndim == 3:
+            mask = numpy.expand_dims(mask, axis=-1)
+
+        # Randomly pick one transformation from each group
+        chosen_transforms = [
+            random.choice(self.basic_geometric),
+            random.choice(self.basic_occlusion + self.basic_intensity_ops),
+            random.choice(self.basic_noise + self.basic_filtering),
+            random.choice(self.deformable)
+        ]
+
+        coarse_dropout_transform = None
+        for t in chosen_transforms:
+            if isinstance(t, A.CoarseDropout3D):
+                print(f"Using coarse dropout transform: {t}")
+                coarse_dropout_transform = t
+                chosen_transforms.remove(t)
+                break
+
+        composed = A.ReplayCompose(chosen_transforms)
+
+        # Apply to first slice and get replay
+        first_input = {"image": volume[0]}
+        # Turn into RGB if necessary
+        if volume[0].ndim == 2:
+            first_input["image"] = numpy.stack([first_input["image"]] * 3, axis=-1)
+        if mask is not None:
+            first_input["mask"] = mask[0]
+
+        first_result = composed(**first_input)
+        replay = first_result["replay"]
+        if first_result['image'].ndim == 3 and first_result['image'].shape[-1] == 3:
+                first_result['image'] = numpy.mean(first_result['image'], axis=-1) # Uses mean to compute grayscale
+
+        transformed_volume = [first_result["image"]]
+        transformed_mask = [first_result["mask"]] if mask is not None else None
+
+        # Apply same transform to remaining slices
+        for i in range(1, volume.shape[0]):
+            input_data = {"image": volume[i]}
+            # Turn into RGB if necessary
+            if volume[i].ndim == 2:
+                input_data["image"] = numpy.stack([input_data["image"]] * 3, axis=-1)
+            if mask is not None:
+                input_data["mask"] = mask[i]
+
+            result = A.ReplayCompose.replay(replay, **input_data)
+            # Transform into grayscale if necessary
+            if result['image'].ndim == 3 and result['image'].shape[-1] == 3:
+                result['image'] = numpy.mean(result['image'], axis=-1) # Uses mean to compute grayscale
+
+            transformed_volume.append(result["image"])
+
+            if mask is not None:
+                transformed_mask.append(result["mask"])
+
+        transformed_volume = numpy.stack(transformed_volume, axis=0)
+        if mask is not None:
+            transformed_mask = numpy.stack(transformed_mask, axis=0)
+            return transformed_volume, transformed_mask
+        
+
+        if coarse_dropout_transform is not None:
+            volume_input = {"volume": transformed_volume}
+            if mask is not None:
+                volume_input["mask"] = transformed_mask
+            result = A.Compose([coarse_dropout_transform])(**volume_input)
+            transformed_volume = result["volume"]
+            if mask is not None:
+                transformed_mask = result["mask"]
+
+        return transformed_volume

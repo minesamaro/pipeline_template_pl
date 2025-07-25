@@ -13,7 +13,7 @@ from collections import defaultdict
 import random
 
 from src.modules.data.data_augmentation.ct_image_augmenter \
-    import CTImageAugmenter
+    import CTImageAugmenter, CTImageAugmenter3D
 
 from src.modules.data.dataloader.visualizationuploader \
     import VisualizationUploader
@@ -281,9 +281,14 @@ class NLSTPreprocessedDataLoader(Dataset):
             self.augmented_indices = set()
 
         if config.data_augmentation.apply and subset_type == "train":
-            self.data_augmenter = CTImageAugmenter(
-                parameters=config.data_augmentation.parameters
-            )
+            if config.dimension == 3:
+                self.data_augmenter = CTImageAugmenter3D(
+                    parameters=config.data_augmentation.parameters
+                )
+            else:
+                self.data_augmenter = CTImageAugmenter(
+                    parameters=config.data_augmentation.parameters
+                )
         self.image_transformer = torchvision.transforms.Compose([
             lambda x: numpy.transpose(x, axes=(1, 2, 0))
                 if x.ndim == 3 else x,
@@ -408,10 +413,14 @@ class NLSTPreprocessedDataLoader(Dataset):
             data_index in self.augmented_indices and  #TODO Change when not local
             self.subset_type == "train"):
             
-            image = self.data_augmenter(image=image)
+            image = self.data_augmenter(image)
             # Squeeze the image to remove single-dimensional entries
-            if image.ndim == 3:
+            if image.ndim == 3 and self.config.dimension != 3:
                 image = numpy.squeeze(image)
+            elif image.ndim == 4 and self.config.dimension == 3:
+                print(f"Image shape before squeeze: {image.shape}")
+                image = numpy.squeeze(image, axis=-1)
+                print(f"Image shape after augmentation: {image.shape}")
             
         if self.visualization:
             self.visualization_uploader.upload_image(
