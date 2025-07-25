@@ -13,7 +13,7 @@ from collections import defaultdict
 import random
 
 from src.modules.data.data_augmentation.ct_image_augmenter \
-    import CTImageAugmenter
+    import CTImageAugmenter, CTImageAugmenter3D
 
 from src.modules.data.dataloader.visualizationuploader \
     import VisualizationUploader
@@ -245,7 +245,11 @@ class NLSTPreprocessedDataLoader(Dataset):
         if 'roi' in config:
             self.roi = config.roi
             if self.roi not in ['lung', 'masked']:
-                self.roi = 'whole_slice'
+                if self.config.dimension == 2:
+                    self.roi = 'ws'
+                elif self.config.dimension == 3:
+                    self.roi = 'whole_slice'
+            print(f"Using ROI: {self.roi}")
         else:
             self.roi = 'whole_slice'
 
@@ -285,9 +289,15 @@ class NLSTPreprocessedDataLoader(Dataset):
             self.augmented_indices = set()
 
         if config.data_augmentation.apply and subset_type == "train":
-            self.data_augmenter = CTImageAugmenter(
-                parameters=config.data_augmentation.parameters
-            )
+            if config.dimension == 3:
+                self.data_augmenter = CTImageAugmenter3D(
+                    parameters=config.data_augmentation.parameters
+                )
+            else:
+                # Use CTImageAugmenter for 2D and 2.5D
+                self.data_augmenter = CTImageAugmenter(
+                    parameters=config.data_augmentation.parameters
+                )
         self.image_transformer = torchvision.transforms.Compose([
             lambda x: numpy.transpose(x, axes=(1, 2, 0))
                 if x.ndim == 3 else x,
@@ -311,6 +321,44 @@ class NLSTPreprocessedDataLoader(Dataset):
             print(f"Label: {self.labels[data_index]}")
             raise e
 
+    def get_slice_range_3d(self, total_slices, slice_idx, n_slices):
+        """
+        Calculates a robust slice range around slice_idx, always returning n_slices if possible.
+        If slice_idx is None, it defaults to the center of the volume.
+        """
+        if slice_idx is None:
+            slice_idx = total_slices // 2
+
+        half = n_slices // 2
+
+        # Initial guess
+        start = slice_idx - half
+        end = slice_idx + half + (0 if n_slices % 2 == 0 else 1)
+
+        # Clamp to volume bounds
+        if start < 0:
+            end += abs(start)
+            start = 0
+        if end > total_slices:
+            excess = end - total_slices
+            start = max(0, start - excess)
+            end = total_slices
+
+        # Final adjustment to ensure exactly n_slices
+        current_len = end - start
+        if current_len < n_slices:
+            if start > 0:
+                missing = n_slices - current_len
+                shift = min(missing, start)
+                start -= shift
+                current_len = end - start
+            if current_len < n_slices and end < total_slices:
+                missing = n_slices - current_len
+                shift = min(missing, total_slices - end)
+                end += shift
+
+        return start, end
+    
     def _get_data(self, data_index):
         dataframe_row = self.lung_metadataframe.loc[
             self.lung_metadataframe['path'] == self.file_names[data_index]
@@ -361,10 +409,14 @@ class NLSTPreprocessedDataLoader(Dataset):
             data_index in self.augmented_indices and 
             self.subset_type == "train"):
             
-            image = self.data_augmenter(image=image)
+            image = self.data_augmenter(image)
             # Squeeze the image to remove single-dimensional entries
-            if image.ndim == 3:
+            if image.ndim == 3 and self.config.dimension != 3:
                 image = numpy.squeeze(image)
+            elif image.ndim == 4 and self.config.dimension == 3:
+                print(f"Image shape before squeeze: {image.shape}")
+                image = numpy.squeeze(image, axis=-1)
+                print(f"Image shape after augmentation: {image.shape}")
 
         if self.visualization:
             self.visualization_uploader.upload_image(
@@ -387,8 +439,9 @@ class NLSTPreprocessedDataLoader(Dataset):
                 )
             )
 
-            if self.config.resize:
-                slice_image = numpy.resize(slice_image, (224, 224))
+            # if self.config.resize:
+            #     slice_image = numpy.resize(slice_image, (224, 224))
+            
 
             return slice_image
         except Exception as e:
@@ -451,7 +504,7 @@ class NLSTPreprocessedDataLoader(Dataset):
 
             # Compute start and end slice indices from the center of the nodule
             # Based on the metadataframe
-            start, end = self.get_slice_range(
+            start, end = self.get_slice_range_3d(
                 total_slices=dicom_image.shape[0],
                 slice_idx= slice_idx,
                 n_slices=n_slices
@@ -460,8 +513,8 @@ class NLSTPreprocessedDataLoader(Dataset):
             # Extract the central volume
             dicom_image = dicom_image[start:end, :, :]
 
-            if reversed:
-                dicom_image = numpy.flip(dicom_image, axis=0)
+            # if reversed:
+            #     dicom_image = numpy.flip(dicom_image, axis=0)
 
             if self.config.resize:
                 dicom_image = numpy.resize(dicom_image, (dicom_image.shape[0], 224, 224))
