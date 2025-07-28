@@ -1,0 +1,74 @@
+Initialization time: 2025-07-25 23:15:15
+
+**************************************************  Experiment 108 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err', 'dicom_slice_count', 'original_slice_thickness_mm', 'sct_slice_new_1', 'reversed', 'sct_slice_final_mapped']
+
+✅ Saved split assignments to 'lung_metadata_with_splits.csv'
+
+Using regular DataLoader for train subset
+Using ROI: whole_slice
+
+Using regular DataLoader for train subset
+Using ROI: whole_slice
+
+Using regular DataLoader for train subset
+Using ROI: whole_slice
+
+✅ Set train dataloaders with 3 folds
+  - Fold 1: 213 samples
+    Label distribution: {0: 160, 1: 53}
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 54, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 109, in run_experiment_pipeline
+    dataloader = PreprocessedDataLoader(
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloader.py", line 29, in __new__
+    return NLSTPreprocessedKFoldDataLoader(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 49, in __init__
+    self._set_dataloaders()
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 165, in _set_dataloaders
+    for batch in dataloader:
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/_utils.py", line 644, in reraise
+    raise exception
+FileNotFoundError: Caught FileNotFoundError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 322, in __getitem__
+    raise e
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 312, in __getitem__
+    data = self._get_data(data_index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 394, in _get_data
+    image = self._get_scan(data_index, data_path, pid, study_yr, slice_idx, reversed)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 496, in _get_scan
+    dicom_image = numpy.load(
+                  ^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/numpy/lib/npyio.py", line 427, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/nas-ctm01/datasets/public/medical_datasets/lung_ct_datasets/nlst/preprocessed_data/protocol_5/general_shift_crop/whole_slice/107521_whole_slice.npy'
+
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+srun: error: 02.ctm-deep-06: task 0: Exited with exit code 1
+Finish time: 2025-07-25 23:15:35

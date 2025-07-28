@@ -1,0 +1,17 @@
+{"time":"2025-07-28T03:48:38.088864777+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_112/version_6/wandb/run-20250728_034836-n86qusy9/logs/debug-core.log"}
+{"time":"2025-07-28T03:48:38.444321654+01:00","level":"INFO","msg":"created new stream","id":"n86qusy9"}
+{"time":"2025-07-28T03:48:38.444358134+01:00","level":"INFO","msg":"stream: started","id":"n86qusy9"}
+{"time":"2025-07-28T03:48:38.444377464+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"n86qusy9"}
+{"time":"2025-07-28T03:48:38.444402924+01:00","level":"INFO","msg":"handler: started","stream_id":"n86qusy9"}
+{"time":"2025-07-28T03:48:38.444445284+01:00","level":"INFO","msg":"sender: started","stream_id":"n86qusy9"}
+{"time":"2025-07-28T03:48:38.679078217+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-28T05:30:24.635055759+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-07-28T07:05:23.561604466+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-28T07:05:23.564892768+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-28T07:05:24.422811948+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-28T07:05:24.564137727+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 304-305, summary, console lines 4-5","runtime_seconds":0.141191659}],"total_operations":1}}
+{"time":"2025-07-28T07:05:24.625770745+01:00","level":"INFO","msg":"stream: closing","id":"n86qusy9"}
+{"time":"2025-07-28T07:05:24.625785995+01:00","level":"INFO","msg":"handler: closed","stream_id":"n86qusy9"}
+{"time":"2025-07-28T07:05:24.625792815+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"n86qusy9"}
+{"time":"2025-07-28T07:05:24.625806095+01:00","level":"INFO","msg":"sender: closed","stream_id":"n86qusy9"}
+{"time":"2025-07-28T07:05:24.626322516+01:00","level":"INFO","msg":"stream: closed","id":"n86qusy9"}

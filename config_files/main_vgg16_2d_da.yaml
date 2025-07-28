@@ -21,8 +21,8 @@ hydra:
 seed_value: 22
 weighted_random_sampler: False
 visualize_imgur: False
-roi: lung
+roi: masked
 wandb:
-  project_name: "cs_vgg_lung_da"
+  project_name: "cs_vgg_masked_da"
   entity: "nlst"
   name: "vgg16_2d"

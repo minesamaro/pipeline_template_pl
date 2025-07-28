@@ -1,0 +1,16 @@
+{"time":"2025-07-27T04:33:17.270135443+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_115/version_8/wandb/run-20250727_043316-jpyr0jvg/logs/debug-core.log"}
+{"time":"2025-07-27T04:33:17.573597637+01:00","level":"INFO","msg":"created new stream","id":"jpyr0jvg"}
+{"time":"2025-07-27T04:33:17.573624611+01:00","level":"INFO","msg":"stream: started","id":"jpyr0jvg"}
+{"time":"2025-07-27T04:33:17.573635556+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"jpyr0jvg"}
+{"time":"2025-07-27T04:33:17.573652713+01:00","level":"INFO","msg":"sender: started","stream_id":"jpyr0jvg"}
+{"time":"2025-07-27T04:33:17.573641089+01:00","level":"INFO","msg":"handler: started","stream_id":"jpyr0jvg"}
+{"time":"2025-07-27T04:33:17.764660494+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-27T05:37:53.23364207+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-27T05:37:53.23380567+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-27T05:37:54.235267372+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.582200539,"progress":"1.1KB/1.1KB"},{"desc":"uploading config.yaml","runtime_seconds":0.446636533,"progress":"5.8KB/5.8KB"}],"total_operations":2}}
+{"time":"2025-07-27T05:37:54.31556606+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-27T05:37:54.511072184+01:00","level":"INFO","msg":"stream: closing","id":"jpyr0jvg"}
+{"time":"2025-07-27T05:37:54.511088094+01:00","level":"INFO","msg":"handler: closed","stream_id":"jpyr0jvg"}
+{"time":"2025-07-27T05:37:54.511094734+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"jpyr0jvg"}
+{"time":"2025-07-27T05:37:54.511100632+01:00","level":"INFO","msg":"sender: closed","stream_id":"jpyr0jvg"}
+{"time":"2025-07-27T05:37:54.511464847+01:00","level":"INFO","msg":"stream: closed","id":"jpyr0jvg"}

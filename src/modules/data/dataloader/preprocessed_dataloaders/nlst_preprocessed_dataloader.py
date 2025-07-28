@@ -248,10 +248,10 @@ class NLSTPreprocessedDataLoader(Dataset):
                 if self.config.dimension == 2:
                     self.roi = 'ws'
                 elif self.config.dimension == 3:
-                    self.roi = 'whole_slice'
+                    self.roi = 'ws'
             print(f"Using ROI: {self.roi}")
         else:
-            self.roi = 'whole_slice'
+            self.roi = 'ws'
 
         self.visualization = config.visualize_imgur
         if self.visualization:

@@ -1,0 +1,151 @@
+Initialization time: 2025-07-26 00:01:51
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/albumentations/core/validation.py:87: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/data_augmentation/ct_image_augmenter.py:240: UserWarning: Argument(s) 'mean' are not valid for transform GaussNoise
+  A.GaussNoise(std_range= (0.1, 0.15), mean = (0.0, 0.0), p=1.0), # Introduces too much noise
+/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/data_augmentation/ct_image_augmenter.py:257: UserWarning: Argument(s) 'shift_limit' are not valid for transform OpticalDistortion
+  A.OpticalDistortion(distort_limit=0.2, shift_limit=0.0, p=0.7)
+
+**************************************************  Experiment 111 | Version 1 **************************************************
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err', 'dicom_slice_count', 'original_slice_thickness_mm', 'sct_slice_new_1', 'reversed', 'sct_slice_final_mapped']
+
+✅ Saved split assignments to 'lung_metadata_with_splits.csv'
+
+Using regular DataLoader for train subset
+Using ROI: ws
+Data Aug
+Original shape: 213, New Shape: 320
+
+Using regular DataLoader for train subset
+Using ROI: ws
+Data Aug
+Original shape: 213, New Shape: 320
+
+Using regular DataLoader for train subset
+Using ROI: ws
+Data Aug
+Original shape: 214, New Shape: 320
+
+✅ Set train dataloaders with 3 folds
+  - Fold 1: 320 samples
+    Label distribution: {0: 160, 1: 160}
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 54, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 109, in run_experiment_pipeline
+    dataloader = PreprocessedDataLoader(
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloader.py", line 29, in __new__
+    return NLSTPreprocessedKFoldDataLoader(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 49, in __init__
+    self._set_dataloaders()
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/data/dataloader/preprocessed_dataloaders/nlst_preprocessed_dataloader.py", line 165, in _set_dataloaders
+    for batch in dataloader:
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1325, in _next_data
+    return self._process_data(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/_utils.py", line 644, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in DataLoader worker process 5.
+Original Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/collate.py", line 265, in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/collate.py", line 142, in collate
+    return [collate(samples, collate_fn_map=collate_fn_map) for samples in transposed]  # Backwards compatibility.
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/collate.py", line 142, in <listcomp>
+    return [collate(samples, collate_fn_map=collate_fn_map) for samples in transposed]  # Backwards compatibility.
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/collate.py", line 127, in collate
+    return elem_type({key: collate([d[key] for d in batch], collate_fn_map=collate_fn_map) for key in elem})
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/collate.py", line 127, in <dictcomp>
+    return elem_type({key: collate([d[key] for d in batch], collate_fn_map=collate_fn_map) for key in elem})
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/collate.py", line 119, in collate
+    return collate_fn_map[elem_type](batch, collate_fn_map=collate_fn_map)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torch/utils/data/_utils/collate.py", line 162, in collate_tensor_fn
+    return torch.stack(batch, 0, out=out)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: stack expects each tensor to be equal size, but got [9, 422, 512] at entry 0 and [9, 423, 512] at entry 1
+
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 1, 1.0: 1}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {0.0: 2}
+    Batch label distribution: {1.0: 2}
+    Batch label distribution: {1.0: 2}
+srun: error: 04.ctm-deep-06: task 0: Exited with exit code 1
+Finish time: 2025-07-26 00:02:03
