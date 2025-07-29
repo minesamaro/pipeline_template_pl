@@ -4,6 +4,8 @@ from src.modules.model.resnet502d.pytorch_lightning_resnet50_2d_model \
     import PyTorchLightningResNet502dModel
 from src.modules.model.vgg16.pytorch_lightning_vgg16_model \
     import PyTorchLightningVGG16Model
+from src.modules.model.resnet183d.pytorch_lightning_resnet18_3d_model \
+    import PyTorchLightningResNet183dModel
 from src.modules.model.resnet503d.pytorch_lightning_resnet50_3d_model \
     import PyTorchLightningResNet503dModel
 from src.modules.model.vgg163d.pytorch_lightning_vgg163d_model \
@@ -40,6 +42,12 @@ class PyTorchLightningModel:
             )
         elif config.model_name == "VGG16":
             return PyTorchLightningVGG16Model(
+                config=config.hyperparameters,
+                experiment_execution_paths=experiment_execution_paths,
+                test_dataloader=test_dataloader
+            )
+        elif config.model_name == "ResNet183d":
+            return PyTorchLightningResNet183dModel(
                 config=config.hyperparameters,
                 experiment_execution_paths=experiment_execution_paths,
                 test_dataloader=test_dataloader

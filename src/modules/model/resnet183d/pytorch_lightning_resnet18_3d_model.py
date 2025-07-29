@@ -4,23 +4,23 @@ import torch
 import wandb
 from sklearn.metrics import balanced_accuracy_score
 
-from src.modules.model.vgg163d.vgg16_model \
-    import VGG16_3DModel
+from src.modules.model.resnet183d.resnet183d_model \
+    import ResNet183DModel
 from src.modules.loss_functions.resnet50_loss_functions \
     import ResNet50LossFunction
 
 
-class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
+class PyTorchLightningResNet183dModel(pytorch_lightning.LightningModule):
     def __init__(self, config, experiment_execution_paths, test_dataloader= None):
         super().__init__()
         self.config = config
 
         self.criterion = ResNet50LossFunction(
-            config=self.config.loss_function,
+            config=self.config.criterion,
             experiment_execution_paths=experiment_execution_paths
         )
         self.labels = None
-        self.model = VGG16_3DModel(config=self.config.model)
+        self.model = ResNet183DModel(config=self.config.model)
         self.predicted_labels = None
         self.weighted_losses = None
         self.test_ref = test_dataloader
@@ -33,6 +33,30 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
             self.parameters(), **self.config.optimiser.kwargs
         )
         return optimizer
+    
+    def print_inbalance(self, predicted_activated_labels, labels, stage_name=""):
+        # Check how many predictions are 0 and 1
+        num_pred_0 = (predicted_activated_labels == 0).sum().item()
+        num_pred_1 = (predicted_activated_labels == 1).sum().item()
+
+        # Check how many actual labels are 0 and 1
+        num_true_0 = (labels == 0).sum().item()
+        num_true_1 = (labels == 1).sum().item()
+
+        print(f"Stage: {stage_name}")
+
+        print(f"Predicted class distribution: 0s = {num_pred_0}, 1s = {num_pred_1}")
+        print(f"Actual label distribution:    0s = {num_true_0}, 1s = {num_true_1}")
+
+        if num_pred_1 == 0 and num_pred_0 > 0:
+            print("⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!")
+        elif num_pred_0 == 0 and num_pred_1 > 0:
+            print("⚠️  Model is predicting only class 1 (minority class). It is ignoring the majority class!")
+        else:
+            print("✅ Model is predicting both classes.")
+
+        return
+
     
     def evaluate_on_test_set(self):
         self.model.eval()
@@ -151,6 +175,13 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
                 task='binary').item()
         }
         wandb.log(metrics_for_logging, step=self.current_epoch)
+        self.log_dict(
+            metrics_for_logging,
+            batch_size=labels.shape[0],
+            on_epoch=True,
+            on_step=False,
+            prog_bar=False
+        )
 
         if self.test_dataloader_ref is not None:
             self.evaluate_on_test_set()

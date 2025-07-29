@@ -7,7 +7,7 @@ class VGG16_3DModel(nn.Module):
     def __init__(self, config):
         super(VGG16_3DModel, self).__init__()
 
-        self.num_classes = config.number_of_classes
+        self.num_classes = 1
         self.in_channels = 3
 
         def conv_block(in_c, out_c, num_convs):
