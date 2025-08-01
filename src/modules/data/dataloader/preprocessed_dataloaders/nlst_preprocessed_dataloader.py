@@ -214,7 +214,14 @@ class NLSTPreprocessedDataLoader(Dataset):
         self.lung_metadataframe = lung_metadataframe
         self.augmented_to_original_data_ratio = config.data_augmentation.augmented_to_original_data_ratio
         self.apply_data_augmentations = config.data_augmentation.apply
-        
+
+        if 'roi' in config:
+            if self.config.roi in ['lung', 'masked']:
+                self.roi = config.roi
+            else:
+                self.roi = 'ws'
+        else:
+            self.roi = None        
 
         if self.apply_data_augmentations and subset_type == "train":
             print("Data Aug")
