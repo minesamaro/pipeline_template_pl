@@ -221,7 +221,14 @@ class NLSTPreprocessedDataLoader(Dataset):
             else:
                 self.roi = 'ws'
         else:
-            self.roi = None        
+            self.roi = None
+                
+        self.visualization = config.visualize_imgur
+        if self.visualization:
+            self.visualization_uploader = VisualizationUploader(
+                client_id='f5a89997db63c60',
+                album_id='WC0PErb6jxLRWHt'
+            )
 
         if self.apply_data_augmentations and subset_type == "train":
             print("Data Aug")
