@@ -61,6 +61,7 @@ class NLSTPreprocessedKFoldDataLoader:
         torch_dataloader = TorchDataLoader(
         dataset=NLSTPreprocessedDataLoader(
             config=self.config,
+            file_names=file_names,
             labels=labels,
             load_data_name=self.load_data_name,
             subset_type=subset_type,
