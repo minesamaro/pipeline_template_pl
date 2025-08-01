@@ -1,0 +1,17 @@
+{"time":"2025-07-31T02:49:34.743593223+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_119/version_6/wandb/run-20250731_024933-us4sh5vf/logs/debug-core.log"}
+{"time":"2025-07-31T02:49:35.004315356+01:00","level":"INFO","msg":"created new stream","id":"us4sh5vf"}
+{"time":"2025-07-31T02:49:35.004355557+01:00","level":"INFO","msg":"stream: started","id":"us4sh5vf"}
+{"time":"2025-07-31T02:49:35.004414557+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"us4sh5vf"}
+{"time":"2025-07-31T02:49:35.004436658+01:00","level":"INFO","msg":"handler: started","stream_id":"us4sh5vf"}
+{"time":"2025-07-31T02:49:35.004477029+01:00","level":"INFO","msg":"sender: started","stream_id":"us4sh5vf"}
+{"time":"2025-07-31T02:49:35.321731547+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-31T03:29:50.942541707+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_ws_resnet18_3d_test/us4sh5vf/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-07-31T04:23:01.760522679+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-31T04:23:01.760782095+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-31T04:23:02.579477505+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-31T04:23:02.760485584+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-07-31T04:23:02.763586617+01:00","level":"INFO","msg":"stream: closing","id":"us4sh5vf"}
+{"time":"2025-07-31T04:23:02.763600717+01:00","level":"INFO","msg":"handler: closed","stream_id":"us4sh5vf"}
+{"time":"2025-07-31T04:23:02.763607367+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"us4sh5vf"}
+{"time":"2025-07-31T04:23:02.763618627+01:00","level":"INFO","msg":"sender: closed","stream_id":"us4sh5vf"}
+{"time":"2025-07-31T04:23:02.764054728+01:00","level":"INFO","msg":"stream: closed","id":"us4sh5vf"}

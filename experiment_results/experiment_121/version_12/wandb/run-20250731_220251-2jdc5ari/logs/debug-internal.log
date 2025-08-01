@@ -1,0 +1,22 @@
+{"time":"2025-07-31T22:02:51.47210154+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_121/version_12/wandb/run-20250731_220251-2jdc5ari/logs/debug-core.log"}
+{"time":"2025-07-31T22:02:51.760062426+01:00","level":"INFO","msg":"created new stream","id":"2jdc5ari"}
+{"time":"2025-07-31T22:02:51.760100725+01:00","level":"INFO","msg":"stream: started","id":"2jdc5ari"}
+{"time":"2025-07-31T22:02:51.760153316+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"2jdc5ari"}
+{"time":"2025-07-31T22:02:51.760174245+01:00","level":"INFO","msg":"sender: started","stream_id":"2jdc5ari"}
+{"time":"2025-07-31T22:02:51.760263566+01:00","level":"INFO","msg":"handler: started","stream_id":"2jdc5ari"}
+{"time":"2025-07-31T22:02:52.008042118+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-31T22:43:54.149736797+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-07-31T22:44:17.625652934+01:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_vgg_masked_da/2jdc5ari/file_stream","body":"{\"error\":\"context deadline exceeded\"}"}
+{"time":"2025-07-31T22:44:26.458107362+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-07-31T22:48:54.46429686+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-07-31T22:50:39.517612078+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-07-31T23:44:46.613279451+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_vgg_masked_da/2jdc5ari/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-08-01T00:01:04.591651984+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-01T00:01:04.591819464+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-01T00:01:05.373942492+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-01T00:01:05.585780895+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-08-01T00:01:05.589201158+01:00","level":"INFO","msg":"stream: closing","id":"2jdc5ari"}
+{"time":"2025-08-01T00:01:05.589219078+01:00","level":"INFO","msg":"handler: closed","stream_id":"2jdc5ari"}
+{"time":"2025-08-01T00:01:05.589226848+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"2jdc5ari"}
+{"time":"2025-08-01T00:01:05.589237798+01:00","level":"INFO","msg":"sender: closed","stream_id":"2jdc5ari"}
+{"time":"2025-08-01T00:01:05.589773028+01:00","level":"INFO","msg":"stream: closed","id":"2jdc5ari"}

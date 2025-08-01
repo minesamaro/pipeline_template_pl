@@ -1,0 +1,17 @@
+{"time":"2025-07-31T09:31:51.708937113+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_121/version_7/wandb/run-20250731_093150-gmfnxq9s/logs/debug-core.log"}
+{"time":"2025-07-31T09:31:51.97431596+01:00","level":"INFO","msg":"created new stream","id":"gmfnxq9s"}
+{"time":"2025-07-31T09:31:51.9743537+01:00","level":"INFO","msg":"stream: started","id":"gmfnxq9s"}
+{"time":"2025-07-31T09:31:51.97441298+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"gmfnxq9s"}
+{"time":"2025-07-31T09:31:51.974475309+01:00","level":"INFO","msg":"handler: started","stream_id":"gmfnxq9s"}
+{"time":"2025-07-31T09:31:51.97450822+01:00","level":"INFO","msg":"sender: started","stream_id":"gmfnxq9s"}
+{"time":"2025-07-31T09:31:52.237808595+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-31T09:56:08.37533849+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-07-31T10:04:10.530120824+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-31T10:04:10.530288925+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-31T10:04:11.412463565+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-31T10:04:11.531694082+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 309-309, summary","runtime_seconds":0.119124827}],"total_operations":1}}
+{"time":"2025-07-31T10:04:11.692262913+01:00","level":"INFO","msg":"stream: closing","id":"gmfnxq9s"}
+{"time":"2025-07-31T10:04:11.692283313+01:00","level":"INFO","msg":"handler: closed","stream_id":"gmfnxq9s"}
+{"time":"2025-07-31T10:04:11.692291193+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"gmfnxq9s"}
+{"time":"2025-07-31T10:04:11.692315263+01:00","level":"INFO","msg":"sender: closed","stream_id":"gmfnxq9s"}
+{"time":"2025-07-31T10:04:11.699416779+01:00","level":"INFO","msg":"stream: closed","id":"gmfnxq9s"}

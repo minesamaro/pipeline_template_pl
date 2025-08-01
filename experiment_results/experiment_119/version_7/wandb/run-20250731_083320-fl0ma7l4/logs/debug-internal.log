@@ -1,0 +1,17 @@
+{"time":"2025-07-31T08:33:21.429302306+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_119/version_7/wandb/run-20250731_083320-fl0ma7l4/logs/debug-core.log"}
+{"time":"2025-07-31T08:33:21.692897006+01:00","level":"INFO","msg":"created new stream","id":"fl0ma7l4"}
+{"time":"2025-07-31T08:33:21.692933806+01:00","level":"INFO","msg":"stream: started","id":"fl0ma7l4"}
+{"time":"2025-07-31T08:33:21.692974968+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"fl0ma7l4"}
+{"time":"2025-07-31T08:33:21.693006448+01:00","level":"INFO","msg":"sender: started","stream_id":"fl0ma7l4"}
+{"time":"2025-07-31T08:33:21.69306633+01:00","level":"INFO","msg":"handler: started","stream_id":"fl0ma7l4"}
+{"time":"2025-07-31T08:33:22.116432697+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-31T08:37:07.272599961+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-07-31T10:50:05.035874406+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-31T10:50:05.03604811+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-31T10:50:05.762199693+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-31T10:50:05.988082002+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-07-31T10:50:05.991526193+01:00","level":"INFO","msg":"stream: closing","id":"fl0ma7l4"}
+{"time":"2025-07-31T10:50:05.991547493+01:00","level":"INFO","msg":"handler: closed","stream_id":"fl0ma7l4"}
+{"time":"2025-07-31T10:50:05.991556223+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"fl0ma7l4"}
+{"time":"2025-07-31T10:50:05.991567804+01:00","level":"INFO","msg":"sender: closed","stream_id":"fl0ma7l4"}
+{"time":"2025-07-31T10:50:05.998066988+01:00","level":"INFO","msg":"stream: closed","id":"fl0ma7l4"}
