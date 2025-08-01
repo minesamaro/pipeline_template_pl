@@ -1,4 +1,5 @@
 from collections import defaultdict
+import pandas
 from sklearn.model_selection import StratifiedKFold, train_test_split
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader as TorchDataLoader, WeightedRandomSampler
@@ -30,14 +31,12 @@ class NLSTPreprocessedKFoldDataLoader:
 
         self.dataloaders = None
         self.dataloaders_by_subset = None
-        self.data_names_by_subset = None
         self.data_splits = None
         self.load_data_name = None
         self.torch_generator = None
 
         self.dataloaders = defaultdict(list)
         self.dataloaders_by_subset = defaultdict(list)
-        self.data_names_by_subset = defaultdict(list)
         self.data_splits = defaultdict(lambda: defaultdict(list))
         self.load_data_name = load_data_name
         self.torch_generator = torch.Generator()
@@ -47,16 +46,6 @@ class NLSTPreprocessedKFoldDataLoader:
         self.torch_generator.manual_seed(self.config.seed_value)
         self._set_data_splits(self.lung_metadataframe)
         self._set_dataloaders()
-
-    def get_data_names(self):
-        folds = self.config.number_of_k_folds
-        if folds == 0:
-            folds = 1
-        data_names = {subset_type: [
-            self.data_splits[subset_type]['file_names'][datafold_id]
-            for datafold_id in range(folds)
-        ] for subset_type in ["train", "validation", "test"]}
-        return data_names
 
     def get_dataloaders(self):
         return self.dataloaders
@@ -68,60 +57,19 @@ class NLSTPreprocessedKFoldDataLoader:
         subset_type,
         torch_dataloader_kwargs
     ):
-        if self.config.weighted_random_sampler:
-            print(f"\nUsing WeightedRandomSampler for {subset_type} subset")
-            dataset = NLSTPreprocessedDataLoader(
-                config=self.config,
-                file_names=file_names,
-                labels=labels,
-                load_data_name=self.load_data_name,
-                subset_type=subset_type,
-                lung_metadataframe=self.lung_metadataframe
-            )
-
-            if subset_type == "train":
-                # Convert labels to numpy for processing
-                labels_np = numpy.array(labels)
-                class_counts = numpy.bincount(labels_np)
-                class_weights = 1. / class_counts
-                # Assign weight to each sample
-                sample_weights = class_weights[labels_np]
-                sampler = WeightedRandomSampler(
-                    weights=sample_weights,
-                    num_samples=len(sample_weights),
-                    replacement=True
-                )
-                shuffle = False  # Disable shuffle when using sampler
-                torch_dataloader = TorchDataLoader(
-                    dataset=dataset,
-                    sampler=sampler,
-                    generator=self.torch_generator,
-                    worker_init_fn=self._get_torch_dataloader_worker_init_fn,
-                    **torch_dataloader_kwargs
-                )
-            else:
-                torch_dataloader = TorchDataLoader(
-                    dataset=dataset,
-                    shuffle=False,  # Validation/test can be shuffled normally or not
-                    generator=self.torch_generator,
-                    worker_init_fn=self._get_torch_dataloader_worker_init_fn,
-                    **torch_dataloader_kwargs
-                )
-        else:
-            print(f"\nUsing regular DataLoader for {subset_type} subset")
-            torch_dataloader = TorchDataLoader(
-            dataset=NLSTPreprocessedDataLoader(
-                config=self.config,
-                file_names=file_names,
-                labels=labels,
-                load_data_name=self.load_data_name,
-                subset_type=subset_type,
-                lung_metadataframe=self.lung_metadataframe
-            ),
-            generator=self.torch_generator,
-            shuffle=True if subset_type == "train" else False,
-            worker_init_fn=self._get_torch_dataloader_worker_init_fn,
-            **torch_dataloader_kwargs
+        print(f"\nUsing regular DataLoader for {subset_type} subset")
+        torch_dataloader = TorchDataLoader(
+        dataset=NLSTPreprocessedDataLoader(
+            config=self.config,
+            labels=labels,
+            load_data_name=self.load_data_name,
+            subset_type=subset_type,
+            lung_metadataframe=self.lung_metadataframe
+        ),
+        generator=self.torch_generator,
+        shuffle=True if subset_type == "train" else False,
+        worker_init_fn=self._get_torch_dataloader_worker_init_fn,
+        **torch_dataloader_kwargs
         )
                 
         return torch_dataloader
@@ -139,8 +87,8 @@ class NLSTPreprocessedKFoldDataLoader:
             for datafold_id in range(folds):
                 self.dataloaders[subset_type].append(
                     self._get_torch_dataloader(
-                        file_names=self.data_splits[subset_type] \
-                            ['file_names'][datafold_id],
+                        pid=self.data_splits[subset_type] \
+                            ['pid'][datafold_id],
                         labels=self.data_splits[subset_type] \
                             ['labels'][datafold_id],
                         subset_type=subset_type,
@@ -155,7 +103,6 @@ class NLSTPreprocessedKFoldDataLoader:
                 print(f"  - Fold {fold_id}: {num_samples} samples")
                 
                 # Print the distribution of labels in the fold
-                
                 labels = dataloader.dataset.labels
                 unique_labels, counts = numpy.unique(labels, return_counts=True)
                 label_distribution = dict(zip(unique_labels, counts))
@@ -170,18 +117,43 @@ class NLSTPreprocessedKFoldDataLoader:
                     print(f"    Batch label distribution: {label_distribution}")
 
 
-
-
     def _set_data_splits(self, lung_metadataframe):
+
+        fixed_splits_path = r'C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\clinical_models\data\lung_metadata_with_splits.csv'
+        if os.path.exists(fixed_splits_path):
+            fixed_test_df = pandas.read_csv(fixed_splits_path)
+            fixed_test_pids = fixed_test_df[fixed_test_df['split_fold_1'] == 'test']['pid'].tolist()
+
+
         metadata_with_splits = lung_metadataframe.copy()
 
+        ## Use the test from smaller dataset as test here
+        fixed_test_set = metadata_with_splits[metadata_with_splits['pid'].isin(fixed_test_pids)]
+        remaining_df = metadata_with_splits[~metadata_with_splits['pid'].isin(fixed_test_pids)]
+
+
+        # Stratified split on remaining
+        strat_test_size = self.config.test_fraction_of_entire_dataset * metadata_with_splits.shape[0] - fixed_test_set.shape[0]
+        if strat_test_size > 0:
+            train_val_df, strat_test_df = train_test_split(
+                remaining_df,
+                test_size=strat_test_size,
+                random_state=self.config.seed_value,
+                stratify=remaining_df['label']
+            )
+            test_df = pandas.concat([fixed_test_set, strat_test_df], ignore_index=True)
+        else:
+            train_val_df = remaining_df
+            test_df = fixed_test_set
+
+
         # === Step 1: Fixed stratified test split ===
-        train_val_df, test_df = train_test_split(
-            lung_metadataframe,
-            test_size=self.config.test_fraction_of_entire_dataset,
-            random_state=self.config.seed_value,
-            stratify=lung_metadataframe['label']
-        )
+        # train_val_df, test_df = train_test_split(
+        #     lung_metadataframe,
+        #     test_size=self.config.test_fraction_of_entire_dataset,
+        #     random_state=self.config.seed_value,
+        #     stratify=lung_metadataframe['label']
+        # )
 
         if not self.config.number_of_k_folds:
             self.config.number_of_k_folds = 1 #Doesnt work
@@ -218,10 +190,10 @@ class NLSTPreprocessedKFoldDataLoader:
 
         # === Save annotated DataFrame to CSV ===
         metadata_with_splits.to_csv(
-            '/nas-ctm01/homes/mipaiva/small_scripts/lung_metadata_with_splits.csv',
+            'C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\clinical_models\\data\\clinical_metadata_with_splits.csv',
             index=False
         )
-        print("\n✅ Saved split assignments to 'lung_metadata_with_splits.csv'")
+        print("\n✅ Saved split assignments to 'clinical_metadata_with_splits.csv'")
 
 
 class NLSTPreprocessedDataLoader(Dataset):
@@ -241,25 +213,6 @@ class NLSTPreprocessedDataLoader(Dataset):
         self.augmented_to_original_data_ratio = config.data_augmentation.augmented_to_original_data_ratio
         self.apply_data_augmentations = config.data_augmentation.apply
         
-        # Check if there is a roi parameter in config
-        if 'roi' in config:
-            self.roi = config.roi
-            if self.roi not in ['lung', 'masked']:
-                if self.config.dimension == 2:
-                    self.roi = 'ws'
-                elif self.config.dimension == 3:
-                    self.roi = 'ws'
-            print(f"Using ROI: {self.roi}")
-        else:
-            self.roi = 'ws'
-
-        self.visualization = config.visualize_imgur
-        if self.visualization:
-            print("\n✅ Visualization enabled for NLSTLocalPreprocessedDataLoader")
-            self.visualization_uploader = VisualizationUploader(
-                client_id='f5a89997db63c60',
-                album_id='WC0PErb6jxLRWHt'
-            )
 
         if self.apply_data_augmentations and subset_type == "train":
             print("Data Aug")

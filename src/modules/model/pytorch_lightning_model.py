@@ -15,6 +15,9 @@ from src.modules.model.resnet182d.pytorch_lightning_resnet18_2d_model \
 from src.modules.model.resnet182d.pytorch_lightning_resnet18_2d_model_oneclass \
     import PyTorchLightningResNet182dModel
 
+from src.modules.model.regularization.pytorch_lightning_regularization import \
+                PyTorchLightningRegularizationModel
+
 class PyTorchLightningModel:
     def __new__(cls, config, experiment_execution_paths, test_dataloader=None):
         if config.model_name == "EfficientNet":
@@ -60,6 +63,12 @@ class PyTorchLightningModel:
             )
         elif config.model_name == "VGG163d":
             return PyTorchLightningVGG163dModel(
+                config=config.hyperparameters,
+                experiment_execution_paths=experiment_execution_paths,
+                test_dataloader=test_dataloader
+            )
+        elif config.model_name == "Regularization":
+            return PyTorchLightningRegularizationModel(
                 config=config.hyperparameters,
                 experiment_execution_paths=experiment_execution_paths,
                 test_dataloader=test_dataloader

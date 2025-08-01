@@ -242,7 +242,10 @@ class NLSTPreprocessedDataLoader(Dataset):
         
         # Check if there is a roi parameter in config
         if 'roi' in config:
-            self.roi = config.roi
+            if self.config.roi in ['lung', 'masked']:
+                self.roi = config.roi
+            else:
+                self.roi = None
         else:
             self.roi = None
 
@@ -369,7 +372,7 @@ class NLSTPreprocessedDataLoader(Dataset):
         else:
             if self.config.dimension == 2:
                 data_path = 'C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\PhantomDataset\\2d' #TODO: Change this to the correct path
-                data_path = os.path.join(data_path, self.roi) if self.roi else data_path
+                data_path = os.path.join(data_path, self.roi) if self.roi is not None else data_path
                 image = self._get_slice(data_index, data_path, pid, study_yr)
                 # Upload the image to the imgur API
                 
