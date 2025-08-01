@@ -87,8 +87,8 @@ class NLSTPreprocessedKFoldDataLoader:
             for datafold_id in range(folds):
                 self.dataloaders[subset_type].append(
                     self._get_torch_dataloader(
-                        pid=self.data_splits[subset_type] \
-                            ['pid'][datafold_id],
+                        file_names=self.data_splits[subset_type] \
+                            ['file_names'][datafold_id],
                         labels=self.data_splits[subset_type] \
                             ['labels'][datafold_id],
                         subset_type=subset_type,
