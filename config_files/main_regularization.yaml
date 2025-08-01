@@ -25,3 +25,4 @@ wandb:
   project_name: "cs_regularization_unet"
   entity: "nlst"
   name: "reg_unet"
+roi: ws
