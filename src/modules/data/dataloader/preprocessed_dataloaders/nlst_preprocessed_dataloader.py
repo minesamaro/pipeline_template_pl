@@ -31,12 +31,14 @@ class NLSTPreprocessedKFoldDataLoader:
 
         self.dataloaders = None
         self.dataloaders_by_subset = None
+        self.data_names_by_subset = None
         self.data_splits = None
         self.load_data_name = None
         self.torch_generator = None
 
         self.dataloaders = defaultdict(list)
         self.dataloaders_by_subset = defaultdict(list)
+        self.data_names_by_subset = defaultdict(list)
         self.data_splits = defaultdict(lambda: defaultdict(list))
         self.load_data_name = load_data_name
         self.torch_generator = torch.Generator()
@@ -49,6 +51,16 @@ class NLSTPreprocessedKFoldDataLoader:
 
     def get_dataloaders(self):
         return self.dataloaders
+    
+    def get_data_names(self):
+        folds = self.config.number_of_k_folds
+        if folds == 0:
+            folds = 1
+        data_names = {subset_type: [
+            self.data_splits[subset_type]['file_names'][datafold_id]
+            for datafold_id in range(folds)
+        ] for subset_type in ["train", "validation", "test"]}
+        return data_names
 
     def _get_torch_dataloader(
         self,
@@ -57,23 +69,64 @@ class NLSTPreprocessedKFoldDataLoader:
         subset_type,
         torch_dataloader_kwargs
     ):
-        print(f"\nUsing regular DataLoader for {subset_type} subset")
-        torch_dataloader = TorchDataLoader(
-        dataset=NLSTPreprocessedDataLoader(
-            config=self.config,
-            file_names=file_names,
-            labels=labels,
-            load_data_name=self.load_data_name,
-            subset_type=subset_type,
-            lung_metadataframe=self.lung_metadataframe
-        ),
-        generator=self.torch_generator,
-        shuffle=True if subset_type == "train" else False,
-        worker_init_fn=self._get_torch_dataloader_worker_init_fn,
-        **torch_dataloader_kwargs
+        if self.config.weighted_random_sampler:
+            print(f"\nUsing WeightedRandomSampler for {subset_type} subset")
+            dataset = NLSTPreprocessedDataLoader(
+                config=self.config,
+                file_names=file_names,
+                labels=labels,
+                load_data_name=self.load_data_name,
+                subset_type=subset_type,
+                lung_metadataframe=self.lung_metadataframe
+            )
+
+            if subset_type == "train":
+                # Convert labels to numpy for processing
+                labels_np = numpy.array(labels)
+                class_counts = numpy.bincount(labels_np)
+                class_weights = 1. / class_counts
+                # Assign weight to each sample
+                sample_weights = class_weights[labels_np]
+                sampler = WeightedRandomSampler(
+                    weights=sample_weights,
+                    num_samples=len(sample_weights),
+                    replacement=True
+                )
+                shuffle = False  # Disable shuffle when using sampler
+                torch_dataloader = TorchDataLoader(
+                    dataset=dataset,
+                    sampler=sampler,
+                    generator=self.torch_generator,
+                    worker_init_fn=self._get_torch_dataloader_worker_init_fn,
+                    **torch_dataloader_kwargs
+                )
+            else:
+                torch_dataloader = TorchDataLoader(
+                    dataset=dataset,
+                    shuffle=False,  # Validation/test can be shuffled normally or not
+                    generator=self.torch_generator,
+                    worker_init_fn=self._get_torch_dataloader_worker_init_fn,
+                    **torch_dataloader_kwargs
+                )
+        else:
+            print(f"\nUsing regular DataLoader for {subset_type} subset")
+            torch_dataloader = TorchDataLoader(
+            dataset=NLSTPreprocessedDataLoader(
+                config=self.config,
+                file_names=file_names,
+                labels=labels,
+                load_data_name=self.load_data_name,
+                subset_type=subset_type,
+                lung_metadataframe=self.lung_metadataframe
+            ),
+            generator=self.torch_generator,
+            shuffle=True if subset_type == "train" else False,
+            worker_init_fn=self._get_torch_dataloader_worker_init_fn,
+            **torch_dataloader_kwargs
         )
                 
         return torch_dataloader
+
 
     def _get_torch_dataloader_worker_init_fn(self, worker_id):
         numpy.random.seed(self.config.seed_value + worker_id)

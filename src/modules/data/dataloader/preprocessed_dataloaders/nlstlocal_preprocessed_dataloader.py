@@ -48,6 +48,7 @@ class NLSTLocalPreprocessedKFoldDataLoader:
         self._set_data_splits(self.lung_metadataframe)
         self._set_dataloaders()
 
+
     def get_data_names(self):
         folds = self.config.number_of_k_folds
         if folds == 0:
