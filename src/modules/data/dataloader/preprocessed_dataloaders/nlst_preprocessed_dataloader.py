@@ -119,41 +119,42 @@ class NLSTPreprocessedKFoldDataLoader:
 
     def _set_data_splits(self, lung_metadataframe):
 
-        fixed_splits_path = r'C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\clinical_models\data\lung_metadata_with_splits.csv'
-        if os.path.exists(fixed_splits_path):
-            fixed_test_df = pandas.read_csv(fixed_splits_path)
-            fixed_test_pids = fixed_test_df[fixed_test_df['split_fold_1'] == 'test']['pid'].tolist()
+        # fixed_splits_path = r'C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\clinical_models\data\lung_metadata_with_splits.csv'
+        # if os.path.exists(fixed_splits_path):
+        #     fixed_test_df = pandas.read_csv(fixed_splits_path)
+        #     fixed_test_pids = fixed_test_df[fixed_test_df['split_fold_1'] == 'test']['pid'].tolist()
 
+
+        # metadata_with_splits = lung_metadataframe.copy()
+
+        # ## Use the test from smaller dataset as test here
+        # fixed_test_set = metadata_with_splits[metadata_with_splits['pid'].isin(fixed_test_pids)]
+        # remaining_df = metadata_with_splits[~metadata_with_splits['pid'].isin(fixed_test_pids)]
+
+
+        # # Stratified split on remaining
+        # strat_test_size = self.config.test_fraction_of_entire_dataset * metadata_with_splits.shape[0] - fixed_test_set.shape[0]
+        # if strat_test_size > 0:
+        #     train_val_df, strat_test_df = train_test_split(
+        #         remaining_df,
+        #         test_size=strat_test_size,
+        #         random_state=self.config.seed_value,
+        #         stratify=remaining_df['label']
+        #     )
+        #     test_df = pandas.concat([fixed_test_set, strat_test_df], ignore_index=True)
+        # else:
+        #     train_val_df = remaining_df
+        #     test_df = fixed_test_set
 
         metadata_with_splits = lung_metadataframe.copy()
 
-        ## Use the test from smaller dataset as test here
-        fixed_test_set = metadata_with_splits[metadata_with_splits['pid'].isin(fixed_test_pids)]
-        remaining_df = metadata_with_splits[~metadata_with_splits['pid'].isin(fixed_test_pids)]
-
-
-        # Stratified split on remaining
-        strat_test_size = self.config.test_fraction_of_entire_dataset * metadata_with_splits.shape[0] - fixed_test_set.shape[0]
-        if strat_test_size > 0:
-            train_val_df, strat_test_df = train_test_split(
-                remaining_df,
-                test_size=strat_test_size,
-                random_state=self.config.seed_value,
-                stratify=remaining_df['label']
-            )
-            test_df = pandas.concat([fixed_test_set, strat_test_df], ignore_index=True)
-        else:
-            train_val_df = remaining_df
-            test_df = fixed_test_set
-
-
         # === Step 1: Fixed stratified test split ===
-        # train_val_df, test_df = train_test_split(
-        #     lung_metadataframe,
-        #     test_size=self.config.test_fraction_of_entire_dataset,
-        #     random_state=self.config.seed_value,
-        #     stratify=lung_metadataframe['label']
-        # )
+        train_val_df, test_df = train_test_split(
+            lung_metadataframe,
+            test_size=self.config.test_fraction_of_entire_dataset,
+            random_state=self.config.seed_value,
+            stratify=lung_metadataframe['label']
+        )
 
         if not self.config.number_of_k_folds:
             self.config.number_of_k_folds = 1 #Doesnt work
@@ -190,7 +191,7 @@ class NLSTPreprocessedKFoldDataLoader:
 
         # === Save annotated DataFrame to CSV ===
         metadata_with_splits.to_csv(
-            'C:\\Users\\HP\\OneDrive - Universidade do Porto\\Documentos\\UNIVERSIDADE\\Tese\\clinical_models\\data\\clinical_metadata_with_splits.csv',
+            '/nas-ctm01/homes/mipaiva/small_scripts/ignore_metadata_with_splits.csv',
             index=False
         )
         print("\n✅ Saved split assignments to 'clinical_metadata_with_splits.csv'")
