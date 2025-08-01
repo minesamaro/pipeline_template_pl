@@ -1,0 +1,17 @@
+{"time":"2025-08-01T00:01:05.673529167+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_121/version_12/wandb/run-20250801_000104-96q47w7u/logs/debug-core.log"}
+{"time":"2025-08-01T00:01:05.936695142+01:00","level":"INFO","msg":"created new stream","id":"96q47w7u"}
+{"time":"2025-08-01T00:01:05.936736671+01:00","level":"INFO","msg":"stream: started","id":"96q47w7u"}
+{"time":"2025-08-01T00:01:05.936775822+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"96q47w7u"}
+{"time":"2025-08-01T00:01:05.936807292+01:00","level":"INFO","msg":"handler: started","stream_id":"96q47w7u"}
+{"time":"2025-08-01T00:01:05.936788001+01:00","level":"INFO","msg":"sender: started","stream_id":"96q47w7u"}
+{"time":"2025-08-01T00:01:06.214655368+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-01T00:12:51.840053646+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_vgg_masked_da/96q47w7u/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-08-01T00:24:07.10646657+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-01T00:24:07.10675719+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-01T00:24:07.832034602+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-01T00:24:08.043414574+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-08-01T00:24:08.046448867+01:00","level":"INFO","msg":"stream: closing","id":"96q47w7u"}
+{"time":"2025-08-01T00:24:08.046464027+01:00","level":"INFO","msg":"handler: closed","stream_id":"96q47w7u"}
+{"time":"2025-08-01T00:24:08.046471756+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"96q47w7u"}
+{"time":"2025-08-01T00:24:08.046486057+01:00","level":"INFO","msg":"sender: closed","stream_id":"96q47w7u"}
+{"time":"2025-08-01T00:24:08.047141097+01:00","level":"INFO","msg":"stream: closed","id":"96q47w7u"}

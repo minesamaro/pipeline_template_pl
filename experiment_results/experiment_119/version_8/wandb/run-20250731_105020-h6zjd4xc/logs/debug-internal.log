@@ -1,0 +1,17 @@
+{"time":"2025-07-31T10:50:20.915275289+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_119/version_8/wandb/run-20250731_105020-h6zjd4xc/logs/debug-core.log"}
+{"time":"2025-07-31T10:50:21.178928731+01:00","level":"INFO","msg":"created new stream","id":"h6zjd4xc"}
+{"time":"2025-07-31T10:50:21.178969082+01:00","level":"INFO","msg":"stream: started","id":"h6zjd4xc"}
+{"time":"2025-07-31T10:50:21.179031853+01:00","level":"INFO","msg":"handler: started","stream_id":"h6zjd4xc"}
+{"time":"2025-07-31T10:50:21.179007573+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"h6zjd4xc"}
+{"time":"2025-07-31T10:50:21.179076475+01:00","level":"INFO","msg":"sender: started","stream_id":"h6zjd4xc"}
+{"time":"2025-07-31T10:50:21.47085244+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-31T10:53:06.680878582+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-07-31T13:02:51.049810055+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-31T13:02:51.049992819+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-31T13:02:51.825387746+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-31T13:02:52.051394618+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 339-340, summary, console lines 4-5","runtime_seconds":0.225838517}],"total_operations":1}}
+{"time":"2025-07-31T13:02:52.109602844+01:00","level":"INFO","msg":"stream: closing","id":"h6zjd4xc"}
+{"time":"2025-07-31T13:02:52.109624584+01:00","level":"INFO","msg":"handler: closed","stream_id":"h6zjd4xc"}
+{"time":"2025-07-31T13:02:52.109633675+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"h6zjd4xc"}
+{"time":"2025-07-31T13:02:52.109655155+01:00","level":"INFO","msg":"sender: closed","stream_id":"h6zjd4xc"}
+{"time":"2025-07-31T13:02:52.110230458+01:00","level":"INFO","msg":"stream: closed","id":"h6zjd4xc"}

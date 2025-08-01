@@ -1,0 +1,19 @@
+{"time":"2025-07-30T20:34:17.373438598+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_119/version_5/wandb/run-20250730_203414-waegedh3/logs/debug-core.log"}
+{"time":"2025-07-30T20:34:17.637322145+01:00","level":"INFO","msg":"created new stream","id":"waegedh3"}
+{"time":"2025-07-30T20:34:17.637365006+01:00","level":"INFO","msg":"stream: started","id":"waegedh3"}
+{"time":"2025-07-30T20:34:17.637407167+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"waegedh3"}
+{"time":"2025-07-30T20:34:17.637425978+01:00","level":"INFO","msg":"handler: started","stream_id":"waegedh3"}
+{"time":"2025-07-30T20:34:17.637464758+01:00","level":"INFO","msg":"sender: started","stream_id":"waegedh3"}
+{"time":"2025-07-30T20:34:17.854483357+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-30T20:55:03.242635664+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-07-30T20:55:03.530368395+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_ws_resnet18_3d_test/waegedh3/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-07-30T21:52:39.960831113+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_ws_resnet18_3d_test/waegedh3/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-07-30T22:11:22.986794923+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-30T22:11:22.987033757+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-30T22:11:23.745373012+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-30T22:11:23.932213508+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-07-30T22:11:23.935578497+01:00","level":"INFO","msg":"stream: closing","id":"waegedh3"}
+{"time":"2025-07-30T22:11:23.935596028+01:00","level":"INFO","msg":"handler: closed","stream_id":"waegedh3"}
+{"time":"2025-07-30T22:11:23.935607638+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"waegedh3"}
+{"time":"2025-07-30T22:11:23.935621047+01:00","level":"INFO","msg":"sender: closed","stream_id":"waegedh3"}
+{"time":"2025-07-30T22:11:23.936302884+01:00","level":"INFO","msg":"stream: closed","id":"waegedh3"}

@@ -1,0 +1,17 @@
+{"time":"2025-07-30T16:13:40.426680588+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_118/version_9/wandb/run-20250730_161339-2vm7l83k/logs/debug-core.log"}
+{"time":"2025-07-30T16:13:40.688472141+01:00","level":"INFO","msg":"created new stream","id":"2vm7l83k"}
+{"time":"2025-07-30T16:13:40.688510202+01:00","level":"INFO","msg":"stream: started","id":"2vm7l83k"}
+{"time":"2025-07-30T16:13:40.688538272+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"2vm7l83k"}
+{"time":"2025-07-30T16:13:40.688577592+01:00","level":"INFO","msg":"handler: started","stream_id":"2vm7l83k"}
+{"time":"2025-07-30T16:13:40.688548122+01:00","level":"INFO","msg":"sender: started","stream_id":"2vm7l83k"}
+{"time":"2025-07-30T16:13:40.977067917+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-30T16:57:12.614842332+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-07-30T17:42:15.211660766+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-30T17:42:15.211841516+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-30T17:42:15.986356708+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-30T17:42:16.20862082+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-07-30T17:42:16.211548691+01:00","level":"INFO","msg":"stream: closing","id":"2vm7l83k"}
+{"time":"2025-07-30T17:42:16.211565691+01:00","level":"INFO","msg":"handler: closed","stream_id":"2vm7l83k"}
+{"time":"2025-07-30T17:42:16.211572872+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"2vm7l83k"}
+{"time":"2025-07-30T17:42:16.211582642+01:00","level":"INFO","msg":"sender: closed","stream_id":"2vm7l83k"}
+{"time":"2025-07-30T17:42:16.212280263+01:00","level":"INFO","msg":"stream: closed","id":"2vm7l83k"}

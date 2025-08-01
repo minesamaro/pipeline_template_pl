@@ -1,0 +1,18 @@
+{"time":"2025-07-30T00:40:07.325544599+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_119/version_1/wandb/run-20250730_004007-0hcdo0ip/logs/debug-core.log"}
+{"time":"2025-07-30T00:40:07.607825601+01:00","level":"INFO","msg":"created new stream","id":"0hcdo0ip"}
+{"time":"2025-07-30T00:40:07.607885342+01:00","level":"INFO","msg":"stream: started","id":"0hcdo0ip"}
+{"time":"2025-07-30T00:40:07.607936953+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"0hcdo0ip"}
+{"time":"2025-07-30T00:40:07.607964794+01:00","level":"INFO","msg":"sender: started","stream_id":"0hcdo0ip"}
+{"time":"2025-07-30T00:40:07.608030136+01:00","level":"INFO","msg":"handler: started","stream_id":"0hcdo0ip"}
+{"time":"2025-07-30T00:40:08.031599487+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-30T00:58:23.23656248+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-07-30T00:59:40.823167039+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_ws_resnet18_3d_test/0hcdo0ip/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-07-30T02:03:21.899029234+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-30T02:03:21.899209238+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-30T02:03:22.731733205+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-30T02:03:22.901135209+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 211-211, summary, console lines 4-5","runtime_seconds":0.169254571}],"total_operations":1}}
+{"time":"2025-07-30T02:03:22.972752411+01:00","level":"INFO","msg":"stream: closing","id":"0hcdo0ip"}
+{"time":"2025-07-30T02:03:22.972770111+01:00","level":"INFO","msg":"handler: closed","stream_id":"0hcdo0ip"}
+{"time":"2025-07-30T02:03:22.972778552+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"0hcdo0ip"}
+{"time":"2025-07-30T02:03:22.972792053+01:00","level":"INFO","msg":"sender: closed","stream_id":"0hcdo0ip"}
+{"time":"2025-07-30T02:03:22.979627854+01:00","level":"INFO","msg":"stream: closed","id":"0hcdo0ip"}

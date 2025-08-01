@@ -1,0 +1,16 @@
+{"time":"2025-07-31T04:06:12.360761654+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_121/version_3/wandb/run-20250731_040612-yax5hhez/logs/debug-core.log"}
+{"time":"2025-07-31T04:06:12.623741419+01:00","level":"INFO","msg":"created new stream","id":"yax5hhez"}
+{"time":"2025-07-31T04:06:12.623778918+01:00","level":"INFO","msg":"stream: started","id":"yax5hhez"}
+{"time":"2025-07-31T04:06:12.623809628+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"yax5hhez"}
+{"time":"2025-07-31T04:06:12.623844868+01:00","level":"INFO","msg":"handler: started","stream_id":"yax5hhez"}
+{"time":"2025-07-31T04:06:12.623832379+01:00","level":"INFO","msg":"sender: started","stream_id":"yax5hhez"}
+{"time":"2025-07-31T04:06:12.863683354+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-31T04:30:13.268235871+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-31T04:30:13.268425831+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-31T04:30:14.269983069+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.637998751,"progress":"550B/550B"},{"desc":"uploading config.yaml","runtime_seconds":0.498978338,"progress":"5.8KB/5.8KB"}],"total_operations":2}}
+{"time":"2025-07-31T04:30:14.416752128+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-31T04:30:14.619521324+01:00","level":"INFO","msg":"stream: closing","id":"yax5hhez"}
+{"time":"2025-07-31T04:30:14.619538744+01:00","level":"INFO","msg":"handler: closed","stream_id":"yax5hhez"}
+{"time":"2025-07-31T04:30:14.619547334+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"yax5hhez"}
+{"time":"2025-07-31T04:30:14.619554714+01:00","level":"INFO","msg":"sender: closed","stream_id":"yax5hhez"}
+{"time":"2025-07-31T04:30:14.620087654+01:00","level":"INFO","msg":"stream: closed","id":"yax5hhez"}

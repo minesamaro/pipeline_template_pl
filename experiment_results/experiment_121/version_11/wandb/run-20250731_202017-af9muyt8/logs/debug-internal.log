@@ -1,0 +1,18 @@
+{"time":"2025-07-31T20:20:18.605791364+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_121/version_11/wandb/run-20250731_202017-af9muyt8/logs/debug-core.log"}
+{"time":"2025-07-31T20:20:18.873644392+01:00","level":"INFO","msg":"created new stream","id":"af9muyt8"}
+{"time":"2025-07-31T20:20:18.873677032+01:00","level":"INFO","msg":"stream: started","id":"af9muyt8"}
+{"time":"2025-07-31T20:20:18.873705092+01:00","level":"INFO","msg":"sender: started","stream_id":"af9muyt8"}
+{"time":"2025-07-31T20:20:18.873722252+01:00","level":"INFO","msg":"handler: started","stream_id":"af9muyt8"}
+{"time":"2025-07-31T20:20:18.873706152+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"af9muyt8"}
+{"time":"2025-07-31T20:20:19.118015502+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-31T20:46:36.333329343+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-07-31T21:56:09.204454068+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_vgg_masked_da/af9muyt8/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-07-31T22:02:35.167160994+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-31T22:02:35.167379585+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-31T22:02:35.99512586+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-31T22:02:36.168957303+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 998-999, summary, console lines 4-5","runtime_seconds":0.173691901}],"total_operations":1}}
+{"time":"2025-07-31T22:02:36.245949745+01:00","level":"INFO","msg":"stream: closing","id":"af9muyt8"}
+{"time":"2025-07-31T22:02:36.245971975+01:00","level":"INFO","msg":"handler: closed","stream_id":"af9muyt8"}
+{"time":"2025-07-31T22:02:36.245980045+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"af9muyt8"}
+{"time":"2025-07-31T22:02:36.246035845+01:00","level":"INFO","msg":"sender: closed","stream_id":"af9muyt8"}
+{"time":"2025-07-31T22:02:36.246401976+01:00","level":"INFO","msg":"stream: closed","id":"af9muyt8"}
