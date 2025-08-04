@@ -37,6 +37,30 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
         )
         return optimizer
     
+    def print_inbalance(self, predicted_activated_labels, labels, stage_name=""):
+        # Check how many predictions are 0 and 1
+        num_pred_0 = (predicted_activated_labels == 0).sum().item()
+        num_pred_1 = (predicted_activated_labels == 1).sum().item()
+
+        # Check how many actual labels are 0 and 1
+        num_true_0 = (labels == 0).sum().item()
+        num_true_1 = (labels == 1).sum().item()
+
+        print(f"Stage: {stage_name}")
+
+        print(f"Predicted class distribution: 0s = {num_pred_0}, 1s = {num_pred_1}")
+        print(f"Actual label distribution:    0s = {num_true_0}, 1s = {num_true_1}")
+
+        if num_pred_1 == 0 and num_pred_0 > 0:
+            print("⚠️  Model is predicting only class 0 (majority class). It is ignoring the minority class!")
+        elif num_pred_0 == 0 and num_pred_1 > 0:
+            print("⚠️  Model is predicting only class 1 (minority class). It is ignoring the majority class!")
+        else:
+            print("✅ Model is predicting both classes.")
+
+        return
+
+    
     def evaluate_on_test_set(self):
         self.model.eval()
         test_labels = []
@@ -127,20 +151,6 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
         self.weighted_losses = []
 
     def training_step(self, batch):
-        # Print a summary of the model
-        if self.current_epoch == 0 and self.global_step == 0:
-            sample_batch = batch  # assuming you have a DataLoader
-            data, _ = sample_batch
-
-            # Send a single batch to model to infer shapes
-            self.model.eval()
-            self.model.freeze()
-            with torch.no_grad():
-                self.model.training_step(data['image'], batch_idx=0)
-
-            # Show the model summary
-            print(summarize(self.model, max_depth=2))
-
         data, labels = batch[0], batch[1]
 
         model_output = self.model(data['image'].to(self.device))
@@ -168,6 +178,13 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
                 task='binary').item()
         }
         wandb.log(metrics_for_logging, step=self.current_epoch)
+        self.log_dict(
+            metrics_for_logging,
+            batch_size=labels.shape[0],
+            on_epoch=True,
+            on_step=False,
+            prog_bar=False
+        )
 
         if self.test_dataloader_ref is not None:
             self.evaluate_on_test_set()
