@@ -1,0 +1,16 @@
+{"time":"2025-08-03T02:59:13.923900442+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_137/version_4/wandb/run-20250803_025913-sdlvndcx/logs/debug-core.log"}
+{"time":"2025-08-03T02:59:14.188176778+01:00","level":"INFO","msg":"created new stream","id":"sdlvndcx"}
+{"time":"2025-08-03T02:59:14.188215349+01:00","level":"INFO","msg":"stream: started","id":"sdlvndcx"}
+{"time":"2025-08-03T02:59:14.188247649+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"sdlvndcx"}
+{"time":"2025-08-03T02:59:14.188291361+01:00","level":"INFO","msg":"handler: started","stream_id":"sdlvndcx"}
+{"time":"2025-08-03T02:59:14.1882569+01:00","level":"INFO","msg":"sender: started","stream_id":"sdlvndcx"}
+{"time":"2025-08-03T02:59:14.379566142+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-03T05:24:19.533813631+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-03T05:24:19.534125028+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-03T05:24:20.5356655+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.652005471,"progress":"550B/550B"},{"desc":"uploading config.yaml","runtime_seconds":0.41972031,"progress":"5.8KB/5.8KB"}],"total_operations":2}}
+{"time":"2025-08-03T05:24:20.651390956+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-03T05:24:20.862181727+01:00","level":"INFO","msg":"stream: closing","id":"sdlvndcx"}
+{"time":"2025-08-03T05:24:20.862203588+01:00","level":"INFO","msg":"handler: closed","stream_id":"sdlvndcx"}
+{"time":"2025-08-03T05:24:20.862216788+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"sdlvndcx"}
+{"time":"2025-08-03T05:24:20.862225808+01:00","level":"INFO","msg":"sender: closed","stream_id":"sdlvndcx"}
+{"time":"2025-08-03T05:24:20.862624207+01:00","level":"INFO","msg":"stream: closed","id":"sdlvndcx"}

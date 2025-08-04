@@ -16,7 +16,7 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
         self.config = config
 
         self.criterion = ResNet50LossFunction(
-            config=self.config.loss_function,
+            config=self.config.criterion,
             experiment_execution_paths=experiment_execution_paths
         )
         self.labels = None
