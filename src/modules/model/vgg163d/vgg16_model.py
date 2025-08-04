@@ -16,7 +16,7 @@ class VGG16_3DModel(nn.Module):
                 layers.append(nn.Conv3d(in_c, out_c, kernel_size=3, padding=1))
                 layers.append(nn.ReLU(inplace=True))
                 in_c = out_c
-            layers.append(nn.MaxPool3d(kernel_size=2, stride=2))
+            layers.append(nn.MaxPool3d(kernel_size=2, stride=(1, 2, 2)))
             return nn.Sequential(*layers)
 
         self.features = nn.Sequential(

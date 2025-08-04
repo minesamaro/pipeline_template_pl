@@ -127,20 +127,6 @@ class PyTorchLightningVGG163dModel(pytorch_lightning.LightningModule):
         self.weighted_losses = []
 
     def training_step(self, batch):
-        # Print a summary of the model
-        if self.current_epoch == 0 and self.global_step == 0:
-            sample_batch = batch  # assuming you have a DataLoader
-            data, _ = sample_batch
-
-            # Send a single batch to model to infer shapes
-            self.model.eval()
-            self.model.freeze()
-            with torch.no_grad():
-                self.model.training_step(data['image'], batch_idx=0)
-
-            # Show the model summary
-            print(summarize(self.model, max_depth=2))
-
         data, labels = batch[0], batch[1]
 
         model_output = self.model(data['image'].to(self.device))
