@@ -9,7 +9,7 @@ from src.modules.loss_functions.regularization_loss_functions \
     import RegularizationLossFunction
 
 
-class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
+class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
     def __init__(self, config, experiment_execution_paths, test_dataloader= None):
         super().__init__()
         self.config = config
