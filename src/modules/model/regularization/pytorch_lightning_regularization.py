@@ -148,9 +148,9 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
         self.surv_loss = []
         self.recon_loss_no_kld = []
         self.kld_loss = []
-    # Running sums for global epoch averages (tensors for easy .item())
-    self.mu_sum = torch.tensor(0.0, device=self.device)
-    self.logvar_sum = torch.tensor(0.0, device=self.device)
+        # Running sums for global epoch averages (tensors for easy .item())
+        self.mu_sum = torch.tensor(0.0, device=self.device)
+        self.logvar_sum = torch.tensor(0.0, device=self.device)
 
     def training_step(self, batch):
         data, labels = batch[0], batch[1]
