@@ -16,9 +16,10 @@ class ConvBlock(nn.Module):
         return self.double_conv(x)
 
 class UNetSurvival(nn.Module):
-    def __init__(self, in_channels=1, base_filters=64, latent_dim=128):
+    def __init__(self, in_channels=1, base_filters=64, latent_dim=128, input_size: int = 512):
         super().__init__()
         self.latent_dim = latent_dim
+        self.input_size = input_size
 
         # Encoder
         self.enc1 = ConvBlock(in_channels, base_filters)
@@ -29,9 +30,16 @@ class UNetSurvival(nn.Module):
         self.pool3 = nn.MaxPool2d(2)
         self.enc4 = ConvBlock(base_filters * 4, base_filters * 8)
 
-        # Latent layer (miu and log2)
+        # Latent layer (mu and logvar)
+        # Dynamically infer the flattened size instead of assuming a fixed 512 input.
         self.flatten = nn.Flatten()
-        enc_out_dim = base_filters * 8 * (512 // 16) * (512 // 16)
+        with torch.no_grad():
+            dummy = torch.zeros(1, in_channels, input_size, input_size)
+            d1 = self.enc1(dummy)
+            d2 = self.enc2(self.pool1(d1))
+            d3 = self.enc3(self.pool2(d2))
+            d4 = self.enc4(self.pool3(d3))
+            enc_out_dim = d4.numel()
         self.fc_mu = nn.Linear(enc_out_dim, latent_dim)
         self.fc_logvar = nn.Linear(enc_out_dim, latent_dim)
         self.fc_decode = nn.Linear(latent_dim, enc_out_dim)
