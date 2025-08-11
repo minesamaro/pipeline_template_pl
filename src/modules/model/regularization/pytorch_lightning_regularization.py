@@ -148,8 +148,9 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
         self.surv_loss = []
         self.recon_loss_no_kld = []
         self.kld_loss = []
-        self.mu = []
-        self.logvar = []
+    # Running sums for global epoch averages (tensors for easy .item())
+    self.mu_sum = torch.tensor(0.0, device=self.device)
+    self.logvar_sum = torch.tensor(0.0, device=self.device)
 
     def training_step(self, batch):
         data, labels = batch[0], batch[1]
@@ -165,14 +166,16 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
             logvar=logvar
         )
 
+        batch_size = data['image'].shape[0]
         self.labels.append(labels)
         self.predicted_labels.append(activated_labels)
-        self.weighted_losses.append(loss * data['image'].shape[0]) ## What is this
-        self.surv_loss.append(surv_loss * data['image'].shape[0])
-        self.recon_loss_no_kld.append(recon_loss_no_kld * data['image'].shape[0])
-        self.kld_loss.append(kld_loss * data['image'].shape[0])
-        self.mu.append(mu * data['image'].shape[0])
-        self.logvar.append(logvar * data['image'].shape[0])
+        self.weighted_losses.append(loss * batch_size)
+        self.surv_loss.append(surv_loss * batch_size)
+        self.recon_loss_no_kld.append(recon_loss_no_kld * batch_size)
+        self.kld_loss.append(kld_loss * batch_size)
+        # Accumulate scalar means weighted by batch size (accurate global mean even if last batch is smaller)
+        self.mu_sum += mu.mean().detach() * batch_size
+        self.logvar_sum += logvar.mean().detach() * batch_size
 
         return loss
 
@@ -189,8 +192,8 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
             'train_surv_loss': (sum(self.surv_loss) / labels.shape[0]).item(),
             'train_recon_loss_no_kld': (sum(self.recon_loss_no_kld) / labels.shape[0]).item(),
             'train_kld_loss': (sum(self.kld_loss) / labels.shape[0]).item(),
-            'train_mu': (sum(self.mu) / labels.shape[0]).item(),
-            'train_logvar': (sum(self.logvar) / labels.shape[0]).item(),
+            'train_mu': (self.mu_sum / labels.shape[0]).item(),
+            'train_logvar': (self.logvar_sum / labels.shape[0]).item(),
         }
         wandb.log(metrics_for_logging, step=self.current_epoch)
         self.log_dict(
