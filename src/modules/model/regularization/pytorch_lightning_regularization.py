@@ -145,13 +145,18 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
         self.labels = []
         self.predicted_labels = []
         self.weighted_losses = []
+        self.surv_loss = []
+        self.recon_loss_no_kld = []
+        self.kld_loss = []
+        self.mu = []
+        self.logvar = []
 
     def training_step(self, batch):
         data, labels = batch[0], batch[1]
 
         model_output, reg_output = self.model(data['image'].to(self.device))
         activated_labels = torch.sigmoid(model_output)
-        loss = self.criterion(
+        loss, surv_loss, recon_loss_no_kld, kld_loss, mu, logvar = self.criterion(
             surv_output=model_output,
             surv_target=labels,
             recon_output=reg_output,
@@ -161,9 +166,14 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
         self.labels.append(labels)
         self.predicted_labels.append(activated_labels)
         self.weighted_losses.append(loss * data['image'].shape[0]) ## What is this
-   
+        self.surv_loss.append(surv_loss * data['image'].shape[0])
+        self.recon_loss_no_kld.append(recon_loss_no_kld * data['image'].shape[0])
+        self.kld_loss.append(kld_loss * data['image'].shape[0])
+        self.mu.append(mu * data['image'].shape[0])
+        self.logvar.append(logvar * data['image'].shape[0])
+
         return loss
-    
+
     def on_train_epoch_end(self):
         labels = torch.cat(self.labels, dim=0)
         predicted_labels = torch.cat(self.predicted_labels, dim=0)
@@ -173,7 +183,12 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
             'train_auroc': auroc(
                 preds=predicted_labels,
                 target=labels.int(),
-                task='binary').item()
+                task='binary').item(),
+            'train_surv_loss': (sum(self.surv_loss) / labels.shape[0]).item(),
+            'train_recon_loss_no_kld': (sum(self.recon_loss_no_kld) / labels.shape[0]).item(),
+            'train_kld_loss': (sum(self.kld_loss) / labels.shape[0]).item(),
+            'train_mu': (sum(self.mu) / labels.shape[0]).item(),
+            'train_logvar': (sum(self.logvar) / labels.shape[0]).item(),
         }
         wandb.log(metrics_for_logging, step=self.current_epoch)
         self.log_dict(
@@ -198,7 +213,7 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
 
         model_output, reg_output = self.model(data['image'].to(self.device))
         activated_labels = torch.sigmoid(model_output)
-        loss = self.criterion(
+        loss, surv_loss, recon_loss_no_kld, kld_loss, mu, logvar = self.criterion(
             surv_output=model_output,
             surv_target=labels,
             recon_output=reg_output,

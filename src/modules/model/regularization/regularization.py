@@ -16,8 +16,9 @@ class ConvBlock(nn.Module):
         return self.double_conv(x)
 
 class UNetSurvival(nn.Module):
-    def __init__(self, in_channels=1, base_filters=64):
+    def __init__(self, in_channels=1, base_filters=64, latent_dim=128):
         super().__init__()
+        self.latent_dim = latent_dim
 
         # Encoder
         self.enc1 = ConvBlock(in_channels, base_filters)
@@ -27,6 +28,13 @@ class UNetSurvival(nn.Module):
         self.enc3 = ConvBlock(base_filters * 2, base_filters * 4)
         self.pool3 = nn.MaxPool2d(2)
         self.enc4 = ConvBlock(base_filters * 4, base_filters * 8)
+
+        # Latent layer (miu and log2)
+        self.flatten = nn.Flatten()
+        enc_out_dim = base_filters * 8 * (512 // 16) * (512 // 16)
+        self.fc_mu = nn.Linear(enc_out_dim, latent_dim)
+        self.fc_logvar = nn.Linear(enc_out_dim, latent_dim)
+        self.fc_decode = nn.Linear(latent_dim, enc_out_dim)
 
         # Decoder
         self.up3 = nn.ConvTranspose2d(base_filters * 8, base_filters * 4, kernel_size=2, stride=2)
@@ -48,6 +56,10 @@ class UNetSurvival(nn.Module):
             nn.Dropout(0.3),
             nn.Linear(64, 1)  # For CoxPH (or 1 output + sigmoid for binary)
         )
+    def reparameterize(self, mu, logvar):
+        std = torch.exp(0.5 * logvar)
+        eps = torch.randn_like(std)
+        return mu + eps * std
 
     def forward(self, x):
         # Encoder
@@ -56,8 +68,15 @@ class UNetSurvival(nn.Module):
         x3 = self.enc3(self.pool2(x2))
         x4 = self.enc4(self.pool3(x3))
 
+        # Latent space
+        x_flat = self.flatten(x4)
+        mu = self.fc_mu(x_flat)
+        logvar = self.fc_logvar(x_flat)
+        z = self.reparameterize(mu, logvar)
+
         # Decoder
-        x = self.up3(x4)
+        dec_input = self.fc_decode(z).view(x4.shape)
+        x = self.up3(dec_input)
         x = self.dec3(torch.cat([x, x3], dim=1))
         x = self.up2(x)
         x = self.dec2(torch.cat([x, x2], dim=1))
@@ -69,4 +88,4 @@ class UNetSurvival(nn.Module):
         pooled = self.global_pool(x4)  # Output from deepest encoder
         survival_output = self.survival_head(pooled)
 
-        return survival_output, reconstruction
+        return survival_output, reconstruction, mu, logvar
