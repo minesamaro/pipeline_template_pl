@@ -1,0 +1,17 @@
+{"time":"2025-08-05T21:05:18.627842521+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_143/version_5/wandb/run-20250805_210518-eyinnap1/logs/debug-core.log"}
+{"time":"2025-08-05T21:05:18.887382394+01:00","level":"INFO","msg":"created new stream","id":"eyinnap1"}
+{"time":"2025-08-05T21:05:18.887423434+01:00","level":"INFO","msg":"stream: started","id":"eyinnap1"}
+{"time":"2025-08-05T21:05:18.887449264+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"eyinnap1"}
+{"time":"2025-08-05T21:05:18.887473594+01:00","level":"INFO","msg":"handler: started","stream_id":"eyinnap1"}
+{"time":"2025-08-05T21:05:18.887530244+01:00","level":"INFO","msg":"sender: started","stream_id":"eyinnap1"}
+{"time":"2025-08-05T21:05:19.137603589+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-05T22:31:35.842741271+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-08-05T22:55:01.225908107+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-05T22:55:01.226081316+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-05T22:55:01.961484669+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-05T22:55:02.227510437+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 152-153, summary, console lines 4-5","runtime_seconds":0.265928317}],"total_operations":1}}
+{"time":"2025-08-05T22:55:02.252187947+01:00","level":"INFO","msg":"stream: closing","id":"eyinnap1"}
+{"time":"2025-08-05T22:55:02.252213397+01:00","level":"INFO","msg":"handler: closed","stream_id":"eyinnap1"}
+{"time":"2025-08-05T22:55:02.252222456+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"eyinnap1"}
+{"time":"2025-08-05T22:55:02.252272397+01:00","level":"INFO","msg":"sender: closed","stream_id":"eyinnap1"}
+{"time":"2025-08-05T22:55:02.255067349+01:00","level":"INFO","msg":"stream: closed","id":"eyinnap1"}

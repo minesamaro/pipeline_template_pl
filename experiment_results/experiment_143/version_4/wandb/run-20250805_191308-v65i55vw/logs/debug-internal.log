@@ -1,0 +1,16 @@
+{"time":"2025-08-05T19:13:11.240440819+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_143/version_4/wandb/run-20250805_191308-v65i55vw/logs/debug-core.log"}
+{"time":"2025-08-05T19:13:11.508170128+01:00","level":"INFO","msg":"created new stream","id":"v65i55vw"}
+{"time":"2025-08-05T19:13:11.508209748+01:00","level":"INFO","msg":"stream: started","id":"v65i55vw"}
+{"time":"2025-08-05T19:13:11.508239238+01:00","level":"INFO","msg":"sender: started","stream_id":"v65i55vw"}
+{"time":"2025-08-05T19:13:11.508270958+01:00","level":"INFO","msg":"handler: started","stream_id":"v65i55vw"}
+{"time":"2025-08-05T19:13:11.508293178+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"v65i55vw"}
+{"time":"2025-08-05T19:13:11.98525182+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-05T21:04:54.388105864+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-05T21:04:54.388284883+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-05T21:04:55.389764314+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"updating run config","runtime_seconds":1.002032642}],"total_operations":1}}
+{"time":"2025-08-05T21:04:56.174897196+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-05T21:04:56.438929483+01:00","level":"INFO","msg":"stream: closing","id":"v65i55vw"}
+{"time":"2025-08-05T21:04:56.438948323+01:00","level":"INFO","msg":"handler: closed","stream_id":"v65i55vw"}
+{"time":"2025-08-05T21:04:56.438975273+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"v65i55vw"}
+{"time":"2025-08-05T21:04:56.439031863+01:00","level":"INFO","msg":"sender: closed","stream_id":"v65i55vw"}
+{"time":"2025-08-05T21:04:56.439419633+01:00","level":"INFO","msg":"stream: closed","id":"v65i55vw"}

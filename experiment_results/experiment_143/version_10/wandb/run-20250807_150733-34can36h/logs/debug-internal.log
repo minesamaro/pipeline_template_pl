@@ -1,0 +1,17 @@
+{"time":"2025-08-07T15:07:35.1934662+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_143/version_10/wandb/run-20250807_150733-34can36h/logs/debug-core.log"}
+{"time":"2025-08-07T15:07:35.485268888+01:00","level":"INFO","msg":"created new stream","id":"34can36h"}
+{"time":"2025-08-07T15:07:35.485296448+01:00","level":"INFO","msg":"stream: started","id":"34can36h"}
+{"time":"2025-08-07T15:07:35.485749919+01:00","level":"INFO","msg":"handler: started","stream_id":"34can36h"}
+{"time":"2025-08-07T15:07:35.485768458+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"34can36h"}
+{"time":"2025-08-07T15:07:35.485967569+01:00","level":"INFO","msg":"sender: started","stream_id":"34can36h"}
+{"time":"2025-08-07T15:07:35.784738731+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-07T15:25:21.441440366+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_ws_vgg16_3d_test/34can36h/file_stream\": dial tcp: lookup api.wandb.ai on 127.0.0.53:53: read udp 127.0.0.1:39469->127.0.0.53:53: i/o timeout"}
+{"time":"2025-08-07T16:58:31.510472463+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-07T16:58:31.510697184+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-07T16:58:32.243678985+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-07T16:58:32.452307138+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-08-07T16:58:32.457307652+01:00","level":"INFO","msg":"stream: closing","id":"34can36h"}
+{"time":"2025-08-07T16:58:32.457340831+01:00","level":"INFO","msg":"handler: closed","stream_id":"34can36h"}
+{"time":"2025-08-07T16:58:32.457350221+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"34can36h"}
+{"time":"2025-08-07T16:58:32.457360741+01:00","level":"INFO","msg":"sender: closed","stream_id":"34can36h"}
+{"time":"2025-08-07T16:58:32.457838772+01:00","level":"INFO","msg":"stream: closed","id":"34can36h"}
