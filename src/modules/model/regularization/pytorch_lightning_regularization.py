@@ -65,7 +65,7 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
         with torch.no_grad():
             for batch in self.test_dataloader_ref:
                 data, labels = batch[0], batch[1]
-                outputs, _ = self.model(data['image'].to(self.device))
+                outputs, _, mu, logvar = self.model(data['image'].to(self.device))
                 probs = torch.sigmoid(outputs)
 
                 test_labels.append(labels)
@@ -154,13 +154,15 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
     def training_step(self, batch):
         data, labels = batch[0], batch[1]
 
-        model_output, reg_output = self.model(data['image'].to(self.device))
+        model_output, reg_output, mu, logvar = self.model(data['image'].to(self.device))
         activated_labels = torch.sigmoid(model_output)
         loss, surv_loss, recon_loss_no_kld, kld_loss, mu, logvar = self.criterion(
             surv_output=model_output,
             surv_target=labels,
             recon_output=reg_output,
             recon_target=data['image'].to(self.device),
+            mu=mu,
+            logvar=logvar
         )
 
         self.labels.append(labels)
@@ -211,13 +213,15 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
     def validation_step(self, batch, batch_idx):
         data, labels = batch[0], batch[1]
 
-        model_output, reg_output = self.model(data['image'].to(self.device))
+        model_output, reg_output, mu, logvar = self.model(data['image'].to(self.device))
         activated_labels = torch.sigmoid(model_output)
         loss, surv_loss, recon_loss_no_kld, kld_loss, mu, logvar = self.criterion(
             surv_output=model_output,
             surv_target=labels,
             recon_output=reg_output,
             recon_target=data['image'].to(self.device),
+            mu=mu,
+            logvar=logvar
         )
 
         self.val_labels.append(labels)
@@ -307,7 +311,7 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
     def test_step(self, batch, batch_idx):
         data, labels = batch[0], batch[1]
 
-        model_output, _ = self.model(data['image'].to(self.device))
+        model_output, reg_output, mu, logvar = self.model(data['image'].to(self.device))
         predicted_labels = torch.sigmoid(model_output)
 
         self.labels.append(labels)
