@@ -511,7 +511,7 @@ class NLSTPreprocessedDataLoader(Dataset):
 
         return start, end
 
-    def resample_volume_centered_full(dicom_image, slice_idx, n_slices=9, coverage='full'):
+    def resample_volume_centered_full(self, dicom_image, slice_idx, n_slices=9, coverage='full'):
         """
         Resample the *entire* 3D image along the slice axis to n_slices,
         centered around the nodule slice.
