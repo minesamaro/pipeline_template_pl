@@ -1,0 +1,16 @@
+{"time":"2025-08-12T04:19:43.221892386+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_149/version_9/wandb/run-20250812_041943-0bk32avc/logs/debug-core.log"}
+{"time":"2025-08-12T04:19:43.480824514+01:00","level":"INFO","msg":"created new stream","id":"0bk32avc"}
+{"time":"2025-08-12T04:19:43.480860375+01:00","level":"INFO","msg":"stream: started","id":"0bk32avc"}
+{"time":"2025-08-12T04:19:43.480905296+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"0bk32avc"}
+{"time":"2025-08-12T04:19:43.480948567+01:00","level":"INFO","msg":"handler: started","stream_id":"0bk32avc"}
+{"time":"2025-08-12T04:19:43.480995228+01:00","level":"INFO","msg":"sender: started","stream_id":"0bk32avc"}
+{"time":"2025-08-12T04:19:43.680496538+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-12T04:37:13.349729115+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-12T04:37:13.350053363+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-12T04:37:14.31770812+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.380597527,"progress":"1.1KB/1.1KB"},{"desc":"uploading config.yaml","runtime_seconds":0.228353642,"progress":"5.8KB/5.8KB"},{"desc":"uploading history steps 58-59, summary, console lines 4-5","runtime_seconds":0.019094392}],"total_operations":3}}
+{"time":"2025-08-12T04:37:14.624461188+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-12T04:37:14.824802389+01:00","level":"INFO","msg":"stream: closing","id":"0bk32avc"}
+{"time":"2025-08-12T04:37:14.82482003+01:00","level":"INFO","msg":"handler: closed","stream_id":"0bk32avc"}
+{"time":"2025-08-12T04:37:14.824827711+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"0bk32avc"}
+{"time":"2025-08-12T04:37:14.824873551+01:00","level":"INFO","msg":"sender: closed","stream_id":"0bk32avc"}
+{"time":"2025-08-12T04:37:14.825329672+01:00","level":"INFO","msg":"stream: closed","id":"0bk32avc"}

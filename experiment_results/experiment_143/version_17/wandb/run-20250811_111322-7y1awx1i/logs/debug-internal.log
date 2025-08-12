@@ -7,3 +7,12 @@
 {"time":"2025-08-11T11:13:22.86768007+01:00","level":"INFO","msg":"Starting system monitor"}
 {"time":"2025-08-11T17:24:49.352952211+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/graphql","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
 {"time":"2025-08-11T20:10:38.525764737+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_ws_vgg16_3d_test/7y1awx1i/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-08-11T23:23:57.902073863+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-11T23:23:57.902392624+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-11T23:23:58.665127229+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-11T23:23:58.880441136+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-08-11T23:23:58.886902412+01:00","level":"INFO","msg":"stream: closing","id":"7y1awx1i"}
+{"time":"2025-08-11T23:23:58.886917581+01:00","level":"INFO","msg":"handler: closed","stream_id":"7y1awx1i"}
+{"time":"2025-08-11T23:23:58.886925181+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"7y1awx1i"}
+{"time":"2025-08-11T23:23:58.886952612+01:00","level":"INFO","msg":"sender: closed","stream_id":"7y1awx1i"}
+{"time":"2025-08-11T23:23:58.888991423+01:00","level":"INFO","msg":"stream: closed","id":"7y1awx1i"}

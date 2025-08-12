@@ -1,0 +1,17 @@
+{"time":"2025-08-12T01:36:58.495257818+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_149/version_7/wandb/run-20250812_013657-6n092qtf/logs/debug-core.log"}
+{"time":"2025-08-12T01:36:58.755435024+01:00","level":"INFO","msg":"created new stream","id":"6n092qtf"}
+{"time":"2025-08-12T01:36:58.755492637+01:00","level":"INFO","msg":"stream: started","id":"6n092qtf"}
+{"time":"2025-08-12T01:36:58.755543018+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"6n092qtf"}
+{"time":"2025-08-12T01:36:58.755573038+01:00","level":"INFO","msg":"handler: started","stream_id":"6n092qtf"}
+{"time":"2025-08-12T01:36:58.755558578+01:00","level":"INFO","msg":"sender: started","stream_id":"6n092qtf"}
+{"time":"2025-08-12T01:36:59.03416869+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-12T02:06:28.805609968+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/graphql","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-08-12T02:13:21.650701947+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-12T02:13:21.650880461+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-12T02:13:22.44413064+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-12T02:13:22.648317762+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-08-12T02:13:22.651572888+01:00","level":"INFO","msg":"stream: closing","id":"6n092qtf"}
+{"time":"2025-08-12T02:13:22.651593639+01:00","level":"INFO","msg":"handler: closed","stream_id":"6n092qtf"}
+{"time":"2025-08-12T02:13:22.651602599+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"6n092qtf"}
+{"time":"2025-08-12T02:13:22.651642579+01:00","level":"INFO","msg":"sender: closed","stream_id":"6n092qtf"}
+{"time":"2025-08-12T02:13:22.652030889+01:00","level":"INFO","msg":"stream: closed","id":"6n092qtf"}

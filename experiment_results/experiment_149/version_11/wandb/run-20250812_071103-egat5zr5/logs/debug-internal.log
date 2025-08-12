@@ -1,0 +1,16 @@
+{"time":"2025-08-12T07:11:03.089930219+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_149/version_11/wandb/run-20250812_071103-egat5zr5/logs/debug-core.log"}
+{"time":"2025-08-12T07:11:03.347033463+01:00","level":"INFO","msg":"created new stream","id":"egat5zr5"}
+{"time":"2025-08-12T07:11:03.347073394+01:00","level":"INFO","msg":"stream: started","id":"egat5zr5"}
+{"time":"2025-08-12T07:11:03.347115435+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"egat5zr5"}
+{"time":"2025-08-12T07:11:03.347127106+01:00","level":"INFO","msg":"sender: started","stream_id":"egat5zr5"}
+{"time":"2025-08-12T07:11:03.347162556+01:00","level":"INFO","msg":"handler: started","stream_id":"egat5zr5"}
+{"time":"2025-08-12T07:11:03.669644207+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-12T07:51:02.121965817+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-12T07:51:02.122164403+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-12T07:51:03.123593288+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading config.yaml","runtime_seconds":0.47630736,"progress":"5.8KB/5.8KB"}],"total_operations":1}}
+{"time":"2025-08-12T07:51:03.162961551+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-12T07:51:03.362173014+01:00","level":"INFO","msg":"stream: closing","id":"egat5zr5"}
+{"time":"2025-08-12T07:51:03.362189554+01:00","level":"INFO","msg":"handler: closed","stream_id":"egat5zr5"}
+{"time":"2025-08-12T07:51:03.362197894+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"egat5zr5"}
+{"time":"2025-08-12T07:51:03.362211795+01:00","level":"INFO","msg":"sender: closed","stream_id":"egat5zr5"}
+{"time":"2025-08-12T07:51:03.362770028+01:00","level":"INFO","msg":"stream: closed","id":"egat5zr5"}

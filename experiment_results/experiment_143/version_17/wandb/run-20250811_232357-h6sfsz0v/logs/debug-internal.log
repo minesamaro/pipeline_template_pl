@@ -1,0 +1,7 @@
+{"time":"2025-08-11T23:23:58.984132817+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_143/version_17/wandb/run-20250811_232357-h6sfsz0v/logs/debug-core.log"}
+{"time":"2025-08-11T23:23:59.277705257+01:00","level":"INFO","msg":"created new stream","id":"h6sfsz0v"}
+{"time":"2025-08-11T23:23:59.277745917+01:00","level":"INFO","msg":"stream: started","id":"h6sfsz0v"}
+{"time":"2025-08-11T23:23:59.277767137+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"h6sfsz0v"}
+{"time":"2025-08-11T23:23:59.277796867+01:00","level":"INFO","msg":"sender: started","stream_id":"h6sfsz0v"}
+{"time":"2025-08-11T23:23:59.277868427+01:00","level":"INFO","msg":"handler: started","stream_id":"h6sfsz0v"}
+{"time":"2025-08-11T23:23:59.560360507+01:00","level":"INFO","msg":"Starting system monitor"}
