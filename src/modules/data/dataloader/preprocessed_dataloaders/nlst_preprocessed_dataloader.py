@@ -285,7 +285,7 @@ class NLSTPreprocessedDataLoader(Dataset):
             )
 
         if self.apply_data_augmentations and subset_type == "train":
-            print("Data Aug")
+            #print("Data Aug")
             label_to_files = defaultdict(list)
             for file, label in zip(file_names, labels):
                 label_to_files[label].append(file)
@@ -305,7 +305,7 @@ class NLSTPreprocessedDataLoader(Dataset):
             # Track which indices are duplicates/augmented
             original_count = len(file_names)
             self.augmented_indices = set(range(original_count, len(self.file_names)))
-            print(f"Original shape: {original_count}, New Shape: {len(self.file_names)}")
+            #print(f"Original shape: {original_count}, New Shape: {len(self.file_names)}")
         else:
             self.file_names = file_names
             self.labels = labels
@@ -437,9 +437,9 @@ class NLSTPreprocessedDataLoader(Dataset):
             if image.ndim == 3 and self.config.dimension != 3:
                 image = numpy.squeeze(image)
             elif image.ndim == 4 and self.config.dimension == 3:
-                print(f"Image shape before squeeze: {image.shape}")
+                #print(f"Image shape before squeeze: {image.shape}")
                 image = numpy.squeeze(image, axis=-1)
-                print(f"Image shape after augmentation: {image.shape}")
+                #print(f"Image shape after augmentation: {image.shape}")
 
         if self.visualization:
             self.visualization_uploader.upload_image(
@@ -543,7 +543,7 @@ class NLSTPreprocessedDataLoader(Dataset):
 
         # Interpolate entire volume
         resampled_volume = zoom(sub_volume, zoom_factor, order=1)  # order=1 = linear interp
-        print(f"Resampled volume shape: {resampled_volume.shape}")
+        #print(f"Resampled volume shape: {resampled_volume.shape}")
         return resampled_volume
 
     def _get_scan(self, data_index, data_path, pid, study_yr, slice_idx, reversed):
