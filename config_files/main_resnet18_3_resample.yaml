@@ -1,11 +1,11 @@
 defaults:
   - data: data3
-  - data/dataloader: nlst_preprocessed_dataloader_3
+  - data/dataloader: nlst_preprocessed_dataloader_3_resample
   - data/metadataframe: nlst_preprocessed_metadataframe
   - experiment_execution/ids: ids
   - experiment_execution/info: info
   - experiment_execution/paths: paths
-  - hyperparameter_grid_based_execution: luna25_hyperparameter_grid_based_execution3dmissing # Change this if necessary
+  - hyperparameter_grid_based_execution: luna25_hyperparameter_grid_based_execution3d # Change this if necessary
   - model: model_resnet183d
   - model/model_pipeline: luna25_model_pipeline # Change this if necessary
   - model/pytorch_lightning_model: nlst_pytorch_lightning_resnet502d
@@ -23,6 +23,6 @@ weighted_random_sampler: False
 visualize_imgur: False
 roi: whole_slice
 wandb:
-  project_name: "cs_ws_resnet18_3d"
+  project_name: "cs_ws_resnet18_3d_resample"
   entity: "nlst"
   name: "resnet18_3d"

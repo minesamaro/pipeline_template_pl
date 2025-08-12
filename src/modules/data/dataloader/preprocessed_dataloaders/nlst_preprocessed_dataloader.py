@@ -1,6 +1,7 @@
 from collections import defaultdict
 import pandas
 from sklearn.model_selection import StratifiedKFold, train_test_split
+from scipy.ndimage import map_coordinates, zoom
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader as TorchDataLoader, WeightedRandomSampler
 import numpy
@@ -510,17 +511,58 @@ class NLSTPreprocessedDataLoader(Dataset):
 
         return start, end
 
-    
-    def _get_scan(self, data_index, data_path, pid, study_yr, slice_idx, reversed):
-        if self.config.resample_z:
-            dicom_image = numpy.load() #TODO: Insert path to the numpy file
+    def resample_volume_centered_full(dicom_image, slice_idx, n_slices=9, coverage='full'):
+        """
+        Resample the *entire* 3D image along the slice axis to n_slices,
+        centered around the nodule slice.
+        
+        Parameters:
+            dicom_image: np.ndarray [num_slices, H, W]
+            slice_idx: int - center slice of nodule
+            n_slices: int - desired number of output slices
+            coverage: 'full' for whole scan, or int specifying number of original slices to span
+        """
+        total_slices = dicom_image.shape[0]
+        if slice_idx is None:
+            slice_idx = total_slices // 2
+
+        # Define the range we want to cover
+        if coverage == 'full':
+            start = 0
+            end = total_slices
         else:
-            dicom_image = numpy.load(
+            half_span = coverage // 2
+            start = max(0, slice_idx - half_span)
+            end = min(total_slices, slice_idx + half_span)
+
+        # Extract the region of interest
+        sub_volume = dicom_image[start:end]
+
+        # Compute zoom factor along z-axis only
+        zoom_factor = (n_slices / sub_volume.shape[0], 1, 1)
+
+        # Interpolate entire volume
+        resampled_volume = zoom(sub_volume, zoom_factor, order=1)  # order=1 = linear interp
+        print(f"Resampled volume shape: {resampled_volume.shape}")
+        return resampled_volume
+
+    def _get_scan(self, data_index, data_path, pid, study_yr, slice_idx, reversed):
+        dicom_image = numpy.load(
                 os.path.join(
                     data_path,
                     f"{pid}_{self.roi}.npy"
                 )
             )
+        
+        if 'resample_z' in self.config:
+            if self.config.resample_z:
+                # Load the full 3D volume and resample it
+                n_slices = 9
+                dicom_image = self.resample_volume_centered_full(
+                        dicom_image, slice_idx=slice_idx, n_slices=n_slices, coverage=160
+                )
+        else:
+            
 
             n_slices = 9
 
