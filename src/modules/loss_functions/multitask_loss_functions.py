@@ -28,7 +28,7 @@ class MultitaskLossFunction(torch.nn.Module):
         stage_loss = cross_entropy(
             input=stage_logits,
             target=stage_targets,
-            weight=self.weights_stage.to(stage_logits.device)
+            #weight=self.weights_stage.to(stage_logits.device)
         )
 
         loss = alpha * surv_loss + beta * stage_loss
