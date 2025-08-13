@@ -1,0 +1,3 @@
+model_id: MT
+model_name: Multitask
+dimension: ${..data.dimension}

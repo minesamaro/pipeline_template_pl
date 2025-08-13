@@ -1,13 +1,12 @@
 from torch.nn.functional import binary_cross_entropy_with_logits, cross_entropy
 import torch.nn.functional as F
 import torch
-from pytorch_msssim import ssim, ms_ssim
 
 from src.modules.data.metadataframe.metadataframe import MetadataFrame
 
-class RegularizationLossFunction(torch.nn.Module):
+class MultitaskLossFunction(torch.nn.Module):
     def __init__(self, config, experiment_execution_paths):
-        super(RegularizationLossFunction, self).__init__()
+        super(MultitaskLossFunction, self).__init__()
         self.config = config
 
         self.weights_surv = self._get_label_weights(experiment_execution_paths, label='label')

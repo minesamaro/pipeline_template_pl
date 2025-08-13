@@ -34,18 +34,32 @@ class ResBlock2D(nn.Module):
 class SqueezeExcitation2D(nn.Module):
     def __init__(self, channels, reduction=16):
         super().__init__()
-        self.avgpool = nn.AdaptiveAvgPool2d(1)
-        self.fc = nn.Sequential(
-            nn.Linear(channels, channels // reduction, bias=False),
-            nn.ReLU(inplace=True),
-            nn.Linear(channels // reduction, channels, bias=False),
-            nn.Sigmoid()
-        )
+        self.global_pool = nn.AvgPool2d(1)  # Squeeze
+        self.fc1 = nn.Linear(channels, channels // reduction, bias=False)
+        self.relu = nn.ReLU(inplace=True)
+        self.fc2 = nn.Linear(channels // reduction, channels, bias=False)
+        self.sigmoid = nn.Sigmoid()
+
     def forward(self, x):
         b, c, _, _ = x.shape
-        y = self.avgpool(x).view(b, c)
-        y = self.fc(y).view(b, c, 1, 1)
-        return x * y
+        
+        # Squeeze: global average pooling → (B, C, 1, 1) → (B, C)
+        y = self.global_pool(x).view(b, c)
+        
+        # Excitation: FC → ReLU → FC → Sigmoid
+        y = self.fc1(y)
+        y = self.relu(y)
+        y = self.fc2(y)
+        y = self.sigmoid(y).view(b, c, 1, 1)
+        
+        # Scale: multiply input by channel-wise weights
+        scaled = x * y
+        
+        # Residual addition: scaled features + original features
+        out = scaled + x
+        
+        return out
+
 
 class BranchBlock2D(nn.Module):
     def __init__(self, channels, use_sem=True):
@@ -62,60 +76,61 @@ class BranchBlock2D(nn.Module):
 # Multi-task 2D network
 # ------------------------------
 class MultiTaskSurvivalStageNet2D(nn.Module):
-    def __init__(self, in_channels=1, base_channels=32, use_sem=True, dropout=0.4):
+    def __init__(self, in_channels=1, base_channels=32, stage_classes=4, use_sem=True):
         super().__init__()
-        # Shared encoder
-        self.stem = nn.Sequential(
-            nn.Conv2d(in_channels, base_channels, kernel_size=7, stride=2, padding=3, bias=False),
-            nn.BatchNorm2d(base_channels),
-            nn.ReLU(inplace=True),
-            nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
-        )
-        self.shared1 = ResBlock2D(base_channels, base_channels*2, stride=1)
-        self.shared2 = ResBlock2D(base_channels*2, base_channels*4, stride=2)
-        self.shared3 = ResBlock2D(base_channels*4, base_channels*8, stride=2)
+        # Shared encoder — no stem, directly ResBlocks
+        self.shared1 = ResBlock2D(in_channels, base_channels, stride=1)
+        self.shared2 = ResBlock2D(base_channels, base_channels * 2, stride=2)
+        self.shared3 = ResBlock2D(base_channels * 2, base_channels * 4, stride=2)
+        #self.shared4 = ResBlock2D(base_channels * 4, base_channels * 8, stride=2)
 
         # Survival branch
-        self.surv_branch_block1 = BranchBlock2D(base_channels*8, use_sem=use_sem)
-        self.surv_branch_block2 = BranchBlock2D(base_channels*8, use_sem=use_sem)
-        self.surv_pool = nn.AdaptiveAvgPool2d(1)
+        self.surv_branch_block1 = BranchBlock2D(base_channels * 4, use_sem=use_sem)
+        self.surv_branch_block2 = BranchBlock2D(base_channels * 4, use_sem=use_sem)
+        self.surv_pool = nn.AdaptativeAvgPool2d(1)
         self.surv_mlp = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(base_channels*8, 256),
+            nn.Linear(base_channels * 4, 1024),
             nn.ReLU(inplace=True),
-            nn.Dropout(dropout),
-            nn.Linear(256, 1)  # risk score for Cox, or sigmoid for binary
+            nn.Dropout(0.5),
+            nn.Linear(1024, 128),
+            nn.ReLU(inplace=True),
+            nn.Dropout(0.5),
+            nn.Linear(128, 1),
         )
 
         # Stage branch
-        self.stage_branch_block1 = BranchBlock2D(base_channels*8, use_sem=use_sem)
-        self.stage_branch_block2 = BranchBlock2D(base_channels*8, use_sem=use_sem)
+        self.stage_branch_block1 = BranchBlock2D(base_channels * 8, use_sem=use_sem)
+        self.stage_branch_block2 = BranchBlock2D(base_channels * 8, use_sem=use_sem)
         self.stage_pool = nn.AdaptiveAvgPool2d(1)
         self.stage_mlp = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(base_channels*8, 256),
+            nn.Linear(base_channels * 8, 1024),
             nn.ReLU(inplace=True),
-            nn.Dropout(dropout),
-            nn.Linear(256, 1)  # binary stage logit
+            nn.Dropout(0.5),
+            nn.Linear(1024, 128),
+            nn.ReLU(inplace=True),
+            nn.Dropout(0.5),
+            nn.Linear(128, stage_classes)  # Multiclass output
         )
 
     def forward(self, x):
         # Shared encoder
-        x = self.stem(x)
         x = self.shared1(x)
         x = self.shared2(x)
         x = self.shared3(x)
+        #x = self.shared4(x)
 
         # Survival branch
         s = self.surv_branch_block1(x)
         s = self.surv_branch_block2(s)
         s = self.surv_pool(s)
-        surv_risk = self.surv_mlp(s).squeeze(1)
+        surv_out = self.surv_mlp(s).squeeze(-1)
 
         # Stage branch
         t = self.stage_branch_block1(x)
         t = self.stage_branch_block2(t)
         t = self.stage_pool(t)
-        stage_logit = self.stage_mlp(t).squeeze(1)
+        stage_out = self.stage_mlp(t)  # logits for multiclass
 
-        return surv_risk, stage_logit
+        return surv_out, stage_out

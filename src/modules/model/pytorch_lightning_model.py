@@ -17,6 +17,9 @@ from src.modules.model.resnet182d.pytorch_lightning_resnet18_2d_model_oneclass \
 
 from src.modules.model.regularization.pytorch_lightning_regularization import \
                 PyTorchLightningRegularizationModel
+from src.modules.model.multitasksem.pytorch_lightning_multitasksem import \
+                PyTorchLightningMultitaskSEMModel
+
 
 class PyTorchLightningModel:
     def __new__(cls, config, experiment_execution_paths, test_dataloader=None):
@@ -69,6 +72,12 @@ class PyTorchLightningModel:
             )
         elif config.model_name == "Regularization":
             return PyTorchLightningRegularizationModel(
+                config=config.hyperparameters,
+                experiment_execution_paths=experiment_execution_paths,
+                test_dataloader=test_dataloader
+            )
+        elif config.model_name == "Multitask":
+            return PyTorchLightningMultitaskSEMModel(
                 config=config.hyperparameters,
                 experiment_execution_paths=experiment_execution_paths,
                 test_dataloader=test_dataloader
