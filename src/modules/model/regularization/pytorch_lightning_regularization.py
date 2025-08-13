@@ -63,7 +63,7 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
         return
 
     @torch.no_grad()
-    def save_reconstruction_examples(self):
+    def save_reconstruction_samples(self):
         self.model.eval()
 
         # Helper to log a few batches to W&B
@@ -89,7 +89,9 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
 
             wandb.log({f"{prefix}_reconstructions_epoch{self.current_epoch}": images_to_log})
         # Validation examples
-        val_loader = self.trainer.datamodule.val_dataloader()
+        val_loader = self.trainer.val_dataloaders
+        if isinstance(val_loader, list):
+            val_loader = val_loader[0]  # Use the first validation loader if multiple
         log_from_loader(val_loader, "val", num_batches=2)
 
         # Test examples (from stored reference)
