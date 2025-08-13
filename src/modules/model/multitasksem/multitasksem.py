@@ -102,11 +102,8 @@ class MultiTaskSurvivalStageNet2D(nn.Module):
         # Stage branch
         self.stage_branch_block1 = BranchBlock2D(base_channels * 4, use_sem=use_sem)
         self.stage_branch_block2 = BranchBlock2D(base_channels * 4, use_sem=use_sem)
-<<<<<<< HEAD
-        self.stage_pool = nn.AvgPool2d(1)
-=======
         self.stage_pool = nn.AdaptiveAvgPool2d(1)
->>>>>>> f0fd0dbef581bd3dfa43eb905be602e1459939e2
+
         self.stage_mlp = nn.Sequential(
             nn.Flatten(),
             nn.Linear(base_channels * 4, 1024),

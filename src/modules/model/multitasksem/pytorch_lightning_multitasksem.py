@@ -275,9 +275,9 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
         self.val_stage_loss.append(stage_loss * data['image'].shape[0])
 
     def on_validation_epoch_end(self):
-        labels = torch.cat(self.val_labels, dim=0).to(self.device)
+        labels = torch.cat(self.val_labels, dim=0).to(self.device).view(-1)
         predicted_labels = torch.cat(self.val_predicted_labels, dim=0).to(self.device)
-        stage_labels = torch.cat(self.val_stage_labels, dim=0).to(self.device)
+        stage_labels = torch.cat(self.val_stage_labels, dim=0).to(self.device).squeeze(-1).long()
         predicted_stage_labels = torch.cat(self.val_stage_predicted_labels, dim=0).to(self.device)
 
         predicted_activated_labels = (predicted_labels > 0.5).int()
@@ -285,6 +285,8 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
         test_binary_preds = (predicted_labels > 0.5).int().view(-1)
         test_binary_thr025 = (predicted_labels > 0.25).int().view(-1)
         test_binary_thr075 = (predicted_labels > 0.75).int().view(-1)
+
+        print(f"Stage labels shape {stage_labels} and stage predictions shape {predicted_stage_labels}")
 
         # Print imbalance information
         #self.print_inbalance(predicted_activated_labels, labels, stage_name="Validation Set")
@@ -346,22 +348,22 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
                 preds=val_stage_pred_classes,
                 target=stage_labels.int(),
                 task='multiclass',
-                num_classes=self.num_classes).item(),
+                num_classes=self.stage_num_classes).item(),
             'val_stage_auroc': auroc(
                 preds=predicted_stage_labels,
                 target=stage_labels.int(),
                 task='multiclass',
-                num_classes=self.num_classes).item(),
+                num_classes=self.stage_num_classes).item(),
             'val_stage_precision0.5': precision(
                 preds=val_stage_pred_classes,
                 target=stage_labels.int(),
                 task='multiclass',
-                num_classes=self.num_classes).item(),
+                num_classes=self.stage_num_classes).item(),
             'val_stage_recall0.5': recall(
                 preds=val_stage_pred_classes,
                 target=stage_labels.int(),
                 task='multiclass',
-                num_classes=self.num_classes).item(),
+                num_classes=self.stage_num_classes).item(),
             'val_stage_balanced_accuracy0.5': balanced_accuracy_score(
                 y_true=stage_labels.cpu().numpy(),
                 y_pred=val_stage_pred_classes.cpu().numpy()
