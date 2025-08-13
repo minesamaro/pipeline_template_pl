@@ -3,6 +3,9 @@ from sklearn.metrics import balanced_accuracy_score
 import pytorch_lightning
 import torch
 import wandb
+import os
+import random
+import torchvision
 
 from src.modules.model.regularization.regularization import UNetSurvival
 from src.modules.loss_functions.regularization_loss_functions \
@@ -23,6 +26,9 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
         self.predicted_labels = None
         self.weighted_losses = None
         self.test_ref = test_dataloader
+        self.best_val_auc = 0.0
+        self.save_dir = '/nas-ctm01/homes/mipaiva/vis_reg_unet/'
+        os.makedirs(self.save_dir, exist_ok=True)
 
         self.to(torch.device(self.config.device))
         self.test_dataloader_ref = test_dataloader
@@ -55,6 +61,41 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
             print("✅ Model is predicting both classes.")
 
         return
+
+    @torch.no_grad()
+    def save_reconstruction_examples(self):
+        self.model.eval()
+
+        # Helper to log a few batches to W&B
+        def log_from_loader(loader, prefix, num_batches):
+            batches = random.sample(list(loader), num_batches)
+            images_to_log = []
+
+            for idx, batch in enumerate(batches):
+                data, _ = batch
+                images = data['image'].to(self.device)
+                _, recon, _, _ = self.model(images)
+
+                # stack input and recon side-by-side for each sample
+                # [C, H, 2*W]
+                paired_imgs = []
+                for i in range(images.size(0)):
+                    inp = images[i]
+                    outp = recon[i]
+                    pair = torch.cat([inp, outp], dim=2)  # concat in width dimension
+                    paired_imgs.append(wandb.Image(pair.cpu(), caption=f"{prefix} batch{idx} sample{i}"))
+
+                images_to_log.extend(paired_imgs)
+
+            wandb.log({f"{prefix}_reconstructions_epoch{self.current_epoch}": images_to_log})
+        # Validation examples
+        val_loader = self.trainer.datamodule.val_dataloader()
+        log_from_loader(val_loader, "val", num_batches=2)
+
+        # Test examples (from stored reference)
+        if self.test_dataloader_ref:
+            log_from_loader(self.test_dataloader_ref, "test", num_batches=3)
+
 
     
     def evaluate_on_test_set(self):
@@ -241,6 +282,12 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
 
         # Print imbalance information
         #self.print_inbalance(predicted_activated_labels, labels, stage_name="Validation Set")
+        val_auroc = auroc(
+            preds=predicted_labels,
+            target=labels.int(),
+            task='binary').item()
+        
+
         metrics_for_logging = {
             'val_accuracy0.5': accuracy(
                 preds=test_binary_preds,
@@ -304,8 +351,12 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
             on_step=False,
             prog_bar=False
         )
-        
-     
+
+        if val_auroc > self.best_val_auc:
+            self.best_val_auc = val_auroc
+            print(f"🌟 New best val_auc: {val_auroc:.4f} at epoch {self.current_epoch}")
+            self.save_reconstruction_samples()
+
     def on_test_epoch_start(self):
         self.labels = []
         self.predicted_labels = []
