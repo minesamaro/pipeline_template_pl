@@ -16,10 +16,12 @@ class MultitaskLossFunction(torch.nn.Module):
 
     def forward(self, surv_output, surv_target, stage_logits, stage_targets, alpha=1, beta=0.5):
         print(f"Survival output shape: {surv_output.shape}, Target shape: {surv_target.shape}")
+        print(f"Stage output shape: {stage_logits.shape}, Target shape: {stage_targets.shape}")
+
         # Survival Loss 
         surv_loss = binary_cross_entropy_with_logits(
             input=surv_output,
-            target=surv_target,
+            target=surv_target.view(-1),
             
             weight=self.weights_surv.to(surv_output.device)
         )
@@ -27,8 +29,7 @@ class MultitaskLossFunction(torch.nn.Module):
         # Stage loss (cross entropy)
         stage_loss = cross_entropy(
             input=stage_logits,
-            target=stage_targets,
-            #weight=self.weights_stage.to(stage_logits.device)
+            target=stage_targets.squeeze(-1).long()
         )
 
         loss = alpha * surv_loss + beta * stage_loss

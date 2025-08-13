@@ -34,7 +34,7 @@ class ResBlock2D(nn.Module):
 class SqueezeExcitation2D(nn.Module):
     def __init__(self, channels, reduction=16):
         super().__init__()
-        self.global_pool = nn.AvgPool2d(1)  # Squeeze
+        self.global_pool = nn.AdaptiveAvgPool2d(1)  # Squeeze
         self.fc1 = nn.Linear(channels, channels // reduction, bias=False)
         self.relu = nn.ReLU(inplace=True)
         self.fc2 = nn.Linear(channels // reduction, channels, bias=False)
@@ -87,7 +87,7 @@ class MultiTaskSurvivalStageNet2D(nn.Module):
         # Survival branch
         self.surv_branch_block1 = BranchBlock2D(base_channels * 4, use_sem=use_sem)
         self.surv_branch_block2 = BranchBlock2D(base_channels * 4, use_sem=use_sem)
-        self.surv_pool = nn.AvgPool2d(1)
+        self.surv_pool = nn.AdaptiveAvgPool2d(1)
         self.surv_mlp = nn.Sequential(
             nn.Flatten(),
             nn.Linear(base_channels * 4, 1024),
@@ -102,10 +102,14 @@ class MultiTaskSurvivalStageNet2D(nn.Module):
         # Stage branch
         self.stage_branch_block1 = BranchBlock2D(base_channels * 4, use_sem=use_sem)
         self.stage_branch_block2 = BranchBlock2D(base_channels * 4, use_sem=use_sem)
+<<<<<<< HEAD
         self.stage_pool = nn.AvgPool2d(1)
+=======
+        self.stage_pool = nn.AdaptiveAvgPool2d(1)
+>>>>>>> f0fd0dbef581bd3dfa43eb905be602e1459939e2
         self.stage_mlp = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(base_channels * 8, 1024),
+            nn.Linear(base_channels * 4, 1024),
             nn.ReLU(inplace=True),
             nn.Dropout(0.5),
             nn.Linear(1024, 128),

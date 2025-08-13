@@ -282,9 +282,9 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
 
         predicted_activated_labels = (predicted_labels > 0.5).int()
         val_stage_pred_classes = predicted_stage_labels.argmax(dim=1)
-        test_binary_preds = (predicted_labels > 0.5).int()
-        test_binary_thr025 = (predicted_labels > 0.25).int()
-        test_binary_thr075 = (predicted_labels > 0.75).int()
+        test_binary_preds = (predicted_labels > 0.5).int().view(-1)
+        test_binary_thr025 = (predicted_labels > 0.25).int().view(-1)
+        test_binary_thr075 = (predicted_labels > 0.75).int().view(-1)
 
         # Print imbalance information
         #self.print_inbalance(predicted_activated_labels, labels, stage_name="Validation Set")
@@ -406,9 +406,9 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
         # Print imbalance information
         #self.print_inbalance(predicted_activated_labels, labels, stage_name="Test Set")
 
-        test_binary_preds = (test_preds > 0.5).int()
-        test_binary_thr025 = (test_preds > 0.25).int()
-        test_binary_thr075 = (test_preds > 0.75).int()
+        test_binary_preds = (test_preds > 0.5).int().view(-1)
+        test_binary_thr025 = (test_preds > 0.25).int().view(-1)
+        test_binary_thr075 = (test_preds > 0.75).int().view(-1)
 
         # Print imbalance information
         #self.print_inbalance(test_binary_preds, test_labels, stage_name="Test Set")
