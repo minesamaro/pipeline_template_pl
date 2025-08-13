@@ -1,0 +1,28 @@
+defaults:
+  - data: data
+  - data/dataloader: best_reg_preprocessed_dataloader
+  - data/metadataframe: nlst_preprocessed_metadataframe
+  - experiment_execution/ids: ids
+  - experiment_execution/info: info
+  - experiment_execution/paths: paths
+  - hyperparameter_grid_based_execution: false_hyperparameter_grid_based_execution # Change this if necessary
+  - model: model_regularization
+  - model/model_pipeline: best_reg_model_pipeline # Change this if necessary
+  - model/pytorch_lightning_model: best_reg_pytorch_lightning
+  - results_analysis/model_test_performance_metrics_dataframe: luna25_model_test_performance_metrics_dataframe # Change this if necessary
+  - results_analysis/model_training_performance_metrics_figure: luna25_model_training_performance_metrics_figure # Change this if necessary
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+  - _self_
+hydra:
+  output_subdir: null
+  run:
+    dir: .
+seed_value: 22
+weighted_random_sampler: False
+visualize_imgur: False
+roi: ws
+wandb:
+  project_name: "best_reg"
+  entity: "nlst"
+  name: "reg_unet"
