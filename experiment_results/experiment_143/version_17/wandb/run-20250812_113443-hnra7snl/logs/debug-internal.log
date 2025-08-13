@@ -1,0 +1,18 @@
+{"time":"2025-08-12T11:34:44.314124983+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_143/version_17/wandb/run-20250812_113443-hnra7snl/logs/debug-core.log"}
+{"time":"2025-08-12T11:34:44.576939128+01:00","level":"INFO","msg":"created new stream","id":"hnra7snl"}
+{"time":"2025-08-12T11:34:44.576986248+01:00","level":"INFO","msg":"stream: started","id":"hnra7snl"}
+{"time":"2025-08-12T11:34:44.577031658+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"hnra7snl"}
+{"time":"2025-08-12T11:34:44.577059088+01:00","level":"INFO","msg":"handler: started","stream_id":"hnra7snl"}
+{"time":"2025-08-12T11:34:44.577140218+01:00","level":"INFO","msg":"sender: started","stream_id":"hnra7snl"}
+{"time":"2025-08-12T11:34:44.874180579+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-12T23:01:12.579996363+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_ws_vgg16_3d_test/hnra7snl/file_stream\": EOF"}
+{"time":"2025-08-12T23:12:12.543179912+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/cs_ws_vgg16_3d_test/hnra7snl/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-08-12T23:49:36.11411042+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-12T23:49:36.11431621+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-12T23:49:36.868900809+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-12T23:49:37.065503972+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-08-12T23:49:37.076451061+01:00","level":"INFO","msg":"stream: closing","id":"hnra7snl"}
+{"time":"2025-08-12T23:49:37.076468691+01:00","level":"INFO","msg":"handler: closed","stream_id":"hnra7snl"}
+{"time":"2025-08-12T23:49:37.076477871+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"hnra7snl"}
+{"time":"2025-08-12T23:49:37.076545941+01:00","level":"INFO","msg":"sender: closed","stream_id":"hnra7snl"}
+{"time":"2025-08-12T23:49:37.079755152+01:00","level":"INFO","msg":"stream: closed","id":"hnra7snl"}

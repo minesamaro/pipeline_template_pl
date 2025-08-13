@@ -1,0 +1,16 @@
+{"time":"2025-08-13T00:28:41.547126838+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_154/version_7/wandb/run-20250813_002840-yftureey/logs/debug-core.log"}
+{"time":"2025-08-13T00:28:41.82812209+01:00","level":"INFO","msg":"created new stream","id":"yftureey"}
+{"time":"2025-08-13T00:28:41.828211975+01:00","level":"INFO","msg":"stream: started","id":"yftureey"}
+{"time":"2025-08-13T00:28:41.828250327+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"yftureey"}
+{"time":"2025-08-13T00:28:41.828365247+01:00","level":"INFO","msg":"sender: started","stream_id":"yftureey"}
+{"time":"2025-08-13T00:28:41.828268123+01:00","level":"INFO","msg":"handler: started","stream_id":"yftureey"}
+{"time":"2025-08-13T00:28:42.052215368+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-13T01:24:28.236535621+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-13T01:24:28.236809762+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-13T01:24:28.98887325+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-13T01:24:29.239360805+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 550-550, summary, console lines 4-5","runtime_seconds":0.250057335}],"total_operations":1}}
+{"time":"2025-08-13T01:24:29.25902676+01:00","level":"INFO","msg":"stream: closing","id":"yftureey"}
+{"time":"2025-08-13T01:24:29.259062941+01:00","level":"INFO","msg":"handler: closed","stream_id":"yftureey"}
+{"time":"2025-08-13T01:24:29.259080493+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"yftureey"}
+{"time":"2025-08-13T01:24:29.259172262+01:00","level":"INFO","msg":"sender: closed","stream_id":"yftureey"}
+{"time":"2025-08-13T01:24:29.259644819+01:00","level":"INFO","msg":"stream: closed","id":"yftureey"}
