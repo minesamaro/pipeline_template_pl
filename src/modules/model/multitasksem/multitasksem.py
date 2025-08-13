@@ -76,7 +76,7 @@ class BranchBlock2D(nn.Module):
 # Multi-task 2D network
 # ------------------------------
 class MultiTaskSurvivalStageNet2D(nn.Module):
-    def __init__(self, in_channels=1, base_channels=32, stage_classes=4, use_sem=True):
+    def __init__(self, in_channels=1, base_channels=32, stage_classes=7, use_sem=True):
         super().__init__()
         # Shared encoder — no stem, directly ResBlocks
         self.shared1 = ResBlock2D(in_channels, base_channels, stride=1)
@@ -87,7 +87,7 @@ class MultiTaskSurvivalStageNet2D(nn.Module):
         # Survival branch
         self.surv_branch_block1 = BranchBlock2D(base_channels * 4, use_sem=use_sem)
         self.surv_branch_block2 = BranchBlock2D(base_channels * 4, use_sem=use_sem)
-        self.surv_pool = nn.AdaptativeAvgPool2d(1)
+        self.surv_pool = nn.AvgPool2d(1)
         self.surv_mlp = nn.Sequential(
             nn.Flatten(),
             nn.Linear(base_channels * 4, 1024),
@@ -102,7 +102,7 @@ class MultiTaskSurvivalStageNet2D(nn.Module):
         # Stage branch
         self.stage_branch_block1 = BranchBlock2D(base_channels * 8, use_sem=use_sem)
         self.stage_branch_block2 = BranchBlock2D(base_channels * 8, use_sem=use_sem)
-        self.stage_pool = nn.AdaptiveAvgPool2d(1)
+        self.stage_pool = nn.AvgPool2d(1)
         self.stage_mlp = nn.Sequential(
             nn.Flatten(),
             nn.Linear(base_channels * 8, 1024),

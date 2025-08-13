@@ -19,11 +19,7 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
         )
         self.labels = None
         self.model = MultiTaskSurvivalStageNet2D(
-            in_channels=config.model.in_channels,
-            base_channels=config.model.base_channels,
-            use_sem=config.model.use_sem,
-            dropout=config.model.dropout,
-            stage_out_classes=config.model.stage_out_classes
+            in_channels=1, base_channels=32, stage_classes=7, use_sem=True
         )
         self.predicted_labels = None
         self.predicted_stage_labels = None
