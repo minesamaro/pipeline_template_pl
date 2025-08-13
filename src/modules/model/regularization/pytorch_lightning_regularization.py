@@ -63,7 +63,7 @@ class PyTorchLightningRegularizationModel(pytorch_lightning.LightningModule):
         return
 
     @torch.no_grad()
-    def save_reconstruction_examples(self):
+    def save_reconstruction_samples(self):
         self.model.eval()
 
         # Helper to log a few batches to W&B
