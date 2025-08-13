@@ -1,0 +1,26 @@
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err', 'dicom_slice_count', 'original_slice_thickness_mm', 'sct_slice_new_1', 'reversed', 'sct_slice_final_mapped', 'stage']
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err', 'dicom_slice_count', 'original_slice_thickness_mm', 'sct_slice_new_1', 'reversed', 'sct_slice_final_mapped', 'stage']
+Label weights: tensor([2.9900], device='cuda:0', dtype=torch.float64), Stage weights: tensor([5.7692], device='cuda:0', dtype=torch.float64)
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 54, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 150, in run_experiment_pipeline
+    model_pipeline = ModelPipeline(
+                     ^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/model_pipeline.py", line 33, in __init__
+    self.pytorch_lightning_model = PyTorchLightningModel(
+                                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/pytorch_lightning_model.py", line 80, in __new__
+    return PyTorchLightningMultitaskSEMModel(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/multitasksem/pytorch_lightning_multitasksem.py", line 22, in __init__
+    in_channels=config.model.in_channels,
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+omegaconf.errors.ConfigAttributeError: Key 'in_channels' is not in struct
+    full_key: model.pytorch_lightning_model.hyperparameters.model.in_channels
+    object_type=dict
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
