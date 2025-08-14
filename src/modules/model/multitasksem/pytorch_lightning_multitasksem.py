@@ -70,9 +70,6 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
         with torch.no_grad():
             for batch in self.test_dataloader_ref:
                 data, labels, stage_labels = batch
-                print(f"Batch size: {data['image'].shape[0]}, Labels shape: {labels.shape}, Stage labels shape: {stage_labels.shape}")
-                print(f"Stage labels: {stage_labels}")
-                print(f"Stage labels (shape): {stage_labels.shape}")
                 surv_logits, stage_logits = self.model(data['image'].to(self.device))
                 probs = torch.sigmoid(surv_logits)
                 stage_probs = torch.softmax(stage_logits, dim=1)
@@ -82,7 +79,7 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
                 test_stage_labels.append(stage_labels)
                 test_stage_preds.append(stage_probs)
 
-        test_labels = torch.cat(test_labels, dim=0).to(self.device)
+        test_labels = torch.cat(test_labels, dim=0).to(self.device).view(-1)
         test_preds = torch.cat(test_preds, dim=0).to(self.device)
         test_stage_labels = torch.cat(test_stage_labels, dim=0).to(self.device).view(-1)
         test_stage_preds = torch.cat(test_stage_preds, dim=0).to(self.device)
@@ -259,9 +256,6 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
 
     def validation_step(self, batch, batch_idx):
         data, labels, stage_labels = batch
-        print(f"\nBatch size: {data['image'].shape[0]}, Labels shape: {labels.shape}, Stage labels shape: {stage_labels.shape}")
-        print(f"Stage labels: {stage_labels}")
-        print(f"Stage labels (shape): {stage_labels.shape}")
 
         surv_logits, stage_logits = self.model(data['image'].to(self.device))
         activated_labels = torch.sigmoid(surv_logits)
@@ -292,13 +286,6 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
         test_binary_preds = (predicted_labels > 0.5).int().view(-1)
         test_binary_thr025 = (predicted_labels > 0.25).int().view(-1)
         test_binary_thr075 = (predicted_labels > 0.75).int().view(-1)
-
-        print(f"\nLabels shape: {labels.shape}, Stage labels shape: {stage_labels.shape}")
-        print(f"Stage labels: {stage_labels}")
-        print(f"Stage labels (shape): {stage_labels.shape}")
-        print(f"Predicted labels shape: {predicted_labels.shape}, Stage predicted labels shape: {predicted_stage_labels.shape}")
-        print(f"Predicted stage labels: {predicted_stage_labels}")
-        print(f"Val_stage_pred_classes: {val_stage_pred_classes}, shape: {val_stage_pred_classes.shape}")
 
         # Print imbalance information
         #self.print_inbalance(predicted_activated_labels, labels, stage_name="Validation Set")
