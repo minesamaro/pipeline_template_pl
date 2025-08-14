@@ -9,6 +9,16 @@ from src.modules.model.vit.vit_model \
 from src.modules.loss_functions.resnet50_loss_functions \
     import ResNet50LossFunction
 
+from torch.optim.lr_scheduler import LambdaLR
+
+def warmup_cosine_lr_scheduler(optimizer, warmup_epochs, total_epochs):
+    def lr_lambda(epoch):
+        if epoch < warmup_epochs:
+            return epoch / warmup_epochs
+        # cosine decay
+        progress = (epoch - warmup_epochs) / (total_epochs - warmup_epochs)
+        return 0.5 * (1 + torch.cos(torch.tensor(progress * 3.1415926535)))
+    return LambdaLR(optimizer, lr_lambda)
 
 class PyTorchLightningVitModel(pytorch_lightning.LightningModule):
     def __init__(self, config, experiment_execution_paths, test_dataloader= None):
@@ -33,11 +43,11 @@ class PyTorchLightningVitModel(pytorch_lightning.LightningModule):
             self.parameters(), **self.config.optimiser.kwargs
         )
 
-	scheduler = {
-            'scheduler': warmup_cosine_lr_scheduler(optimizer, 5, self.trainer.max_epochs),
-            'interval': 'epoch',
-            'frequency': 1
-        }
+        scheduler = {
+                'scheduler': warmup_cosine_lr_scheduler(optimizer, 5, self.trainer.max_epochs),
+                'interval': 'epoch',
+                'frequency': 1
+            }
         return [optimizer], [scheduler]
     
     def print_inbalance(self, predicted_activated_labels, labels, stage_name=""):
