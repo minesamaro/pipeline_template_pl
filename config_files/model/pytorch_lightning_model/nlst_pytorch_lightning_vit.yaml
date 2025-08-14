@@ -7,6 +7,7 @@ hyperparameters:
     type: AdamW
     kwargs:
       lr: 0.00001
+      weight_decay=0.05
   criterion:
     apply_weights: True
     device: ${..device}

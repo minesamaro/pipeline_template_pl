@@ -32,7 +32,13 @@ class PyTorchLightningVitModel(pytorch_lightning.LightningModule):
         optimizer = getattr(torch.optim, self.config.optimiser.type)(
             self.parameters(), **self.config.optimiser.kwargs
         )
-        return optimizer
+
+	scheduler = {
+            'scheduler': warmup_cosine_lr_scheduler(optimizer, 5, self.trainer.max_epochs),
+            'interval': 'epoch',
+            'frequency': 1
+        }
+        return [optimizer], [scheduler]
     
     def print_inbalance(self, predicted_activated_labels, labels, stage_name=""):
         # Check how many predictions are 0 and 1
@@ -66,7 +72,7 @@ class PyTorchLightningVitModel(pytorch_lightning.LightningModule):
         with torch.no_grad():
             for batch in self.test_dataloader_ref:
                 data, labels = batch[0], batch[1]
-                outputs = self.model(data['image'].to(self.device))
+                outputs = self.model(data['image'].to(self.device), interpolate_pos_encoding=True)
                 probs = torch.sigmoid(outputs)
 
                 test_labels.append(labels)
@@ -150,7 +156,7 @@ class PyTorchLightningVitModel(pytorch_lightning.LightningModule):
     def training_step(self, batch):
         data, labels = batch[0], batch[1]
 
-        model_output = self.model(data['image'].to(self.device))
+        model_output = self.model(data['image'].to(self.device), interpolate_pos_encoding=True)
         activated_labels = torch.sigmoid(model_output)
         loss = self.criterion(
             logits=model_output,
@@ -195,7 +201,7 @@ class PyTorchLightningVitModel(pytorch_lightning.LightningModule):
     def validation_step(self, batch, batch_idx):
         data, labels = batch[0], batch[1]
 
-        model_output = self.model(data['image'].to(self.device))
+        model_output = self.model(data['image'].to(self.device), interpolate_pos_encoding=True)
         activated_labels = torch.sigmoid(model_output)
         loss = self.criterion(
             logits=model_output,
@@ -289,7 +295,7 @@ class PyTorchLightningVitModel(pytorch_lightning.LightningModule):
     def test_step(self, batch, batch_idx):
         data, labels = batch[0], batch[1]
 
-        model_output = self.model(data['image'].to(self.device))
+        model_output = self.model(data['image'].to(self.device), interpolate_pos_encoding=True)
         predicted_labels = torch.sigmoid(model_output)
 
         self.labels.append(labels)
