@@ -36,3 +36,4 @@ resample_z: False
 random: False
 weighted_random_sampler: False
 visualize_imgur: ${...visualize_imgur} # True, False
+use_stage_label: True

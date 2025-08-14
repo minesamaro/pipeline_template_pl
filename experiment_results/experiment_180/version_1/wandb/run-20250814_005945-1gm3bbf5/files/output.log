@@ -1,0 +1,92 @@
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new']
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', 'stage', '1y', '2y', '5y', '10y', 'fup_days', 'sct_nod_err', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new']
+Label weights: tensor([1.], device='cuda:0', dtype=torch.float64), Stage weights: tensor([0.5000], device='cuda:0', dtype=torch.float64)
+C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:442: PossibleUserWarning: The dataloader, val_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  rank_zero_warn(
+tensor([3])
+tensor([3])
+Survival output shape: torch.Size([2]), Target shape: torch.Size([2, 1])
+Stage output shape: torch.Size([2, 7]), Target shape: torch.Size([2, 1])
+tensor([7])
+Survival output shape: torch.Size([1]), Target shape: torch.Size([1, 1])
+Stage output shape: torch.Size([1, 7]), Target shape: torch.Size([1, 1])
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 571, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 980, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1021, in _run_stage
+    self._run_sanity_check()
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1050, in _run_sanity_check
+    val_loop.run()
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\utilities.py", line 181, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\evaluation_loop.py", line 122, in run
+    return self.on_run_end()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\evaluation_loop.py", line 244, in on_run_end
+    self._on_evaluation_epoch_end()
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\loops\evaluation_loop.py", line 326, in _on_evaluation_epoch_end
+    call._call_lightning_module_hook(trainer, hook_name)
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\call.py", line 146, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\model\multitasksem\pytorch_lightning_multitasksem.py", line 278, in on_validation_epoch_end
+    labels = torch.cat(self.val_labels, dim=0).to(self.device).view(-1)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\scripts\run_experiment_pipeline.py", line 59, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\scripts\run_experiment_pipeline.py", line 167, in run_experiment_pipeline
+    model_pipeline.train_model()
+  File "C:\Users\HP\OneDrive - Universidade do Porto\Documentos\UNIVERSIDADE\Tese\pytorch_lightning_dl_pipeline_template\src\modules\model\model_pipeline.py", line 68, in train_model
+    self.pytorch_lightning_trainer.fit(
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 532, in fit
+    call._call_and_handle_interrupt(
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\call.py", line 67, in _call_and_handle_interrupt
+    trainer._teardown()
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1003, in _teardown
+    self.strategy.teardown()
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\pytorch_lightning\strategies\strategy.py", line 498, in teardown
+    self.lightning_module.cpu()
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\lightning_fabric\utilities\device_dtype_mixin.py", line 79, in cpu
+    return super().cpu()
+           ^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\torch\nn\modules\module.py", line 1133, in cpu
+    return self._apply(lambda t: t.cpu())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\torch\nn\modules\module.py", line 915, in _apply
+    module._apply(fn)
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\torch\nn\modules\module.py", line 915, in _apply
+    module._apply(fn)
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\torch\nn\modules\module.py", line 915, in _apply
+    module._apply(fn)
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\torch\nn\modules\module.py", line 942, in _apply
+    param_applied = fn(param)
+                    ^^^^^^^^^
+  File "C:\Users\HP\.conda\envs\pipeline\Lib\site-packages\torch\nn\modules\module.py", line 1133, in <lambda>
+    return self._apply(lambda t: t.cpu())
+                                 ^^^^^^^
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

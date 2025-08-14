@@ -305,16 +305,35 @@ class NLSTPreprocessedDataLoader(Dataset):
     def __getitem__(self, data_index):
         try:
             data = self._get_data(data_index)
-            label = self._get_label(data_index)
-            if not self.load_data_name:
-                return data, label
+            label = self._get_label(data_index)  # survival label
+
+            # If multitask: also get stage label
+            if getattr(self.config, "use_stage_label", False):
+                stage_label = self._get_stage_label(data_index)
+                print(stage_label)
+                if not self.load_data_name:
+                    return data, label, stage_label
+                else:
+                    return self.file_names[data_index], data, label, stage_label
             else:
-                return self.file_names[data_index], data, label
+                if not self.load_data_name:
+                    return data, label
+                else:
+                    return self.file_names[data_index], data, label
+
         except Exception as e:
             print(f"[ERROR] Error in __getitem__ at index {data_index}: {e}")
             print(f"File path: {self.file_names[data_index]}")
             print(f"Label: {self.labels[data_index]}")
             raise e
+
+    def _get_stage_label(self, data_index):
+        # Assuming stage labels are stored in self.lung_metadataframe['stage']
+        dataframe_row = self.lung_metadataframe.loc[
+            self.lung_metadataframe['path'] == self.file_names[data_index]
+        ]
+        stage_value = dataframe_row['stage'].values[0]
+        return torch.tensor([int(stage_value)])
         
     def get_slice_range(self, total_slices, slice_idx, n_slices):
         """
