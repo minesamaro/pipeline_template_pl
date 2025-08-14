@@ -1,0 +1,436 @@
+
+Running model pipeline for data fold 1...
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err', 'dicom_slice_count', 'original_slice_thickness_mm', 'sct_slice_new_1', 'reversed', 'sct_slice_final_mapped', 'stage']
+Label column '5y' found in metadata. Available columns: ['pid', 'study_yr', 'path', 'sct_slice_num_og', '1y', '2y', '5y', '10y', 'fup_days', 'lung_side', 'de_stag', 'de_stag_7thed', 'sct_slice_new', 'sct_nod_err', 'dicom_slice_count', 'original_slice_thickness_mm', 'sct_slice_new_1', 'reversed', 'sct_slice_final_mapped', 'stage']
+Label weights: tensor([2.9900], device='cuda:0', dtype=torch.float64), Stage weights: tensor([5.7692], device='cuda:0', dtype=torch.float64)
+
+Batch size: 16, Labels shape: torch.Size([16, 1]), Stage labels shape: torch.Size([16, 1])
+Stage labels: tensor([[0],
+        [4],
+        [3],
+        [0],
+        [1],
+        [0],
+        [3],
+        [2],
+        [0],
+        [0],
+        [1],
+        [0],
+        [0],
+        [0],
+        [6],
+        [0]], device='cuda:0')
+Stage labels (shape): torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+
+Batch size: 16, Labels shape: torch.Size([16, 1]), Stage labels shape: torch.Size([16, 1])
+Stage labels: tensor([[1],
+        [0],
+        [0],
+        [0],
+        [1],
+        [4],
+        [0],
+        [0],
+        [0],
+        [0],
+        [4],
+        [2],
+        [0],
+        [0],
+        [2],
+        [0]], device='cuda:0')
+Stage labels (shape): torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+
+Labels shape: torch.Size([32]), Stage labels shape: torch.Size([32])
+Stage labels: tensor([0, 4, 3, 0, 1, 0, 3, 2, 0, 0, 1, 0, 0, 0, 6, 0, 1, 0, 0, 0, 1, 4, 0, 0,
+        0, 0, 4, 2, 0, 0, 2, 0], device='cuda:0')
+Stage labels (shape): torch.Size([32])
+Predicted labels shape: torch.Size([32]), Stage predicted labels shape: torch.Size([32, 7])
+Predicted stage labels: tensor([[0.1351, 0.1444, 0.1491, 0.1359, 0.1517, 0.1434, 0.1404],
+        [0.1352, 0.1444, 0.1493, 0.1359, 0.1514, 0.1433, 0.1404],
+        [0.1351, 0.1444, 0.1491, 0.1359, 0.1518, 0.1434, 0.1404],
+        [0.1353, 0.1446, 0.1497, 0.1359, 0.1510, 0.1431, 0.1405],
+        [0.1352, 0.1444, 0.1492, 0.1359, 0.1515, 0.1434, 0.1404],
+        [0.1351, 0.1444, 0.1491, 0.1359, 0.1516, 0.1434, 0.1404],
+        [0.1353, 0.1444, 0.1495, 0.1359, 0.1513, 0.1432, 0.1405],
+        [0.1352, 0.1444, 0.1493, 0.1359, 0.1515, 0.1433, 0.1404],
+        [0.1353, 0.1445, 0.1495, 0.1359, 0.1512, 0.1431, 0.1405],
+        [0.1353, 0.1446, 0.1496, 0.1359, 0.1510, 0.1431, 0.1405],
+        [0.1351, 0.1444, 0.1491, 0.1359, 0.1517, 0.1434, 0.1404],
+        [0.1353, 0.1444, 0.1494, 0.1359, 0.1513, 0.1432, 0.1405],
+        [0.1352, 0.1444, 0.1494, 0.1359, 0.1514, 0.1432, 0.1404],
+        [0.1353, 0.1444, 0.1494, 0.1359, 0.1513, 0.1432, 0.1405],
+        [0.1352, 0.1444, 0.1494, 0.1359, 0.1514, 0.1432, 0.1404],
+        [0.1352, 0.1444, 0.1492, 0.1359, 0.1516, 0.1434, 0.1404],
+        [0.1351, 0.1444, 0.1492, 0.1359, 0.1516, 0.1434, 0.1404],
+        [0.1353, 0.1446, 0.1496, 0.1359, 0.1511, 0.1431, 0.1405],
+        [0.1352, 0.1444, 0.1493, 0.1359, 0.1515, 0.1433, 0.1404],
+        [0.1352, 0.1444, 0.1493, 0.1359, 0.1515, 0.1433, 0.1404],
+        [0.1352, 0.1444, 0.1492, 0.1359, 0.1515, 0.1433, 0.1404],
+        [0.1353, 0.1445, 0.1495, 0.1359, 0.1513, 0.1432, 0.1405],
+        [0.1352, 0.1444, 0.1493, 0.1359, 0.1514, 0.1433, 0.1404],
+        [0.1351, 0.1444, 0.1491, 0.1359, 0.1516, 0.1434, 0.1404],
+        [0.1352, 0.1444, 0.1493, 0.1359, 0.1514, 0.1433, 0.1404],
+        [0.1351, 0.1444, 0.1492, 0.1359, 0.1516, 0.1434, 0.1404],
+        [0.1351, 0.1444, 0.1489, 0.1358, 0.1522, 0.1434, 0.1403],
+        [0.1353, 0.1445, 0.1495, 0.1359, 0.1512, 0.1431, 0.1405],
+        [0.1351, 0.1444, 0.1491, 0.1359, 0.1518, 0.1434, 0.1404],
+        [0.1353, 0.1445, 0.1495, 0.1359, 0.1512, 0.1432, 0.1405],
+        [0.1353, 0.1445, 0.1495, 0.1359, 0.1512, 0.1432, 0.1405],
+        [0.1353, 0.1444, 0.1494, 0.1359, 0.1513, 0.1432, 0.1404]],
+       device='cuda:0')
+Val_stage_pred_classes: tensor([4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+        4, 4, 4, 4, 4, 4, 4, 4], device='cuda:0'), shape: torch.Size([32])
+/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchmetrics/utilities/prints.py:43: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+Survival output shape: torch.Size([14]), Target shape: torch.Size([14, 1])
+Stage output shape: torch.Size([14, 7]), Target shape: torch.Size([14, 1])
+
+Batch size: 16, Labels shape: torch.Size([16, 1]), Stage labels shape: torch.Size([16, 1])
+Stage labels: tensor([[0],
+        [4],
+        [3],
+        [0],
+        [1],
+        [0],
+        [3],
+        [2],
+        [0],
+        [0],
+        [1],
+        [0],
+        [0],
+        [0],
+        [6],
+        [0]], device='cuda:0')
+Stage labels (shape): torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+
+Batch size: 16, Labels shape: torch.Size([16, 1]), Stage labels shape: torch.Size([16, 1])
+Stage labels: tensor([[1],
+        [0],
+        [0],
+        [0],
+        [1],
+        [4],
+        [0],
+        [0],
+        [0],
+        [0],
+        [4],
+        [2],
+        [0],
+        [0],
+        [2],
+        [0]], device='cuda:0')
+Stage labels (shape): torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+
+Batch size: 16, Labels shape: torch.Size([16, 1]), Stage labels shape: torch.Size([16, 1])
+Stage labels: tensor([[2],
+        [0],
+        [1],
+        [1],
+        [0],
+        [0],
+        [0],
+        [0],
+        [6],
+        [1],
+        [1],
+        [0],
+        [0],
+        [0],
+        [0],
+        [1]], device='cuda:0')
+Stage labels (shape): torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+
+Batch size: 16, Labels shape: torch.Size([16, 1]), Stage labels shape: torch.Size([16, 1])
+Stage labels: tensor([[6],
+        [0],
+        [0],
+        [0],
+        [0],
+        [0],
+        [0],
+        [2],
+        [0],
+        [0],
+        [0],
+        [0],
+        [4],
+        [0],
+        [6],
+        [0]], device='cuda:0')
+Stage labels (shape): torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+
+Batch size: 16, Labels shape: torch.Size([16, 1]), Stage labels shape: torch.Size([16, 1])
+Stage labels: tensor([[0],
+        [0],
+        [5],
+        [0],
+        [0],
+        [0],
+        [2],
+        [0],
+        [0],
+        [0],
+        [0],
+        [6],
+        [0],
+        [2],
+        [0],
+        [0]], device='cuda:0')
+Stage labels (shape): torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+
+Batch size: 16, Labels shape: torch.Size([16, 1]), Stage labels shape: torch.Size([16, 1])
+Stage labels: tensor([[1],
+        [6],
+        [2],
+        [0],
+        [0],
+        [0],
+        [0],
+        [0],
+        [2],
+        [0],
+        [1],
+        [4],
+        [0],
+        [0],
+        [2],
+        [6]], device='cuda:0')
+Stage labels (shape): torch.Size([16, 1])
+Survival output shape: torch.Size([16]), Target shape: torch.Size([16, 1])
+Stage output shape: torch.Size([16, 7]), Target shape: torch.Size([16, 1])
+
+Batch size: 11, Labels shape: torch.Size([11, 1]), Stage labels shape: torch.Size([11, 1])
+Stage labels: tensor([[0],
+        [0],
+        [0],
+        [0],
+        [0],
+        [0],
+        [0],
+        [4],
+        [0],
+        [0],
+        [4]], device='cuda:0')
+Stage labels (shape): torch.Size([11, 1])
+Survival output shape: torch.Size([11]), Target shape: torch.Size([11, 1])
+Stage output shape: torch.Size([11, 7]), Target shape: torch.Size([11, 1])
+
+Labels shape: torch.Size([107]), Stage labels shape: torch.Size([107])
+Stage labels: tensor([0, 4, 3, 0, 1, 0, 3, 2, 0, 0, 1, 0, 0, 0, 6, 0, 1, 0, 0, 0, 1, 4, 0, 0,
+        0, 0, 4, 2, 0, 0, 2, 0, 2, 0, 1, 1, 0, 0, 0, 0, 6, 1, 1, 0, 0, 0, 0, 1,
+        6, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 4, 0, 6, 0, 0, 0, 5, 0, 0, 0, 2, 0,
+        0, 0, 0, 6, 0, 2, 0, 0, 1, 6, 2, 0, 0, 0, 0, 0, 2, 0, 1, 4, 0, 0, 2, 6,
+        0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 4], device='cuda:0')
+Stage labels (shape): torch.Size([107])
+Predicted labels shape: torch.Size([107]), Stage predicted labels shape: torch.Size([107, 7])
+Predicted stage labels: tensor([[0.2843, 0.1758, 0.1222, 0.0994, 0.1246, 0.0854, 0.1083],
+        [0.2815, 0.1761, 0.1238, 0.1007, 0.1245, 0.0856, 0.1079],
+        [0.2837, 0.1761, 0.1227, 0.0988, 0.1255, 0.0853, 0.1078],
+        [0.2788, 0.1765, 0.1250, 0.1026, 0.1232, 0.0862, 0.1077],
+        [0.2836, 0.1756, 0.1225, 0.0999, 0.1242, 0.0856, 0.1086],
+        [0.2835, 0.1759, 0.1227, 0.0993, 0.1250, 0.0854, 0.1081],
+        [0.2810, 0.1759, 0.1238, 0.1015, 0.1237, 0.0859, 0.1081],
+        [0.2823, 0.1758, 0.1232, 0.1005, 0.1241, 0.0857, 0.1083],
+        [0.2795, 0.1764, 0.1245, 0.1024, 0.1233, 0.0861, 0.1078],
+        [0.2792, 0.1762, 0.1249, 0.1025, 0.1231, 0.0861, 0.1080],
+        [0.2837, 0.1760, 0.1228, 0.0987, 0.1255, 0.0853, 0.1079],
+        [0.2812, 0.1759, 0.1236, 0.1016, 0.1236, 0.0860, 0.1082],
+        [0.2806, 0.1759, 0.1240, 0.1012, 0.1241, 0.0860, 0.1081],
+        [0.2813, 0.1756, 0.1238, 0.1013, 0.1237, 0.0858, 0.1085],
+        [0.2821, 0.1756, 0.1229, 0.1016, 0.1235, 0.0859, 0.1084],
+        [0.2833, 0.1759, 0.1225, 0.1000, 0.1245, 0.0857, 0.1081],
+        [0.2832, 0.1760, 0.1226, 0.1000, 0.1245, 0.0857, 0.1080],
+        [0.2791, 0.1762, 0.1246, 0.1030, 0.1228, 0.0864, 0.1079],
+        [0.2817, 0.1759, 0.1235, 0.1003, 0.1246, 0.0858, 0.1082],
+        [0.2819, 0.1760, 0.1234, 0.1005, 0.1244, 0.0858, 0.1080],
+        [0.2816, 0.1762, 0.1238, 0.0998, 0.1251, 0.0856, 0.1079],
+        [0.2810, 0.1760, 0.1236, 0.1017, 0.1237, 0.0859, 0.1080],
+        [0.2820, 0.1759, 0.1232, 0.1012, 0.1240, 0.0856, 0.1081],
+        [0.2832, 0.1761, 0.1229, 0.0994, 0.1250, 0.0855, 0.1077],
+        [0.2815, 0.1759, 0.1234, 0.1010, 0.1241, 0.0858, 0.1082],
+        [0.2833, 0.1758, 0.1226, 0.0997, 0.1245, 0.0858, 0.1084],
+        [0.2868, 0.1754, 0.1222, 0.0963, 0.1273, 0.0850, 0.1070],
+        [0.2799, 0.1760, 0.1242, 0.1023, 0.1234, 0.0861, 0.1080],
+        [0.2838, 0.1759, 0.1227, 0.0986, 0.1255, 0.0854, 0.1080],
+        [0.2796, 0.1761, 0.1250, 0.1013, 0.1242, 0.0859, 0.1079],
+        [0.2805, 0.1762, 0.1240, 0.1021, 0.1235, 0.0859, 0.1079],
+        [0.2789, 0.1761, 0.1252, 0.1013, 0.1246, 0.0861, 0.1078],
+        [0.2817, 0.1758, 0.1236, 0.1007, 0.1243, 0.0858, 0.1082],
+        [0.2809, 0.1760, 0.1239, 0.1016, 0.1238, 0.0859, 0.1081],
+        [0.2848, 0.1759, 0.1219, 0.0988, 0.1252, 0.0853, 0.1081],
+        [0.2806, 0.1758, 0.1241, 0.1017, 0.1237, 0.0859, 0.1082],
+        [0.2802, 0.1761, 0.1242, 0.1020, 0.1235, 0.0861, 0.1080],
+        [0.2826, 0.1758, 0.1229, 0.1005, 0.1243, 0.0857, 0.1082],
+        [0.2801, 0.1758, 0.1243, 0.1015, 0.1241, 0.0861, 0.1081],
+        [0.2804, 0.1760, 0.1242, 0.1013, 0.1242, 0.0859, 0.1079],
+        [0.2831, 0.1761, 0.1229, 0.0985, 0.1264, 0.0855, 0.1077],
+        [0.2838, 0.1757, 0.1225, 0.0996, 0.1246, 0.0854, 0.1084],
+        [0.2800, 0.1759, 0.1245, 0.1014, 0.1240, 0.0861, 0.1081],
+        [0.2834, 0.1755, 0.1224, 0.1007, 0.1236, 0.0857, 0.1087],
+        [0.2808, 0.1761, 0.1238, 0.1019, 0.1237, 0.0859, 0.1079],
+        [0.2832, 0.1759, 0.1230, 0.0987, 0.1257, 0.0856, 0.1079],
+        [0.2819, 0.1758, 0.1234, 0.1009, 0.1239, 0.0859, 0.1082],
+        [0.2818, 0.1756, 0.1233, 0.1013, 0.1236, 0.0859, 0.1085],
+        [0.2789, 0.1762, 0.1249, 0.1023, 0.1233, 0.0863, 0.1081],
+        [0.2795, 0.1763, 0.1245, 0.1020, 0.1237, 0.0861, 0.1078],
+        [0.2824, 0.1756, 0.1233, 0.1002, 0.1242, 0.0857, 0.1086],
+        [0.2836, 0.1758, 0.1224, 0.1000, 0.1245, 0.0856, 0.1080],
+        [0.2806, 0.1762, 0.1243, 0.1005, 0.1248, 0.0857, 0.1079],
+        [0.2822, 0.1759, 0.1229, 0.1013, 0.1238, 0.0858, 0.1081],
+        [0.2791, 0.1761, 0.1251, 0.1022, 0.1234, 0.0861, 0.1081],
+        [0.2821, 0.1756, 0.1234, 0.1006, 0.1239, 0.0859, 0.1086],
+        [0.2782, 0.1766, 0.1253, 0.1033, 0.1226, 0.0864, 0.1077],
+        [0.2821, 0.1759, 0.1233, 0.1005, 0.1244, 0.0857, 0.1080],
+        [0.2805, 0.1761, 0.1240, 0.1020, 0.1235, 0.0860, 0.1080],
+        [0.2806, 0.1759, 0.1242, 0.1017, 0.1235, 0.0859, 0.1081],
+        [0.2850, 0.1754, 0.1219, 0.0988, 0.1249, 0.0856, 0.1084],
+        [0.2802, 0.1764, 0.1238, 0.1027, 0.1230, 0.0860, 0.1079],
+        [0.2816, 0.1758, 0.1236, 0.1007, 0.1242, 0.0858, 0.1082],
+        [0.2810, 0.1760, 0.1237, 0.1019, 0.1234, 0.0859, 0.1082],
+        [0.2830, 0.1760, 0.1228, 0.0999, 0.1248, 0.0856, 0.1079],
+        [0.2795, 0.1764, 0.1245, 0.1027, 0.1232, 0.0861, 0.1078],
+        [0.2807, 0.1762, 0.1240, 0.1016, 0.1238, 0.0859, 0.1079],
+        [0.2863, 0.1753, 0.1212, 0.0982, 0.1254, 0.0852, 0.1083],
+        [0.2819, 0.1757, 0.1233, 0.1010, 0.1241, 0.0859, 0.1082],
+        [0.2845, 0.1755, 0.1217, 0.0999, 0.1241, 0.0857, 0.1085],
+        [0.2821, 0.1761, 0.1234, 0.1001, 0.1246, 0.0856, 0.1080],
+        [0.2845, 0.1754, 0.1220, 0.0996, 0.1243, 0.0854, 0.1088],
+        [0.2792, 0.1761, 0.1250, 0.1015, 0.1242, 0.0861, 0.1079],
+        [0.2815, 0.1759, 0.1232, 0.1022, 0.1233, 0.0858, 0.1080],
+        [0.2816, 0.1760, 0.1234, 0.1009, 0.1242, 0.0858, 0.1081],
+        [0.2788, 0.1763, 0.1250, 0.1029, 0.1228, 0.0863, 0.1080],
+        [0.2824, 0.1757, 0.1228, 0.1014, 0.1237, 0.0859, 0.1080],
+        [0.2851, 0.1758, 0.1217, 0.0994, 0.1246, 0.0856, 0.1078],
+        [0.2850, 0.1755, 0.1217, 0.0991, 0.1246, 0.0855, 0.1085],
+        [0.2797, 0.1764, 0.1241, 0.1030, 0.1229, 0.0862, 0.1078],
+        [0.2789, 0.1764, 0.1247, 0.1032, 0.1227, 0.0863, 0.1078],
+        [0.2815, 0.1758, 0.1234, 0.1019, 0.1235, 0.0858, 0.1082],
+        [0.2815, 0.1761, 0.1240, 0.1002, 0.1248, 0.0856, 0.1079],
+        [0.2790, 0.1765, 0.1248, 0.1026, 0.1231, 0.0862, 0.1078],
+        [0.2815, 0.1755, 0.1234, 0.1014, 0.1235, 0.0860, 0.1086],
+        [0.2833, 0.1759, 0.1228, 0.0996, 0.1249, 0.0856, 0.1080],
+        [0.2809, 0.1758, 0.1239, 0.1019, 0.1233, 0.0859, 0.1083],
+        [0.2824, 0.1757, 0.1228, 0.1011, 0.1236, 0.0859, 0.1085],
+        [0.2805, 0.1761, 0.1241, 0.1021, 0.1234, 0.0859, 0.1080],
+        [0.2855, 0.1756, 0.1214, 0.0984, 0.1254, 0.0855, 0.1081],
+        [0.2846, 0.1761, 0.1219, 0.0989, 0.1252, 0.0854, 0.1079],
+        [0.2812, 0.1760, 0.1238, 0.1011, 0.1240, 0.0858, 0.1081],
+        [0.2777, 0.1763, 0.1254, 0.1033, 0.1228, 0.0867, 0.1079],
+        [0.2821, 0.1760, 0.1233, 0.1007, 0.1242, 0.0857, 0.1080],
+        [0.2815, 0.1760, 0.1234, 0.1013, 0.1239, 0.0858, 0.1081],
+        [0.2816, 0.1759, 0.1236, 0.1004, 0.1247, 0.0858, 0.1080],
+        [0.2850, 0.1757, 0.1216, 0.0988, 0.1250, 0.0856, 0.1083],
+        [0.2816, 0.1759, 0.1238, 0.1006, 0.1246, 0.0856, 0.1079],
+        [0.2808, 0.1759, 0.1240, 0.1010, 0.1243, 0.0860, 0.1081],
+        [0.2828, 0.1759, 0.1226, 0.0992, 0.1253, 0.0858, 0.1083],
+        [0.2830, 0.1754, 0.1229, 0.1003, 0.1240, 0.0857, 0.1088],
+        [0.2793, 0.1760, 0.1248, 0.1018, 0.1239, 0.0862, 0.1080],
+        [0.2825, 0.1760, 0.1232, 0.1000, 0.1247, 0.0855, 0.1081],
+        [0.2771, 0.1764, 0.1258, 0.1037, 0.1224, 0.0870, 0.1076],
+        [0.2812, 0.1759, 0.1237, 0.1013, 0.1239, 0.0858, 0.1081],
+        [0.2836, 0.1761, 0.1226, 0.0990, 0.1253, 0.0855, 0.1079],
+        [0.2815, 0.1758, 0.1236, 0.1011, 0.1241, 0.0858, 0.1081]],
+       device='cuda:0')
+Val_stage_pred_classes: tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], device='cuda:0'), shape: torch.Size([107])
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 54, in run_hyperparameter_grid_based_execution_pipeline
+    run_experiment_pipeline(config)
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/slurm_files/shell_script_files/../../src/scripts/run_experiment_pipeline.py", line 167, in run_experiment_pipeline
+    model_pipeline.train_model()
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/model_pipeline.py", line 68, in train_model
+    self.pytorch_lightning_trainer.fit(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 532, in fit
+    call._call_and_handle_interrupt(
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 43, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 571, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 980, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1023, in _run_stage
+    self.fit_loop.run()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 203, in run
+    self.on_advance_end()
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/loops/fit_loop.py", line 369, in on_advance_end
+    call._call_lightning_module_hook(trainer, "on_train_epoch_end")
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 146, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/pipeline_template_pl/src/modules/model/multitasksem/pytorch_lightning_multitasksem.py", line 225, in on_train_epoch_end
+    'train_auroc': auroc(
+                   ^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchmetrics/functional/classification/auroc.py", line 471, in auroc
+    return binary_auroc(preds, target, max_fpr, thresholds, ignore_index, validate_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchmetrics/functional/classification/auroc.py", line 175, in binary_auroc
+    _binary_precision_recall_curve_tensor_validation(preds, target, ignore_index)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchmetrics/functional/classification/precision_recall_curve.py", line 137, in _binary_precision_recall_curve_tensor_validation
+    _check_same_shape(preds, target)
+  File "/nas-ctm01/homes/mipaiva/.conda/envs/pipeline/lib/python3.11/site-packages/torchmetrics/utilities/checks.py", line 39, in _check_same_shape
+    raise RuntimeError(
+RuntimeError: Predictions and targets are expected to have the same shape, but got torch.Size([318]) and torch.Size([318, 1]).
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
