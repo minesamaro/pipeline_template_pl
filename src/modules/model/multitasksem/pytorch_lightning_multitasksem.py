@@ -215,9 +215,9 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
         return loss
 
     def on_train_epoch_end(self):
-        labels = torch.cat(self.labels, dim=0)
+        labels = torch.cat(self.labels, dim=0).view(-1)
         predicted_labels = torch.cat(self.predicted_labels, dim=0)
-        stage_labels = torch.cat(self.stage_labels, dim=0)
+        stage_labels = torch.cat(self.stage_labels, dim=0).view(-1)
         predicted_stage_labels = torch.cat(self.stage_predicted_labels, dim=0)
 
         metrics_for_logging = {
