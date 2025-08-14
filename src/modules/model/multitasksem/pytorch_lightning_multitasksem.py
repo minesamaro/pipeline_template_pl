@@ -84,7 +84,7 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
 
         test_labels = torch.cat(test_labels, dim=0).to(self.device)
         test_preds = torch.cat(test_preds, dim=0).to(self.device)
-        test_stage_labels = torch.cat(test_stage_labels, dim=0).to(self.device)
+        test_stage_labels = torch.cat(test_stage_labels, dim=0).to(self.device).view(-1)
         test_stage_preds = torch.cat(test_stage_preds, dim=0).to(self.device)
 
         # Considering the model is binary classification with 1 output
@@ -231,6 +231,7 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
                 target=stage_labels.int(),
                 task='multiclass',
                 num_classes=self.stage_num_classes).item(),
+
             'train_surv_loss': (sum(self.surv_loss) / labels.shape[0]).item(),
             'train_stage_loss': (sum(self.stage_loss) / labels.shape[0]).item(),
         }
@@ -274,7 +275,7 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
 
         self.val_labels.append(labels)
         self.val_predicted_labels.append(activated_labels)
-        self.val_stage_labels.append(activated_stage_labels)
+        self.val_stage_labels.append(stage_labels)
         self.val_stage_predicted_labels.append(activated_stage_labels)
         self.val_weighted_losses.append(loss * data['image'].shape[0])
         self.val_surv_loss.append(surv_loss * data['image'].shape[0])
@@ -283,7 +284,7 @@ class PyTorchLightningMultitaskSEMModel(pytorch_lightning.LightningModule):
     def on_validation_epoch_end(self):
         labels = torch.cat(self.val_labels, dim=0).to(self.device).view(-1)
         predicted_labels = torch.cat(self.val_predicted_labels, dim=0).to(self.device)
-        stage_labels = torch.cat(self.val_stage_labels, dim=0).to(self.device)
+        stage_labels = torch.cat(self.val_stage_labels, dim=0).to(self.device).view(-1)
         predicted_stage_labels = torch.cat(self.val_stage_predicted_labels, dim=0).to(self.device)
 
         predicted_activated_labels = (predicted_labels > 0.5).int()
