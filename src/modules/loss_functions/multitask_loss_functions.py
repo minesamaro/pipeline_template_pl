@@ -14,7 +14,7 @@ class MultitaskLossFunction(torch.nn.Module):
         print(f"Label weights: {self.weights_surv}, Stage weights: {self.weights_stage}")
 
 
-    def forward(self, surv_output, surv_target, stage_logits, stage_targets, alpha=1, beta=0.5):
+    def forward(self, surv_output, surv_target, stage_logits, stage_targets, alpha=1, beta=0.25):
         print(f"Survival output shape: {surv_output.shape}, Target shape: {surv_target.shape}")
         print(f"Stage output shape: {stage_logits.shape}, Target shape: {stage_targets.shape}")
 
