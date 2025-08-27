@@ -191,9 +191,9 @@ class PyTorchLightningMultitaskSEMBinModel(pytorch_lightning.LightningModule):
         activated_stage_labels = torch.sigmoid(stage_logits)
         loss, surv_loss, stage_loss = self.criterion(
             surv_output=surv_logits,
-            surv_target=labels,
+            surv_target=labels.float(),
             stage_logits=stage_logits,
-            stage_targets=stage_labels
+            stage_targets=stage_labels.float()
         )
 
         batch_size = data['image'].shape[0]
@@ -257,9 +257,9 @@ class PyTorchLightningMultitaskSEMBinModel(pytorch_lightning.LightningModule):
         activated_stage_labels = torch.sigmoid(stage_logits)
         loss, surv_loss, stage_loss = self.criterion(
             surv_output=surv_logits,
-            surv_target=labels,
+            surv_target=labels.float(),
             stage_logits=stage_logits,
-            stage_targets=stage_labels
+            stage_targets=stage_labels.float()
         )
 
         self.val_labels.append(labels)
@@ -383,9 +383,9 @@ class PyTorchLightningMultitaskSEMBinModel(pytorch_lightning.LightningModule):
         activated_stage_labels = torch.sigmoid(stage_logits)
         loss, surv_loss, stage_loss = self.criterion(
             surv_output=surv_logits,
-            surv_target=labels,
+            surv_target=labels.float(),
             stage_logits=stage_logits,
-            stage_targets=stage_labels
+            stage_targets=stage_labels.float()
         )
 
         self.labels.append(labels)
