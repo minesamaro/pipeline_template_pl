@@ -1,0 +1,16 @@
+{"time":"2025-08-23T19:56:47.662337835+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_203/version_8/wandb/run-20250823_195646-v1c1xuob/logs/debug-core.log"}
+{"time":"2025-08-23T19:56:47.92524922+01:00","level":"INFO","msg":"created new stream","id":"v1c1xuob"}
+{"time":"2025-08-23T19:56:47.92529355+01:00","level":"INFO","msg":"stream: started","id":"v1c1xuob"}
+{"time":"2025-08-23T19:56:47.92534372+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"v1c1xuob"}
+{"time":"2025-08-23T19:56:47.925379651+01:00","level":"INFO","msg":"handler: started","stream_id":"v1c1xuob"}
+{"time":"2025-08-23T19:56:47.92540926+01:00","level":"INFO","msg":"sender: started","stream_id":"v1c1xuob"}
+{"time":"2025-08-23T19:56:48.183076521+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-23T21:35:32.766693036+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-23T21:35:32.766891585+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-23T21:35:33.768363667+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.65333354,"progress":"1.8MB/2.0MB"},{"desc":"uploading history steps 996-999, summary, console lines 27941-28010","runtime_seconds":0.122204266}],"total_operations":2}}
+{"time":"2025-08-23T21:35:34.185035682+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-23T21:35:34.398525458+01:00","level":"INFO","msg":"stream: closing","id":"v1c1xuob"}
+{"time":"2025-08-23T21:35:34.398549818+01:00","level":"INFO","msg":"handler: closed","stream_id":"v1c1xuob"}
+{"time":"2025-08-23T21:35:34.398573198+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"v1c1xuob"}
+{"time":"2025-08-23T21:35:34.398591688+01:00","level":"INFO","msg":"sender: closed","stream_id":"v1c1xuob"}
+{"time":"2025-08-23T21:35:34.399296709+01:00","level":"INFO","msg":"stream: closed","id":"v1c1xuob"}

@@ -1,0 +1,18 @@
+{"time":"2025-08-22T19:31:41.480321417+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_203/version_3/wandb/run-20250822_193141-4cvlcaer/logs/debug-core.log"}
+{"time":"2025-08-22T19:31:41.861756514+01:00","level":"INFO","msg":"created new stream","id":"4cvlcaer"}
+{"time":"2025-08-22T19:31:41.861791634+01:00","level":"INFO","msg":"stream: started","id":"4cvlcaer"}
+{"time":"2025-08-22T19:31:41.861918345+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"4cvlcaer"}
+{"time":"2025-08-22T19:31:41.861942004+01:00","level":"INFO","msg":"sender: started","stream_id":"4cvlcaer"}
+{"time":"2025-08-22T19:31:41.861957215+01:00","level":"INFO","msg":"handler: started","stream_id":"4cvlcaer"}
+{"time":"2025-08-22T19:31:42.217267702+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-22T20:02:58.945204768+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-08-22T20:45:16.385941118+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/multitask_sem/4cvlcaer/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-08-22T20:59:37.012578776+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-22T20:59:37.013267396+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-22T20:59:38.013534687+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.644942274,"progress":"762.1KB/762.1KB"},{"desc":"uploading wandb-summary.json","runtime_seconds":0.644928414,"progress":"1.7KB/1.7KB"},{"desc":"uploading config.yaml","runtime_seconds":0.474116431,"progress":"5.9KB/5.9KB"}],"total_operations":3}}
+{"time":"2025-08-22T20:59:38.258955728+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-22T20:59:38.472879916+01:00","level":"INFO","msg":"stream: closing","id":"4cvlcaer"}
+{"time":"2025-08-22T20:59:38.472903055+01:00","level":"INFO","msg":"handler: closed","stream_id":"4cvlcaer"}
+{"time":"2025-08-22T20:59:38.472913245+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"4cvlcaer"}
+{"time":"2025-08-22T20:59:38.472943625+01:00","level":"INFO","msg":"sender: closed","stream_id":"4cvlcaer"}
+{"time":"2025-08-22T20:59:38.473615966+01:00","level":"INFO","msg":"stream: closed","id":"4cvlcaer"}

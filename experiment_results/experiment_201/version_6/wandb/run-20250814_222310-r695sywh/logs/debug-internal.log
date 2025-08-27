@@ -1,0 +1,17 @@
+{"time":"2025-08-14T22:23:10.136817989+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_201/version_6/wandb/run-20250814_222310-r695sywh/logs/debug-core.log"}
+{"time":"2025-08-14T22:23:10.493274477+01:00","level":"INFO","msg":"created new stream","id":"r695sywh"}
+{"time":"2025-08-14T22:23:10.493320283+01:00","level":"INFO","msg":"stream: started","id":"r695sywh"}
+{"time":"2025-08-14T22:23:10.493338969+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"r695sywh"}
+{"time":"2025-08-14T22:23:10.493356602+01:00","level":"INFO","msg":"sender: started","stream_id":"r695sywh"}
+{"time":"2025-08-14T22:23:10.49337669+01:00","level":"INFO","msg":"handler: started","stream_id":"r695sywh"}
+{"time":"2025-08-14T22:23:10.730254001+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-14T22:35:29.191918134+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/graphql","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-08-14T23:58:38.872867312+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-14T23:58:38.87303021+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-14T23:58:39.874667701+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.671471384,"progress":"1.1MB/1.1MB"}],"total_operations":1}}
+{"time":"2025-08-14T23:58:40.176923005+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-14T23:58:40.399508346+01:00","level":"INFO","msg":"stream: closing","id":"r695sywh"}
+{"time":"2025-08-14T23:58:40.399532161+01:00","level":"INFO","msg":"handler: closed","stream_id":"r695sywh"}
+{"time":"2025-08-14T23:58:40.399548292+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"r695sywh"}
+{"time":"2025-08-14T23:58:40.39956297+01:00","level":"INFO","msg":"sender: closed","stream_id":"r695sywh"}
+{"time":"2025-08-14T23:58:40.400189021+01:00","level":"INFO","msg":"stream: closed","id":"r695sywh"}

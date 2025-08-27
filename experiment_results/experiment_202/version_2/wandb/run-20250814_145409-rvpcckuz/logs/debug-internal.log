@@ -1,0 +1,17 @@
+{"time":"2025-08-14T14:54:09.867832644+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_202/version_2/wandb/run-20250814_145409-rvpcckuz/logs/debug-core.log"}
+{"time":"2025-08-14T14:54:10.187298167+01:00","level":"INFO","msg":"created new stream","id":"rvpcckuz"}
+{"time":"2025-08-14T14:54:10.18738224+01:00","level":"INFO","msg":"stream: started","id":"rvpcckuz"}
+{"time":"2025-08-14T14:54:10.187423539+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"rvpcckuz"}
+{"time":"2025-08-14T14:54:10.187516166+01:00","level":"INFO","msg":"sender: started","stream_id":"rvpcckuz"}
+{"time":"2025-08-14T14:54:10.187560364+01:00","level":"INFO","msg":"handler: started","stream_id":"rvpcckuz"}
+{"time":"2025-08-14T14:54:10.460033975+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-14T15:44:27.215698688+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-08-14T16:29:38.814164945+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-14T16:29:38.814463162+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-14T16:29:39.816626534+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.631794151,"progress":"992.1KB/992.1KB"},{"desc":"uploading config.yaml","runtime_seconds":0.173422544,"progress":"5.9KB/5.9KB"}],"total_operations":2}}
+{"time":"2025-08-14T16:29:40.143446268+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-14T16:29:40.397489909+01:00","level":"INFO","msg":"stream: closing","id":"rvpcckuz"}
+{"time":"2025-08-14T16:29:40.397525354+01:00","level":"INFO","msg":"handler: closed","stream_id":"rvpcckuz"}
+{"time":"2025-08-14T16:29:40.397543933+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"rvpcckuz"}
+{"time":"2025-08-14T16:29:40.397640373+01:00","level":"INFO","msg":"sender: closed","stream_id":"rvpcckuz"}
+{"time":"2025-08-14T16:29:40.398455876+01:00","level":"INFO","msg":"stream: closed","id":"rvpcckuz"}

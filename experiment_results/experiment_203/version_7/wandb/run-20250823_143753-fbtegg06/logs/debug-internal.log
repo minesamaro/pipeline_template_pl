@@ -1,0 +1,16 @@
+{"time":"2025-08-23T14:37:53.794413775+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_203/version_7/wandb/run-20250823_143753-fbtegg06/logs/debug-core.log"}
+{"time":"2025-08-23T14:37:54.070700581+01:00","level":"INFO","msg":"created new stream","id":"fbtegg06"}
+{"time":"2025-08-23T14:37:54.070734731+01:00","level":"INFO","msg":"stream: started","id":"fbtegg06"}
+{"time":"2025-08-23T14:37:54.070768051+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"fbtegg06"}
+{"time":"2025-08-23T14:37:54.070813041+01:00","level":"INFO","msg":"sender: started","stream_id":"fbtegg06"}
+{"time":"2025-08-23T14:37:54.070889731+01:00","level":"INFO","msg":"handler: started","stream_id":"fbtegg06"}
+{"time":"2025-08-23T14:37:54.347486026+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-23T16:12:38.903002104+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-23T16:12:38.903213024+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-23T16:12:39.904568265+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.651255828,"progress":"1.6MB/3.9MB"},{"desc":"uploading history steps 996-999, summary, console lines 53881-54012","runtime_seconds":0.085898087}],"total_operations":2}}
+{"time":"2025-08-23T16:12:40.413362213+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-23T16:12:40.641588421+01:00","level":"INFO","msg":"stream: closing","id":"fbtegg06"}
+{"time":"2025-08-23T16:12:40.641610541+01:00","level":"INFO","msg":"handler: closed","stream_id":"fbtegg06"}
+{"time":"2025-08-23T16:12:40.641620321+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"fbtegg06"}
+{"time":"2025-08-23T16:12:40.641633531+01:00","level":"INFO","msg":"sender: closed","stream_id":"fbtegg06"}
+{"time":"2025-08-23T16:12:40.642171421+01:00","level":"INFO","msg":"stream: closed","id":"fbtegg06"}

@@ -1,0 +1,17 @@
+{"time":"2025-08-14T15:39:05.418278505+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_201/version_4/wandb/run-20250814_153905-00rl0ou8/logs/debug-core.log"}
+{"time":"2025-08-14T15:39:05.762936504+01:00","level":"INFO","msg":"created new stream","id":"00rl0ou8"}
+{"time":"2025-08-14T15:39:05.762973854+01:00","level":"INFO","msg":"stream: started","id":"00rl0ou8"}
+{"time":"2025-08-14T15:39:05.762996717+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"00rl0ou8"}
+{"time":"2025-08-14T15:39:05.763016034+01:00","level":"INFO","msg":"sender: started","stream_id":"00rl0ou8"}
+{"time":"2025-08-14T15:39:05.763032805+01:00","level":"INFO","msg":"handler: started","stream_id":"00rl0ou8"}
+{"time":"2025-08-14T15:39:06.000161477+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-14T15:44:21.580835466+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-08-14T16:30:13.064721716+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-14T16:30:13.065035428+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-14T16:30:14.035753499+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.602461788,"progress":"697.1KB/697.1KB"}],"total_operations":1}}
+{"time":"2025-08-14T16:30:14.277210274+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-14T16:30:14.577780172+01:00","level":"INFO","msg":"stream: closing","id":"00rl0ou8"}
+{"time":"2025-08-14T16:30:14.577813124+01:00","level":"INFO","msg":"handler: closed","stream_id":"00rl0ou8"}
+{"time":"2025-08-14T16:30:14.577830286+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"00rl0ou8"}
+{"time":"2025-08-14T16:30:14.577848981+01:00","level":"INFO","msg":"sender: closed","stream_id":"00rl0ou8"}
+{"time":"2025-08-14T16:30:14.578643972+01:00","level":"INFO","msg":"stream: closed","id":"00rl0ou8"}

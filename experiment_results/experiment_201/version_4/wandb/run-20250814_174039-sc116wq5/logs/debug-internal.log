@@ -1,0 +1,17 @@
+{"time":"2025-08-14T17:40:40.954838976+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_201/version_4/wandb/run-20250814_174039-sc116wq5/logs/debug-core.log"}
+{"time":"2025-08-14T17:40:41.239396039+01:00","level":"INFO","msg":"created new stream","id":"sc116wq5"}
+{"time":"2025-08-14T17:40:41.239435483+01:00","level":"INFO","msg":"stream: started","id":"sc116wq5"}
+{"time":"2025-08-14T17:40:41.239508131+01:00","level":"INFO","msg":"handler: started","stream_id":"sc116wq5"}
+{"time":"2025-08-14T17:40:41.239504644+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"sc116wq5"}
+{"time":"2025-08-14T17:40:41.239544179+01:00","level":"INFO","msg":"sender: started","stream_id":"sc116wq5"}
+{"time":"2025-08-14T17:40:41.552816807+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-14T18:09:57.107976473+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/vit/sc116wq5/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-08-14T18:34:01.9750461+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-14T18:34:01.975219888+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-14T18:34:02.97695131+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.416215266,"progress":"669.3KB/669.3KB"}],"total_operations":1}}
+{"time":"2025-08-14T18:34:03.415290013+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-14T18:34:03.672954874+01:00","level":"INFO","msg":"stream: closing","id":"sc116wq5"}
+{"time":"2025-08-14T18:34:03.672980312+01:00","level":"INFO","msg":"handler: closed","stream_id":"sc116wq5"}
+{"time":"2025-08-14T18:34:03.672994469+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"sc116wq5"}
+{"time":"2025-08-14T18:34:03.673031278+01:00","level":"INFO","msg":"sender: closed","stream_id":"sc116wq5"}
+{"time":"2025-08-14T18:34:03.673484775+01:00","level":"INFO","msg":"stream: closed","id":"sc116wq5"}
