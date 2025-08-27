@@ -342,6 +342,12 @@ class NLSTPreprocessedDataLoader(Dataset):
                     return data, label, stage_label
                 else:
                     return self.file_names[data_index], data, label, stage_label
+            elif getattr(self.config, "use_stagebin_label", False):
+                stage_bin_label = self._get_stage_label(data_index, stage='binary_stage')
+                if not self.load_data_name:
+                    return data, label, stage_bin_label
+                else:
+                    return self.file_names[data_index], data, label, stage_bin_label
             else:
                 if not self.load_data_name:
                     return data, label
@@ -354,12 +360,12 @@ class NLSTPreprocessedDataLoader(Dataset):
             print(f"Label: {self.labels[data_index]}")
             raise e
 
-    def _get_stage_label(self, data_index):
+    def _get_stage_label(self, data_index, stage='stage'):
         # Assuming stage labels are stored in self.lung_metadataframe['stage']
         dataframe_row = self.lung_metadataframe.loc[
             self.lung_metadataframe['path'] == self.file_names[data_index]
         ]
-        stage_value = dataframe_row['stage'].values[0]
+        stage_value = dataframe_row[stage].values[0]
         return torch.tensor([int(stage_value)])
 
     def get_slice_range_3d(self, total_slices, slice_idx, n_slices):

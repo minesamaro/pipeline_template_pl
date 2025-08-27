@@ -19,6 +19,8 @@ from src.modules.model.regularization.pytorch_lightning_regularization import \
                 PyTorchLightningRegularizationModel
 from src.modules.model.multitasksem.pytorch_lightning_multitasksem import \
                 PyTorchLightningMultitaskSEMModel
+from src.modules.model.multitasksembin.pytorch_lightning_multitasksembin import \
+                PyTorchLightningMultitaskSEMBinModel
 from src.modules.model.vit.pytorch_lightning_vit import \
                 PyTorchLightningVitModel
 
@@ -79,6 +81,12 @@ class PyTorchLightningModel:
             )
         elif config.model_name == "Multitask":
             return PyTorchLightningMultitaskSEMModel(
+                config=config.hyperparameters,
+                experiment_execution_paths=experiment_execution_paths,
+                test_dataloader=test_dataloader
+            )
+        elif config.model_name == "Multitaskbin":
+            return PyTorchLightningMultitaskSEMBinModel(
                 config=config.hyperparameters,
                 experiment_execution_paths=experiment_execution_paths,
                 test_dataloader=test_dataloader
