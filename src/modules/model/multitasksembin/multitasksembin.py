@@ -132,6 +132,6 @@ class MultiTaskSurvivalStageBinNet2D(nn.Module):
         t = self.stage_branch_block1(x)
         t = self.stage_branch_block2(t)
         t = self.stage_pool(t)
-        stage_out = self.stage_mlp(t)  # logits for binary classification
+        stage_out = self.stage_mlp(t).squeeze(-1)  # logits for binary classification
 
         return surv_out, stage_out

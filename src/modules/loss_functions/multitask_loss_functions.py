@@ -64,7 +64,7 @@ class MultitaskBinLossFunction(torch.nn.Module):
         self.config = config
 
         self.weights_surv = self._get_label_weights(experiment_execution_paths, label='label')
-        self.weights_stage = self._get_label_weights(experiment_execution_paths, label='stage')
+        self.weights_stage = self._get_label_weights(experiment_execution_paths, label='binary_stage')
         print(f"Label weights: {self.weights_surv}, Stage weights: {self.weights_stage}")
 
 
@@ -108,7 +108,7 @@ class MultitaskBinLossFunction(torch.nn.Module):
         else:
             if label == 'label':
                 label_weights = torch.tensor([1.0, 1.0]).to(self.config.device)
-            elif label == 'stage':
+            elif label == 'binary_stage':
                 label_weights = torch.tensor([1.0, 1.0]).to(self.config.device)
 
         return label_weights
