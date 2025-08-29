@@ -14,9 +14,7 @@ class MultitaskLossFunction(torch.nn.Module):
         print(f"Label weights: {self.weights_surv}, Stage weights: {self.weights_stage}")
 
 
-    def forward(self, surv_output, surv_target, stage_logits, stage_targets, alpha=1, beta=0.25):
-        print(f"Survival output shape: {surv_output.shape}, Target shape: {surv_target.shape}")
-        print(f"Stage output shape: {stage_logits.shape}, Target shape: {stage_targets.shape}")
+    def forward(self, surv_output, surv_target, stage_logits, stage_targets, alpha=1, beta=0.75):
 
         # Survival Loss 
         surv_loss = binary_cross_entropy_with_logits(
@@ -59,19 +57,17 @@ class MultitaskLossFunction(torch.nn.Module):
         return label_weights
 
 class MultitaskBinLossFunction(torch.nn.Module):
-    def __init__(self, config, experiment_execution_paths):
+    def __init__(self, config, experiment_execution_paths, alpha):
         super(MultitaskBinLossFunction, self).__init__()
         self.config = config
+        self.beta = alpha
 
         self.weights_surv = self._get_label_weights(experiment_execution_paths, label='label')
         self.weights_stage = self._get_label_weights(experiment_execution_paths, label='binary_stage')
         print(f"Label weights: {self.weights_surv}, Stage weights: {self.weights_stage}")
 
 
-    def forward(self, surv_output, surv_target, stage_logits, stage_targets, alpha=1, beta=0.5):
-        print(f"Survival output shape: {surv_output.shape}, Target shape: {surv_target.shape}")
-        print(f"Stage output shape: {stage_logits.shape}, Target shape: {stage_targets.shape}")
-
+    def forward(self, surv_output, surv_target, stage_logits, stage_targets, alpha=1):
         # Survival Loss 
         surv_loss = binary_cross_entropy_with_logits(
             input=surv_output,
@@ -87,7 +83,7 @@ class MultitaskBinLossFunction(torch.nn.Module):
             weight=self.weights_stage.to(stage_logits.device)
         )
 
-        loss = alpha * surv_loss + beta * stage_loss
+        loss = alpha * surv_loss + self.beta * stage_loss
 
         return loss, surv_loss, stage_loss
 

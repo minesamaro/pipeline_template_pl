@@ -22,7 +22,7 @@ seed_value: 22
 weighted_random_sampler: False
 visualize_imgur: False
 wandb:
-  project_name: "multitask_sem_alpha025"
+  project_name: "multitask_sem_alpha075"
   entity: "nlst"
   name: "multitask"
 roi: ws

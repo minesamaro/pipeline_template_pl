@@ -25,7 +25,7 @@ from src.modules.model.vit.pytorch_lightning_vit import \
                 PyTorchLightningVitModel
 
 class PyTorchLightningModel:
-    def __new__(cls, config, experiment_execution_paths, test_dataloader=None):
+    def __new__(cls, config, experiment_execution_paths, test_dataloader=None, alpha=1):
         if config.model_name == "EfficientNet":
             return PyTorchLightningEfficientNetModel(
                 config=config.hyperparameters,
@@ -83,13 +83,15 @@ class PyTorchLightningModel:
             return PyTorchLightningMultitaskSEMModel(
                 config=config.hyperparameters,
                 experiment_execution_paths=experiment_execution_paths,
-                test_dataloader=test_dataloader
+                test_dataloader=test_dataloader,
+                alpha=alpha
             )
         elif config.model_name == "Multitaskbin":
             return PyTorchLightningMultitaskSEMBinModel(
                 config=config.hyperparameters,
                 experiment_execution_paths=experiment_execution_paths,
-                test_dataloader=test_dataloader
+                test_dataloader=test_dataloader,
+                alpha=alpha
             )
         elif config.model_name == "Vit":
             return PyTorchLightningVitModel(

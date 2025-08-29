@@ -118,8 +118,13 @@ def run_experiment_pipeline(config):
     n_datafolds = len(kfold_dataloaders['train'])
     if 'hyperparameter_grid_based_execution' in config:
         hyperparameters_dict = config.hyperparameter_grid_based_execution.hyperparameter_combination.used
-        hyperparameters = {'batch_size': hyperparameters_dict['data.dataloader.torch_dataloader_kwargs.batch_size'], \
-                          'learning_rate': hyperparameters_dict['model.pytorch_lightning_model.hyperparameters.optimiser.kwargs.lr']}
+        if 'alpha' in hyperparameters_dict:
+            hyperparameters = {'batch_size': hyperparameters_dict['data.dataloader.torch_dataloader_kwargs.batch_size'], \
+                              'learning_rate': hyperparameters_dict['model.pytorch_lightning_model.hyperparameters.optimiser.kwargs.lr'], \
+                              'alpha': hyperparameters_dict['alpha']}
+        else:
+            hyperparameters = {'batch_size': hyperparameters_dict['data.dataloader.torch_dataloader_kwargs.batch_size'], \
+                              'learning_rate': hyperparameters_dict['model.pytorch_lightning_model.hyperparameters.optimiser.kwargs.lr']}
         config_dict = (dict(config) | hyperparameters)
     else:
         config_dict = dict(config) \
@@ -161,7 +166,8 @@ def run_experiment_pipeline(config):
                 test=kfold_data_names['test'][datafold_id - 1]
             ),
             experiment_execution_ids=config.experiment_execution.ids,
-            experiment_execution_paths=config.experiment_execution.paths
+            experiment_execution_paths=config.experiment_execution.paths, 
+            alpha= config.alpha if 'alpha' in config else 1
         )
         
         model_pipeline.train_model()

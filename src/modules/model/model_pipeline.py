@@ -16,7 +16,8 @@ class ModelPipeline:
             dataloaders,
             data_file_names,
             experiment_execution_ids,
-            experiment_execution_paths
+            experiment_execution_paths,
+            alpha=1
     ):
         self.config = config
 
@@ -33,7 +34,8 @@ class ModelPipeline:
         self.pytorch_lightning_model = PyTorchLightningModel(
             config=self.config.pytorch_lightning_model,
             experiment_execution_paths=experiment_execution_paths,
-            test_dataloader=self.dataloaders['test']
+            test_dataloader=self.dataloaders['test'],
+            alpha=alpha
         )
         self.pytorch_lightning_trainer = Trainer(
             callbacks=self._get_model_trainer_callbacks(),

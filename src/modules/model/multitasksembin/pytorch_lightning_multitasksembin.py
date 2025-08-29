@@ -9,13 +9,14 @@ from src.modules.loss_functions.multitask_loss_functions import MultitaskBinLoss
 
 
 class PyTorchLightningMultitaskSEMBinModel(pytorch_lightning.LightningModule):
-    def __init__(self, config, experiment_execution_paths, test_dataloader= None):
+    def __init__(self, config, experiment_execution_paths, test_dataloader= None, alpha=1):
         super().__init__()
         self.config = config
 
         self.criterion = MultitaskBinLossFunction(
             config=self.config.criterion,
-            experiment_execution_paths=experiment_execution_paths
+            experiment_execution_paths=experiment_execution_paths,
+            alpha=alpha
         )
         self.labels = None
         self.model = MultiTaskSurvivalStageBinNet2D(
