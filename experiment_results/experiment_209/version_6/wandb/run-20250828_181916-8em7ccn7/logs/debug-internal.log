@@ -1,0 +1,16 @@
+{"time":"2025-08-28T18:19:18.132125807+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_209/version_6/wandb/run-20250828_181916-8em7ccn7/logs/debug-core.log"}
+{"time":"2025-08-28T18:19:18.396286121+01:00","level":"INFO","msg":"created new stream","id":"8em7ccn7"}
+{"time":"2025-08-28T18:19:18.396323422+01:00","level":"INFO","msg":"stream: started","id":"8em7ccn7"}
+{"time":"2025-08-28T18:19:18.396371413+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"8em7ccn7"}
+{"time":"2025-08-28T18:19:18.396398355+01:00","level":"INFO","msg":"sender: started","stream_id":"8em7ccn7"}
+{"time":"2025-08-28T18:19:18.396379064+01:00","level":"INFO","msg":"handler: started","stream_id":"8em7ccn7"}
+{"time":"2025-08-28T18:19:18.616066445+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-28T20:09:33.294846989+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-28T20:09:33.295065644+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-28T20:09:34.296494872+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.663679717,"progress":"1.0MB/1.0MB"},{"desc":"uploading history steps 997-999, summary, console lines 13981-14010","runtime_seconds":0.212276407}],"total_operations":2}}
+{"time":"2025-08-28T20:09:34.570874148+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-28T20:09:34.758011481+01:00","level":"INFO","msg":"stream: closing","id":"8em7ccn7"}
+{"time":"2025-08-28T20:09:34.758029512+01:00","level":"INFO","msg":"handler: closed","stream_id":"8em7ccn7"}
+{"time":"2025-08-28T20:09:34.758036682+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"8em7ccn7"}
+{"time":"2025-08-28T20:09:34.758056993+01:00","level":"INFO","msg":"sender: closed","stream_id":"8em7ccn7"}
+{"time":"2025-08-28T20:09:34.758448651+01:00","level":"INFO","msg":"stream: closed","id":"8em7ccn7"}

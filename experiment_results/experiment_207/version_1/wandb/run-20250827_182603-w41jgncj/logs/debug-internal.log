@@ -1,0 +1,17 @@
+{"time":"2025-08-27T18:26:06.649392943+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_207/version_1/wandb/run-20250827_182603-w41jgncj/logs/debug-core.log"}
+{"time":"2025-08-27T18:26:06.906873237+01:00","level":"INFO","msg":"created new stream","id":"w41jgncj"}
+{"time":"2025-08-27T18:26:06.906908638+01:00","level":"INFO","msg":"stream: started","id":"w41jgncj"}
+{"time":"2025-08-27T18:26:06.906950828+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"w41jgncj"}
+{"time":"2025-08-27T18:26:06.906968398+01:00","level":"INFO","msg":"handler: started","stream_id":"w41jgncj"}
+{"time":"2025-08-27T18:26:06.906995408+01:00","level":"INFO","msg":"sender: started","stream_id":"w41jgncj"}
+{"time":"2025-08-27T18:26:08.151143026+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-27T19:08:38.522258721+01:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-08-27T20:08:28.845201458+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-27T20:08:28.845373678+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-27T20:08:29.847135924+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.571075797,"progress":"1.1MB/1.2MB"},{"desc":"uploading wandb-summary.json","runtime_seconds":0.571059937,"progress":"1.7KB/1.7KB"},{"desc":"uploading config.yaml","runtime_seconds":0.399925773,"progress":"6.0KB/6.0KB"}],"total_operations":3}}
+{"time":"2025-08-27T20:08:30.654887218+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-27T20:08:30.924839362+01:00","level":"INFO","msg":"stream: closing","id":"w41jgncj"}
+{"time":"2025-08-27T20:08:30.924863972+01:00","level":"INFO","msg":"handler: closed","stream_id":"w41jgncj"}
+{"time":"2025-08-27T20:08:30.924880132+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"w41jgncj"}
+{"time":"2025-08-27T20:08:30.924895732+01:00","level":"INFO","msg":"sender: closed","stream_id":"w41jgncj"}
+{"time":"2025-08-27T20:08:30.925731546+01:00","level":"INFO","msg":"stream: closed","id":"w41jgncj"}
