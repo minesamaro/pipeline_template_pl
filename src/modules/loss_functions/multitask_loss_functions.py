@@ -61,6 +61,7 @@ class MultitaskBinLossFunction(torch.nn.Module):
         super(MultitaskBinLossFunction, self).__init__()
         self.config = config
         self.beta = alpha
+        print(f"Alpha: {self.beta}")
 
         self.weights_surv = self._get_label_weights(experiment_execution_paths, label='label')
         self.weights_stage = self._get_label_weights(experiment_execution_paths, label='binary_stage')
