@@ -42,6 +42,10 @@ def run_hyperparameter_grid_based_execution_pipeline(config):
         ))
         for hyperparameter_combination_index, current_hyperparameter_combination \
                 in enumerate(all_hyperparameter_combinations, 1):
+            #DEBUG
+            print(f"Running hyperparameter combination {hyperparameter_combination_index}:")
+            # Print the hyperparameter combination as is
+            print(current_hyperparameter_combination)
             experiment_execution_config.set_used_hyperparameter_combination(
                 config, current_hyperparameter_combination
             )
@@ -118,10 +122,10 @@ def run_experiment_pipeline(config):
     n_datafolds = len(kfold_dataloaders['train'])
     if 'hyperparameter_grid_based_execution' in config:
         hyperparameters_dict = config.hyperparameter_grid_based_execution.hyperparameter_combination.used
-        if 'alpha' in hyperparameters_dict:
+        if 'alpha' in config:
             hyperparameters = {'batch_size': hyperparameters_dict['data.dataloader.torch_dataloader_kwargs.batch_size'], \
                               'learning_rate': hyperparameters_dict['model.pytorch_lightning_model.hyperparameters.optimiser.kwargs.lr'], \
-                              'alpha': hyperparameters_dict['alpha']}
+                              'alpha': config['alpha']}
         else:
             hyperparameters = {'batch_size': hyperparameters_dict['data.dataloader.torch_dataloader_kwargs.batch_size'], \
                               'learning_rate': hyperparameters_dict['model.pytorch_lightning_model.hyperparameters.optimiser.kwargs.lr']}

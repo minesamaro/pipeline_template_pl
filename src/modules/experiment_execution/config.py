@@ -156,6 +156,8 @@ class ExperimentExecutionConfig:
                 config.hyperparameter_grid_based_execution
                         .hyperparameter_combination.used.items()
         ):
+            print(config_string_representation)
+            print(config_value)
             config_keys = config_string_representation.split('.')
             config_copy = config
             for config_key in config_keys[:-1]:
