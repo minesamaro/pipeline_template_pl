@@ -1,0 +1,17 @@
+{"time":"2025-08-29T19:45:09.611727344+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_213/version_4/wandb/run-20250829_194508-f4sa47wi/logs/debug-core.log"}
+{"time":"2025-08-29T19:45:09.911792941+01:00","level":"INFO","msg":"created new stream","id":"f4sa47wi"}
+{"time":"2025-08-29T19:45:09.911828332+01:00","level":"INFO","msg":"stream: started","id":"f4sa47wi"}
+{"time":"2025-08-29T19:45:09.911852303+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"f4sa47wi"}
+{"time":"2025-08-29T19:45:09.911883273+01:00","level":"INFO","msg":"sender: started","stream_id":"f4sa47wi"}
+{"time":"2025-08-29T19:45:09.911865653+01:00","level":"INFO","msg":"handler: started","stream_id":"f4sa47wi"}
+{"time":"2025-08-29T19:45:10.122540181+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-29T20:46:25.813229325+01:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/maria-i-paiva-inesc-tec/multitask_sem_alpha075/f4sa47wi/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-08-29T20:53:31.290233182+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-29T20:53:31.290390286+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-29T20:53:32.108623826+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-29T20:53:32.291926845+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 726-727, summary, console lines 5-6","runtime_seconds":0.183179447}],"total_operations":1}}
+{"time":"2025-08-29T20:53:32.320955384+01:00","level":"INFO","msg":"stream: closing","id":"f4sa47wi"}
+{"time":"2025-08-29T20:53:32.320980724+01:00","level":"INFO","msg":"handler: closed","stream_id":"f4sa47wi"}
+{"time":"2025-08-29T20:53:32.320989324+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"f4sa47wi"}
+{"time":"2025-08-29T20:53:32.321002084+01:00","level":"INFO","msg":"sender: closed","stream_id":"f4sa47wi"}
+{"time":"2025-08-29T20:53:32.321630829+01:00","level":"INFO","msg":"stream: closed","id":"f4sa47wi"}

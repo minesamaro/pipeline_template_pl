@@ -83,8 +83,7 @@ class PyTorchLightningModel:
             return PyTorchLightningMultitaskSEMModel(
                 config=config.hyperparameters,
                 experiment_execution_paths=experiment_execution_paths,
-                test_dataloader=test_dataloader,
-                alpha=alpha
+                test_dataloader=test_dataloader
             )
         elif config.model_name == "Multitaskbin":
             return PyTorchLightningMultitaskSEMBinModel(
