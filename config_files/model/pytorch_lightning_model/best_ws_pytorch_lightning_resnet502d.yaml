@@ -6,7 +6,7 @@ hyperparameters:
   optimiser:
     type: Adam
     kwargs:
-      lr: 0.001
+      lr: 0.00001
   criterion:
     apply_weights: True
     device: ${..device}

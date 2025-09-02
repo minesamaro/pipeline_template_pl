@@ -2,14 +2,14 @@ model_id: ${..model_id}
 model_name: ${..model_name}
 callbacks:
   model_checkpoints:
-    - monitor: val_auroc
+    - monitor: train_loss
       filename: mod=${....model_id}-exp=X-ver=Y-dtf=Z-{epoch}-var={${.monitor}:.3f}
-      mode: max
+      mode: min
       save_top_k: 1
     - filename: mod=${....model_id}-exp=X-ver=Y-dtf=Z-{epoch}-var=last_epoch
   model_early_stoppings:
     - monitor: train_auroc
-      patience: 150
+      patience: 50
       mode: max
       verbose: False
 enable_logging: False
@@ -25,4 +25,4 @@ pytorch_lightning_trainer_kwargs:
   enable_progress_bar: False
   log_every_n_steps: 1
   min_epochs: 0
-  max_epochs: 1000
+  max_epochs: 64

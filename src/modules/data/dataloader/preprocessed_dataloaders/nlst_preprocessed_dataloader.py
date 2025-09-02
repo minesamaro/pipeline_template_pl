@@ -218,38 +218,68 @@ class NLSTPreprocessedKFoldDataLoader:
         for fold_id in range(1, self.config.number_of_k_folds + 1):
             metadata_with_splits.loc[test_df.index, f'split_fold_{fold_id}'] = 'test'
 
-        # === Step 2: Stratified K-Fold on train_val_df only ===
-        skf = StratifiedKFold(
-            n_splits=self.config.number_of_k_folds,
-            shuffle=True,
-            random_state=self.config.seed_value
+        # # === Step 2: Stratified K-Fold on train_val_df only ===
+        # skf = StratifiedKFold(
+        #     n_splits=self.config.number_of_k_folds,
+        #     shuffle=True,
+        #     random_state=self.config.seed_value
+        # )
+        # # Missing a generator, no??
+
+        # for fold_id, (train_idx, val_idx) in enumerate(
+        #     skf.split(train_val_df, train_val_df['label']), 1
+        # ):
+        #     train_split = train_val_df.iloc[train_idx]
+        #     val_split = train_val_df.iloc[val_idx]
+
+        #     # Assign to DataFrame
+        #     metadata_with_splits.loc[train_split.index, f'split_fold_{fold_id}'] = 'train'
+        #     metadata_with_splits.loc[val_split.index, f'split_fold_{fold_id}'] = 'val'
+
+        #     # Save in internal structure if needed
+        #     self.data_splits['train']['file_names'].append(train_split['path'].tolist())
+        #     self.data_splits['train']['labels'].append(train_split['label'].tolist())
+        #     self.data_splits['validation']['file_names'].append(val_split['path'].tolist())
+        #     self.data_splits['validation']['labels'].append(val_split['label'].tolist())
+        #     self.data_splits['test']['file_names'].append(test_df['path'].tolist())
+        #     self.data_splits['test']['labels'].append(test_df['label'].tolist())
+
+        # # === Save annotated DataFrame to CSV ===
+        # metadata_with_splits.to_csv(
+        #     '/nas-ctm01/homes/mipaiva/small_scripts/ignore_metadata_with_splits.csv',
+        #     index=False
+        # )
+        # print("\n✅ Saved split assignments to 'clinical_metadata_with_splits.csv'")
+
+
+        # === One fixed split ===
+        train_df, val_df = train_test_split(
+            train_val_df,
+            test_size=2,   # <-- only 2 samples for "val"
+            random_state=self.config.seed_value,
+            stratify=train_val_df['label']
         )
-        # Missing a generator, no??
 
-        for fold_id, (train_idx, val_idx) in enumerate(
-            skf.split(train_val_df, train_val_df['label']), 1
-        ):
-            train_split = train_val_df.iloc[train_idx]
-            val_split = train_val_df.iloc[val_idx]
+        fold_id = 1  # since we only want one split
+        metadata_with_splits.loc[train_df.index, f'split_fold_{fold_id}'] = 'train'
+        metadata_with_splits.loc[val_df.index, f'split_fold_{fold_id}'] = 'val'
 
-            # Assign to DataFrame
-            metadata_with_splits.loc[train_split.index, f'split_fold_{fold_id}'] = 'train'
-            metadata_with_splits.loc[val_split.index, f'split_fold_{fold_id}'] = 'val'
+        # Optional: still assign test = val if pipeline expects it
+        metadata_with_splits.loc[val_df.index, f'split_fold_{fold_id}'] = 'val'
 
-            # Save in internal structure if needed
-            self.data_splits['train']['file_names'].append(train_split['path'].tolist())
-            self.data_splits['train']['labels'].append(train_split['label'].tolist())
-            self.data_splits['validation']['file_names'].append(val_split['path'].tolist())
-            self.data_splits['validation']['labels'].append(val_split['label'].tolist())
-            self.data_splits['test']['file_names'].append(test_df['path'].tolist())
-            self.data_splits['test']['labels'].append(test_df['label'].tolist())
+        self.data_splits['train']['file_names'].append(train_df['path'].tolist())
+        self.data_splits['train']['labels'].append(train_df['label'].tolist())
+        self.data_splits['validation']['file_names'].append(val_df['path'].tolist())
+        self.data_splits['validation']['labels'].append(val_df['label'].tolist())
+        self.data_splits['test']['file_names'].append(test_df['path'].tolist())
+        self.data_splits['test']['labels'].append(test_df['label'].tolist())
 
-        # === Save annotated DataFrame to CSV ===
+        # Save
         metadata_with_splits.to_csv(
             '/nas-ctm01/homes/mipaiva/small_scripts/ignore_metadata_with_splits.csv',
             index=False
         )
-        print("\n✅ Saved split assignments to 'clinical_metadata_with_splits.csv'")
+        print("\n✅ Saved single split with 2 val samples.")
 
 
 class NLSTPreprocessedDataLoader(Dataset):
