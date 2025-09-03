@@ -1,0 +1,13 @@
+apply: True #CHANGE THIS TO FALSE TO DISABLE HYPERPARAMETER GRID BASED EXECUTION
+hyperparameter_combination:
+  index: None
+  used: None
+hyperparameter_grid:
+  model.pytorch_lightning_model.hyperparameters.optimiser.kwargs.lr:
+    - 0.000001
+  data.dataloader.torch_dataloader_kwargs.batch_size:
+    - 16
+  seed_value:
+    - 22
+#    - 123761
+#    - 900
