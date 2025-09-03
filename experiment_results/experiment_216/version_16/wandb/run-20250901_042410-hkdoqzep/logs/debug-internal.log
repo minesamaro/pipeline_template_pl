@@ -1,0 +1,16 @@
+{"time":"2025-09-01T04:24:10.869145979+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_216/version_16/wandb/run-20250901_042410-hkdoqzep/logs/debug-core.log"}
+{"time":"2025-09-01T04:24:11.226116115+01:00","level":"INFO","msg":"created new stream","id":"hkdoqzep"}
+{"time":"2025-09-01T04:24:11.226156106+01:00","level":"INFO","msg":"stream: started","id":"hkdoqzep"}
+{"time":"2025-09-01T04:24:11.226182907+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"hkdoqzep"}
+{"time":"2025-09-01T04:24:11.226212858+01:00","level":"INFO","msg":"handler: started","stream_id":"hkdoqzep"}
+{"time":"2025-09-01T04:24:11.226191597+01:00","level":"INFO","msg":"sender: started","stream_id":"hkdoqzep"}
+{"time":"2025-09-01T04:24:11.481788418+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-09-01T06:20:37.095157725+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-09-01T06:20:37.095319969+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-09-01T06:20:37.905553748+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-09-01T06:20:38.096905771+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 997-999, summary, console lines 6-7","runtime_seconds":0.191221569}],"total_operations":1}}
+{"time":"2025-09-01T06:20:38.122852664+01:00","level":"INFO","msg":"stream: closing","id":"hkdoqzep"}
+{"time":"2025-09-01T06:20:38.122874344+01:00","level":"INFO","msg":"handler: closed","stream_id":"hkdoqzep"}
+{"time":"2025-09-01T06:20:38.122884015+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"hkdoqzep"}
+{"time":"2025-09-01T06:20:38.122907856+01:00","level":"INFO","msg":"sender: closed","stream_id":"hkdoqzep"}
+{"time":"2025-09-01T06:20:38.123643763+01:00","level":"INFO","msg":"stream: closed","id":"hkdoqzep"}

@@ -1,0 +1,16 @@
+{"time":"2025-08-31T03:16:47.753549272+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/nas-ctm01/homes/mipaiva/pipeline_template_pl/experiment_results/experiment_216/version_10/wandb/run-20250831_031646-vtots436/logs/debug-core.log"}
+{"time":"2025-08-31T03:16:48.064090831+01:00","level":"INFO","msg":"created new stream","id":"vtots436"}
+{"time":"2025-08-31T03:16:48.064131512+01:00","level":"INFO","msg":"stream: started","id":"vtots436"}
+{"time":"2025-08-31T03:16:48.064165753+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"vtots436"}
+{"time":"2025-08-31T03:16:48.064213074+01:00","level":"INFO","msg":"sender: started","stream_id":"vtots436"}
+{"time":"2025-08-31T03:16:48.064184324+01:00","level":"INFO","msg":"handler: started","stream_id":"vtots436"}
+{"time":"2025-08-31T03:16:48.263816212+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-31T04:43:20.143581393+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-31T04:43:20.143769187+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-31T04:43:21.145214237+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.658145816,"progress":"1.1KB/1.1KB"},{"desc":"uploading config.yaml","runtime_seconds":0.453340094,"progress":"6.0KB/6.0KB"}],"total_operations":2}}
+{"time":"2025-08-31T04:43:21.19530381+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-31T04:43:21.3915959+01:00","level":"INFO","msg":"stream: closing","id":"vtots436"}
+{"time":"2025-08-31T04:43:21.391619001+01:00","level":"INFO","msg":"handler: closed","stream_id":"vtots436"}
+{"time":"2025-08-31T04:43:21.391639921+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"vtots436"}
+{"time":"2025-08-31T04:43:21.391651351+01:00","level":"INFO","msg":"sender: closed","stream_id":"vtots436"}
+{"time":"2025-08-31T04:43:21.392298777+01:00","level":"INFO","msg":"stream: closed","id":"vtots436"}
