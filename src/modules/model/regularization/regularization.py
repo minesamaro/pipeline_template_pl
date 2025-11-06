@@ -85,11 +85,11 @@ class UNetSurvival(nn.Module):
         # Decoder
         dec_input = self.fc_decode(z).view(x4.shape)
         x = self.up3(dec_input)
-        x = self.dec3(torch.cat([x, x3], dim=1))
+        #x = self.dec3(torch.cat([x, x3], dim=1))
         x = self.up2(x)
-        x = self.dec2(torch.cat([x, x2], dim=1))
+        #x = self.dec2(torch.cat([x, x2], dim=1))
         x = self.up1(x)
-        x = self.dec1(torch.cat([x, x1], dim=1))
+        #x = self.dec1(torch.cat([x, x1], dim=1))
         reconstruction = self.reconstruction_head(x)
 
         # Survival branch
